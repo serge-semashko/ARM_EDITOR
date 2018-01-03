@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.413,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UCommon.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.167,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\Unit2.dfm=C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UDCB.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.946,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\MTXCommand.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.dfm,D:\Примеры программных модулей\Delphi\comport\Example\Unit2.dfm=D:\Примеры программных модулей\Delphi\comport\Example\UMTXEventList.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\Unit1.dfm=C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UPortOptions.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.825,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UMTXInput.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.938,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UMTXEventList.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.942,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UMTXButton.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,D:\Примеры программных модулей\Delphi\comport\Example\Unit2.pas=D:\Примеры программных модулей\Delphi\comport\Example\UMTXEventList.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.353,=C:\АРМ РЕДАКТОРА\ADMIN\COM-port\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.167,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\Unit2.pas=C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UDCB.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,D:\Примеры программных модулей\Delphi\comport\Example\Unit1.pas=D:\Примеры программных модулей\Delphi\comport\Example\UMTXInput.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.451,=C:\АРМ РЕДАКТОРА\ADMIN\COM-port\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,C:\АРМ РЕДАКТОРА\ADMIN\COM-port\Unit1.pas=C:\АРМ РЕДАКТОРА\ADMIN\COM-port\UPortOptions.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.dfm,D:\Примеры программных модулей\Delphi\comport\Example\Unit1.dfm=D:\Примеры программных модулей\Delphi\comport\Example\UMTXInput.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

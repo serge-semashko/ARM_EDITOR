@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.600,F:\home\АРМ РЕДАКТОРА2\New1.txt=F:\home\АРМ РЕДАКТОРА2\#jsonexample.txt</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.297,=F:\home\АРМ РЕДАКТОРА2\New1.txt</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.659,F:\home\АРМ РЕДАКТОРА2\json.txt=F:\home\АРМ РЕДАКТОРА2\New1.txt</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.686,=F:\home\АРМ РЕДАКТОРА2\New1.txt</Transaction>
+  </Transactions>
+</BorlandProject>

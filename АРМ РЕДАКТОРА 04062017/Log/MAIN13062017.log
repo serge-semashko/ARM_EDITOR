@@ -1,0 +1,1615 @@
+13.06.2017 15:45:51:651 || Message:WM_GETMINMAXINFO
+13.06.2017 15:45:51:651 || Message:WM_GETMINMAXINFO
+13.06.2017 15:45:51:651 || Message:WM_GETMINMAXINFO
+13.06.2017 15:45:51:651 || Message:WM_GETMINMAXINFO
+13.06.2017 15:45:51:651 || Message:WM_GETMINMAXINFO
+13.06.2017 15:45:51:651 || Message:WM_GETMINMAXINFO
+13.06.2017 15:45:51:651 || Form1.Create Start
+13.06.2017 15:45:51:651 || 
+13.06.2017 15:45:51:651 || *****************************************************************************************
+13.06.2017 15:45:51:651 || *************************               «¿œ”—  œ–Œ√–¿ÃÃ€             *************************
+13.06.2017 15:45:51:651 || *************************            ¬ÂÏˇ ÒÚ‡Ú‡: 15:45:51:18             *************************
+13.06.2017 15:45:51:651 || *****************************************************************************************
+13.06.2017 15:45:51:651 || UCommon.CreateDirectories NewProject=
+13.06.2017 15:45:51:651 || UCommon.CreateDirectories PathFiles=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Clips
+13.06.2017 15:45:51:651 || UCommon.CreateDirectories DirProject=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects
+13.06.2017 15:45:51:651 || UCommon.CreateDirectories œÓÂÍÚ ÌÂ Á‡‰‡Ì
+13.06.2017 15:45:51:651 || Õ‡˜‡ÎÓ ˜ÚÂÌËˇ IniFile: F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\ARM_Director.ini
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || ŒÍÓÌ˜‡ÌËÂ ˜ÚÂÌËˇ IniFile: F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\ARM_Director.ini
+13.06.2017 15:45:51:651 || UMyFiles.ExecTaskOnDelete
+13.06.2017 15:45:51:651 || UInitForms.InputInSystem
+13.06.2017 15:45:51:651 || UInitForms.InputInSystem - ¬ıÓ‰ ‚ ÒËÒÚÂÏÛ ‚˚ÔÓÎÌÂÌ
+13.06.2017 15:45:51:651 || UInitForms.InitMainForm
+13.06.2017 15:45:51:651 || UInitForms.InitPanelControl
+13.06.2017 15:45:51:651 || UCommon.SetMainGridPanel Start
+13.06.2017 15:45:51:651 || UCommon.SetMainGridPanel MainGrid=projects
+13.06.2017 15:45:51:651 || UCommon.CheckedClipsInList Start Grid=GridClips
+13.06.2017 15:45:51:651 || UCommon.CheckedClipsInList Finish Grid=GridClips
+13.06.2017 15:45:51:651 || UCommon.SetMainGridPanel Finish
+13.06.2017 15:45:51:651 || UInitForms.InitPanelClips
+13.06.2017 15:45:51:651 || UGrid.initgrid Grid=GridClips Width=1560
+13.06.2017 15:45:51:651 || UInitForms.InitPanelPlayList
+13.06.2017 15:45:51:651 || UGrid.initgrid Grid=GridActPlayList Width=1560
+13.06.2017 15:45:51:651 || UInitForms.InitPanelProject
+13.06.2017 15:45:51:651 || UGrid.initgrid Grid=GridProjects Width=1560
+13.06.2017 15:45:51:651 || UGrid.initgrid Grid=GridLists Width=1560
+13.06.2017 15:45:51:651 || UInitForms.InitPanelPrepare
+13.06.2017 15:45:51:651 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+13.06.2017 15:45:51:651 || UGrid.initgrid Grid=GridGRTemplate Width=446
+13.06.2017 15:45:51:651 || UDrawTimelines.TTLNames.SetDefaultFonts;
+13.06.2017 15:45:51:651 || UDrawTimelines.TTLNames.Draw Start
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+13.06.2017 15:45:51:651 || UDrawTimelines.TNamesTL.Init Result=152
+13.06.2017 15:45:51:651 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 15:45:51:651 || UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 15:45:51:651 || UInitForms.InitPanelAir
+13.06.2017 15:45:51:651 || UMyFiles.LoadGridFromFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\ListProjects.prjt Grid=GridProjects
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:51:651 || UMyFiles.LoadGridFromFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\ListProjects.prjt Grid=GridProjects
+13.06.2017 15:45:51:651 || UGrid.findgridselection Grid=GridProjects Cell=2 Result=1
+13.06.2017 15:45:51:651 || UCommon.loadoldproject Start
+13.06.2017 15:45:51:651 || UCommon.initnewproject Start
+13.06.2017 15:45:51:651 || UInitForms.InitPanelPrepare
+13.06.2017 15:45:51:651 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+13.06.2017 15:45:51:651 || UGrid.initgrid Grid=GridGRTemplate Width=446
+13.06.2017 15:45:51:651 || UDrawTimelines.TTLNames.SetDefaultFonts;
+13.06.2017 15:45:51:651 || UDrawTimelines.TTLNames.Draw Start
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 15:45:51:651 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 15:45:51:651 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 15:45:51:651 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 15:45:51:651 || UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 15:45:51:651 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 15:45:51:651 || UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 15:45:51:651 || UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 15:45:51:651 || UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 15:45:51:651 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 15:45:51:651 || UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 15:45:51:651 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+13.06.2017 15:45:51:651 || UGrid.GridClear Row=1
+13.06.2017 15:45:51:651 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+13.06.2017 15:45:51:651 || UGrid.GridClear Row=1
+13.06.2017 15:45:51:651 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+13.06.2017 15:45:51:651 || UGrid.GridClear Row=1
+13.06.2017 15:45:51:651 || UCommon.initnewproject Finish
+13.06.2017 15:45:51:651 || UGrid.findgridselection Grid=GridProjects Cell=2 Result=1
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.UpdateProjectPathes NewProject=2017522182734909
+13.06.2017 15:45:51:651 |2017522182734909| UMyFiles.LoadProjectFromDisk Start
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories NewProject=2017522182734909
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathFiles=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Clips
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories DirProject=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathProject=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathLists=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Lists
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathClips=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Clips
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathTemplates=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Templates
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathPlayLists=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\PlayLists
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathTemp=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp
+13.06.2017 15:45:51:651 |2017522182734909| UCommon.CreateDirectories PathLog=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\\Log
+13.06.2017 15:45:51:651 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909 Mask=*.*
+13.06.2017 15:45:51:651 |2017522182734909| UMyFiles.LoadGridTimelinesFromFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Lists\Timelines.lst Grid=GridTimeLines
+13.06.2017 15:45:51:651 |2017522182734909| UMyFiles.LoadGridTimelinesFromFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Lists\Timelines.lst Grid=GridTimeLines
+13.06.2017 15:45:51:651 |2017522182734909| UMyFiles.LoadProjectFromDisk Finish
+13.06.2017 15:45:51:651 |2017522182734909| UMyFiles.LoadGridFromFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\PlayLists.lst Grid=GridLists
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UMyFiles.LoadGridFromFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\PlayLists.lst Grid=GridLists
+13.06.2017 15:45:52:652 |2017522182734909| UMyFiles.LoadGridFromFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\ImageTemplates.lst Grid=GridGRTemplate
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UMyFiles.LoadGridFromFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\ImageTemplates.lst Grid=GridGRTemplate
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TMyCell.LoadJpeg File=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Templates\20176321534794.jpeg Width=128 Height=80
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.GridImageReload Grid=GridGRTemplate File=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Templates\20176321534794.jpeg
+13.06.2017 15:45:52:652 |2017522182734909| UMyFiles.LoadGridFromFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\Clips.lst Grid=GridClips
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 15:45:52:652 |2017522182734909| UMyFiles.LoadGridFromFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\Clips.lst Grid=GridClips
+13.06.2017 15:45:52:652 |2017522182734909| UCommon.CheckedClipsInList Start Grid=GridClips
+13.06.2017 15:45:52:652 |2017522182734909| UCommon.CheckedClipsInList-2 Grid=GridClips File=ÕÂ ÒÛ˘ÂÒÚ‚ÛÂÚ
+13.06.2017 15:45:52:652 |2017522182734909| UCommon.CheckedClipsInList Grid=GridClips File=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Clips\Zaz-Francuzskaya-pesnya-Les-Passants(muzofon.com)_1.mp3Õ‡È‰ÂÌ
+13.06.2017 15:45:52:652 |2017522182734909| UCommon.CheckedClipsInList Grid=GridClips File=E:\œ‡‚ÂÎ ¿ÎÂÍÒÂÂ‚Ë˜\ARM EDITOR\Clips\√Û‰·‡È, ¿ÏÂËÍ‡! ¬.¡ÛÚÛÒÓ‚. Goodbye, America. V. Butusov. (1)1.aviÕ‡È‰ÂÌ
+13.06.2017 15:45:52:652 |2017522182734909| UCommon.CheckedClipsInList Finish Grid=GridClips
+13.06.2017 15:45:52:652 |2017522182734909| UCommon.loadoldproject Finish
+13.06.2017 15:45:52:652 |2017522182734909| UCommon.UpdateProjectPathes NewProject=2017522182734909
+13.06.2017 15:45:52:652 |2017522182734909| UInitForms.UpdatePanelAir
+13.06.2017 15:45:52:652 |2017522182734909| Form1.Create Finish
+13.06.2017 15:45:52:652 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 15:45:52:652 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 15:45:52:652 |2017522182734909| Message:WMEraseBackGround
+13.06.2017 15:45:52:652 |2017522182734909| UInitForms.InitNewProject
+13.06.2017 15:45:52:652 |2017522182734909| UInitForms.InitPlaylists
+13.06.2017 15:45:52:652 |2017522182734909| UInitForms.InitEditTimeline
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrButtonOptions
+13.06.2017 15:45:58:658 |2017522182734909| UGrid.initgrid Grid=StringGrid1 Width=512
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitImportFiles
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitTextTemplates
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitMyMessage
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitImageTemplate
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrSetTemplate
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrSetEventData
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrSortGrid
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrShiftTL
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrShortNum
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrMediaCopy
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFPageSetup
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitfrMyPrint
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitFrLTC
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitfrTimeCode
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitfrMyTextTemplate
+13.06.2017 15:45:58:658 |2017522182734909| UInitForms.InitfrNewList
+13.06.2017 15:45:58:658 |2017522182734909| Message:WMEraseBackGround
+13.06.2017 18:12:49:649 |2017522182734909| Message:WMSysCommand
+13.06.2017 18:50:44:644 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 18:58:39:639 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 19:32:21:621 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 19:57:27:627 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 21:34:32:632 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 21:34:32:632 |2017522182734909| Message:WM_GETMINMAXINFO
+13.06.2017 21:34:32:632 |2017522182734909| Message:WMEraseBackGround
+13.06.2017 21:34:32:632 |2017522182734909| Message:WMEraseBackGround
+13.06.2017 21:34:33:633 |2017522182734909| TForm1.SpeedButton1Click Input=Yes User=Demo
+13.06.2017 21:34:36:636 |2017522182734909| TForm1.lbModeClick
+13.06.2017 21:34:36:636 |2017522182734909| TForm1.Label2Click Start
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer Start
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer - Œ˜ËÒÚÍ‡ Ô‡ÏˇÚË
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173635265.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173644658.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173647663.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173650552.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173742249.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173743936.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173756886.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173816372.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173830333.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173839746.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP201761217387147.undo
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo | Delete File:TMP2017612173922720.undo
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer-Œ˜ËÒÚÍ‡ UNDO
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+13.06.2017 21:34:36:636 |2017522182734909| UCommon.SwitcherVideoPanels Command=1
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+13.06.2017 21:34:36:636 |2017522182734909| UCommon.TemplateToScreen-2 Clear
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.ClearBuffer
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.ClearTimeline
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLParameters.UpdateParameters
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=-1
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.InitTimelines Start
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.ClearBuffer
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.WriteToBuffer
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.ClearTimeline
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.ClearBuffer
+13.06.2017 21:34:36:636 |2017522182734909| UGRTimelines.TTLZone.InitTimelines Finish
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+13.06.2017 21:34:36:636 |2017522182734909| UCommon.TemplateToScreen-2 Clear
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+13.06.2017 21:34:36:636 |2017522182734909| UActPlayList.LoadDefaultClipToPlayer œÛÒÚÓÈ ÍÎËÔ Á‡„ÛÊÂÌ.
+13.06.2017 21:34:36:636 |2017522182734909| Message:WMEraseBackGround
+13.06.2017 21:34:36:636 |2017522182734909| UInitForms.UpdatePanelPrepare
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:36:636 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.initgrid Grid=GridGRTemplate Width=446
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.LoadGridFromFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\ImageTemplates.lst Grid=GridGRTemplate
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.TGridRows.SetDefaultFonts
+13.06.2017 21:34:36:636 |2017522182734909| UMyFiles.LoadGridFromFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp\ImageTemplates.lst Grid=GridGRTemplate
+13.06.2017 21:34:36:636 |2017522182734909| UGrid.TMyCell.LoadJpeg File=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Templates\20176321534794.jpeg Width=128 Height=80
+13.06.2017 21:34:37:637 |2017522182734909| UGrid.GridImageReload Grid=GridGRTemplate File=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Templates\20176321534794.jpeg
+13.06.2017 21:34:37:637 |2017522182734909| UInitForms.UpdatePanelAir
+13.06.2017 21:34:37:637 |2017522182734909| UCommon.TemplateToScreen-2 Clear
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.InitTimelines Start
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.ClearBuffer
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.WriteToBuffer
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.ClearTimeline
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.ClearBuffer
+13.06.2017 21:34:37:637 |2017522182734909| UGRTimelines.TTLZone.InitTimelines Finish
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:37:637 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:37:637 |2017522182734909| TForm1.Label2Click Finish
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:38:638 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| TForm1.imgTLNamesMouseUp X=144 Y=256
+13.06.2017 21:34:39:639 |2017522182734909| UCommon.createunicumname Result=2017613213439378
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTLNames.ClickTTLNames Start Grid=GridTimeLines
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.ClickScaler btnone
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.ClickEditTl Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.ClickNamesTL Position=2IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UCommon.SetPanelTypeTL TypeTL=tlmedia Apos=3
+13.06.2017 21:34:39:639 |2017522182734909| UInitForms.UpdatePanelPrepare
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UInitForms.UpdatePanelAir
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.AssignTL Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:39:639 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:42:642 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:48:648 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:49:649 |2017522182734909| TForm1.imgTLNamesMouseUp X=130 Y=211
+13.06.2017 21:34:49:649 |2017522182734909| UCommon.createunicumname Result=2017613213449941
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTLNames.ClickTTLNames Start Grid=GridTimeLines
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneScaler.ClickScaler btnone
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.ClickEditTl Grid=GridTimeLines Position=3 IDTimeline=41
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.ClickNamesTL Position=1IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UCommon.SetPanelTypeTL TypeTL=tltext Apos=2
+13.06.2017 21:34:49:649 |2017522182734909| UInitForms.UpdatePanelPrepare
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:49:649 |2017522182734909| UInitForms.UpdatePanelAir
+13.06.2017 21:34:49:649 |2017522182734909| UDrawTimelines.TZoneEditTL.AssignTL Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:50:650 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:54:654 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:55:655 |2017522182734909| TForm1.imgTLNamesMouseUp X=156 Y=169
+13.06.2017 21:34:55:655 |2017522182734909| UCommon.createunicumname Result=2017613213455116
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTLNames.ClickTTLNames Start Grid=GridTimeLines
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneScaler.ClickScaler btnone
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.ClickEditTl Grid=GridTimeLines Position=2 IDTimeline=21
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.ClickNamesTL Position=0IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UCommon.SetPanelTypeTL TypeTL=tldevice Apos=1
+13.06.2017 21:34:55:655 |2017522182734909| UInitForms.UpdatePanelPrepare
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UInitForms.UpdatePanelAir
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.AssignTL Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTLNames.Draw Start
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Clear
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Init Result=113
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:34:55:655 |2017522182734909| UDrawTimelines.TTLNames.Draw Finish
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:02:62 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:14:614 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneScaler.Draw Height=25
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=0
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=1
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TTimeLineName.Draw Position=2
+13.06.2017 21:35:15:615 |2017522182734909| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+13.06.2017 22:09:43:643 |2017522182734909| Message:WMSysCommand
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveGridToFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\ListProjects.prjt Grid=GridProjects
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveGridToFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\ListProjects.prjt Grid=GridProjects
+13.06.2017 22:09:43:643 |2017522182734909| UCommon.saveoldproject Start
+13.06.2017 22:09:43:643 |2017522182734909| UGrid.findgridselection Grid=GridProjects Cell=2 Result=1
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveProjectToDisk Start
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveGridTimelinesToFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Lists\Timelines.lst Grid=GridTimeLines
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveGridTimelinesToFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Lists\Timelines.lst Grid=GridTimeLines
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveProjectToDisk Finish
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveGridToFile Start FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Lists\Clips.lst Grid=GridClips
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.SaveGridToFile Finish FileName=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Lists\Clips.lst Grid=GridClips
+13.06.2017 22:09:43:643 |2017522182734909| UCommon.saveoldproject Finish
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.*
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.* | Delete File:Clips.lst
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.* | Delete File:ImageTemplates.lst
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.* | Delete File:PlayLists.lst
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.* | Delete File:TextTemplates.lst
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.* | Delete File:TMP2017613213439378.undo
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.* | Delete File:TMP2017613213449941.undo
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.* | Delete File:TMP2017613213455116.undo
+13.06.2017 22:09:43:643 |2017522182734909| UMyFiles.DeleteFilesMask Dir=F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\Projects\2017522182734909\Temp Mask=*.undo
+13.06.2017 22:09:43:643 |2017522182734909| Õ‡˜‡ÎÓ Á‡ÔËÒË IniFile: F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\ARM_Director.ini
+13.06.2017 22:09:43:643 |2017522182734909| ŒÍÓÌ˜‡ÌËÂ Á‡ÔËÒË IniFile: F:\home\¿–Ã –≈ƒ¿ “Œ–¿ 04062017\ARM_Director.ini
+13.06.2017 22:09:43:643 |2017522182734909| TForm1.FormClose
