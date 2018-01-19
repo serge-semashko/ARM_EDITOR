@@ -77,11 +77,14 @@ Procedure TCommThread.Execute;
 Begin {Execute}
   Repeat
     QueryPort;//процедура опроса порта будет производитьс€ пока поток не будет прекращен
+    sleep(1);
   Until Terminated;
 End;  {Execute}
 
 Procedure TCommThread.QueryPort;
 Var
+  stat                     : TComStat;
+  commErrors               : dword;
   MyBuff:Array[0..1023] Of ansichar;//буфер дл€ чтени€ данных
   ByteReaded:Cardinal; //количество считанных байт
   Str, s1, s2, lststr :ansistring;         //вспомогательна€ строка
@@ -93,8 +96,13 @@ Begin {QueryPort}
     fmMain.btnStop.Click;
     Exit;
   end;  {ошибка при получении статуса модема}
+  //ѕровер€ем есть ли символы дл€ чтени€. stat.cbInQue - количество байтов в очереди
+  if not ClearCommError(hport,commErrors,@stat)
+                    then RaiseLastwin32error;
+  If stat.cbInQue < 1 Then exit;
 
-//читаем буфер из Com-порта
+  //читаем буфер из Com-порта
+
   FillChar(MyBuff,SizeOf(MyBuff),#0);
   If Not ReadFile(hPort,MyBuff,SizeOf(MyBuff),ByteReaded,nil) then begin
     SysErrorMessage(GetLastError);
@@ -203,12 +211,14 @@ Begin
 //передаем данные
   s:=Ch;
   StrLCopy(MyBuff, PansiChar(S), Length(S));
+
   If Not WriteFile(hPort,MyBuff, Length(S),ByteWritten,Nil) then begin
     SysErrorMessage(GetLastError);
-    fmMain.btnStop.Click;
+    fmMain.btnStop.Click();
     Exit;
   End; {ошибка}
 //считаем байтики
+
   SendBytes:=SendBytes+ByteWritten;
   fmMain.lbSend.Caption:='send: ' + IntToStr(SendBytes) + ' bytes...';
 End;

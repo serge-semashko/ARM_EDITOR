@@ -16,7 +16,7 @@ object frMediaCopy: TfrMediaCopy
   StyleElements = []
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Gauge1: TGauge
     Left = 7
     Top = 113

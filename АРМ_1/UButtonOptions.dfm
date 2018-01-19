@@ -192,7 +192,7 @@ object FButtonOptions: TFButtonOptions
       object Label4: TLabel
         Left = 8
         Top = 1
-        Width = 60
+        Width = 55
         Height = 20
         Caption = #1064#1088#1080#1092#1090
         Font.Charset = DEFAULT_CHARSET
@@ -207,7 +207,7 @@ object FButtonOptions: TFButtonOptions
       object Label2: TLabel
         Left = 8
         Top = 55
-        Width = 94
+        Width = 85
         Height = 20
         Caption = #1062#1074#1077#1090' '#1092#1086#1085#1072
         Font.Charset = DEFAULT_CHARSET
@@ -234,7 +234,7 @@ object FButtonOptions: TFButtonOptions
       object Label6: TLabel
         Left = 289
         Top = 1
-        Width = 37
+        Width = 33
         Height = 20
         Caption = #1054#1089#1085'.'
         Font.Charset = DEFAULT_CHARSET
@@ -249,7 +249,7 @@ object FButtonOptions: TFButtonOptions
       object Label7: TLabel
         Left = 363
         Top = 1
-        Width = 38
+        Width = 34
         Height = 20
         Caption = #1044#1086#1087'.'
         Font.Charset = DEFAULT_CHARSET
@@ -264,7 +264,7 @@ object FButtonOptions: TFButtonOptions
       object Label8: TLabel
         Left = 440
         Top = 1
-        Width = 43
+        Width = 39
         Height = 20
         Caption = #1062#1074#1077#1090
         Font.Charset = DEFAULT_CHARSET
@@ -296,7 +296,7 @@ object FButtonOptions: TFButtonOptions
       object Label5: TLabel
         Left = 147
         Top = 55
-        Width = 183
+        Width = 166
         Height = 20
         Caption = #1043#1088#1072#1092#1080#1095#1077#1089#1082#1080#1081' '#1096#1072#1073#1083#1086#1085
         Font.Charset = DEFAULT_CHARSET
@@ -353,7 +353,7 @@ object FButtonOptions: TFButtonOptions
         Left = 438
         Top = 20
         Width = 127
-        Height = 28
+        Height = 22
         Selected = clWhite
         Style = [cbStandardColors]
         BevelKind = bkFlat

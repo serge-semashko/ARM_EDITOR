@@ -24,27 +24,30 @@ type
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
-     NeedCopy : boolean;
+    NeedCopy: boolean;
 
   public
     { Public declarations }
-    Multifiles : boolean;
-    MyResult : boolean;
-    StrResult : string;
+    Multifiles: boolean;
+    MyResult: boolean;
+    StrResult: string;
   end;
 
-function CopyMediaFile(FileName_From, DirName_To : string) : string;
-function CopyMediaFiles(Lst : tstrings; DirName_To : string; mmMistakes : tmemo) : boolean;
-//function CopyOneMedia(FileFrom, DirTo : string);
+function CopyMediaFile(FileName_From, DirName_To: string): string;
+function CopyMediaFiles(Lst: tstrings; DirName_To: string;
+  mmMistakes: tmemo): boolean;
+// function CopyOneMedia(FileFrom, DirTo : string);
 procedure AllClipsReset;
 
 var
   frMediaCopy: TfrMediaCopy;
-  listfiles, listmistakes : tstrings;
+  listfiles, listmistakes: tstrings;
 
 implementation
-uses umain, ucommon, uinitforms, umymessage, ugrid, uplayer, uactplaylist, uwaiting,
-     UHRTimer, umyfiles;
+
+uses umain, ucommon, uinitforms, umymessage, ugrid, uplayer, uactplaylist,
+  uwaiting,
+  UHRTimer, umyfiles;
 
 {$R *.dfm}
 
@@ -53,276 +56,331 @@ var
   FS: TFileStream;
 begin
   try
-    FS := TFileStream.Create(Filename, fmOpenRead or fmShareDenyNone);
+    FS := TFileStream.Create(FileName, fmOpenRead or fmShareDenyNone);
   except
     Result := -1;
   end;
-  if Result <> -1 then Result := FS.Size;
+  if Result <> -1 then
+    Result := FS.Size;
   FS.Free;
 end;
 
-Procedure CopyMediaOneFile(FileName_From, FileName_To : string);
-Const BufSize=10000;
-Var FSize  : Longint;
-    RByte  : Longint; //Сколько читать байт
-    N,X,Y  : Longint;
-    Source, Target : TFileStream;
-    FileHandle  : Integer;
-    FileHandle1 : Integer;
-    Buffer : array[0..9999] of byte;
-    T : TDateTime;
+Procedure CopyMediaOneFile(FileName_From, FileName_To: string);
+Const
+  BufSize = 10000;
+Var
+  FSize: Longint;
+  RByte: Longint; // Сколько читать байт
+  N, X, Y: Longint;
+  Source, Target: TFileStream;
+  FileHandle: Integer;
+  FileHandle1: Integer;
+  Buffer: array [0 .. 9999] of byte;
+  T: TDateTime;
 Begin
 
-  FSize:=GetFileSize(FileName_From);
+  FSize := GetFileSize(FileName_From);
 
-  T:=Now;
-  frMediaCopy.Gauge1.Progress:=0;
-  frMediaCopy.Gauge1.MaxValue:=FSize;
+  T := Now;
+  frMediaCopy.Gauge1.Progress := 0;
+  frMediaCopy.Gauge1.MaxValue := FSize;
 
   try
     Source := TFileStream.Create(FileName_From, fmOpenRead or fmShareDenyNone);
-  try
-    Target := TFileStream.Create(FileName_To, fmCreate or fmShareDenyNone);
-  try
+    try
+      Target := TFileStream.Create(FileName_To, fmCreate or fmShareDenyNone);
+      try
 
-  While FSize<>0 Do
-   Begin
-    If FSize>=BufSize Then RByte:=BufSize
-    Else RByte:=FSize;
+        While FSize <> 0 Do
+        Begin
+          If FSize >= BufSize Then
+            RByte := BufSize
+          Else
+            RByte := FSize;
 
-    FSize:=FSize-RByte;
+          FSize := FSize - RByte;
 
-    Source.ReadBuffer(buffer,RByte);
+          Source.ReadBuffer(Buffer, RByte);
 
-    frMediaCopy.Gauge1.Progress:=frMediaCopy.Gauge1.MaxValue-FSize;
-    frMediaCopy.Label6.Caption:='Прошло времени: '+TimeToStr(Now-T);
-    Application.ProcessMessages;
+          frMediaCopy.Gauge1.Progress := frMediaCopy.Gauge1.MaxValue - FSize;
+          frMediaCopy.Label6.Caption := 'Прошло времени: ' + TimeToStr(Now - T);
+          Application.ProcessMessages;
 
-    Target.WriteBuffer(buffer,RByte);
-  End;
+          Target.WriteBuffer(Buffer, RByte);
+        End;
 
-  finally
-    FreeAndNil(Source);
-  end;
-  finally
-    FreeAndNil(Target);
-  end;
-  frMediaCopy.ModalResult:=mrOk;
+      finally
+        FreeAndNil(Source);
+      end;
+    finally
+      FreeAndNil(Target);
+    end;
+    frMediaCopy.ModalResult := mrOk;
   except
     FreeAndNil(Source);
     FreeAndNil(Target);
-    frMediaCopy.ModalResult:=mrOk;
+    frMediaCopy.ModalResult := mrOk;
   end;
 End;
 
-function CopyOneMedia(FileFrom, DirTo : string) : string;
-var fnm, nm, ext : string;
-    i : integer;
-    MyFileName : string;
+function CopyOneMedia(FileFrom, DirTo: string): string;
+var
+  fnm, nm, ext: string;
+  i: Integer;
+  MyFileName: string;
 begin
-  with frMediaCopy do begin
-    MyFileName := DirTo+ Label8.Caption;
+  with frMediaCopy do
+  begin
+    MyFileName := DirTo + Label8.Caption;
     fnm := extractfilename(FileFrom);
     ext := ExtractFileExt(fnm);
-    nm := Copy(fnm,1, Length(fnm) - length(ext));
-    if FileExists(MyFileName) then begin
-      If MyTextMessage('Вопрос','Файл ' + fnm + ' уже существует.' + #10#13 + 'Скопировать с другим именем [Да], отказаться от копирования [Нет].',2)
-      then begin
-        i:=0;
+    nm := Copy(fnm, 1, Length(fnm) - Length(ext));
+    if FileExists(MyFileName) then
+    begin
+      If MyTextMessage('Вопрос', 'Файл ' + fnm + ' уже существует.' + #10#13 +
+        'Скопировать с другим именем [Да], отказаться от копирования [Нет].', 2)
+      then
+      begin
+        i := 0;
         repeat
-          i := i +1;
+          i := i + 1;
           MyFileName := DirTo + nm + '_' + inttostr(i) + ext;
         until Not FileExists(MyFileName);
         CopyMediaOneFile(FileFrom, MyFileName);
       end;
-    end else begin
+    end
+    else
+    begin
       CopyMediaOneFile(FileFrom, MyFileName);
     end;
-    result := MyFileName;
+    Result := MyFileName;
   end;
 end;
 
-function CopyMediaFiles(Lst : tstrings; DirName_To : string; mmMistakes : tmemo) : boolean;
-var FSize : longint;
-    err, i, ei, rw : integer;
-    mfne, fne, fn, ext, txt : string;
-    Duration: Double;
+function CopyMediaFiles(Lst: tstrings; DirName_To: string;
+  mmMistakes: tmemo): boolean;
+var
+  FSize: Longint;
+  err, i, ei, rw: Integer;
+  mfne, fne, fn, ext, txt: string;
+  Duration: Double;
 begin
-  frMediaCopy.multifiles := true;
-  result := false;
+  frMediaCopy.Multifiles := true;
+  Result := false;
   frMediaCopy.Gauge1.Progress := 0;
   listfiles := tstringlist.Create;
   try
     listfiles.Clear;
-    for i:=0 to lst.Count-1 do listfiles.Add(lst.Strings[i]);
-  listmistakes := tstringlist.Create;
-  try
-    listmistakes.Clear;
+    for i := 0 to Lst.Count - 1 do
+      listfiles.Add(Lst.Strings[i]);
+    listmistakes := tstringlist.Create;
+    try
+      listmistakes.Clear;
 
-  if lst.Count<0 then exit;
-  frMediaCopy.Label4.Caption := extractfilepath(Lst.Strings[0]);
-  frMediaCopy.Label8.Caption := 'Импортируется '  + inttostr(lst.Count) + ' файлов.';
-  frMediaCopy.Label5.Caption := trim(DirName_To) + '\';
-  frMediaCopy.Label6.Caption:='Прошло времени: '+TimeToStr(0);
-  frMediaCopy.Label1.Caption:='';
-  frMediaCopy.ShowModal;
-  if frMediaCopy.ModalResult=mrOk then begin
-    mmMistakes.Lines.Clear;
-    for i:=0 to listmistakes.Count-1 do mmMistakes.Lines.Add(listmistakes.Strings[i]);
-    result := frMediaCopy.MyResult;
-  end;
-  finally
-    listfiles.Free;
-  end;
+      if Lst.Count < 0 then
+        exit;
+      frMediaCopy.Label4.Caption := extractfilepath(Lst.Strings[0]);
+      frMediaCopy.Label8.Caption := 'Импортируется ' + inttostr(Lst.Count) +
+        ' файлов.';
+      frMediaCopy.Label5.Caption := trim(DirName_To) + '\';
+      frMediaCopy.Label6.Caption := 'Прошло времени: ' + TimeToStr(0);
+      frMediaCopy.Label1.Caption := '';
+      frMediaCopy.ShowModal;
+      if frMediaCopy.ModalResult = mrOk then
+      begin
+        mmMistakes.Lines.Clear;
+        for i := 0 to listmistakes.Count - 1 do
+          mmMistakes.Lines.Add(listmistakes.Strings[i]);
+        Result := frMediaCopy.MyResult;
+      end;
+    finally
+      listfiles.Free;
+    end;
   finally
     listmistakes.Free;
   end;
 end;
 
-function CopyMediaFile(FileName_From, DirName_To : string) : string;
-var txt : string;
-    FSize : longint;
+function CopyMediaFile(FileName_From, DirName_To: string): string;
+var
+  txt: string;
+  FSize: Longint;
 begin
-  frMediaCopy.multifiles := false;
-  result := FileName_From;
+  frMediaCopy.Multifiles := false;
+  Result := FileName_From;
   frMediaCopy.Gauge1.Progress := 0;
   frMediaCopy.Label4.Caption := extractfilepath(FileName_From);
   frMediaCopy.Label8.Caption := extractfilename(FileName_From);
   frMediaCopy.Label5.Caption := trim(DirName_To) + '\';
-  frMediaCopy.Label6.Caption:='Прошло времени: '+TimeToStr(0);
-  FSize:=GetFileSize(FileName_From);
-  frMediaCopy.Label1.Caption:='Размер файла '+IntToStr(FSize)+' Байт';
+  frMediaCopy.Label6.Caption := 'Прошло времени: ' + TimeToStr(0);
+  FSize := GetFileSize(FileName_From);
+  frMediaCopy.Label1.Caption := 'Размер файла ' + inttostr(FSize) + ' Байт';
   frMediaCopy.ShowModal;
-  if frMediaCopy.ModalResult=mrOk then result := frMediaCopy.StrResult;//CopyOneMedia(FileName_From, frMediaCopy.Label5.Caption);
+  if frMediaCopy.ModalResult = mrOk then
+    Result := frMediaCopy.StrResult;
+  // CopyOneMedia(FileName_From, frMediaCopy.Label5.Caption);
 end;
 
 procedure TfrMediaCopy.SpeedButton1Click(Sender: TObject);
-var FSize : longint;
-    err, i, ei, rw : integer;
-    mfne, fne, fn, ext, txt : string;
-    Duration: Double;
+var
+  FSize: Longint;
+  err, i, ei, rw: Integer;
+  mfne, fne, fn, ext, txt: string;
+  Duration: Double;
 begin
 
-  if multifiles then begin
+  if Multifiles then
+  begin
     NeedCopy := true;
     MyResult := true;
     listmistakes.Clear;
     AllClipsReset;
-//++++++++++++++++++++++++++++++++++
+    // ++++++++++++++++++++++++++++++++++
     ei := 0;
-    for i:=0 to listfiles.Count-1 do begin
+    for i := 0 to listfiles.Count - 1 do
+    begin
       mfne := listfiles.Strings[i];
       fne := extractfilename(listfiles.Strings[i]);
       frMediaCopy.Label8.Caption := fne;
-      ext := extractfileext(listfiles.Strings[i]);
-      fn := copy(fne,1,length(fne) - length(ext));
-      frMediaCopy.Label1.Caption:='Импорт файла: ' + fne;
+      ext := ExtractFileExt(listfiles.Strings[i]);
+      fn := Copy(fne, 1, Length(fne) - Length(ext));
+      frMediaCopy.Label1.Caption := 'Импорт файла: ' + fne;
       err := CreateGraph(listfiles.Strings[i]);
-      application.ProcessMessages;
-      if Err=0 then begin
-         mfne := CopyOneMedia(listfiles.Strings[i], frMediaCopy.Label5.Caption);
-         pMediaPosition.get_Duration(Duration);
-         rw:=GridAddRow(Form1.GridClips,RowGridClips);
-         IDCLIPS:=IDCLIPS+1;
-         (Form1.GridClips.Objects[0,rw] as TGridRows).ID:=IDCLIPS;
-         (Form1.GridClips.Objects[0,rw] as TGridRows).MyCells[1].Mark:=true;
-         with (Form1.GridClips.Objects[0,rw] as TGridRows).MyCells[3] do begin
-           UpdatePhrase('File',mfne);
-           UpdatePhrase('Clip',fn + '_' + inttostr(IDCLIPS));
-           UpdatePhrase('Song',fn);
-           UpdatePhrase('Comment','');
-           UpdatePhrase('Singer','');
-           UpdatePhrase('Duration',MyDoubleToSTime(Duration));
-           UpdatePhrase('NTK','00:00:00:00');
-           UpdatePhrase('Dur',MyDoubleToSTime(Duration));
-           UpdatePhrase('TypeMedia','');
-           txt:= createunicumname;
-           UpdatePhrase('ClipID',txt);
-         end;
-         listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne + ' - Импортирован.');
-      end else begin
+      Application.ProcessMessages;
+      if err = 0 then
+      begin
+        mfne := CopyOneMedia(listfiles.Strings[i], frMediaCopy.Label5.Caption);
+        pMediaPosition.get_Duration(Duration);
+        rw := GridAddRow(Form1.GridClips, RowGridClips);
+        IDCLIPS := IDCLIPS + 1;
+        (Form1.GridClips.Objects[0, rw] as TGridRows).ID := IDCLIPS;
+        (Form1.GridClips.Objects[0, rw] as TGridRows).MyCells[1].Mark := true;
+        with (Form1.GridClips.Objects[0, rw] as TGridRows).MyCells[3] do
+        begin
+          UpdatePhrase('File', mfne);
+          UpdatePhrase('Clip', fn + '_' + inttostr(IDCLIPS));
+          UpdatePhrase('Song', fn);
+          UpdatePhrase('Comment', '');
+          UpdatePhrase('Singer', '');
+          UpdatePhrase('Duration', MyDoubleToSTime(Duration));
+          UpdatePhrase('NTK', '00:00:00:00');
+          UpdatePhrase('Dur', MyDoubleToSTime(Duration));
+          UpdatePhrase('TypeMedia', '');
+          txt := createunicumname;
+          UpdatePhrase('ClipID', txt);
+        end;
+        listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne +
+          ' - Импортирован.');
+      end
+      else
+      begin
         ei := ei + 1;
-        listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne + ' - Невозможно прочитать.');
-        frMediaCopy.Label1.Caption:='Медиа-файл невозможно прочитать.';
-      end; //if
-    end; //for
-    if ei > 0 then begin
+        listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne +
+          ' - Невозможно прочитать.');
+        frMediaCopy.Label1.Caption := 'Медиа-файл невозможно прочитать.';
+      end; // if
+    end; // for
+    if ei > 0 then
+    begin
       listmistakes.Add('');
-      listmistakes.Add('     Импортировалось медиа-файлов: ' + IntToStr(Form1.OpenDialog1.Files.Count));
-      listmistakes.Add('     Импортировано: ' + IntToStr(Form1.OpenDialog1.Files.Count - ei));
-      listmistakes.Add('     Не удалось импортировать: ' + IntToStr(ei));
+      listmistakes.Add('     Импортировалось медиа-файлов: ' +
+        inttostr(Form1.OpenDialog1.Files.Count));
+      listmistakes.Add('     Импортировано: ' +
+        inttostr(Form1.OpenDialog1.Files.Count - ei));
+      listmistakes.Add('     Не удалось импортировать: ' + inttostr(ei));
       MyResult := true;
-    end else begin
-      Form1.GridClips.Row:=rw;
+    end
+    else
+    begin
+      Form1.GridClips.Row := rw;
       GridClipsToPanel(rw);
     end;
-//++++++++++++++++++++++++++++++++++
-  end else StrResult := CopyOneMedia(frMediaCopy.Label4.Caption + frMediaCopy.Label8.Caption, frMediaCopy.Label5.Caption);
-  ModalResult:=mrOk;
+    // ++++++++++++++++++++++++++++++++++
+  end
+  else
+    StrResult := CopyOneMedia(frMediaCopy.Label4.Caption +
+      frMediaCopy.Label8.Caption, frMediaCopy.Label5.Caption);
+  ModalResult := mrOk;
 end;
 
 procedure TfrMediaCopy.SpeedButton2Click(Sender: TObject);
-var FSize : longint;
-    err, i, ei, rw : integer;
-    mfne, fne, fn, ext, txt : string;
-    Duration: Double;
+var
+  FSize: Longint;
+  err, i, ei, rw: Integer;
+  mfne, fne, fn, ext, txt: string;
+  Duration: Double;
 begin
-  if multifiles then begin
+  if Multifiles then
+  begin
     NeedCopy := false;
-       MyResult := true;
+    MyResult := true;
     listmistakes.Clear;
     AllClipsReset;
-//++++++++++++++++++++++++++++++++++
+    // ++++++++++++++++++++++++++++++++++
     ei := 0;
-    for i:=0 to listfiles.Count-1 do begin
+    for i := 0 to listfiles.Count - 1 do
+    begin
       mfne := listfiles.Strings[i];
       fne := extractfilename(listfiles.Strings[i]);
       frMediaCopy.Label8.Caption := fne;
-      ext := extractfileext(listfiles.Strings[i]);
-      fn := copy(fne,1,length(fne) - length(ext));
-      frMediaCopy.Label1.Caption:='Импорт файла: ' + fne;
+      ext := ExtractFileExt(listfiles.Strings[i]);
+      fn := Copy(fne, 1, Length(fne) - Length(ext));
+      frMediaCopy.Label1.Caption := 'Импорт файла: ' + fne;
       err := CreateGraph(listfiles.Strings[i]);
-      application.ProcessMessages;
-      if Err=0 then begin
-         //if frMediaCopy.NeedCopy then mfne := CopyOneMedia(listfiles.Strings[i], frMediaCopy.Label5.Caption);
-         pMediaPosition.get_Duration(Duration);
-         rw:=GridAddRow(Form1.GridClips,RowGridClips);
-         IDCLIPS:=IDCLIPS+1;
-         (Form1.GridClips.Objects[0,rw] as TGridRows).ID:=IDCLIPS;
-         (Form1.GridClips.Objects[0,rw] as TGridRows).MyCells[1].Mark:=true;
-         with (Form1.GridClips.Objects[0,rw] as TGridRows).MyCells[3] do begin
-           UpdatePhrase('File',mfne);
-           UpdatePhrase('Clip',fn + '_' + inttostr(IDCLIPS));
-           UpdatePhrase('Song',fn);
-           UpdatePhrase('Comment','');
-           UpdatePhrase('Singer','');
-           UpdatePhrase('Duration',MyDoubleToSTime(Duration));
-           UpdatePhrase('NTK','00:00:00:00');
-           UpdatePhrase('Dur',MyDoubleToSTime(Duration));
-           UpdatePhrase('TypeMedia','');
-           txt:= createunicumname;
-           UpdatePhrase('ClipID',txt);
-         end;
-         listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne + ' - Импортирован.');
-      end else begin
+      Application.ProcessMessages;
+      if err = 0 then
+      begin
+        // if frMediaCopy.NeedCopy then mfne := CopyOneMedia(listfiles.Strings[i], frMediaCopy.Label5.Caption);
+        pMediaPosition.get_Duration(Duration);
+        rw := GridAddRow(Form1.GridClips, RowGridClips);
+        IDCLIPS := IDCLIPS + 1;
+        (Form1.GridClips.Objects[0, rw] as TGridRows).ID := IDCLIPS;
+        (Form1.GridClips.Objects[0, rw] as TGridRows).MyCells[1].Mark := true;
+        with (Form1.GridClips.Objects[0, rw] as TGridRows).MyCells[3] do
+        begin
+          UpdatePhrase('File', mfne);
+          UpdatePhrase('Clip', fn + '_' + inttostr(IDCLIPS));
+          UpdatePhrase('Song', fn);
+          UpdatePhrase('Comment', '');
+          UpdatePhrase('Singer', '');
+          UpdatePhrase('Duration', MyDoubleToSTime(Duration));
+          UpdatePhrase('NTK', '00:00:00:00');
+          UpdatePhrase('Dur', MyDoubleToSTime(Duration));
+          UpdatePhrase('TypeMedia', '');
+          txt := createunicumname;
+          UpdatePhrase('ClipID', txt);
+        end;
+        listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne +
+          ' - Импортирован.');
+      end
+      else
+      begin
         ei := ei + 1;
-        listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne + ' - Невозможно прочитать.');
-        frMediaCopy.Label1.Caption:='Медиа-файл невозможно прочитать.';
-      end; //if
-    end; //for
-    if ei > 0 then begin
+        listmistakes.Add('     ' + inttostr(i) + ')    Медиа-файл ' + fne +
+          ' - Невозможно прочитать.');
+        frMediaCopy.Label1.Caption := 'Медиа-файл невозможно прочитать.';
+      end; // if
+    end; // for
+    if ei > 0 then
+    begin
       listmistakes.Add('');
-      listmistakes.Add('     Импортировалось медиа-файлов: ' + IntToStr(Form1.OpenDialog1.Files.Count));
-      listmistakes.Add('     Импортировано: ' + IntToStr(Form1.OpenDialog1.Files.Count - ei));
-      listmistakes.Add('     Не удалось импортировать: ' + IntToStr(ei));
+      listmistakes.Add('     Импортировалось медиа-файлов: ' +
+        inttostr(Form1.OpenDialog1.Files.Count));
+      listmistakes.Add('     Импортировано: ' +
+        inttostr(Form1.OpenDialog1.Files.Count - ei));
+      listmistakes.Add('     Не удалось импортировать: ' + inttostr(ei));
       MyResult := true;
-    end else begin
-      Form1.GridClips.Row:=rw;
+    end
+    else
+    begin
+      Form1.GridClips.Row := rw;
       GridClipsToPanel(rw);
     end;
-//++++++++++++++++++++++++++++++++++
-    ModalResult:=mrOk;
-  end else ModalResult:=mrCancel;
+    // ++++++++++++++++++++++++++++++++++
+    ModalResult := mrOk;
+  end
+  else
+    ModalResult := mrCancel;
 end;
 
 procedure TfrMediaCopy.FormCreate(Sender: TObject);
@@ -331,11 +389,14 @@ begin
 end;
 
 procedure AllClipsReset;
-var i : integer;
+var
+  i: Integer;
 begin
-  for i:=1 to form1.GridClips.RowCount-1 do begin
-    if form1.GridClips.Objects[0,i] is TGridRows then begin
-      (form1.GridClips.Objects[0,i] as TGridRows).MyCells[1].Mark:=False;
+  for i := 1 to Form1.GridClips.RowCount - 1 do
+  begin
+    if Form1.GridClips.Objects[0, i] is TGridRows then
+    begin
+      (Form1.GridClips.Objects[0, i] as TGridRows).MyCells[1].Mark := false;
     end;
   end;
 end;

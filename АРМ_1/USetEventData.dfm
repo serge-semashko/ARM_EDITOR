@@ -17,7 +17,7 @@ object frSetEventData: TfrSetEventData
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object SpeedButton1: TSpeedButton
     Left = 358
     Top = 94
@@ -108,7 +108,7 @@ object frSetEventData: TfrSetEventData
     Left = 104
     Top = 46
     Width = 98
-    Height = 31
+    Height = 19
     Ctl3D = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

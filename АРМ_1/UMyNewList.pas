@@ -32,7 +32,7 @@ type
 var
   frNewList: TfrNewList;
 
-procedure EditMyListTemplate(nom : integer);
+procedure EditMyListTemplate(nom: integer);
 
 implementation
 
@@ -40,43 +40,56 @@ uses umytexttemplate, uinitforms;
 
 {$R *.dfm}
 
-procedure EditMyListTemplate(nom : integer);
-var lstnm, lblnm, lbxnm : string;
-    i, ncmp, nl : integer;
+procedure EditMyListTemplate(nom: integer);
+var
+  lstnm, lblnm, lbxnm: string;
+  i, ncmp, nl: integer;
 begin
   frNewList.Memo1.Clear;
-  if nom=-1 then begin
-    frNewList.Edit1.Text:='';
-  end else begin
+  if nom = -1 then
+  begin
+    frNewList.Edit1.Text := '';
+  end
+  else
+  begin
     lbxnm := frMyTextTemplate.Components[nom].Name;
     nl := frMyTextTemplate.myfindcomponent('lb' + trim(lbxnm));
-    frNewList.Edit1.Text := (frMyTextTemplate.Components[nl] as tlabel).Caption;
-    for i:=0 to (frMyTextTemplate.Components[nom] as tlistbox).Count-1 do begin
-      frNewList.Memo1.Lines.Add((frMyTextTemplate.Components[nom] as tlistbox).Items.Strings[i]);
+    frNewList.Edit1.Text := (frMyTextTemplate.Components[nl] as TLabel).Caption;
+    for i := 0 to (frMyTextTemplate.Components[nom] as tlistbox).Count - 1 do
+    begin
+      frNewList.Memo1.Lines.Add((frMyTextTemplate.Components[nom] as tlistbox)
+        .Items.Strings[i]);
     end;
   end;
   frNewList.ShowModal;
-  if frNewList.ModalResult = mrOk then begin
-    if nom=-1 then begin
+  if frNewList.ModalResult = mrOk then
+  begin
+    if nom = -1 then
+    begin
       lbxnm := frMyTextTemplate.MyListCreate;
       ncmp := frMyTextTemplate.myfindcomponent(trim(lbxnm));
       nl := frMyTextTemplate.myfindcomponent('lb' + trim(lbxnm));
       frMyTextTemplate.ComboBox1.Items.Add(frNewList.Edit1.Text)
-    end else begin
+    end
+    else
+    begin
       ncmp := nom;
     end;
-    (frMyTextTemplate.Components[nl] as tlabel).Caption:=frNewList.Edit1.Text;
+    (frMyTextTemplate.Components[nl] as TLabel).Caption := frNewList.Edit1.Text;
     (frMyTextTemplate.Components[ncmp] as tlistbox).Clear;
-    for i:=0 to frNewList.Memo1.Lines.Count-1 do begin
-       if trim(frNewList.Memo1.Lines.Strings[i])<>''
-         then (frMyTextTemplate.Components[ncmp] as tlistbox).Items.Add(frNewList.Memo1.Lines.Strings[i]);
+    for i := 0 to frNewList.Memo1.Lines.Count - 1 do
+    begin
+      if trim(frNewList.Memo1.Lines.Strings[i]) <> '' then
+        (frMyTextTemplate.Components[ncmp] as tlistbox)
+          .Items.Add(frNewList.Memo1.Lines.Strings[i]);
     end;
   end;
 end;
 
 procedure TfrNewList.SpeedButton5Click(Sender: TObject);
 begin
-  if trim(Edit1.Text)='' then begin
+  if trim(Edit1.Text) = '' then
+  begin
     ActiveControl := Edit1;
     exit;
   end;
@@ -89,16 +102,20 @@ begin
 end;
 
 procedure TfrNewList.SpeedButton3Click(Sender: TObject);
-var lst : tstrings;
-    i : integer;
+var
+  lst: tstrings;
+  i: integer;
 begin
-  lst:=tstringlist.Create;
+  lst := tstringlist.Create;
   lst.Clear;
   try
-    if OpenDialog1.Execute then begin
+    if OpenDialog1.Execute then
+    begin
       lst.LoadFromFile(OpenDialog1.FileName);
-      for i:=0 to lst.Count-1 do begin
-        if trim(lst.Strings[i])<>'' then Memo1.Lines.Add(lst.Strings[i]);
+      for i := 0 to lst.Count - 1 do
+      begin
+        if trim(lst.Strings[i]) <> '' then
+          Memo1.Lines.Add(lst.Strings[i]);
       end;
     end;
   finally
@@ -108,7 +125,7 @@ end;
 
 procedure TfrNewList.SpeedButton6Click(Sender: TObject);
 begin
-  ModalResult:=mrCancel;
+  ModalResult := mrCancel;
 end;
 
 procedure TfrNewList.FormCreate(Sender: TObject);

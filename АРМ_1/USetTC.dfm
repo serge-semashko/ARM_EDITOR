@@ -17,7 +17,7 @@ object frSetTC: TfrSetTC
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Bevel1: TBevel
     Left = 0
     Top = 1
@@ -69,7 +69,7 @@ object frSetTC: TfrSetTC
     Left = 8
     Top = 14
     Width = 113
-    Height = 26
+    Height = 19
     Ctl3D = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

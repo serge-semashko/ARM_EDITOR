@@ -17,7 +17,7 @@ object FDelGridRow: TFDelGridRow
   StyleElements = []
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 169
@@ -108,7 +108,7 @@ object FDelGridRow: TFDelGridRow
     object Label2: TLabel
       Left = 1
       Top = 1
-      Width = 108
+      Width = 102
       Height = 143
       Align = alLeft
       Alignment = taRightJustify
@@ -121,6 +121,7 @@ object FDelGridRow: TFDelGridRow
       ParentFont = False
       Layout = tlCenter
       StyleElements = []
+      ExplicitLeft = 7
       ExplicitHeight = 16
     end
     object DateTimePicker1: TDateTimePicker
@@ -157,8 +158,8 @@ object FDelGridRow: TFDelGridRow
     object Label1: TLabel
       Left = 0
       Top = 0
-      Width = 361
-      Height = 97
+      Width = 41
+      Height = 16
       Align = alClient
       Alignment = taCenter
       Caption = 'Label1'
@@ -170,8 +171,6 @@ object FDelGridRow: TFDelGridRow
       ParentFont = False
       Layout = tlCenter
       StyleElements = []
-      ExplicitWidth = 41
-      ExplicitHeight = 16
     end
   end
   object pnList: TPanel

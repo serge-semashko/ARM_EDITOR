@@ -18,7 +18,7 @@ object frMyTextTemplate: TfrMyTextTemplate
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel3: TPanel
     Left = 0
     Top = 498
@@ -66,7 +66,7 @@ object frMyTextTemplate: TfrMyTextTemplate
     object Label2: TLabel
       Left = 16
       Top = 37
-      Width = 154
+      Width = 149
       Height = 16
       Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1090#1086#1083#1073#1094#1086#1074': '
       StyleElements = []
@@ -103,7 +103,7 @@ object frMyTextTemplate: TfrMyTextTemplate
     object Label4: TLabel
       Left = 16
       Top = 8
-      Width = 141
+      Width = 137
       Height = 16
       Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1087#1080#1089#1082#1086#1074':'
       Font.Charset = DEFAULT_CHARSET
@@ -117,7 +117,7 @@ object frMyTextTemplate: TfrMyTextTemplate
     object Label5: TLabel
       Left = 314
       Top = 16
-      Width = 112
+      Width = 108
       Height = 16
       Caption = #1058#1077#1082#1091#1097#1080#1081' '#1089#1087#1080#1089#1086#1082':'
       StyleElements = []
@@ -259,7 +259,7 @@ object frMyTextTemplate: TfrMyTextTemplate
       Left = 8
       Top = 14
       Width = 825
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText

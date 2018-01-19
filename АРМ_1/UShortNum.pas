@@ -27,30 +27,42 @@ type
 var
   frShortNum: TfrShortNum;
 
-  procedure SetShortNumber;
+procedure SetShortNumber;
 
 implementation
+
 uses umain, ucommon, ugrtimelines, uinitforms;
 
 {$R *.dfm}
 
 procedure SetShortNumber;
-var i, ps : integer;
-    txt : string;
+var
+  i, ps: integer;
+  txt: string;
 begin
-  if TLZone.TLEditor.TypeTL<>tldevice then exit;
-  with frShortNum do begin
+  if TLZone.TLEditor.TypeTL <> tldevice then
+    exit;
+  with frShortNum do
+  begin
     ShowModal;
-    if ModalResult = mrOk then begin
-      if CheckBox1.Checked then txt := trim(Edit1.Text) else  txt := '';
-      ps:=TLZone.FindTimeline(TLZone.TLEditor.IDTimeline);
-      for i := 0 to TLZone.TLEditor.Count-1 do begin
-        TLZone.TLEditor.Events[i].SetPhraseText('ShortNum', txt + inttostr(i+1));
-        TLZone.TLEditor.Events[i].SetPhraseData('ShortNum', i+1);
+    if ModalResult = mrOk then
+    begin
+      if CheckBox1.Checked then
+        txt := trim(Edit1.Text)
+      else
+        txt := '';
+      ps := TLZone.FindTimeline(TLZone.TLEditor.IDTimeline);
+      for i := 0 to TLZone.TLEditor.Count - 1 do
+      begin
+        TLZone.TLEditor.Events[i].SetPhraseText('ShortNum',
+          txt + inttostr(i + 1));
+        TLZone.TLEditor.Events[i].SetPhraseData('ShortNum', i + 1);
       end;
-      for i := 0 to TLZone.Timelines[ps].Count-1 do begin
-        TLZone.Timelines[ps].Events[i].SetPhraseText('ShortNum', txt + inttostr(i+1));
-        TLZone.Timelines[ps].Events[i].SetPhraseData('ShortNum', i+1);
+      for i := 0 to TLZone.Timelines[ps].Count - 1 do
+      begin
+        TLZone.Timelines[ps].Events[i].SetPhraseText('ShortNum',
+          txt + inttostr(i + 1));
+        TLZone.Timelines[ps].Events[i].SetPhraseData('ShortNum', i + 1);
       end;
     end;
   end;
@@ -58,7 +70,10 @@ end;
 
 procedure TfrShortNum.CheckBox1Click(Sender: TObject);
 begin
-  If checkbox1.Checked then edit1.Visible:=true else edit1.Visible:=false;
+  If CheckBox1.Checked then
+    Edit1.Visible := true
+  else
+    Edit1.Visible := false;
 end;
 
 procedure TfrShortNum.SpeedButton1Click(Sender: TObject);
@@ -73,10 +88,12 @@ end;
 
 procedure TfrShortNum.FormKeyPress(Sender: TObject; var Key: Char);
 begin
-     case key of
-  #13 : modalresult := mrOk;
-  #27 : modalresult := mrcancel;
-     end;
+  case Key of
+    #13:
+      ModalResult := mrOk;
+    #27:
+      ModalResult := mrCancel;
+  end;
 end;
 
 procedure TfrShortNum.FormCreate(Sender: TObject);

@@ -2,53 +2,53 @@ program ARM_Director;
 
 uses
   Forms,
-  UMain in 'UMain.pas' {Form1},
+  UMain in 'UMain.pas' {Form1} ,
   UCommon in 'UCommon.pas',
   UGrid in 'UGrid.pas',
-  UProject in 'UProject.pas' {FNewProject},
+  UProject in 'UProject.pas' {FNewProject} ,
   UIMGButtons in 'UIMGButtons.pas',
-  UPlayLists in 'UPlayLists.pas' {FPlayLists},
-  UDelGridRow in 'UDelGridRow.pas' {FDelGridRow},
-  UTimeline in 'UTimeline.pas' {FEditTimeline},
-  UButtonOptions in 'UButtonOptions.pas' {FButtonOptions},
+  UPlayLists in 'UPlayLists.pas' {FPlayLists} ,
+  UDelGridRow in 'UDelGridRow.pas' {FDelGridRow} ,
+  UTimeline in 'UTimeline.pas' {FEditTimeline} ,
+  UButtonOptions in 'UButtonOptions.pas' {FButtonOptions} ,
   UDrawTimelines in 'UDrawTimelines.pas',
   UInitForms in 'UInitForms.pas',
-  UImportFiles in 'UImportFiles.pas' {FImportFiles},
+  UImportFiles in 'UImportFiles.pas' {FImportFiles} ,
   UPlayer in 'UPlayer.pas',
   UActPlayList in 'UActPlayList.pas',
   UGRTimelines in 'UGRTimelines.pas',
   UMyEvents in 'UMyEvents.pas',
   UHRTimer in 'UHRTimer.pas',
-  UWaiting in 'UWaiting.pas' {FWaiting},
+  UWaiting in 'UWaiting.pas' {FWaiting} ,
   UMyFiles in 'UMyFiles.pas',
-  UTextTemplate in 'UTextTemplate.pas' {FTextTemplate},
-  UMyMessage in 'UMyMessage.pas' {FMyMessage},
-  UImageTemplate in 'UImageTemplate.pas' {FGRTemplate},
+  UTextTemplate in 'UTextTemplate.pas' {FTextTemplate} ,
+  UMyMessage in 'UMyMessage.pas' {FMyMessage} ,
+  UImageTemplate in 'UImageTemplate.pas' {FGRTemplate} ,
   UAirDraw in 'UAirDraw.pas',
   USubtitrs in 'USubtitrs.pas',
-  USetTemplate in 'USetTemplate.pas' {FrSetTemplate},
+  USetTemplate in 'USetTemplate.pas' {FrSetTemplate} ,
   UMyLists in 'UMyLists.pas',
-  USetEventData in 'USetEventData.pas' {frSetEventData},
-  UGridSort in 'UGridSort.pas' {FrSortGrid},
-  uwebserv in 'uwebserv.pas' {HTTPSRVForm},
+  USetEventData in 'USetEventData.pas' {frSetEventData} ,
+  UGridSort in 'UGridSort.pas' {FrSortGrid} ,
+  uwebserv in 'uwebserv.pas' {HTTPSRVForm} ,
   uLkJSON in 'uLkJSON.pas',
   UMyMediaSwitcher in 'UMyMediaSwitcher.pas',
-  ushifttl in 'ushifttl.pas' {frShiftTL},
-  UShortNum in 'UShortNum.pas' {frShortNum},
+  ushifttl in 'ushifttl.pas' {frShiftTL} ,
+  UShortNum in 'UShortNum.pas' {frShortNum} ,
   UMyIniFile in 'UMyIniFile.pas',
   UEvSwapBuffer in 'UEvSwapBuffer.pas',
-  ULock in 'ULock.pas' {frLock},
+  ULock in 'ULock.pas' {frLock} ,
   UMyUNDO in 'UMyUNDO.pas',
-  UMediaCopy in 'UMediaCopy.pas' {frMediaCopy},
-  UPageSetup in 'UPageSetup.pas' {FPage},
-  UMyPrint in 'UMyPrint.pas' {frMyPrint},
+  UMediaCopy in 'UMediaCopy.pas' {frMediaCopy} ,
+  UPageSetup in 'UPageSetup.pas' {FPage} ,
+  UMyPrint in 'UMyPrint.pas' {frMyPrint} ,
   MyData in 'MyData.pas',
   UListUsers in 'UListUsers.pas',
   UPageDraw in 'UPageDraw.pas',
-  UMyLTC in 'UMyLTC.pas' {frLTC},
-  USetTC in 'USetTC.pas' {frSetTC},
-  UMyTextTemplate in 'UMyTextTemplate.pas' {frMyTextTemplate},
-  UMyNewList in 'UMyNewList.pas' {frNewList},
+  UMyLTC in 'UMyLTC.pas' {frLTC} ,
+  USetTC in 'USetTC.pas' {frSetTC} ,
+  UMyTextTemplate in 'UMyTextTemplate.pas' {frMyTextTemplate} ,
+  UMyNewList in 'UMyNewList.pas' {frNewList} ,
   USetProcent in 'USetProcent.pas' {frSetProcent};
 
 {$R *.res}
@@ -68,7 +68,7 @@ begin
   Application.CreateForm(TFrSetTemplate, FrSetTemplate);
   Application.CreateForm(TfrSetEventData, frSetEventData);
   Application.CreateForm(TFrSortGrid, FrSortGrid);
-  //Application.CreateForm(THTTPSRVForm, HTTPSRVForm);
+  // Application.CreateForm(THTTPSRVForm, HTTPSRVForm);
   Application.CreateForm(TfrShiftTL, frShiftTL);
   Application.CreateForm(TfrShortNum, frShortNum);
   Application.CreateForm(TfrLock, frLock);
@@ -81,4 +81,5 @@ begin
   Application.CreateForm(TfrNewList, frNewList);
   Application.CreateForm(TfrSetProcent, frSetProcent);
   Application.Run;
+
 end.

@@ -139,7 +139,7 @@ object FTextTemplate: TFTextTemplate
     Left = 8
     Top = 544
     Width = 1035
-    Height = 26
+    Height = 22
     BevelInner = bvNone
     BevelOuter = bvNone
     Ctl3D = False

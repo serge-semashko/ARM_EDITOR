@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ExtCtrls,strutils;
+  Dialogs, StdCtrls, Buttons, ExtCtrls, strutils;
 
 type
   THandledObject = class(TObject)
@@ -14,6 +14,7 @@ type
     destructor Destroy; override;
     property Handle: THandle read FHandle;
   end;
+
   TSharedMem = class(THandledObject)
   private
     FName: string;
@@ -29,32 +30,35 @@ type
     property Created: Boolean read FCreated;
   end;
 
-
-// Function setVariable(ObjName,VarName:widestring;value:string);
+  // Function setVariable(ObjName,VarName:widestring;value:string);
   THardRec = packed record
-     DateTimeSTR           :array[0..5] of ansichar;
-     UpdateCounter         :int64;
-     VersionSignature      :array[0..5] of ansichar;
-     JSONAll : array[0..10000000] of ansichar;
+    DateTimeSTR: array [0 .. 5] of ansichar;
+    UpdateCounter: int64;
+    VersionSignature: array [0 .. 5] of ansichar;
+    JSONAll: array [0 .. 10000000] of ansichar;
   end;
+
   PHardRec = ^THardRec;
-var
-HardRec :phardrec;
-testbuf : array[0..1000] of byte absolute hardrec;
-shared : tsharedmem;
 
 var
-  PortNum : integer = 9091;
+  HardRec: PHardRec;
+  testbuf: array [0 .. 1000] of byte absolute HardRec;
+  shared: TSharedMem;
+
 var
-  tmpjSon : ansistring;
-  Jevent, JDev, jAirsecond : TStringList;
-  Jmain : ansistring;
-  jsonresult : ansistring;
+  PortNum: Integer = 9091;
+
+var
+  tmpjSon: ansistring;
+  Jevent, JDev, jAirsecond: TStringList;
+  Jmain: ansistring;
+  jsonresult: ansistring;
 procedure BeginJson;
 procedure SaveJson;
-Function addVariable (ObjNum : integer; varname, VarValue : string) : integer; overload;
-Function addVariable (ObjNum : integer; arrName, Elementid, varname, VarValue : string) : integer; overload;
-
+Function addVariable(ObjNum: Integer; varname, VarValue: string)
+  : Integer; overload;
+Function addVariable(ObjNum: Integer; arrName, Elementid, varname,
+  VarValue: string): Integer; overload;
 
 implementation
 
@@ -63,88 +67,89 @@ begin
   raise Exception.Create(Msg);
 end;
 
-
 Procedure BeginJson;
-  var
-    i : integer;
-  begin
-    tmpjSon := '{';
-    for i := 0 to 255 do
-      Jevent[i] := '';
-    for i := 0 to 255 do
-      Jdev[i] := '';
-    for i := 0 to 255 do
-      JairSecond[i] := '';
-  end;
-
+var
+  i: Integer;
+begin
+  tmpjSon := '{';
+  for i := 0 to 255 do
+    Jevent[i] := '';
+  for i := 0 to 255 do
+    JDev[i] := '';
+  for i := 0 to 255 do
+    jAirsecond[i] := '';
+end;
 
 procedure SaveJson;
-  var
-    tmpres : ansistring;
-    Procedure addjlist (arrName : ansistring; arrlist : TStringList);
-      var
-        i : integer;
-      begin
-        tmpJson :=tmpJson+arrname+':{';
-        for i := 0 to arrlist.Count - 1 do
-          begin
-            if arrlist[i]<>'' then
-               tmpJson :=tmpJson+ IntToStr(i)+':{'+arrlist[i]+'},';
-          end;
-        tmpJson :=tmpJson+'},';
-      end;
 var
-    freq, sttime, msectime :int64;
-    msec : string;
+  tmpres: ansistring;
+  Procedure addjlist(arrName: ansistring; arrlist: TStringList);
+  var
+    i: Integer;
+  begin
+    tmpjSon := tmpjSon + arrName + ':{';
+    for i := 0 to arrlist.Count - 1 do
+    begin
+      if arrlist[i] <> '' then
+        tmpjSon := tmpjSon + IntToStr(i) + ':{' + arrlist[i] + '},';
+    end;
+    tmpjSon := tmpjSon + '},';
+  end;
+
+var
+  freq, sttime, msectime: int64;
+  msec: string;
 begin
   QueryPerformanceFrequency(freq);
   QueryPerformanceCounter(sttime);
-  msectime := STTIME;
-  msec := inttostr(msectime);
-  addvariable(1,'timeStamp',msec);
- // SetStretchBltMode(Cv.Handle, COLORONCOLOR);
-  addjlist ('Event', Jevent);
-  addjlist ('Dev', JDev);
-  addjlist ('airSecond', jAirsecond);
+  msectime := sttime;
+  msec := IntToStr(msectime);
+  addVariable(1, 'timeStamp', msec);
+  // SetStretchBltMode(Cv.Handle, COLORONCOLOR);
+  addjlist('Event', Jevent);
+  addjlist('Dev', JDev);
+  addjlist('airSecond', jAirsecond);
   jsonresult := tmpjSon + '}';
-  strpcopy(hardrec.JSONAll, jsonresult);
+  strpcopy(HardRec.JSONAll, jsonresult);
 end;
 
-Function addVariable (ObjNum : integer; varname, VarValue : string) : integer;
-  var
-    resstr : ansistring;
-    utf8val : string;
-  begin
-    varvalue := replacestr(varvalue,'"','\"');
-    utf8val := stringOf(tencoding.UTF8.GetBytes(varValue));
+Function addVariable(ObjNum: Integer; varname, VarValue: string): Integer;
+var
+  resstr: ansistring;
+  utf8val: string;
+begin
+  VarValue := replacestr(VarValue, '"', '\"');
+  utf8val := stringOf(tencoding.UTF8.GetBytes(VarValue));
 
+  tmpjSon := tmpjSon + varname + ':' + '"' + utf8val + '",';
+end;
 
-    tmpjSon := tmpjSon + varname + ':' + '"' + utf8Val + '",';
-  end;
+Function addVariable(ObjNum: Integer; arrName, Elementid, varname,
+  VarValue: string): Integer; overload;
+var
+  teststr: ansistring;
+  list: TStringList;
+  numElement: Integer;
+  utf8val: string;
+begin
+  VarValue := replacestr(VarValue, '"', '\"');
+  utf8val := stringOf(tencoding.UTF8.GetBytes(VarValue));
+  if arrName = 'Event' then
+    list := Jevent;
+  if arrName = 'Dev' then
+    list := JDev;
+  if arrName = 'airSecond' then
+    list := jAirsecond;
+  numElement := strToInt(Elementid);
+  list[numElement] := list[numElement] + varname + ':' + '"' + utf8val + '",';
+end;
 
-Function addVariable (ObjNum : integer; arrName, Elementid, varname, VarValue : string) : integer; overload;
-  var
-    teststr : ansistring;
-    list : TStringList;
-    numElement : integer;
-    utf8val : string;
-  begin
-    varvalue := replacestr(varvalue,'"','\"');
-    utf8val := stringOf(tencoding.UTF8.GetBytes(varValue));
-    if arrName = 'Event' then
-      list := Jevent;
-    if arrName = 'Dev' then
-      list := JDev;
-    if arrName = 'airSecond' then
-      list := jAirsecond;
-    numElement := strToInt (Elementid);
-    list[numElement] :=    list[numElement]+ varname + ':' + '"' + utf8val + '",';
-  end;
 destructor THandledObject.Destroy;
 begin
   if FHandle <> 0 then
     CloseHandle(FHandle);
 end;
+
 constructor TSharedMem.Create(const Name: string; Size: Integer);
 begin
   try
@@ -152,13 +157,15 @@ begin
     FSize := Size;
     { CreateFileMapping, when called with $FFFFFFFF for the hanlde value,
       creates a region of shared memory }
-    FHandle := CreateFileMapping($FFFFFFFF, nil, PAGE_READWRITE, 0,
-        Size, PChar(Name));
-    if FHandle = 0 then abort;
+    FHandle := CreateFileMapping($FFFFFFFF, nil, PAGE_READWRITE, 0, Size,
+      PChar(Name));
+    if FHandle = 0 then
+      abort;
     FCreated := GetLastError = 0;
     { We still need to map a pointer to the handle of the shared memory region }
     FFileView := MapViewOfFile(FHandle, FILE_MAP_WRITE, 0, 0, Size);
-    if FFileView = nil then abort;
+    if FFileView = nil then
+      abort;
   except
     Error(Format('Error creating shared memory %s (%d)', [Name, GetLastError]));
   end;
@@ -171,24 +178,26 @@ begin
   inherited Destroy;
 end;
 
-
-
 var
-  i : integer;
+  i: Integer;
 
 initialization
-   shared := tsharedmem.Create('webredis tempore mutanur',10000000);
-   HardRec:=Pointer(Integer(shared.Buffer)+100);
-     fillchar(hardrec.JSONAll,1000000,0);
-     hardrec.UpdateCounter := 13131313;
+
+shared := TSharedMem.Create('webredis tempore mutanur', 10000000);
+HardRec := Pointer(Integer(shared.Buffer) + 100);
+
+fillchar(HardRec.JSONAll, 1000000, 0);
+
+HardRec.UpdateCounter := 13131313;
 Jevent := TStringList.Create;
-for i := 0 to 255 do
-  Jevent.Add ('');
+
+for i := 0 to 255 do
+  Jevent.Add('');
 JDev := TStringList.Create;
 for i := 0 to 255 do
-  JDev.Add ('');
+  JDev.Add('');
 jAirsecond := TStringList.Create;
 for i := 0 to 255 do
-  jAirsecond.Add ('');
+  jAirsecond.Add('');
 
 end.

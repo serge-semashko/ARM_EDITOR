@@ -20,7 +20,7 @@ object FGRTemplate: TFGRTemplate
   OnDestroy = FormDestroy
   OnResize = FormResize
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel3: TPanel
     Left = 664
     Top = 0
@@ -140,7 +140,7 @@ object FGRTemplate: TFGRTemplate
         Left = 592
         Top = 6
         Width = 65
-        Height = 24
+        Height = 21
         BevelInner = bvNone
         BevelKind = bkFlat
         Style = csDropDownList
@@ -192,8 +192,8 @@ object FGRTemplate: TFGRTemplate
       object Label1: TLabel
         Left = 260
         Top = 3
-        Width = 40
-        Height = 16
+        Width = 30
+        Height = 13
         Caption = #1058#1077#1082#1089#1090
         StyleElements = []
       end
@@ -240,8 +240,8 @@ object FGRTemplate: TFGRTemplate
         object Label4: TLabel
           Left = 10
           Top = 2
-          Width = 149
-          Height = 16
+          Width = 108
+          Height = 13
           Caption = #1043#1088#1072#1092#1080#1095#1077#1089#1082#1080#1081' '#1096#1072#1073#1083#1086#1085
           StyleElements = []
         end

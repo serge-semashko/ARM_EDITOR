@@ -48,8 +48,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure StringGrid1DrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
-    procedure Image2MouseMove(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
+    procedure Image2MouseMove(Sender: TObject; Shift: TShiftState;
+      X, Y: Integer);
     procedure Image2MouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure Image2MouseDown(Sender: TObject; Button: TMouseButton;
@@ -71,366 +71,454 @@ type
     procedure SpeedButton3Click(Sender: TObject);
   private
     { Private declarations }
-    StringGridDoubleClick : boolean;
+    StringGridDoubleClick: boolean;
     procedure LoadStringGrid;
   public
     { Public declarations }
-    TypeEvent : integer;
+    TypeEvent: Integer;
   end;
 
 var
   FButtonOptions: TFButtonOptions;
-  WorkEvent : TMyEvent;
-  myRect : TRect;
+  WorkEvent: TMyEvent;
+  myRect: TRect;
 
-
-function EditButtonsOptions(nom : integer; obj : TTimelineOptions) : boolean;
+function EditButtonsOptions(nom: Integer; obj: TTimelineOptions): boolean;
 
 implementation
-uses ucommon, uimgbuttons, ugrtimelines, udrawtimelines, ugrid, umyfiles, uinitforms;
+
+uses ucommon, uimgbuttons, ugrtimelines, udrawtimelines, ugrid, umyfiles,
+  uinitforms;
 
 {$R *.dfm}
 
-procedure SwitchObjects(TL : TTypetimeline);
+procedure SwitchObjects(TL: TTypetimeline);
 begin
   try
-  with FButtonOptions do begin
-       Case TL of
-  tldevice : begin
-               Edit1.Visible := true;
-               Label1.Caption := 'Номер устройства';
-               Label9.Visible := true;
-               lbNumber.Visible := true;
-               Stringgrid1.Visible := true;
-               CheckBox1.Visible := true;
-               Bevel1.Visible := true;
-               Label3.Visible := true;
-               Label5.Visible := true;
-               SpeedButton3.Visible := true;
-               cbMainFont.Enabled := true;
-               cbSubFont.Enabled := true;
-               ColorBox1.Enabled := true;
-               WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects tldevice');
-             end;
-  tltext   : begin
-               Edit1.Visible := false;
-               Label1.Caption := 'Текстовое событие';
-               Label9.Visible := false;
-               lbNumber.Visible := false;
-               Stringgrid1.Visible := false;
-               CheckBox1.Visible := false;
-               Bevel1.Visible := false;
-               Label3.Visible := false;
-               Label5.Visible := false;
-               SpeedButton3.Visible := false;
-               cbMainFont.Enabled := false;
-               ColorBox1.Enabled := false;
-               WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects tltext');
-             end;
-  tlmedia  : begin
-               Edit1.Visible := false;
-               Label1.Caption := 'Медиа событие';
-               Label9.Visible := false;
-               lbNumber.Visible := false;
-               Stringgrid1.Visible := false;
-               CheckBox1.Visible := false;
-               Bevel1.Visible := false;
-               Label3.Visible := false;
-               Label5.Visible := false;
-               SpeedButton3.Visible := false;
-               cbMainFont.Enabled := false;
-               ColorBox1.Enabled := true;
-               WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects tlmedia');
-             end;
-       end;
-  end;
+    with FButtonOptions do
+    begin
+      Case TL of
+        tldevice:
+          begin
+            Edit1.Visible := true;
+            Label1.Caption := 'Номер устройства';
+            Label9.Visible := true;
+            lbNumber.Visible := true;
+            StringGrid1.Visible := true;
+            CheckBox1.Visible := true;
+            Bevel1.Visible := true;
+            Label3.Visible := true;
+            Label5.Visible := true;
+            SpeedButton3.Visible := true;
+            cbMainFont.Enabled := true;
+            cbSubFont.Enabled := true;
+            ColorBox1.Enabled := true;
+            WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects tldevice');
+          end;
+        tltext:
+          begin
+            Edit1.Visible := false;
+            Label1.Caption := 'Текстовое событие';
+            Label9.Visible := false;
+            lbNumber.Visible := false;
+            StringGrid1.Visible := false;
+            CheckBox1.Visible := false;
+            Bevel1.Visible := false;
+            Label3.Visible := false;
+            Label5.Visible := false;
+            SpeedButton3.Visible := false;
+            cbMainFont.Enabled := false;
+            ColorBox1.Enabled := false;
+            WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects tltext');
+          end;
+        tlmedia:
+          begin
+            Edit1.Visible := false;
+            Label1.Caption := 'Медиа событие';
+            Label9.Visible := false;
+            lbNumber.Visible := false;
+            StringGrid1.Visible := false;
+            CheckBox1.Visible := false;
+            Bevel1.Visible := false;
+            Label3.Visible := false;
+            Label5.Visible := false;
+            SpeedButton3.Visible := false;
+            cbMainFont.Enabled := false;
+            ColorBox1.Enabled := true;
+            WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects tlmedia');
+          end;
+      end;
+    end;
   except
-    on E: Exception do WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'UButtonOptions.SwitchObjects | ' + E.Message);
   end;
 end;
 
 procedure TFButtonOptions.LoadStringGrid;
-var i, WDTH, HGHT, DLT : integer;
+var
+  i, WDTH, HGHT, DLT: Integer;
 begin
   try
-  WriteLog('ButtonOptions', 'TFButtonOptions.LoadStringGrid');
-  WDTH:=0;
-  if StringGrid1.ColCount>=2 then begin
-    For i:=0 to StringGrid1.ColCount-2 do WDTH:=WDTH + StringGrid1.ColWidths[i];
-    if StringGrid1.RowCount > 1 then begin
-      for i:=0 to StringGrid1.RowCount-1
-        do StringGrid1.ColWidths[StringGrid1.ColCount-1] := StringGrid1.Width - WDTH;
+    WriteLog('ButtonOptions', 'TFButtonOptions.LoadStringGrid');
+    WDTH := 0;
+    if StringGrid1.ColCount >= 2 then
+    begin
+      For i := 0 to StringGrid1.ColCount - 2 do
+        WDTH := WDTH + StringGrid1.ColWidths[i];
+      if StringGrid1.RowCount > 1 then
+      begin
+        for i := 0 to StringGrid1.RowCount - 1 do
+          StringGrid1.ColWidths[StringGrid1.ColCount - 1] :=
+            StringGrid1.Width - WDTH;
+      end;
     end;
-  end;
 
-    HGHT := Panel3.Height - Panel7.Height;// - StringGrid1.Height;
-    if StringGrid1.Objects[0,0] is TGridRows then begin
-      dlt := HGHT mod (StringGrid1.Objects[0,0] as TGridRows).HeightRow;
-      Panel4.Height:=dlt;
-      StringGrid1.Height:=HGHT-DLT;
+    HGHT := Panel3.Height - Panel7.Height; // - StringGrid1.Height;
+    if StringGrid1.Objects[0, 0] is TGridRows then
+    begin
+      DLT := HGHT mod (StringGrid1.Objects[0, 0] as TGridRows).HeightRow;
+      Panel4.Height := DLT;
+      StringGrid1.Height := HGHT - DLT;
     end;
-//      initgrid(StringGrid1, RowGridListGR, Panel14.Width);
-    if FileExists(PathTemp + '\ImageTemplates.lst')
-    then LoadGridFromFile(PathTemp + '\ImageTemplates.lst', StringGrid1)
-    else if FileExists(PathLists + '\ImageTemplates.lst')
-           then LoadGridFromFile(PathLists + '\ImageTemplates.lst', StringGrid1)
-           else StringGrid1.Enabled:=false;;
+    // initgrid(StringGrid1, RowGridListGR, Panel14.Width);
+    if FileExists(PathTemp + '\ImageTemplates.lst') then
+      LoadGridFromFile(PathTemp + '\ImageTemplates.lst', StringGrid1)
+    else if FileExists(PathLists + '\ImageTemplates.lst') then
+      LoadGridFromFile(PathLists + '\ImageTemplates.lst', StringGrid1)
+    else
+      StringGrid1.Enabled := false;;
     StringGrid1.Repaint;
     application.ProcessMessages;
     GridImageReload(StringGrid1);
     StringGrid1.Repaint;
   except
-    on E: Exception do WriteLog('ButtonOptions', 'TFButtonOptions.LoadStringGrid | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'TFButtonOptions.LoadStringGrid | ' +
+        E.Message);
   end;
 end;
 
-procedure DrawEvent(TypeEvent : integer);
-var i, j, tpp, lft : integer;
-    rt : trect;
+procedure DrawEvent(TypeEvent: Integer);
+var
+  i, j, tpp, lft: Integer;
+  rt: TRect;
 begin
   try
-  WriteLog('ButtonOptions', 'UButtonOptions.DrawEvent TypeEvent=' + inttostr(TypeEvent));
-  FButtonOptions.Image2.Canvas.Brush.Style:=bsSolid;
-  FButtonOptions.Image2.Canvas.Brush.Color:=TLParameters.ForeGround;
-  FButtonOptions.Image2.Canvas.FillRect(FButtonOptions.Image2.Canvas.ClipRect);
+    WriteLog('ButtonOptions', 'UButtonOptions.DrawEvent TypeEvent=' +
+      inttostr(TypeEvent));
+    FButtonOptions.Image2.Canvas.Brush.Style := bsSolid;
+    FButtonOptions.Image2.Canvas.Brush.Color := TLParameters.ForeGround;
+    FButtonOptions.Image2.Canvas.FillRect
+      (FButtonOptions.Image2.Canvas.ClipRect);
 
-         case TypeEvent of
-  0 : TLZone.TLEditor.DrawEditorDeviceEvent(WorkEvent, FButtonOptions.Image2.Canvas, MyRect, false);
-  1 : TLZone.TLEditor.DrawEditorTextEvent(WorkEvent, FButtonOptions.Image2.Canvas, MyRect, false);
-  2 : begin
-        FButtonOptions.Image2.Canvas.Brush.Color:=WorkEvent.Color;
-        rt.Top:=MyRect.Top;
-        rt.Bottom:=Myrect.Bottom;
-        rt.Left:=FButtonOptions.Image2.Canvas.ClipRect.Left;
-        rt.Right:=FButtonOptions.Image2.Canvas.ClipRect.Right;
-        FButtonOptions.Image2.Canvas.FillRect(rt);
-        TLZone.TLEditor.DrawEditorMediaEvent(WorkEvent, FButtonOptions.Image2.Canvas, MyRect, false);
-      end;
-         end;
-
-  tpp := MyRect.Top;
-  lft := WorkEvent.Start * TLParameters.FrameSize;
-  FButtonOptions.Image2.Canvas.Brush.Style:=bsClear;
-  FButtonOptions.Image2.Canvas.Pen.Color:=SmoothColor(WorkEvent.Color,48);
-  FButtonOptions.Image2.Canvas.Pen.Style:=psDot;
-  for i := 0 to WorkEvent.Count-1 do begin
-    for j := 0 to WorkEvent.Rows[i].Count-1 do begin
-      rt.Top := tpp + WorkEvent.Rows[i].Phrases[j].Rect.Top;
-      rt.Bottom := tpp + WorkEvent.Rows[i].Phrases[j].Rect.Bottom;
-      rt.Left := lft + WorkEvent.Rows[i].Phrases[j].Rect.Left;
-      rt.Right := lft + WorkEvent.Rows[i].Phrases[j].Rect.Right;
-      if rt.Right > WorkEvent.Finish * TLParameters.FrameSize
-        then rt.Right := WorkEvent.Finish * TLParameters.FrameSize;
-      FButtonOptions.Image2.Canvas.Rectangle(rt);
+    case TypeEvent of
+      0:
+        TLZone.TLEditor.DrawEditorDeviceEvent(WorkEvent,
+          FButtonOptions.Image2.Canvas, myRect, false);
+      1:
+        TLZone.TLEditor.DrawEditorTextEvent(WorkEvent,
+          FButtonOptions.Image2.Canvas, myRect, false);
+      2:
+        begin
+          FButtonOptions.Image2.Canvas.Brush.Color := WorkEvent.Color;
+          rt.Top := myRect.Top;
+          rt.Bottom := myRect.Bottom;
+          rt.Left := FButtonOptions.Image2.Canvas.ClipRect.Left;
+          rt.Right := FButtonOptions.Image2.Canvas.ClipRect.Right;
+          FButtonOptions.Image2.Canvas.FillRect(rt);
+          TLZone.TLEditor.DrawEditorMediaEvent(WorkEvent,
+            FButtonOptions.Image2.Canvas, myRect, false);
+        end;
     end;
-  end;
-  except
-    on E: Exception do WriteLog('ButtonOptions', 'UButtonOptions.DrawEvent | ' + E.Message);
-  end;
-end;
 
-Procedure SetDeviceEvent(nom : integer; obj : TTimelineOptions);
-var i, index : integer;
-    txt, grtmpl : string;
-begin
-  try
-  WriteLog('ButtonOptions', 'UButtonOptions.SetDeviceEvent Number=' + inttostr(nom));
-  FButtonOptions.StringGrid1.Visible:=true;
-  FButtonOptions.LoadStringGrid;
-
-  WorkEvent.Assign(obj.DevEvents[nom]);
-  WorkEvent.Start:=5;
-  WorkEvent.Finish:=FButtonOptions.Image2.Width div TLParameters.FrameSize - 5;
-
-  FButtonOptions.cbFontName.ItemIndex := FButtonOptions.cbFontName.Items.IndexOf(Trim(WorkEvent.FontName));
-  Index := FButtonOptions.cbMainFont.Items.IndexOf(inttostr(WorkEvent.FontSize));
-  if index=-1 then FButtonOptions.cbMainFont.Text:=inttostr(WorkEvent.FontSize)
-  else FButtonOptions.cbMainFont.ItemIndex := index;
-  Index := FButtonOptions.cbSubFont.Items.IndexOf(inttostr(WorkEvent.FontSizeSub));
-  if index=-1 then FButtonOptions.cbSubFont.Text:=inttostr(WorkEvent.FontSizeSub)
-  else FButtonOptions.cbSubFont.ItemIndex := index;
-  txt := WorkEvent.ReadPhraseCommand('Text');
-  if trim(txt) = '' then begin
-    FButtonOptions.Label3.Caption:='Не установлен';
-    For i:=0 to FButtonOptions.StringGrid1.RowCount-1
-      do if FButtonOptions.StringGrid1.Objects[0,i] is TGridRows
-            then (FButtonOptions.StringGrid1.Objects[0,i] as TGridRows).MyCells[0].Mark:=false;
-  end else begin
-    FButtonOptions.Label3.Caption:=txt;
-    For i:=0 to FButtonOptions.StringGrid1.RowCount-1 do begin
-      if FButtonOptions.StringGrid1.Objects[0,i] is TGridRows then begin
-        (FButtonOptions.StringGrid1.Objects[0,i] as TGridRows).MyCells[0].ColorTrue:=clRed;
-        grtmpl:=(FButtonOptions.StringGrid1.Objects[0,i] as TGridRows).MyCells[(FButtonOptions.StringGrid1.Objects[0,i] as TGridRows).Count-1].ReadPhrase('File');
-        if trim(lowercase(grtmpl))=trim(lowercase(txt)) then begin
-          (FButtonOptions.StringGrid1.Objects[0,i] as TGridRows).MyCells[0].Mark:=true;
-           FButtonOptions.StringGrid1.Row := i;
-         end else (FButtonOptions.StringGrid1.Objects[0,i] as TGridRows).MyCells[0].Mark:=false;
+    tpp := myRect.Top;
+    lft := WorkEvent.Start * TLParameters.FrameSize;
+    FButtonOptions.Image2.Canvas.Brush.Style := bsClear;
+    FButtonOptions.Image2.Canvas.Pen.Color := SmoothColor(WorkEvent.Color, 48);
+    FButtonOptions.Image2.Canvas.Pen.Style := psDot;
+    for i := 0 to WorkEvent.Count - 1 do
+    begin
+      for j := 0 to WorkEvent.Rows[i].Count - 1 do
+      begin
+        rt.Top := tpp + WorkEvent.Rows[i].Phrases[j].Rect.Top;
+        rt.Bottom := tpp + WorkEvent.Rows[i].Phrases[j].Rect.Bottom;
+        rt.Left := lft + WorkEvent.Rows[i].Phrases[j].Rect.Left;
+        rt.Right := lft + WorkEvent.Rows[i].Phrases[j].Rect.Right;
+        if rt.Right > WorkEvent.Finish * TLParameters.FrameSize then
+          rt.Right := WorkEvent.Finish * TLParameters.FrameSize;
+        FButtonOptions.Image2.Canvas.Rectangle(rt);
       end;
     end;
-  end;
-  FButtonOptions.ColorBox1.Selected := WorkEvent.FontColor;
-  FButtonOptions.lbNumber.Caption :=  inttostr(WorkEvent.ReadPhraseData('Device'));
-  FButtonOptions.Edit1.Text := WorkEvent.ReadPhraseText('Device');
-
-  MyRect.Left   := 0;
-  MyRect.Right  := FButtonOptions.Image2.Width;
-  MyRect.Top    := (FButtonOptions.Image2.Height - 110) div 2;
-  MyRect.Bottom := MyRect.Top + 110;
-
-  DrawEvent(FButtonOptions.TypeEvent);
-
-  FButtonOptions.lbNumber.Caption:=inttostr(nom+1);
-
-  FButtonOptions.Image1.Canvas.Brush.Style:=bsSolid;
-  FButtonOptions.Image1.Canvas.Brush.Color:=obj.DevEvents[nom].Color;
-  FButtonOptions.Image1.Canvas.FillRect(FButtonOptions.Image1.Canvas.ClipRect);
-  FButtonOptions.Image1.Canvas.Font.Color:=FormsFontColor;
   except
-    on E: Exception do WriteLog('ButtonOptions', 'UButtonOptions.SetDeviceEvent | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'UButtonOptions.DrawEvent | ' + E.Message);
   end;
 end;
 
-Procedure SetTextEvent(nom : integer; obj : TTimelineOptions);
-var i, index : integer;
-    txt, grtmpl : string;
+Procedure SetDeviceEvent(nom: Integer; obj: TTimelineOptions);
+var
+  i, Index: Integer;
+  txt, grtmpl: string;
 begin
   try
-  WriteLog('ButtonOptions', 'UButtonOptions.SetTextEvent Number=' + inttostr(nom));
-  FButtonOptions.StringGrid1.Visible:=false;
+    WriteLog('ButtonOptions', 'UButtonOptions.SetDeviceEvent Number=' +
+      inttostr(nom));
+    FButtonOptions.StringGrid1.Visible := true;
+    FButtonOptions.LoadStringGrid;
 
-  WorkEvent.Assign(obj.TextEvent);
-  WorkEvent.Start:=5;
-  WorkEvent.Finish:=FButtonOptions.Image2.Width div TLParameters.FrameSize - 5;
-  WorkEvent.SetRectAreas(obj.TypeTL);
+    WorkEvent.Assign(obj.DevEvents[nom]);
+    WorkEvent.Start := 5;
+    WorkEvent.Finish := FButtonOptions.Image2.Width div TLParameters.
+      FrameSize - 5;
 
-  FButtonOptions.cbFontName.ItemIndex := FButtonOptions.cbFontName.Items.IndexOf(Trim(WorkEvent.FontName));
+    FButtonOptions.cbFontName.ItemIndex :=
+      FButtonOptions.cbFontName.Items.IndexOf(Trim(WorkEvent.FontName));
+    Index := FButtonOptions.cbMainFont.Items.IndexOf
+      (inttostr(WorkEvent.FontSize));
+    if index = -1 then
+      FButtonOptions.cbMainFont.Text := inttostr(WorkEvent.FontSize)
+    else
+      FButtonOptions.cbMainFont.ItemIndex := index;
+    Index := FButtonOptions.cbSubFont.Items.IndexOf
+      (inttostr(WorkEvent.FontSizeSub));
+    if index = -1 then
+      FButtonOptions.cbSubFont.Text := inttostr(WorkEvent.FontSizeSub)
+    else
+      FButtonOptions.cbSubFont.ItemIndex := index;
+    txt := WorkEvent.ReadPhraseCommand('Text');
+    if Trim(txt) = '' then
+    begin
+      FButtonOptions.Label3.Caption := 'Не установлен';
+      For i := 0 to FButtonOptions.StringGrid1.RowCount - 1 do
+        if FButtonOptions.StringGrid1.Objects[0, i] is TGridRows then
+          (FButtonOptions.StringGrid1.Objects[0, i] as TGridRows).MyCells[0]
+            .Mark := false;
+    end
+    else
+    begin
+      FButtonOptions.Label3.Caption := txt;
+      For i := 0 to FButtonOptions.StringGrid1.RowCount - 1 do
+      begin
+        if FButtonOptions.StringGrid1.Objects[0, i] is TGridRows then
+        begin
+          (FButtonOptions.StringGrid1.Objects[0, i] as TGridRows).MyCells[0]
+            .ColorTrue := clRed;
+          grtmpl := (FButtonOptions.StringGrid1.Objects[0, i] as TGridRows)
+            .MyCells[(FButtonOptions.StringGrid1.Objects[0, i] as TGridRows)
+            .Count - 1].ReadPhrase('File');
+          if Trim(lowercase(grtmpl)) = Trim(lowercase(txt)) then
+          begin
+            (FButtonOptions.StringGrid1.Objects[0, i] as TGridRows)
+              .MyCells[0].Mark := true;
+            FButtonOptions.StringGrid1.Row := i;
+          end
+          else
+            (FButtonOptions.StringGrid1.Objects[0, i] as TGridRows)
+              .MyCells[0].Mark := false;
+        end;
+      end;
+    end;
+    FButtonOptions.ColorBox1.Selected := WorkEvent.FontColor;
+    FButtonOptions.lbNumber.Caption :=
+      inttostr(WorkEvent.ReadPhraseData('Device'));
+    FButtonOptions.Edit1.Text := WorkEvent.ReadPhraseText('Device');
 
-  Index := FButtonOptions.cbSubFont.Items.IndexOf(inttostr(WorkEvent.FontSizeSub));
-  if index=-1 then FButtonOptions.cbSubFont.Text:=inttostr(WorkEvent.FontSizeSub)
-  else FButtonOptions.cbSubFont.ItemIndex := index;
+    myRect.Left := 0;
+    myRect.Right := FButtonOptions.Image2.Width;
+    myRect.Top := (FButtonOptions.Image2.Height - 110) div 2;
+    myRect.Bottom := myRect.Top + 110;
 
-  txt := WorkEvent.ReadPhraseText('Color');
-  if Trim(txt)='' then begin
-    WorkEvent.SetPhraseText('Color','White');
-    WorkEvent.SetPhraseData('Color',clWhite);
-  end;
-  FButtonOptions.ColorBox1.Selected := WorkEvent.ReadPhraseData('Color');
+    DrawEvent(FButtonOptions.TypeEvent);
 
-  MyRect.Left   := 0;
-  MyRect.Right  := FButtonOptions.Image2.Width;
-  MyRect.Top    := (FButtonOptions.Image2.Height - 110) div 2;
-  MyRect.Bottom := MyRect.Top + 110;
+    FButtonOptions.lbNumber.Caption := inttostr(nom + 1);
 
-  DrawEvent(FButtonOptions.TypeEvent);
-
-  FButtonOptions.Image1.Canvas.Brush.Style:=bsSolid;
-  FButtonOptions.Image1.Canvas.Brush.Color:=obj.TextColor;
-  FButtonOptions.Image1.Canvas.FillRect(FButtonOptions.Image1.Canvas.ClipRect);
+    FButtonOptions.Image1.Canvas.Brush.Style := bsSolid;
+    FButtonOptions.Image1.Canvas.Brush.Color := obj.DevEvents[nom].Color;
+    FButtonOptions.Image1.Canvas.FillRect
+      (FButtonOptions.Image1.Canvas.ClipRect);
+    FButtonOptions.Image1.Canvas.Font.Color := FormsFontColor;
   except
-    on E: Exception do WriteLog('ButtonOptions', 'UButtonOptions.SetTextEvent | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'UButtonOptions.SetDeviceEvent | ' + E.Message);
   end;
 end;
 
-Procedure SetMediaEvent(nom : integer; obj : TTimelineOptions);
-var i, index : integer;
-    txt, grtmpl : string;
+Procedure SetTextEvent(nom: Integer; obj: TTimelineOptions);
+var
+  i, Index: Integer;
+  txt, grtmpl: string;
 begin
   try
-  WriteLog('ButtonOptions', 'UButtonOptions.SetMediaEvent Number=' + inttostr(nom));
-  FButtonOptions.StringGrid1.Visible:=false;
+    WriteLog('ButtonOptions', 'UButtonOptions.SetTextEvent Number=' +
+      inttostr(nom));
+    FButtonOptions.StringGrid1.Visible := false;
 
-  WorkEvent.Assign(obj.MediaEvent);
-  WorkEvent.Start:=50;
-  WorkEvent.Finish:=FButtonOptions.Image2.Width div TLParameters.FrameSize - 10;
-  WorkEvent.SetRectAreas(obj.TypeTL);
+    WorkEvent.Assign(obj.TextEvent);
+    WorkEvent.Start := 5;
+    WorkEvent.Finish := FButtonOptions.Image2.Width div TLParameters.
+      FrameSize - 5;
+    WorkEvent.SetRectAreas(obj.TypeTL);
 
-  FButtonOptions.cbFontName.ItemIndex := FButtonOptions.cbFontName.Items.IndexOf(Trim(WorkEvent.FontName));
+    FButtonOptions.cbFontName.ItemIndex :=
+      FButtonOptions.cbFontName.Items.IndexOf(Trim(WorkEvent.FontName));
 
-  Index := FButtonOptions.cbSubFont.Items.IndexOf(inttostr(WorkEvent.FontSizeSub));
-  if index=-1 then FButtonOptions.cbSubFont.Text:=inttostr(WorkEvent.FontSizeSub)
-  else FButtonOptions.cbSubFont.ItemIndex := index;
+    Index := FButtonOptions.cbSubFont.Items.IndexOf
+      (inttostr(WorkEvent.FontSizeSub));
+    if index = -1 then
+      FButtonOptions.cbSubFont.Text := inttostr(WorkEvent.FontSizeSub)
+    else
+      FButtonOptions.cbSubFont.ItemIndex := index;
 
-  txt := WorkEvent.ReadPhraseText('Color');
-  if Trim(txt)='' then begin
-    WorkEvent.SetPhraseText('Color','White');
-    WorkEvent.SetPhraseData('Color',clWhite);
-  end;
-  FButtonOptions.ColorBox1.Selected := WorkEvent.ReadPhraseData('Color');
+    txt := WorkEvent.ReadPhraseText('Color');
+    if Trim(txt) = '' then
+    begin
+      WorkEvent.SetPhraseText('Color', 'White');
+      WorkEvent.SetPhraseData('Color', clWhite);
+    end;
+    FButtonOptions.ColorBox1.Selected := WorkEvent.ReadPhraseData('Color');
 
-  MyRect.Left   := 0;
-  MyRect.Right  := FButtonOptions.Image2.Width;
-  MyRect.Top    := (FButtonOptions.Image2.Height - 110) div 2;
-  MyRect.Bottom := MyRect.Top + 110;
+    myRect.Left := 0;
+    myRect.Right := FButtonOptions.Image2.Width;
+    myRect.Top := (FButtonOptions.Image2.Height - 110) div 2;
+    myRect.Bottom := myRect.Top + 110;
 
-  DrawEvent(FButtonOptions.TypeEvent);
+    DrawEvent(FButtonOptions.TypeEvent);
 
-  FButtonOptions.Image1.Canvas.Brush.Style:=bsSolid;
-  FButtonOptions.Image1.Canvas.Brush.Color:=obj.MediaColor;
-  FButtonOptions.Image1.Canvas.FillRect(FButtonOptions.Image1.Canvas.ClipRect);
+    FButtonOptions.Image1.Canvas.Brush.Style := bsSolid;
+    FButtonOptions.Image1.Canvas.Brush.Color := obj.TextColor;
+    FButtonOptions.Image1.Canvas.FillRect
+      (FButtonOptions.Image1.Canvas.ClipRect);
   except
-    on E: Exception do WriteLog('ButtonOptions', 'UButtonOptions.SetMediaEvent | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'UButtonOptions.SetTextEvent | ' + E.Message);
   end;
 end;
 
-function EditButtonsOptions(nom : integer; obj : TTimelineOptions) : boolean;
+Procedure SetMediaEvent(nom: Integer; obj: TTimelineOptions);
+var
+  i, Index: Integer;
+  txt, grtmpl: string;
 begin
   try
-  WriteLog('MAIN', 'UButtonOptions.EditButtonsOptions Start Number=' + inttostr(nom));
-  WriteLog('ButtonOptions', 'UButtonOptions.EditButtonsOptions Start Number=' + inttostr(nom));
-  result := false;
-  FButtonOptions.TypeEvent := ord(obj.TypeTL);
-  SwitchObjects(obj.TypeTL);
-       case obj.TypeTL of
-  tldevice : SetDeviceEvent(nom,obj);
-  tlText   : SetTextEvent(nom,obj);
-  tlMedia  : SetMediaEvent(nom,obj);
-       end;
+    WriteLog('ButtonOptions', 'UButtonOptions.SetMediaEvent Number=' +
+      inttostr(nom));
+    FButtonOptions.StringGrid1.Visible := false;
 
-  FButtonOptions.ShowModal;
-  if FButtonOptions.ModalResult=mrOk then begin
+    WorkEvent.Assign(obj.MediaEvent);
+    WorkEvent.Start := 50;
+    WorkEvent.Finish := FButtonOptions.Image2.Width div TLParameters.
+      FrameSize - 10;
+    WorkEvent.SetRectAreas(obj.TypeTL);
 
-         case obj.TypeTL of
-    tldevice : obj.DevEvents[nom].Assign(WorkEvent);
-    tlText   : begin
-                 obj.TextEvent.Assign(WorkEvent);
-                 obj.TextColor:=WorkEvent.Color;
-               end;
-    tlMedia  : begin
-                 obj.MediaEvent.Assign(WorkEvent);
-                 obj.MediaColor:=WorkEvent.Color;
-               end;
-         end;
-    result := true;
-  end;
+    FButtonOptions.cbFontName.ItemIndex :=
+      FButtonOptions.cbFontName.Items.IndexOf(Trim(WorkEvent.FontName));
 
-  WriteLog('ButtonOptions', 'UButtonOptions.EditButtonsOptions Finish Number=' + inttostr(nom));
-  WriteLog('MAIN', 'UButtonOptions.EditButtonsOptions Finish Number=' + inttostr(nom));
+    Index := FButtonOptions.cbSubFont.Items.IndexOf
+      (inttostr(WorkEvent.FontSizeSub));
+    if index = -1 then
+      FButtonOptions.cbSubFont.Text := inttostr(WorkEvent.FontSizeSub)
+    else
+      FButtonOptions.cbSubFont.ItemIndex := index;
+
+    txt := WorkEvent.ReadPhraseText('Color');
+    if Trim(txt) = '' then
+    begin
+      WorkEvent.SetPhraseText('Color', 'White');
+      WorkEvent.SetPhraseData('Color', clWhite);
+    end;
+    FButtonOptions.ColorBox1.Selected := WorkEvent.ReadPhraseData('Color');
+
+    myRect.Left := 0;
+    myRect.Right := FButtonOptions.Image2.Width;
+    myRect.Top := (FButtonOptions.Image2.Height - 110) div 2;
+    myRect.Bottom := myRect.Top + 110;
+
+    DrawEvent(FButtonOptions.TypeEvent);
+
+    FButtonOptions.Image1.Canvas.Brush.Style := bsSolid;
+    FButtonOptions.Image1.Canvas.Brush.Color := obj.MediaColor;
+    FButtonOptions.Image1.Canvas.FillRect
+      (FButtonOptions.Image1.Canvas.ClipRect);
   except
-    on E: Exception do WriteLog('ButtonOptions', 'UButtonOptions.EditButtonsOptions | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'UButtonOptions.SetMediaEvent | ' + E.Message);
   end;
 end;
 
+function EditButtonsOptions(nom: Integer; obj: TTimelineOptions): boolean;
+begin
+  try
+    WriteLog('MAIN', 'UButtonOptions.EditButtonsOptions Start Number=' +
+      inttostr(nom));
+    WriteLog('ButtonOptions', 'UButtonOptions.EditButtonsOptions Start Number='
+      + inttostr(nom));
+    result := false;
+    FButtonOptions.TypeEvent := ord(obj.TypeTL);
+    SwitchObjects(obj.TypeTL);
+    case obj.TypeTL of
+      tldevice:
+        SetDeviceEvent(nom, obj);
+      tltext:
+        SetTextEvent(nom, obj);
+      tlmedia:
+        SetMediaEvent(nom, obj);
+    end;
+
+    FButtonOptions.ShowModal;
+    if FButtonOptions.ModalResult = mrOk then
+    begin
+
+      case obj.TypeTL of
+        tldevice:
+          obj.DevEvents[nom].Assign(WorkEvent);
+        tltext:
+          begin
+            obj.TextEvent.Assign(WorkEvent);
+            obj.TextColor := WorkEvent.Color;
+          end;
+        tlmedia:
+          begin
+            obj.MediaEvent.Assign(WorkEvent);
+            obj.MediaColor := WorkEvent.Color;
+          end;
+      end;
+      result := true;
+    end;
+
+    WriteLog('ButtonOptions', 'UButtonOptions.EditButtonsOptions Finish Number='
+      + inttostr(nom));
+    WriteLog('MAIN', 'UButtonOptions.EditButtonsOptions Finish Number=' +
+      inttostr(nom));
+  except
+    on E: Exception do
+      WriteLog('ButtonOptions', 'UButtonOptions.EditButtonsOptions | ' +
+        E.Message);
+  end;
+end;
 
 procedure TFButtonOptions.Image1Click(Sender: TObject);
-var deltx, delty : integer;
+var
+  deltx, delty: Integer;
 begin
-  Colordialog1.Color:=Image1.Canvas.Brush.Color;
-  if Colordialog1.Execute then begin
-    Image1.Canvas.Brush.Color:=Colordialog1.Color;
+  ColorDialog1.Color := Image1.Canvas.Brush.Color;
+  if ColorDialog1.Execute then
+  begin
+    Image1.Canvas.Brush.Color := ColorDialog1.Color;
     Image1.Canvas.FillRect(Image1.Canvas.ClipRect);
-    WorkEvent.Color:=Colordialog1.Color;
+    WorkEvent.Color := ColorDialog1.Color;
     DrawEvent(FButtonOptions.TypeEvent);
   end;
 end;
 
 procedure TFButtonOptions.SpeedButton1Click(Sender: TObject);
 begin
-  FButtonOptions.ModalResult:=mrOk;
+  FButtonOptions.ModalResult := mrOk;
 end;
 
 procedure TFButtonOptions.SpeedButton2Click(Sender: TObject);
 begin
-  FButtonOptions.ModalResult:=mrCancel;
+  FButtonOptions.ModalResult := mrCancel;
 end;
 
 procedure TFButtonOptions.FormCreate(Sender: TObject);
@@ -441,118 +529,140 @@ begin
   initgrid(StringGrid1, RowGridListGR, Panel3.Width);
 end;
 
-procedure TFButtonOptions.StringGrid1DrawCell(Sender: TObject; ACol,
-  ARow: Integer; Rect: TRect; State: TGridDrawState);
+procedure TFButtonOptions.StringGrid1DrawCell(Sender: TObject;
+  ACol, ARow: Integer; Rect: TRect; State: TGridDrawState);
 begin
   GridDrawMyCell(StringGrid1, ACol, ARow, Rect);
 end;
 
-procedure TFButtonOptions.Image2MouseMove(Sender: TObject;
+procedure TFButtonOptions.Image2MouseMove(Sender: TObject; Shift: TShiftState;
+  X, Y: Integer);
+var
+  i, rw, ph, tpp, Top, btm, l1, r1, lft: Integer;
+begin
+  try
+    lft := WorkEvent.Start * TLParameters.FrameSize;
+    for i := 0 to WorkEvent.Count - 1 do
+    begin
+      for ph := 0 to WorkEvent.Rows[i].Count - 1 do
+      begin
+        Top := myRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Top;
+        btm := myRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Bottom;
+        l1 := lft + WorkEvent.Rows[i].Phrases[ph].Rect.Left;
+        r1 := lft + WorkEvent.Rows[i].Phrases[ph].Rect.Right;
+        if (X >= l1) and (X <= r1) and (Y >= Top) and (Y <= btm) then
+        begin
+          WorkEvent.Rows[i].Phrases[ph].Select := true;
+        end;
+      end;
+    end;
+    // TLZone.TLEditor.DrawEditorDeviceEvent(WorkEvent, FButtonOptions.Image2.Canvas, MyRect, false);
+    DrawEvent(FButtonOptions.TypeEvent);
+    WorkEvent.EventSelectFalse;
+    Image2.Repaint;
+  except
+    on E: Exception do
+      WriteLog('ButtonOptions', 'TFButtonOptions.Image2MouseMove | ' +
+        E.Message);
+  end;
+end;
+
+procedure TFButtonOptions.Image2MouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
-var i, rw, ph, tpp, top, btm, l1, r1, lft : integer;
+var
+  i, rw, ph, tpp, Top, btm, l1, r1, lft: Integer;
 begin
   try
-  lft := WorkEvent.Start * TLParameters.FrameSize;
-  for i:=0 to WorkEvent.Count-1 do begin
-    for ph:=0 to WorkEvent.Rows[i].Count-1 do begin
-      top:=MyRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Top;
-      btm:=MyRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Bottom;
-      l1:=lft + WorkEvent.Rows[i].Phrases[ph].Rect.Left;
-      r1:=lft + WorkEvent.Rows[i].Phrases[ph].Rect.Right;
-      if (X>=l1) and (X<=r1) and (Y>=top) and (Y<=btm) then begin
-        WorkEvent.Rows[i].Phrases[ph].Select:=true;
+    lft := WorkEvent.Start * TLParameters.FrameSize;
+    for i := 0 to WorkEvent.Count - 1 do
+    begin
+      for ph := 0 to WorkEvent.Rows[i].Count - 1 do
+      begin
+        Top := myRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Top;
+        btm := myRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Bottom;
+        l1 := lft + WorkEvent.Rows[i].Phrases[ph].Rect.Left;
+        r1 := lft + WorkEvent.Rows[i].Phrases[ph].Rect.Right;
+        if (X >= l1) and (X <= r1) and (Y >= Top) and (Y <= btm) then
+        begin
+          WorkEvent.Rows[i].Phrases[ph].Select := true;
+          TLZone.TLEditor.UpdateEventData(WorkEvent);
+          Break;
+        end;
       end;
     end;
-  end;
-  //TLZone.TLEditor.DrawEditorDeviceEvent(WorkEvent, FButtonOptions.Image2.Canvas, MyRect, false);
-  DrawEvent(FButtonOptions.TypeEvent);
-  WorkEvent.EventSelectFalse;
-  Image2.Repaint;
+    DrawEvent(FButtonOptions.TypeEvent);
+    WorkEvent.EventSelectFalse;
+    Image2.Repaint;
   except
-    on E: Exception do WriteLog('ButtonOptions', 'TFButtonOptions.Image2MouseMove | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'TFButtonOptions.Image2MouseUp | ' + E.Message);
   end;
 end;
 
-procedure TFButtonOptions.Image2MouseUp(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-var i, rw, ph, tpp, top, btm, l1, r1, lft : integer;
+procedure TFButtonOptions.Image2MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+var
+  i, rw, ph, tpp, Top, btm, l1, r1, lft: Integer;
 begin
   try
-  lft := WorkEvent.Start * TLParameters.FrameSize;
-  for i:=0 to WorkEvent.Count-1 do begin
-    for ph:=0 to WorkEvent.Rows[i].Count-1 do begin
-      top:=MyRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Top;
-      btm:=MyRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Bottom;
-      l1:=lft + WorkEvent.Rows[i].Phrases[ph].Rect.Left;
-      r1:=lft + WorkEvent.Rows[i].Phrases[ph].Rect.Right;
-      if (X>=l1) and (X<=r1) and (Y>=top) and (Y<=btm) then begin
-        WorkEvent.Rows[i].Phrases[ph].Select:=true;
-        TLZone.TLEditor.UpdateEventData(WorkEvent);
-        Break;
+    lft := WorkEvent.Start * TLParameters.FrameSize;
+    for i := 0 to WorkEvent.Count - 1 do
+    begin
+      for ph := 0 to WorkEvent.Rows[i].Count - 1 do
+      begin
+        Top := myRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Top;
+        btm := myRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Bottom;
+        l1 := lft + WorkEvent.Rows[i].Phrases[ph].Rect.Left;
+        r1 := lft + WorkEvent.Rows[i].Phrases[ph].Rect.Right;
+        if (X >= l1) and (X <= r1) and (Y >= Top) and (Y <= btm) then
+        begin
+          WorkEvent.Rows[i].Phrases[ph].Select := true;
+          // if WorkEvent.Rows[i].Phrases[ph].Select then TLZone.TLEditor.UpdateEventData(WorkEvent);
+          // exit;
+        end;
       end;
     end;
-  end;
-  DrawEvent(FButtonOptions.TypeEvent);
-  WorkEvent.EventSelectFalse;
-  Image2.Repaint;
   except
-    on E: Exception do WriteLog('ButtonOptions', 'TFButtonOptions.Image2MouseUp | ' + E.Message);
-  end;
-end;
-
-procedure TFButtonOptions.Image2MouseDown(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-var i, rw, ph, tpp, top, btm, l1, r1, lft : integer;
-begin
-  try
-  lft := WorkEvent.Start * TLParameters.FrameSize;
-  for i:=0 to WorkEvent.Count-1 do begin
-    for ph:=0 to WorkEvent.Rows[i].Count-1 do begin
-      top:=MyRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Top;
-      btm:=MyRect.Top + WorkEvent.Rows[i].Phrases[ph].Rect.Bottom;
-      l1:=lft + WorkEvent.Rows[i].Phrases[ph].Rect.Left;
-      r1:=lft + WorkEvent.Rows[i].Phrases[ph].Rect.Right;
-      if (X>=l1) and (X<=r1) and (Y>=top) and (Y<=btm) then begin
-           WorkEvent.Rows[i].Phrases[ph].Select:=true;
-        //if WorkEvent.Rows[i].Phrases[ph].Select then TLZone.TLEditor.UpdateEventData(WorkEvent);
-        //exit;
-      end;
-    end;
-  end;
-  except
-    on E: Exception do WriteLog('ButtonOptions', 'TFButtonOptions.Image2MouseDown | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'TFButtonOptions.Image2MouseDown | ' +
+        E.Message);
   end;
 end;
 
 procedure TFButtonOptions.cbFontNameMeasureItem(Control: TWinControl;
   Index: Integer; var Height: Integer);
 begin
-  if Index=-1 then Exit;
+  if Index = -1 then
+    Exit;
   with cbFontName.Canvas do
   begin
-    Font.Name:=cbFontName.Items[Index];
-    Font.Size:=0;
-    Height:=TextHeight('Wg')+2;
+    Font.Name := cbFontName.Items[Index];
+    Font.Size := 0;
+    Height := TextHeight('Wg') + 2;
   end;
 end;
 
 procedure TFButtonOptions.cbFontNameDrawItem(Control: TWinControl;
   Index: Integer; Rect: TRect; State: TOwnerDrawState);
 begin
-  if Index=-1 then Exit;
+  if Index = -1 then
+    Exit;
   with cbFontName.Canvas do
   begin
     FillRect(Rect);
-    Font.Name:=cbFontName.Items[Index];
-    Font.Size:=0;
+    Font.Name := cbFontName.Items[Index];
+    Font.Size := 0;
     TextOut(Rect.Left, Rect.Top, cbFontName.Items[Index]);
   end;
 end;
 
 procedure TFButtonOptions.Edit1Change(Sender: TObject);
 begin
-  if trim(Edit1.Text)='' then WorkEvent.SetPhraseText('Device',inttostr(WorkEvent.ReadPhraseData('Device')))
-  else WorkEvent.SetPhraseText('Device',Trim(Edit1.text));
+  if Trim(Edit1.Text) = '' then
+    WorkEvent.SetPhraseText('Device',
+      inttostr(WorkEvent.ReadPhraseData('Device')))
+  else
+    WorkEvent.SetPhraseText('Device', Trim(Edit1.Text));
   DrawEvent(FButtonOptions.TypeEvent);
   WorkEvent.EventSelectFalse;
   Image2.Repaint;
@@ -560,8 +670,9 @@ end;
 
 procedure TFButtonOptions.cbFontNameChange(Sender: TObject);
 begin
-  if trim(cbFontName.Text)<>'' then begin
-    WorkEvent.FontName:=cbFontName.Text;
+  if Trim(cbFontName.Text) <> '' then
+  begin
+    WorkEvent.FontName := cbFontName.Text;
     DrawEvent(FButtonOptions.TypeEvent);
     WorkEvent.EventSelectFalse;
     Image2.Repaint;
@@ -570,8 +681,9 @@ end;
 
 procedure TFButtonOptions.cbMainFontChange(Sender: TObject);
 begin
-  if trim(cbMainFont.Text)<>'' then begin
-    WorkEvent.FontSize:=strtoint(cbMainFont.Text);
+  if Trim(cbMainFont.Text) <> '' then
+  begin
+    WorkEvent.FontSize := strtoint(cbMainFont.Text);
     DrawEvent(FButtonOptions.TypeEvent);
     WorkEvent.EventSelectFalse;
     Image2.Repaint;
@@ -580,8 +692,9 @@ end;
 
 procedure TFButtonOptions.cbSubFontChange(Sender: TObject);
 begin
-  if trim(cbSubFont.Text)<>'' then begin
-    WorkEvent.FontSizeSub:=StrToInt(cbSubFont.Text);
+  if Trim(cbSubFont.Text) <> '' then
+  begin
+    WorkEvent.FontSizeSub := strtoint(cbSubFont.Text);
     DrawEvent(FButtonOptions.TypeEvent);
     WorkEvent.EventSelectFalse;
     Image2.Repaint;
@@ -590,7 +703,7 @@ end;
 
 procedure TFButtonOptions.ColorBox1Change(Sender: TObject);
 begin
-  WorkEvent.FontColor:=ColorBox1.Selected;
+  WorkEvent.FontColor := ColorBox1.Selected;
   DrawEvent(FButtonOptions.TypeEvent);
   WorkEvent.EventSelectFalse;
   Image2.Repaint;
@@ -598,33 +711,42 @@ end;
 
 procedure TFButtonOptions.StringGrid1MouseUp(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-var i, j, rw, ps : integer;
-    txt, flnm : string;
+var
+  i, j, rw, ps: Integer;
+  txt, flnm: string;
 begin
   try
-  //if (TLzone.TLEditor.TypeTL=tltext) or (TLzone.TLEditor.TypeTL=tlmedia) then exit;
-  if not StringGridDoubleClick then exit;
-  rw := GridClickRow(StringGrid1,Y);
-  if rw=-1 then exit;
-  if StringGrid1.Objects[0,rw] is TGridRows then begin
-    with (StringGrid1.Objects[0,rw] as TGridRows) do begin
-      for j := 0 to StringGrid1.RowCount-1 do (StringGrid1.Objects[0,j] as TGridRows).MyCells[0].Mark:=false;
-      MyCells[0].Mark:=true;
-      MyCells[0].ColorTrue:=clRed;
-      txt := MyCells[Count-1].ReadPhrase('Template');
-      flnm := MyCells[Count-1].ReadPhrase('File');
+    // if (TLzone.TLEditor.TypeTL=tltext) or (TLzone.TLEditor.TypeTL=tlmedia) then exit;
+    if not StringGridDoubleClick then
+      Exit;
+    rw := GridClickRow(StringGrid1, Y);
+    if rw = -1 then
+      Exit;
+    if StringGrid1.Objects[0, rw] is TGridRows then
+    begin
+      with (StringGrid1.Objects[0, rw] as TGridRows) do
+      begin
+        for j := 0 to StringGrid1.RowCount - 1 do
+          (StringGrid1.Objects[0, j] as TGridRows).MyCells[0].Mark := false;
+        MyCells[0].Mark := true;
+        MyCells[0].ColorTrue := clRed;
+        txt := MyCells[Count - 1].ReadPhrase('Template');
+        flnm := MyCells[Count - 1].ReadPhrase('File');
+      end;
+      if not CheckBox1.Checked then
+        WorkEvent.SetPhraseText('Text', txt);
+      WorkEvent.SetPhraseCommand('Text', flnm);
+      Label3.Caption := flnm;
+      StringGrid1.Repaint;
+      DrawEvent(FButtonOptions.TypeEvent);
+      WorkEvent.EventSelectFalse;
+      Image2.Repaint;
     end;
-    if not CheckBox1.Checked then WorkEvent.SetPhraseText('Text',txt);
-    WorkEvent.SetPhraseCommand('Text',flnm);
-    Label3.Caption:=flnm;
-    StringGrid1.Repaint;
-    DrawEvent(FButtonOptions.TypeEvent);
-    WorkEvent.EventSelectFalse;
-    Image2.Repaint;
-  end;
-  StringGridDoubleClick := false;
+    StringGridDoubleClick := false;
   except
-    on E: Exception do WriteLog('ButtonOptions', 'TFButtonOptions.StringGrid1MouseUp | ' + E.Message);
+    on E: Exception do
+      WriteLog('ButtonOptions', 'TFButtonOptions.StringGrid1MouseUp | ' +
+        E.Message);
   end;
 end;
 
@@ -635,38 +757,47 @@ end;
 
 procedure TFButtonOptions.FormKeyPress(Sender: TObject; var Key: Char);
 begin
-     case key of
-  #13 : ModalResult := mrOk;
-  #27 : ModalResult := mrCancel;
-     end;
+  case Key of
+    #13:
+      ModalResult := mrOk;
+    #27:
+      ModalResult := mrCancel;
+  end;
 end;
 
 procedure TFButtonOptions.SpeedButton4Click(Sender: TObject);
 begin
-    case TypeEvent of
-  0 : WorkEvent.Color := DefaultColors[WorkEvent.ReadPhraseData('Device')-1];
-  1 : WorkEvent.Color := TLParameters.ForeGround;
-  2 : WorkEvent.Color := DefaultMediaColor;
-         end;
-  Image1.Canvas.Brush.Color:=WorkEvent.Color;
+  case TypeEvent of
+    0:
+      WorkEvent.Color := DefaultColors[WorkEvent.ReadPhraseData('Device') - 1];
+    1:
+      WorkEvent.Color := TLParameters.ForeGround;
+    2:
+      WorkEvent.Color := DefaultMediaColor;
+  end;
+  Image1.Canvas.Brush.Color := WorkEvent.Color;
   Image1.Canvas.FillRect(Image1.Canvas.ClipRect);
   DrawEvent(FButtonOptions.TypeEvent);
   Image2.Repaint;
 end;
 
 procedure TFButtonOptions.SpeedButton3Click(Sender: TObject);
-var  i : integer;
+var
+  i: Integer;
 begin
-  Label3.Caption:='Не установлен';
-  WorkEvent.SetPhraseCommand('Text','');
-  for i:=0 to Stringgrid1.RowCount-1 do (stringgrid1.Objects[0,i] as TGridRows).MyCells[0].Mark:=false;
-  stringgrid1.Repaint;
+  Label3.Caption := 'Не установлен';
+  WorkEvent.SetPhraseCommand('Text', '');
+  for i := 0 to StringGrid1.RowCount - 1 do
+    (StringGrid1.Objects[0, i] as TGridRows).MyCells[0].Mark := false;
+  StringGrid1.Repaint;
 end;
 
 initialization
+
 WorkEvent := TMyEvent.Create;
 
 finalization
+
 WorkEvent.FreeInstance;
 
 end.

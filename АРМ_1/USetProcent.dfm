@@ -13,7 +13,7 @@ object frSetProcent: TfrSetProcent
   OldCreateOrder = False
   StyleElements = []
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object ListBox1: TListBox
     Left = 0
     Top = 0

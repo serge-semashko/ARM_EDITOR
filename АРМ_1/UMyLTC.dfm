@@ -18,7 +18,7 @@ object frLTC: TfrLTC
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -73,8 +73,8 @@ object frLTC: TfrLTC
     object Label2: TLabel
       Left = 26
       Top = 30
-      Width = 192
-      Height = 16
+      Width = 148
+      Height = 13
       Caption = #1042#1088#1077#1084#1103' '#1089#1090#1072#1088#1090#1072' (HH:MM:SS:FF)'
       StyleElements = []
     end

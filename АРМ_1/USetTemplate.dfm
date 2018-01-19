@@ -18,7 +18,7 @@ object FrSetTemplate: TFrSetTemplate
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel2: TPanel
     Left = 0
     Top = 462

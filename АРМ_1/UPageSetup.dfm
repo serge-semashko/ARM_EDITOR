@@ -148,7 +148,7 @@ object FPage: TFPage
     object Label9: TLabel
       Left = 10
       Top = 167
-      Width = 264
+      Width = 252
       Height = 16
       Caption = #1055#1086#1089#1083#1077#1076#1086#1074#1072#1090#1077#1083#1100#1085#1086#1089#1090#1100' '#1074#1099#1074#1086#1076#1072' '#1089#1090#1088#1072#1085#1080#1094':'
       StyleElements = []
@@ -370,7 +370,7 @@ object FPage: TFPage
     object Label11: TLabel
       Left = 20
       Top = 279
-      Width = 143
+      Width = 134
       Height = 16
       Caption = #1053#1080#1078#1085#1080#1081' '#1082#1086#1083#1086#1085#1090#1080#1090#1091#1083':'
       StyleElements = []
@@ -378,7 +378,7 @@ object FPage: TFPage
     object Label10: TLabel
       Left = 20
       Top = 16
-      Width = 144
+      Width = 138
       Height = 16
       Caption = #1042#1077#1088#1093#1085#1080#1081' '#1082#1086#1083#1086#1085#1090#1080#1090#1091#1083':'
       StyleElements = []
@@ -450,7 +450,7 @@ object FPage: TFPage
       object Label3: TLabel
         Left = 160
         Top = 15
-        Width = 97
+        Width = 95
         Height = 16
         Caption = #1054#1090#1089#1090#1091#1087' '#1089#1074#1077#1088#1093#1091
         StyleElements = []
@@ -458,7 +458,7 @@ object FPage: TFPage
       object Label4: TLabel
         Left = 164
         Top = 251
-        Width = 92
+        Width = 89
         Height = 16
         Caption = #1054#1090#1089#1090#1091#1087' '#1089#1085#1080#1079#1091
         StyleElements = []
@@ -466,7 +466,7 @@ object FPage: TFPage
       object Label5: TLabel
         Left = 17
         Top = 116
-        Width = 92
+        Width = 89
         Height = 16
         Caption = #1054#1090#1089#1090#1091#1087' '#1089#1083#1077#1074#1072
         StyleElements = []
@@ -474,7 +474,7 @@ object FPage: TFPage
       object Label6: TLabel
         Left = 296
         Top = 121
-        Width = 100
+        Width = 97
         Height = 16
         Caption = #1054#1090#1089#1090#1091#1087' '#1089#1087#1088#1072#1074#1072
         StyleElements = []
@@ -482,7 +482,7 @@ object FPage: TFPage
       object Label7: TLabel
         Left = 304
         Top = 22
-        Width = 81
+        Width = 77
         Height = 32
         Alignment = taCenter
         Caption = #1042#1077#1088#1093#1085#1080#1081' '#13#10#1082#1086#1083#1086#1085#1090#1080#1090#1091#1083
@@ -491,7 +491,7 @@ object FPage: TFPage
       object Label8: TLabel
         Left = 301
         Top = 199
-        Width = 81
+        Width = 77
         Height = 32
         Alignment = taCenter
         Caption = #1053#1080#1078#1085#1080#1081#13#10#1082#1086#1083#1086#1085#1090#1080#1090#1091#1083
@@ -1015,7 +1015,7 @@ object FPage: TFPage
       object Label1: TLabel
         Left = 10
         Top = 61
-        Width = 58
+        Width = 54
         Height = 16
         Caption = #1064#1080#1088#1080#1085#1072':'
         StyleElements = []
@@ -1023,7 +1023,7 @@ object FPage: TFPage
       object Label2: TLabel
         Left = 10
         Top = 96
-        Width = 54
+        Width = 51
         Height = 16
         Caption = #1042#1099#1089#1086#1090#1072':'
         StyleElements = []

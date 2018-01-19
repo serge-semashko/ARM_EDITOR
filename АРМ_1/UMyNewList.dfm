@@ -16,7 +16,7 @@ object frNewList: TfrNewList
   StyleElements = []
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 355
@@ -109,7 +109,7 @@ object frNewList: TfrNewList
     object Label1: TLabel
       Left = 10
       Top = 7
-      Width = 119
+      Width = 117
       Height = 16
       Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1089#1087#1080#1089#1082#1072':'
       Font.Charset = DEFAULT_CHARSET

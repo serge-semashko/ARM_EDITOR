@@ -18,7 +18,7 @@ object FImportFiles: TFImportFiles
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel2: TPanel
     Left = 0
     Top = 422
@@ -291,7 +291,7 @@ object FImportFiles: TFImportFiles
       object lbStartTimeTxt: TLabel
         Left = 31
         Top = 49
-        Width = 109
+        Width = 102
         Height = 16
         Caption = #1042#1088#1077#1084#1103' '#1089#1090#1072#1088#1090#1072
         Font.Charset = DEFAULT_CHARSET

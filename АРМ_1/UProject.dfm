@@ -20,11 +20,11 @@ object FNewProject: TFNewProject
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Label1: TLabel
     Left = 1
     Top = 17
-    Width = 147
+    Width = 144
     Height = 16
     Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1087#1088#1086#1077#1082#1090#1072':'
     Font.Charset = DEFAULT_CHARSET
@@ -38,7 +38,7 @@ object FNewProject: TFNewProject
   object Label2: TLabel
     Left = 21
     Top = 53
-    Width = 129
+    Width = 124
     Height = 16
     Caption = #1044#1072#1090#1072' '#1086#1082#1086#1085#1095#1072#1085#1080#1103':'
     Font.Charset = DEFAULT_CHARSET
@@ -52,7 +52,7 @@ object FNewProject: TFNewProject
   object Label3: TLabel
     Left = 38
     Top = 89
-    Width = 113
+    Width = 105
     Height = 16
     Caption = #1050#1086#1084#1084#1077#1085#1090#1072#1088#1080#1081':'
     Font.Charset = DEFAULT_CHARSET
@@ -99,7 +99,7 @@ object FNewProject: TFNewProject
     Left = 145
     Top = 16
     Width = 315
-    Height = 24
+    Height = 21
     Ctl3D = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

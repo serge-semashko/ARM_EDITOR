@@ -22,19 +22,20 @@ var
   frLock: TfrLock;
 
 implementation
+
 uses umain, ucommon;
 
 {$R *.dfm}
 
 procedure TfrLock.Timer1Timer(Sender: TObject);
 begin
-  Timer1.Enabled:=false;
-  ModalResult:=mrOk;
+  Timer1.Enabled := false;
+  ModalResult := mrOk;
 end;
 
 procedure TfrLock.FormShow(Sender: TObject);
 begin
-  Timer1.Enabled:=true;
+  Timer1.Enabled := true;
 end;
 
 end.

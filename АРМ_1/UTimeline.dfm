@@ -19,7 +19,7 @@ object FEditTimeline: TFEditTimeline
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
-  TextHeight = 16
+  TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -34,7 +34,7 @@ object FEditTimeline: TFEditTimeline
     object Label1: TLabel
       Left = 16
       Top = 12
-      Width = 132
+      Width = 123
       Height = 16
       Caption = #1058#1080#1087' '#1090#1072#1081#1084'-'#1083#1080#1085#1080#1080':'
       Font.Charset = DEFAULT_CHARSET
@@ -135,8 +135,8 @@ object FEditTimeline: TFEditTimeline
     object Label7: TLabel
       Left = 16
       Top = -2
-      Width = 267
-      Height = 16
+      Width = 195
+      Height = 13
       Caption = #1057#1080#1084#1074#1086#1083#1100#1085#1086#1077' '#1086#1073#1086#1079#1085#1072#1095#1077#1085#1080#1077' '#1090#1072#1081#1084'-'#1083#1080#1085#1080#1080':'
       StyleElements = []
     end
@@ -154,7 +154,7 @@ object FEditTimeline: TFEditTimeline
     object Label2: TLabel
       Left = 5
       Top = 53
-      Width = 70
+      Width = 69
       Height = 16
       Caption = #1053#1072#1079#1074#1072#1085#1080#1077':'
       Font.Charset = DEFAULT_CHARSET
@@ -177,7 +177,7 @@ object FEditTimeline: TFEditTimeline
     object Label3: TLabel
       Left = 5
       Top = 84
-      Width = 159
+      Width = 152
       Height = 16
       Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1091#1089#1090#1088#1086#1081#1089#1090#1074':'
       Font.Charset = DEFAULT_CHARSET
@@ -295,8 +295,8 @@ object FEditTimeline: TFEditTimeline
     object Label4: TLabel
       Left = 0
       Top = 0
-      Width = 329
-      Height = 81
+      Width = 48
+      Height = 16
       Align = alClient
       Alignment = taCenter
       Caption = 'Label4'
@@ -308,8 +308,6 @@ object FEditTimeline: TFEditTimeline
       ParentFont = False
       Layout = tlCenter
       StyleElements = []
-      ExplicitWidth = 48
-      ExplicitHeight = 16
     end
   end
   object pnText: TPanel
@@ -325,48 +323,48 @@ object FEditTimeline: TFEditTimeline
     object Label8: TLabel
       Left = 16
       Top = 73
-      Width = 266
-      Height = 16
+      Width = 196
+      Height = 13
       Caption = #1052#1080#1085#1080#1084#1072#1083#1100#1085#1072#1103' '#1076#1083#1080#1090#1077#1083#1100#1085#1086#1089#1090#1100' '#1089#1086#1073#1099#1090#1080#1103': '
       StyleElements = []
     end
     object Label9: TLabel
       Left = 16
       Top = 138
-      Width = 96
-      Height = 16
+      Width = 71
+      Height = 13
       Caption = #1062#1074#1077#1090' '#1089#1086#1073#1099#1090#1080#1103
       StyleElements = []
     end
     object Label10: TLabel
       Left = 357
       Top = 73
-      Width = 48
-      Height = 16
+      Width = 36
+      Height = 13
       Caption = #1082#1072#1076#1088#1086#1074
       StyleElements = []
     end
     object Label11: TLabel
       Left = 16
       Top = 106
-      Width = 282
-      Height = 16
+      Width = 211
+      Height = 13
       Caption = #1059#1089#1088#1077#1076#1085#1105#1085#1085#1072#1103' '#1076#1083#1080#1090#1077#1083#1100#1085#1086#1089#1090#1100' '#1086#1076#1085#1086#1081' '#1073#1091#1082#1074#1099':'
       StyleElements = []
     end
     object Label12: TLabel
       Left = 16
       Top = 41
-      Width = 70
-      Height = 16
+      Width = 53
+      Height = 13
       Caption = #1053#1072#1079#1074#1072#1085#1080#1077':'
       StyleElements = []
     end
     object Label13: TLabel
       Left = 358
       Top = 106
-      Width = 33
-      Height = 16
+      Width = 26
+      Height = 13
       Caption = #1084#1089#1077#1082
       StyleElements = []
     end
@@ -437,16 +435,16 @@ object FEditTimeline: TFEditTimeline
     object Label5: TLabel
       Left = 16
       Top = 65
-      Width = 70
-      Height = 16
+      Width = 53
+      Height = 13
       Caption = #1053#1072#1079#1074#1072#1085#1080#1077';'
       StyleElements = []
     end
     object Label6: TLabel
       Left = 16
       Top = 98
-      Width = 124
-      Height = 16
+      Width = 89
+      Height = 13
       Caption = #1062#1074#1077#1090' '#1090#1072#1081#1084'-'#1083#1080#1085#1080#1080':'
       StyleElements = []
     end
