@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.938,=C:\АРМ РЕДАКТОРА\ADMIN\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.549,=C:\АРМ РЕДАКТОРА\ADMIN\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.365,C:\АРМ РЕДАКТОРА\ADMIN\UChose.pas=C:\АРМ РЕДАКТОРА\ADMIN\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.394,C:\АРМ РЕДАКТОРА\ADMIN\UInitForms.pas=C:\АРМ РЕДАКТОРА\ADMIN\Unit1.pas</Transaction>
-  </Transactions>
-</BorlandProject>

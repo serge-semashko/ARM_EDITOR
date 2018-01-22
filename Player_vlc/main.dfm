@@ -18,15 +18,13 @@ object MainForm: TMainForm
   PixelsPerInch = 120
   TextHeight = 17
   object Panel1: TPanel
-    Left = 672
+    Left = 144
     Top = 0
-    Width = 475
+    Width = 1003
     Height = 674
     Align = alRight
     Caption = 'Panel1'
     TabOrder = 0
-    ExplicitLeft = 678
-    ExplicitTop = -6
     object SpeedButton1: TSpeedButton
       Left = 46
       Top = 344
@@ -156,28 +154,40 @@ object MainForm: TMainForm
       Caption = 'normal'
       OnClick = SpeedButton8Click
     end
+    object SpeedButton9: TSpeedButton
+      Left = 40
+      Top = 440
+      Width = 209
+      Height = 22
+      OnClick = SpeedButton9Click
+    end
+    object SpeedButton10: TSpeedButton
+      Left = 312
+      Top = 352
+      Width = 23
+      Height = 22
+      OnClick = SpeedButton10Click
+    end
     object Memo1: TMemo
       Left = 1
       Top = 1
-      Width = 473
+      Width = 1001
       Height = 320
       Align = alTop
-      Lines.Strings = (
-        'Memo1')
       ScrollBars = ssBoth
       TabOrder = 0
-      ExplicitWidth = 497
+      ExplicitWidth = 473
     end
   end
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 672
+    Width = 144
     Height = 674
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
-    ExplicitWidth = 601
+    ExplicitWidth = 233
   end
   object StatusBar1: TStatusBar
     Left = 0

@@ -8,6 +8,7 @@ uses
   Dialogs, ExtCtrls, Menus,
   PasLibVlcUnit, vlcpl, StdCtrls, ComCtrls, Vcl.Buttons;
 
+
 const
   libvlc_state: array [0 .. 7] of string = ('libvlc_NothingSpecial',
     'libvlc_Opening', 'libvlc_Buffering', 'libvlc_Playing', 'libvlc_Paused',
@@ -38,6 +39,8 @@ type
     SpeedButton6: TSpeedButton;
     SpeedButton7: TSpeedButton;
     SpeedButton8: TSpeedButton;
+    SpeedButton9: TSpeedButton;
+    SpeedButton10: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure MenuPlayClick(Sender: TObject);
     procedure MenuFileQuitClick(Sender: TObject);
@@ -52,6 +55,8 @@ type
     procedure SpeedButton7Click(Sender: TObject);
     procedure SpeedButton8Click(Sender: TObject);
     procedure SpeedButton6Click(Sender: TObject);
+    procedure SpeedButton9Click(Sender: TObject);
+    procedure SpeedButton10Click(Sender: TObject);
   private
     p_li: libvlc_instance_t_ptr;
     p_mi: libvlc_media_player_t_ptr;
@@ -70,6 +75,7 @@ var
 implementation
 
 {$R *.dfm}
+uses PsAPI, TlHelp32;
 
 procedure TMainForm.PlayerInit();
 begin
@@ -82,6 +88,57 @@ end;
 procedure TMainForm.PlayerStop();
 begin
   Player.Stop;
+end;
+
+procedure TMainForm.SpeedButton10Click(Sender: TObject);
+
+function GetThreadsInfo(PID:Cardinal): Boolean;
+  var
+    SnapProcHandle: THandle;
+    NextProc      : Boolean;
+    ThreadEntry  : TThreadEntry32;
+    infostr : string;
+  begin
+    SnapProcHandle := CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0); //Создаем снэпшот всех существующих потоков
+    Result := (SnapProcHandle <> INVALID_HANDLE_VALUE);
+    if Result then
+      try
+            infostr := '';
+        ThreadEntry.dwSize := SizeOf(ThreadEntry);
+        NextProc := Thread32First(SnapProcHandle, ThreadEntry);//получаем первый поток
+        while NextProc do begin
+          if ThreadEntry.th32OwnerProcessID = PID then begin //проверка на принадлежность к процессу
+//              Writeln('Thread ID      ' + inttohex(ThreadEntry.th32ThreadID, 8));
+              infostr := infostr +('Thread ID      ' + inttohex(ThreadEntry.th32ThreadID, 8));
+//              Writeln('base priority  ' + inttostr(ThreadEntry.tpBasePri));
+              infostr := infostr +(' base priority  ' + inttostr(ThreadEntry.tpBasePri));
+//              Writeln('delta priority ' + inttostr(ThreadEntry.tpBasePri));
+              infostr := infostr +(' delta priority ' + inttostr(ThreadEntry.tpBasePri));
+//              Writeln('');
+                memo1.Lines.Add(infostr);
+                infostr := '';
+          end;
+          NextProc := Thread32Next(SnapProcHandle, ThreadEntry);//получаем следующий поток
+        end;
+      finally
+        CloseHandle(SnapProcHandle);//освобождаем снэпшот
+      end;
+  end;
+var
+     i : integer;
+     pc :pbyte;
+     hexstr : string;
+begin
+ pc := player.p_mi;
+ GetThreadsInfo(GetCurrentProcessId);
+ memo1.Lines.Add('- MI  ---');
+ hexstr := '';
+ for  I := 0 to 200  do begin
+   hexstr :=hexstr+ format('%x',[pc^]);
+   pc := pc+1;
+ end;
+ memo1.Lines.Add(hexstr);
+ memo1.Lines.Add('----');
 end;
 
 procedure TMainForm.SpeedButton6Click(Sender: TObject);
@@ -99,6 +156,24 @@ procedure TMainForm.SpeedButton8Click(Sender: TObject);
 begin
  Player.setRate(1);
 
+end;
+
+procedure TMainForm.SpeedButton9Click(Sender: TObject);
+ var
+  i1 : integer;
+  st, fin : double;
+  p1,pos1 : int64;
+  diff : int64;
+begin
+  st := now();
+  diff := 0;
+  for i1:= 0 to 1000000 do begin
+    if pos1<>Player.Time then diff:= diff+1;
+    pos1 :=Player.Time;
+    p1 := Player.Duration;
+  end;
+  fin := now();
+  showmessage (floattostr((fin-st)*24*3600)+' '+IntToStr(diff));
 end;
 
 procedure TMainForm.PlayerDestroy();
