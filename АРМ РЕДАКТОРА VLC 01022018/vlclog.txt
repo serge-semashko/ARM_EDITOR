@@ -1,0 +1,7 @@
+vlcCreate
+vlcInit
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState

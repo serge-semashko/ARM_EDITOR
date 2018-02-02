@@ -22,10 +22,6 @@ object Form1: TForm1
     Lines.Strings = (
       'Memo1')
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 24
-    ExplicitWidth = 185
-    ExplicitHeight = 89
   end
   object Panel1: TPanel
     Left = 448
@@ -35,9 +31,6 @@ object Form1: TForm1
     Align = alRight
     Caption = 'Panel1'
     TabOrder = 1
-    ExplicitLeft = 304
-    ExplicitTop = 48
-    ExplicitHeight = 41
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16

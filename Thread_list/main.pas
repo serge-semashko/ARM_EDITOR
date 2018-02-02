@@ -4,10 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.StdCtrls, system.json;
 
 type
   TForm1 = class(TForm)
+
     Memo1: TMemo;
     Panel1: TPanel;
     SpeedButton1: TSpeedButton;
@@ -16,14 +17,82 @@ type
     { Private declarations }
   public
     { Public declarations }
+    Function SaveToJSON: string;
   end;
 
 var
   Form1: TForm1;
+    aint: integer =1;
+    aint64: int64 = 64;
+    adbl: double = 0.456;
+    astr : string = '\\\\"""';
+    abool    :Boolean =  false;
+    acolor : tcolor = $0000FF;
+    aintarr : array[0..4] of string = ('1','2','3','4','5');
+
 
 implementation
 uses PsAPI, TlHelp32;
 {$R *.dfm}
+function Tform1.SaveToJSON: string;
+var
+  json: tjsonobject;
+    jsondata :string;
+  (*
+    ** сохранение всех переменных в строку JSONDATA в формате JSON
+  *)
+  function getVariableFromJson(varName: string;var  varvalue: variant): boolean;
+  var
+    tmpjson: tjsonvalue;
+    tmpstr : string;
+  begin
+    tmpjson := json.GetValue(varName);
+    if (tmpjson <> nil) then
+    begin
+     tmpStr:= tmpjson.Value;
+     varValue := tmpStr;
+    end;
+
+  end;
+  Procedure addVariableToJson(varName: string; varvalue: variant);
+  var
+    teststr: ansistring;
+    list: TStringList;
+    numElement: integer;
+    utf8val: string;
+    tmpjson: tjsonvalue;
+    retval: string;
+    strValue : string;
+    vType : tvarType;
+    tmpInt : integer;
+  begin
+    FormatSettings.DecimalSeparator := '.';
+    vtype:=varType(varValue);
+    strValue := varValue;
+    utf8val := stringOf(tencoding.UTF8.GetBytes(strValue));
+    json.AddPair(varName, strvalue);
+  end;
+
+begin
+  json := tjsonobject.Create;
+  try
+  except
+    on E: Exception do
+  end;
+  addVariableToJson('aint',aint);
+  getVariableFromJson('aint',tmpInt);
+  addVariableToJson('aint64',aint64);
+  getVariableFromJson('aint',tmpInt)
+  addVariableToJson('afloat',adbl);
+  addVariableToJson('abool',abool);
+  addVariableToJson('astr',astr);
+  addVariableToJson('aint',aint);
+  addVariableToJson('acolor',acolor);
+  JsonData := json.ToString;
+  json.free;
+  result := jsonData;
+end;
+
 function GetThreadsInfo(PID:Cardinal): Boolean;
   var
     SnapProcHandle: THandle;
@@ -85,7 +154,8 @@ function GetThreadsInfo(PID:Cardinal): Boolean;
 
 begin
  memo1.Clear;
- GetThreadsInfo(GetCurrentProcessId);
+ memo1.Lines.Add(SaveToJSON);
+// GetThreadsInfo(GetCurrentProcessId);
 
 end;
 
