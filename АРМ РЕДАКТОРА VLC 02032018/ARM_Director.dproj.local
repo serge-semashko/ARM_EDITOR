@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.314,=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UfrHotKeys.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.621,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit3.pas=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UStartWindow.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.695,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit3.pas=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UFrSaveProject.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.326,=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UHotKeys.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.695,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit3.dfm=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UFrSaveProject.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.621,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit3.dfm=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UStartWindow.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.369,=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\vlcpl.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.781,=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.904,=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.893,=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.121,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit1.pas=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UMyMenu.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.801,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UEditedProjects.pas=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.420,=E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.468,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UStartWindow.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.739,E:\Павел Алексеевич\АРМ РЕДАКТОРА_Arh\АРМ РЕДАКТОРА VLC\UEditedProjects.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

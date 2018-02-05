@@ -240,6 +240,7 @@ begin
    end;
    //читаем текущую скорость
    //pMediaPosition.get_Rate(pdRate);
+
    pdRate:=libvlc_media_player_get_rate(vlcplayer.p_mi);
    //уменьшаем ее в dlt раз
    //pMediaPosition.put_Rate(pdRate/dlt);

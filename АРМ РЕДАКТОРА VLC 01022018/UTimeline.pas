@@ -31,6 +31,9 @@ type
     Procedure ReadFromStream(F : tStream);
     constructor Create;
     destructor  Destroy; override;
+     Function SaveToJSON:string;
+    Function LoadFromJSON(JSONstr:string):boolean;
+
   end;
 
   TFEditTimeline = class(TForm)
@@ -122,9 +125,60 @@ function SetTypeTimeline(ps : integer) : TTypeTimeline;
 
 implementation
 
-uses UMain, UButtonOptions, uinitforms, umymessage, ugrtimelines, umyfiles;
+uses UMain, UButtonOptions, uinitforms, umymessage, ugrtimelines, umyfiles,system.json;
 
 {$R *.dfm}
+function TTimelineOptions.LoadFromJSON(JSONstr: string): boolean;
+var
+  json: tjsonobject;
+
+begin
+
+end;
+
+function TTimelineOptions.SaveToJSON: string;
+var
+  json: tjsonobject;
+  (*
+    ** сохранение всех переменных в строку JSONDATA в формате JSON
+  *)
+  function getVariableFromJson(varName: string; varvalue: string): boolean;
+  var
+    tmpjson: tjsonvalue;
+  begin
+    tmpjson := json.GetValue(varName);
+    if (tmpjson <> nil) then
+    begin
+
+    end;
+
+  end;
+  Procedure addVariableToJson(varName: string; varvalue: string);
+  var
+    teststr: ansistring;
+    list: TStringList;
+    numElement: integer;
+    utf8val: string;
+    tmpjson: tjsonvalue;
+    retval: string;
+  begin
+    utf8val := stringOf(tencoding.UTF8.GetBytes(varvalue));
+    varvalue := varvalue;
+    json.AddPair(varName, varvalue);
+    tmpjson := json.GetValue(varName);
+    tmpjson := json.GetValue(varName + ' ');
+  end;
+
+begin
+  json := tjsonobject.Create;
+  try
+  except
+    on E: Exception do
+      WriteLog('MAIN', 'TAirOneEvent.SendHTTPOneEvent | ' + E.Message);
+  end;
+  json.free;
+
+end;
 
 Procedure TFEditTimeline.DrawIcons(ttl : TTypeTimeline; Selection : integer);
 var i, clx, nx, deltx, delty, wx, hy : integer;
