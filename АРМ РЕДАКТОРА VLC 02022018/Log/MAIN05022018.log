@@ -9788,3 +9788,1509 @@
 05.02.2018 02:58:20:220 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
 05.02.2018 02:58:20:220 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
 05.02.2018 02:58:20:220 |201822133847263| UActPlayList.LoadClipsToPlayer ZoneNames.Draw
+05.02.2018 13:20:31:231 || Form1.Create Start
+05.02.2018 13:20:31:231 || 
+05.02.2018 13:20:31:231 || *****************************************************************************************
+05.02.2018 13:20:31:231 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+05.02.2018 13:20:31:231 || *************************            Время старта: 13:20:31:10             *************************
+05.02.2018 13:20:31:231 || *****************************************************************************************
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+05.02.2018 13:20:31:231 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+05.02.2018 13:20:31:231 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:20:31:231 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:31:231 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:31:231 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:31:231 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:31:231 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:31:231 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:31:231 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:20:31:231 || UMyFiles.ExecTaskOnDelete
+05.02.2018 13:20:31:231 || UInitForms.InputInSystem - Вход в систему выполнен
+05.02.2018 13:20:31:231 || UInitForms.InputInSystem
+05.02.2018 13:20:31:231 || UInitForms.InitMyStartWindow
+05.02.2018 13:20:31:231 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+05.02.2018 13:20:31:231 || UInitForms.InitMainForm
+05.02.2018 13:20:31:231 || UInitForms.InitPanelControl
+05.02.2018 13:20:31:231 || UCommon.SetMainGridPanel Start
+05.02.2018 13:20:31:231 || UCommon.SetMainGridPanel MainGrid=projects
+05.02.2018 13:20:31:231 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:20:31:231 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:20:31:231 || UCommon.SetMainGridPanel Finish
+05.02.2018 13:20:31:231 || UInitForms.InitPanelClips
+05.02.2018 13:20:31:231 || UGrid.initgrid Grid=GridClips Width=1560
+05.02.2018 13:20:31:231 || UInitForms.InitPanelPlayList
+05.02.2018 13:20:31:231 || UGrid.initgrid Grid=GridActPlayList Width=1560
+05.02.2018 13:20:31:231 || UInitForms.InitPanelProject
+05.02.2018 13:20:31:231 || UGrid.initgrid Grid=GridLists Width=1560
+05.02.2018 13:20:31:231 || UInitForms.InitPanelPrepare
+05.02.2018 13:20:31:231 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:20:31:231 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:20:31:231 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:20:31:231 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+05.02.2018 13:20:31:231 || UDrawTimelines.TNamesTL.Init Result=152
+05.02.2018 13:20:31:231 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:20:31:231 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:20:31:231 || UInitForms.InitPanelAir
+05.02.2018 13:20:31:231 || UInitForms.MyStartWindow - Вход в систему выполнен
+05.02.2018 13:20:31:231 || UCommon.loadoldproject Start
+05.02.2018 13:20:31:231 || UCommon.initnewproject Start
+05.02.2018 13:20:31:231 || UInitForms.InitPanelPrepare
+05.02.2018 13:20:31:231 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:20:31:231 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:20:31:231 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:20:31:231 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:20:31:231 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:20:31:231 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:20:31:231 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:20:31:231 || UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:20:31:231 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:20:31:231 || UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:20:31:231 || UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:20:31:231 || UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:20:31:231 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:20:31:231 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:20:31:231 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+05.02.2018 13:20:31:231 || UGrid.GridClear Row=1
+05.02.2018 13:20:31:231 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:20:31:231 || UGrid.GridClear Row=1
+05.02.2018 13:20:31:231 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+05.02.2018 13:20:31:231 || UGrid.GridClear Row=1
+05.02.2018 13:20:31:231 || UCommon.initnewproject Finish
+05.02.2018 13:20:31:231 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:20:31:231 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:20:31:231 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:20:31:231 || UCommon.loadoldproject Finish
+05.02.2018 13:20:31:231 || UInitForms.UpdatePanelAir
+05.02.2018 13:20:31:231 || Form1.Create Finish
+05.02.2018 13:20:32:232 || UInitForms.InitNewProject
+05.02.2018 13:20:32:232 || UInitForms.InitPlaylists
+05.02.2018 13:20:32:232 || UInitForms.InitEditTimeline
+05.02.2018 13:20:33:233 || UInitForms.InitFrButtonOptions
+05.02.2018 13:20:33:233 || UGrid.initgrid Grid=StringGrid1 Width=512
+05.02.2018 13:20:33:233 || UInitForms.InitImportFiles
+05.02.2018 13:20:33:233 || UInitForms.InitTextTemplates
+05.02.2018 13:20:33:233 || UInitForms.InitMyMessage
+05.02.2018 13:20:33:233 || UInitForms.InitImageTemplate
+05.02.2018 13:20:33:233 || UGrid.initgrid Grid=GridImgTemplate Width=386
+05.02.2018 13:20:33:233 || UInitForms.InitFrSetTemplate
+05.02.2018 13:20:33:233 || UInitForms.InitFrSetEventData
+05.02.2018 13:20:33:233 || UInitForms.InitFrSortGrid
+05.02.2018 13:20:33:233 || UInitForms.InitFrShiftTL
+05.02.2018 13:20:33:233 || UInitForms.InitFrShortNum
+05.02.2018 13:20:33:233 || UInitForms.InitFrMediaCopy
+05.02.2018 13:20:33:233 || UInitForms.InitFPageSetup
+05.02.2018 13:20:33:233 || UInitForms.InitfrMyPrint
+05.02.2018 13:20:33:233 || UInitForms.InitFrLTC
+05.02.2018 13:20:33:233 || UInitForms.InitfrTimeCode
+05.02.2018 13:20:33:233 || UInitForms.InitfrMyTextTemplate
+05.02.2018 13:20:33:233 || UInitForms.InitfrNewList
+05.02.2018 13:20:48:248 || UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.*
+05.02.2018 13:20:48:248 || UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:20:48:248 || Начало записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:20:48:248 || Окончание записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:20:48:248 || TForm1.FormClose
+05.02.2018 13:20:53:253 || Form1.Create Start
+05.02.2018 13:20:53:253 || 
+05.02.2018 13:20:53:253 || *****************************************************************************************
+05.02.2018 13:20:53:253 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+05.02.2018 13:20:53:253 || *************************            Время старта: 13:20:53:14             *************************
+05.02.2018 13:20:53:253 || *****************************************************************************************
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+05.02.2018 13:20:53:253 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+05.02.2018 13:20:53:253 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:20:53:253 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:53:253 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:53:253 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:53:253 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:53:253 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:53:253 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:53:253 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:20:53:253 || UMyFiles.ExecTaskOnDelete
+05.02.2018 13:20:53:253 || UInitForms.InputInSystem - Вход в систему выполнен
+05.02.2018 13:20:53:253 || UInitForms.InputInSystem
+05.02.2018 13:20:53:253 || UInitForms.InitMyStartWindow
+05.02.2018 13:20:53:253 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+05.02.2018 13:20:53:253 || UInitForms.InitMainForm
+05.02.2018 13:20:53:253 || UInitForms.InitPanelControl
+05.02.2018 13:20:53:253 || UCommon.SetMainGridPanel Start
+05.02.2018 13:20:53:253 || UCommon.SetMainGridPanel MainGrid=projects
+05.02.2018 13:20:53:253 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:20:53:253 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:20:53:253 || UCommon.SetMainGridPanel Finish
+05.02.2018 13:20:53:253 || UInitForms.InitPanelClips
+05.02.2018 13:20:53:253 || UGrid.initgrid Grid=GridClips Width=1560
+05.02.2018 13:20:53:253 || UInitForms.InitPanelPlayList
+05.02.2018 13:20:53:253 || UGrid.initgrid Grid=GridActPlayList Width=1560
+05.02.2018 13:20:53:253 || UInitForms.InitPanelProject
+05.02.2018 13:20:53:253 || UGrid.initgrid Grid=GridLists Width=1560
+05.02.2018 13:20:53:253 || UInitForms.InitPanelPrepare
+05.02.2018 13:20:53:253 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:20:53:253 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:20:53:253 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:20:53:253 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+05.02.2018 13:20:53:253 || UDrawTimelines.TNamesTL.Init Result=152
+05.02.2018 13:20:53:253 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:20:53:253 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:20:53:253 || UInitForms.InitPanelAir
+05.02.2018 13:20:53:253 || UInitForms.MyStartWindow - Вход в систему выполнен
+05.02.2018 13:20:53:253 || UCommon.loadoldproject Start
+05.02.2018 13:20:53:253 || UCommon.initnewproject Start
+05.02.2018 13:20:53:253 || UInitForms.InitPanelPrepare
+05.02.2018 13:20:53:253 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:20:53:253 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:20:53:253 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:20:53:253 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:20:53:253 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:20:53:253 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:20:53:253 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:20:53:253 || UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:20:53:253 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:20:53:253 || UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:20:53:253 || UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:20:53:253 || UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:20:53:253 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:20:53:253 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:20:53:253 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+05.02.2018 13:20:53:253 || UGrid.GridClear Row=1
+05.02.2018 13:20:53:253 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:20:53:253 || UGrid.GridClear Row=1
+05.02.2018 13:20:53:253 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+05.02.2018 13:20:53:253 || UGrid.GridClear Row=1
+05.02.2018 13:20:53:253 || UCommon.initnewproject Finish
+05.02.2018 13:20:53:253 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:20:53:253 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:20:53:253 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:20:53:253 || UCommon.loadoldproject Finish
+05.02.2018 13:20:53:253 || UInitForms.UpdatePanelAir
+05.02.2018 13:20:53:253 || Form1.Create Finish
+05.02.2018 13:20:54:254 || UInitForms.InitNewProject
+05.02.2018 13:20:54:254 || UInitForms.InitPlaylists
+05.02.2018 13:20:54:254 || UInitForms.InitEditTimeline
+05.02.2018 13:20:54:254 || UInitForms.InitFrButtonOptions
+05.02.2018 13:20:54:254 || UGrid.initgrid Grid=StringGrid1 Width=512
+05.02.2018 13:20:54:254 || UInitForms.InitImportFiles
+05.02.2018 13:20:54:254 || UInitForms.InitTextTemplates
+05.02.2018 13:20:54:254 || UInitForms.InitMyMessage
+05.02.2018 13:20:54:254 || UInitForms.InitImageTemplate
+05.02.2018 13:20:54:254 || UGrid.initgrid Grid=GridImgTemplate Width=386
+05.02.2018 13:20:54:254 || UInitForms.InitFrSetTemplate
+05.02.2018 13:20:54:254 || UInitForms.InitFrSetEventData
+05.02.2018 13:20:54:254 || UInitForms.InitFrSortGrid
+05.02.2018 13:20:54:254 || UInitForms.InitFrShiftTL
+05.02.2018 13:20:54:254 || UInitForms.InitFrShortNum
+05.02.2018 13:20:54:254 || UInitForms.InitFrMediaCopy
+05.02.2018 13:20:54:254 || UInitForms.InitFPageSetup
+05.02.2018 13:20:54:254 || UInitForms.InitfrMyPrint
+05.02.2018 13:20:54:254 || UInitForms.InitFrLTC
+05.02.2018 13:20:54:254 || UInitForms.InitfrTimeCode
+05.02.2018 13:20:54:254 || UInitForms.InitfrMyTextTemplate
+05.02.2018 13:20:54:254 || UInitForms.InitfrNewList
+05.02.2018 13:20:59:259 || UMyFiles.ReadProjectFromFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:20:59:259 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridLists
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridClips
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:20:59:259 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:21:00:20 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridImgTemplate
+05.02.2018 13:21:00:20 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:21:00:20 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.GridClear Row=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:21:00:20 |201822133847263| UMyFiles.ReadProjectFromFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:21:00:20 |201822133847263| TForm1.Label2Click Start
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+05.02.2018 13:21:00:20 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+05.02.2018 13:21:00:20 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:21:00:20 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:21:00:20 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+05.02.2018 13:21:00:20 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:21:00:20 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=-1
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:21:00:20 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+05.02.2018 13:21:00:20 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+05.02.2018 13:21:00:20 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:21:00:20 |201822133847263| UInitForms.UpdatePanelPrepare
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.initgrid Grid=GridGRTemplate Width=355
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.GridClear Row=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:21:00:20 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:21:00:20 |201822133847263| UInitForms.UpdatePanelAir
+05.02.2018 13:21:00:20 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:21:00:20 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:21:00:20 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:21:00:20 |201822133847263| TForm1.Label2Click Finish
+05.02.2018 13:21:00:20 |201822133847263| UCommon.SetMainGridPanel Start
+05.02.2018 13:21:00:20 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:21:00:20 |201822133847263| UCommon.SetMainGridPanel MainGrid=projects
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:21:00:20 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:21:00:20 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:21:00:20 |201822133847263| UCommon.SetMainGridPanel Finish
+05.02.2018 13:21:00:20 |201822133847263| UCommon.ClearClipsStatusPlay
+05.02.2018 13:21:00:20 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:21:00:20 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:21:05:25 |201822133847263| Message:WMSysCommand
+05.02.2018 13:21:50:250 |201822133847263| TForm1.sbClipsClick
+05.02.2018 13:21:50:250 |201822133847263| UCommon.SetMainGridPanel Start
+05.02.2018 13:21:50:250 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:21:50:250 |201822133847263| UCommon.SetMainGridPanel MainGrid=clips
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:21:50:250 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:21:50:250 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:21:50:250 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:21:50:250 |201822133847263| UCommon.SetMainGridPanel Finish
+05.02.2018 13:21:52:252 |201822133847263| TForm1.GridClipsMouseUp X=227 Y=130
+05.02.2018 13:21:52:252 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=227 Result=3
+05.02.2018 13:21:52:252 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=130 Result=-1
+05.02.2018 13:21:52:252 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=130 Result=-1
+05.02.2018 13:21:52:252 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=130 Result=3
+05.02.2018 13:21:52:252 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:21:52:252 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:21:54:254 |201822133847263| TForm1.GridClipsMouseUp X=217 Y=145
+05.02.2018 13:21:54:254 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=217 Result=3
+05.02.2018 13:21:54:254 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=145 Result=-1
+05.02.2018 13:21:54:254 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=145 Result=-1
+05.02.2018 13:21:54:254 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=145 Result=3
+05.02.2018 13:21:54:254 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:21:54:254 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:21:55:255 |201822133847263| TForm1.GridClipsMouseUp X=217 Y=145
+05.02.2018 13:21:55:255 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=217 Result=3
+05.02.2018 13:21:55:255 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=145 Result=-1
+05.02.2018 13:21:55:255 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=145 Result=-1
+05.02.2018 13:21:55:255 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=145 Result=3
+05.02.2018 13:21:59:259 |201822133847263| UCommon.ReloadClipInList Grid=GridClips ARow3
+05.02.2018 13:23:08:28 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:23:08:28 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:23:10:210 |201822133847263| UCommon.ReloadClipInList Grid=GridClips ARow3 File=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4v Загружен
+05.02.2018 13:23:13:213 |201822133847263| UCommon.UpdateClipDataInWinPrepare Start Grid=GridClips ClipID=201822133934657 Position=3
+05.02.2018 13:23:13:213 |201822133847263| UCommon.UpdateClipDataInWinPrepare Finish Grid=GridClips ClipID=201822133934657 Position=3
+05.02.2018 13:23:13:213 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:23:13:213 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:23:17:217 |201822133847263| TForm1.GridClipsMouseUp X=69 Y=142
+05.02.2018 13:23:17:217 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=69 Result=2
+05.02.2018 13:23:17:217 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=142 Result=-1
+05.02.2018 13:23:17:217 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=142 Result=-1
+05.02.2018 13:23:17:217 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=142 Result=3
+05.02.2018 13:23:17:217 |201822133847263| UCommon.PlayClipFromClipsList PredClipID=201822133934657
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadClipsToPlayer Start
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadClipsToPlayer - Очистка памяти
+05.02.2018 13:23:17:217 |201822133847263| TForm1.Label2Click Start
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+05.02.2018 13:23:17:217 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+05.02.2018 13:23:17:217 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+05.02.2018 13:23:17:217 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:23:17:217 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:23:17:217 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:23:17:217 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+05.02.2018 13:23:17:217 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:23:17:217 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+05.02.2018 13:23:17:217 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:23:17:217 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:23:17:217 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+05.02.2018 13:23:17:217 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:23:17:217 |201822133847263| UInitForms.UpdatePanelPrepare
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UInitForms.UpdatePanelAir
+05.02.2018 13:23:17:217 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:23:17:217 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:23:17:217 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:23:17:217 |201822133847263| TForm1.Label2Click Finish
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.GridActvePLToPanel Clips GridPlayerRow=3
+05.02.2018 13:23:17:217 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadClipsToPlayer ClearUndo
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadClipsToPlayer | Список клипов | File: G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4v | Clip: John Lennon - Woman | ClipID=201822133934657 | Start= | Duration= 01:38:49:10
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadClipsToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+05.02.2018 13:23:17:217 |201822133847263| UCommon.SetStatusClipInPlayer ClipID=201822133934657
+05.02.2018 13:23:17:217 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:23:17:217 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadClipsToPlayer SetStatusClipInPlayer ActiveClipID=201822133934657
+05.02.2018 13:23:17:217 |201822133847263| UActPlayList.LoadClipsToPlayer FileExists Name=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4v
+05.02.2018 13:23:17:217 |201822133847263| UCommon.SwitcherVideoPanels Command=0
+05.02.2018 13:23:54:254 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:23:54:254 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:23:54:254 |201822133847263| UActPlayList.LoadClipsToPlayer FileLoads Name=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4v
+05.02.2018 13:23:54:254 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=201822133934657
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:23:54:254 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:23:54:254 |201822133847263| UMyFiles.LoadClipEditingFromFile Finish ClipName=201822133934657
+05.02.2018 13:23:54:254 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+05.02.2018 13:23:54:254 |201822133847263| UPlayer.MediaSetPosition (LoadClipsToPlayer) Position= 00:00:10:00|
+05.02.2018 13:23:54:254 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:23:54:254 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:23:54:254 |201822133847263| UActPlayList.LoadClipsToPlayer SetClipTimeParameters
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:54:254 |201822133847263| UActPlayList.LoadClipsToPlayer TypeTL=tlDevice
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:54:254 |201822133847263| UActPlayList.LoadClipsToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:23:54:254 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:23:54:254 |201822133847263| UActPlayList.LoadClipsToPlayer ZoneNames.Draw
+05.02.2018 13:23:58:258 |201822133847263| UGRTimelines.TTLZone.DrawBitmap | Недостаточно памяти для обработки команды.
+
+05.02.2018 13:23:58:258 |201822133847263| UActPlayList.LoadClipsToPlayer TLZone.DrawBitmap
+05.02.2018 13:23:58:258 |201822133847263| UActPlayList.LoadClipsToPlayer TLZone.DrawTimelines
+05.02.2018 13:23:58:258 |201822133847263| UActPlayList.LoadClipsToPlayer CurrentEvents : Number=-1 Image=
+05.02.2018 13:23:58:258 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadClipsToPlayer-2
+05.02.2018 13:23:58:258 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadClipsToPlayer-2
+05.02.2018 13:23:58:258 |201822133847263| UActPlayList.LoadClipsToPlayer TemplateToScreen
+05.02.2018 13:23:58:258 |201822133847263| UActPlayList.LoadClipsToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+05.02.2018 13:23:58:258 |201822133847263| UActPlayList.LoadClipsToPlayer MyPanelAir.SetValues
+05.02.2018 13:23:58:258 |201822133847263| UActPlayList.LoadClipsToPlayer Клип загружен
+05.02.2018 13:23:58:258 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:23:58:258 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:01:21 |201822133847263| TForm1.sbClipsClick
+05.02.2018 13:24:01:21 |201822133847263| UCommon.SetMainGridPanel Start
+05.02.2018 13:24:01:21 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:24:01:21 |201822133847263| UCommon.SetInGridClipPosition Start Grid=GridClips ClipID=201822133934657
+05.02.2018 13:24:01:21 |201822133847263| UCommon.UpdateClipDataInWinPrepare Start Grid=GridClips ClipID=201822133934657 Position=3
+05.02.2018 13:24:01:21 |201822133847263| UCommon.UpdateClipDataInWinPrepare Grid=GridClips ClipID=201822133934657 GridPlayerRow=3
+05.02.2018 13:24:01:21 |201822133847263| UActPlayList.GridActvePLToPanel Clips GridPlayerRow=3
+05.02.2018 13:24:01:21 |201822133847263| UCommon.UpdateClipDataInWinPrepare Finish Grid=GridClips ClipID=201822133934657 Position=3
+05.02.2018 13:24:01:21 |201822133847263| UCommon.SetInGridClipPosition Finish Grid=GridClips ClipID=201822133934657
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4vНайден
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:24:01:21 |201822133847263| UCommon.SetMainGridPanel MainGrid=clips
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4vНайден
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:24:01:21 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:24:01:21 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:24:01:21 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:01:21 |201822133847263| UCommon.SetMainGridPanel Finish
+05.02.2018 13:24:02:22 |201822133847263| TForm1.GridClipsMouseUp X=273 Y=158
+05.02.2018 13:24:02:22 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=273 Result=3
+05.02.2018 13:24:02:22 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=158 Result=-1
+05.02.2018 13:24:02:22 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=158 Result=-1
+05.02.2018 13:24:02:22 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=158 Result=3
+05.02.2018 13:24:02:22 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:24:02:22 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:03:23 |201822133847263| TForm1.GridClipsMouseUp X=273 Y=158
+05.02.2018 13:24:03:23 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=273 Result=3
+05.02.2018 13:24:03:23 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=158 Result=-1
+05.02.2018 13:24:03:23 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=158 Result=-1
+05.02.2018 13:24:03:23 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=158 Result=3
+05.02.2018 13:24:03:23 |201822133847263| UMyFiles.SaveClipEditingToFile Start ClipName=201822133934657
+05.02.2018 13:24:03:23 |201822133847263| UMyFiles.SaveClipEditingToFile Finish ClipName=201822133934657
+05.02.2018 13:24:08:28 |201822133847263| UCommon.ReloadClipInList Grid=GridClips ARow3
+05.02.2018 13:24:37:237 || Form1.Create Start
+05.02.2018 13:24:37:237 || 
+05.02.2018 13:24:37:237 || *****************************************************************************************
+05.02.2018 13:24:37:237 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+05.02.2018 13:24:37:237 || *************************            Время старта: 13:24:37:05             *************************
+05.02.2018 13:24:37:237 || *****************************************************************************************
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+05.02.2018 13:24:37:237 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+05.02.2018 13:24:37:237 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:24:37:237 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:37:237 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:37:237 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:37:237 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:37:237 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:37:237 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:37:237 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:24:37:237 || UMyFiles.ExecTaskOnDelete
+05.02.2018 13:24:37:237 || UInitForms.InputInSystem - Вход в систему выполнен
+05.02.2018 13:24:37:237 || UInitForms.InputInSystem
+05.02.2018 13:24:37:237 || UInitForms.InitMyStartWindow
+05.02.2018 13:24:37:237 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+05.02.2018 13:24:37:237 || UInitForms.InitMainForm
+05.02.2018 13:24:37:237 || UInitForms.InitPanelControl
+05.02.2018 13:24:37:237 || UCommon.SetMainGridPanel Start
+05.02.2018 13:24:37:237 || UCommon.SetMainGridPanel MainGrid=projects
+05.02.2018 13:24:37:237 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:24:37:237 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:24:37:237 || UCommon.SetMainGridPanel Finish
+05.02.2018 13:24:37:237 || UInitForms.InitPanelClips
+05.02.2018 13:24:37:237 || UGrid.initgrid Grid=GridClips Width=1560
+05.02.2018 13:24:37:237 || UInitForms.InitPanelPlayList
+05.02.2018 13:24:37:237 || UGrid.initgrid Grid=GridActPlayList Width=1560
+05.02.2018 13:24:37:237 || UInitForms.InitPanelProject
+05.02.2018 13:24:37:237 || UGrid.initgrid Grid=GridLists Width=1560
+05.02.2018 13:24:37:237 || UInitForms.InitPanelPrepare
+05.02.2018 13:24:37:237 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:24:37:237 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:24:37:237 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:24:37:237 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+05.02.2018 13:24:37:237 || UDrawTimelines.TNamesTL.Init Result=152
+05.02.2018 13:24:37:237 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:37:237 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:37:237 || UInitForms.InitPanelAir
+05.02.2018 13:24:37:237 || UInitForms.MyStartWindow - Вход в систему выполнен
+05.02.2018 13:24:37:237 || UCommon.loadoldproject Start
+05.02.2018 13:24:37:237 || UCommon.initnewproject Start
+05.02.2018 13:24:37:237 || UInitForms.InitPanelPrepare
+05.02.2018 13:24:37:237 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:24:37:237 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:24:37:237 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:24:37:237 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:37:237 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:24:37:237 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:24:37:237 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:24:37:237 || UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:24:37:237 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:37:237 || UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:24:37:237 || UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:24:37:237 || UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:24:37:237 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:37:237 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:37:237 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+05.02.2018 13:24:37:237 || UGrid.GridClear Row=1
+05.02.2018 13:24:37:237 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:37:237 || UGrid.GridClear Row=1
+05.02.2018 13:24:37:237 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+05.02.2018 13:24:37:237 || UGrid.GridClear Row=1
+05.02.2018 13:24:37:237 || UCommon.initnewproject Finish
+05.02.2018 13:24:37:237 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:24:37:237 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:24:37:237 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:24:37:237 || UCommon.loadoldproject Finish
+05.02.2018 13:24:37:237 || UInitForms.UpdatePanelAir
+05.02.2018 13:24:37:237 || Form1.Create Finish
+05.02.2018 13:24:37:237 || UInitForms.InitNewProject
+05.02.2018 13:24:37:237 || UInitForms.InitPlaylists
+05.02.2018 13:24:37:237 || UInitForms.InitEditTimeline
+05.02.2018 13:24:38:238 || UInitForms.InitFrButtonOptions
+05.02.2018 13:24:38:238 || UGrid.initgrid Grid=StringGrid1 Width=512
+05.02.2018 13:24:38:238 || UInitForms.InitImportFiles
+05.02.2018 13:24:38:238 || UInitForms.InitTextTemplates
+05.02.2018 13:24:38:238 || UInitForms.InitMyMessage
+05.02.2018 13:24:38:238 || UInitForms.InitImageTemplate
+05.02.2018 13:24:38:238 || UGrid.initgrid Grid=GridImgTemplate Width=386
+05.02.2018 13:24:38:238 || UInitForms.InitFrSetTemplate
+05.02.2018 13:24:38:238 || UInitForms.InitFrSetEventData
+05.02.2018 13:24:38:238 || UInitForms.InitFrSortGrid
+05.02.2018 13:24:38:238 || UInitForms.InitFrShiftTL
+05.02.2018 13:24:38:238 || UInitForms.InitFrShortNum
+05.02.2018 13:24:38:238 || UInitForms.InitFrMediaCopy
+05.02.2018 13:24:38:238 || UInitForms.InitFPageSetup
+05.02.2018 13:24:38:238 || UInitForms.InitfrMyPrint
+05.02.2018 13:24:38:238 || UInitForms.InitFrLTC
+05.02.2018 13:24:38:238 || UInitForms.InitfrTimeCode
+05.02.2018 13:24:38:238 || UInitForms.InitfrMyTextTemplate
+05.02.2018 13:24:38:238 || UInitForms.InitfrNewList
+05.02.2018 13:24:40:240 || UMyFiles.ReadProjectFromFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:24:40:240 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridLists
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridClips
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridImgTemplate
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:24:40:240 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+05.02.2018 13:24:40:240 |201822133847263| UGrid.GridClear Row=1
+05.02.2018 13:24:40:240 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:24:40:240 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:24:40:240 |201822133847263| UMyFiles.ReadProjectFromFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:24:40:240 |201822133847263| TForm1.Label2Click Start
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+05.02.2018 13:24:40:240 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+05.02.2018 13:24:40:240 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+05.02.2018 13:24:40:240 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:24:40:240 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:24:40:240 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:24:40:240 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+05.02.2018 13:24:40:240 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:24:40:240 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=-1
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:40:240 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:40:240 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+05.02.2018 13:24:40:240 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:24:40:240 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:24:40:240 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+05.02.2018 13:24:40:240 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+05.02.2018 13:24:40:240 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:24:41:241 |201822133847263| UInitForms.UpdatePanelPrepare
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:41:241 |201822133847263| UGrid.initgrid Grid=GridGRTemplate Width=355
+05.02.2018 13:24:41:241 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+05.02.2018 13:24:41:241 |201822133847263| UGrid.GridClear Row=1
+05.02.2018 13:24:41:241 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:24:41:241 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:24:41:241 |201822133847263| UInitForms.UpdatePanelAir
+05.02.2018 13:24:41:241 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:41:241 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:41:241 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:41:241 |201822133847263| TForm1.Label2Click Finish
+05.02.2018 13:24:41:241 |201822133847263| UCommon.SetMainGridPanel Start
+05.02.2018 13:24:41:241 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:24:41:241 |201822133847263| UCommon.SetMainGridPanel MainGrid=projects
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:24:41:241 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:24:41:241 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:24:41:241 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:41:241 |201822133847263| UCommon.SetMainGridPanel Finish
+05.02.2018 13:24:41:241 |201822133847263| UCommon.ClearClipsStatusPlay
+05.02.2018 13:24:41:241 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:24:41:241 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:42:242 |201822133847263| TForm1.sbClipsClick
+05.02.2018 13:24:42:242 |201822133847263| UCommon.SetMainGridPanel Start
+05.02.2018 13:24:42:242 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:24:42:242 |201822133847263| UCommon.SetMainGridPanel MainGrid=clips
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:24:42:242 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:24:42:242 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:24:42:242 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:42:242 |201822133847263| UCommon.SetMainGridPanel Finish
+05.02.2018 13:24:44:244 |201822133847263| TForm1.GridClipsMouseUp X=228 Y=139
+05.02.2018 13:24:44:244 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=228 Result=3
+05.02.2018 13:24:44:244 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=139 Result=-1
+05.02.2018 13:24:44:244 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=139 Result=-1
+05.02.2018 13:24:44:244 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=139 Result=3
+05.02.2018 13:24:44:244 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:24:44:244 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:49:249 |201822133847263| TForm1.GridClipsMouseUp X=79 Y=145
+05.02.2018 13:24:49:249 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=79 Result=2
+05.02.2018 13:24:49:249 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=145 Result=-1
+05.02.2018 13:24:49:249 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=145 Result=-1
+05.02.2018 13:24:49:249 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=145 Result=3
+05.02.2018 13:24:49:249 |201822133847263| UCommon.PlayClipFromClipsList PredClipID=201822133934657
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadClipsToPlayer Start
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadClipsToPlayer - Очистка памяти
+05.02.2018 13:24:49:249 |201822133847263| TForm1.Label2Click Start
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+05.02.2018 13:24:49:249 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+05.02.2018 13:24:49:249 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+05.02.2018 13:24:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:24:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:24:49:249 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:24:49:249 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+05.02.2018 13:24:49:249 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:24:49:249 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+05.02.2018 13:24:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:24:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:24:49:249 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+05.02.2018 13:24:49:249 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:24:49:249 |201822133847263| UInitForms.UpdatePanelPrepare
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UInitForms.UpdatePanelAir
+05.02.2018 13:24:49:249 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:24:49:249 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:24:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:24:49:249 |201822133847263| TForm1.Label2Click Finish
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.GridActvePLToPanel Clips GridPlayerRow=3
+05.02.2018 13:24:49:249 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadClipsToPlayer ClearUndo
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadClipsToPlayer | Список клипов | File: V:\Video\Дюна (1984. Dune).mkv | Clip: John Lennon - Woman | ClipID=201822133934657 | Start= | Duration= 02:16:33:20
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadClipsToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+05.02.2018 13:24:49:249 |201822133847263| UCommon.SetStatusClipInPlayer ClipID=201822133934657
+05.02.2018 13:24:49:249 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:24:49:249 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadClipsToPlayer SetStatusClipInPlayer ActiveClipID=201822133934657
+05.02.2018 13:24:49:249 |201822133847263| UActPlayList.LoadClipsToPlayer FileExists Name=V:\Video\Дюна (1984. Dune).mkv
+05.02.2018 13:24:49:249 |201822133847263| UCommon.SwitcherVideoPanels Command=0
+05.02.2018 13:25:30:230 || Form1.Create Start
+05.02.2018 13:25:30:230 || 
+05.02.2018 13:25:30:230 || *****************************************************************************************
+05.02.2018 13:25:30:230 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+05.02.2018 13:25:30:230 || *************************            Время старта: 13:25:30:00             *************************
+05.02.2018 13:25:30:230 || *****************************************************************************************
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+05.02.2018 13:25:30:230 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+05.02.2018 13:25:30:230 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:25:30:230 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:30:230 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:30:230 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:30:230 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:30:230 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:30:230 || UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:30:230 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:25:30:230 || UMyFiles.ExecTaskOnDelete
+05.02.2018 13:25:30:230 || UInitForms.InputInSystem - Вход в систему выполнен
+05.02.2018 13:25:30:230 || UInitForms.InputInSystem
+05.02.2018 13:25:30:230 || UInitForms.InitMyStartWindow
+05.02.2018 13:25:30:230 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+05.02.2018 13:25:30:230 || UInitForms.InitMainForm
+05.02.2018 13:25:30:230 || UInitForms.InitPanelControl
+05.02.2018 13:25:30:230 || UCommon.SetMainGridPanel Start
+05.02.2018 13:25:30:230 || UCommon.SetMainGridPanel MainGrid=projects
+05.02.2018 13:25:30:230 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:25:30:230 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:25:30:230 || UCommon.SetMainGridPanel Finish
+05.02.2018 13:25:30:230 || UInitForms.InitPanelClips
+05.02.2018 13:25:30:230 || UGrid.initgrid Grid=GridClips Width=1560
+05.02.2018 13:25:30:230 || UInitForms.InitPanelPlayList
+05.02.2018 13:25:30:230 || UGrid.initgrid Grid=GridActPlayList Width=1560
+05.02.2018 13:25:30:230 || UInitForms.InitPanelProject
+05.02.2018 13:25:30:230 || UGrid.initgrid Grid=GridLists Width=1560
+05.02.2018 13:25:30:230 || UInitForms.InitPanelPrepare
+05.02.2018 13:25:30:230 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:25:30:230 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:25:30:230 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:25:30:230 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+05.02.2018 13:25:30:230 || UDrawTimelines.TNamesTL.Init Result=152
+05.02.2018 13:25:30:230 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:25:30:230 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:25:30:230 || UInitForms.InitPanelAir
+05.02.2018 13:25:30:230 || UInitForms.MyStartWindow - Вход в систему выполнен
+05.02.2018 13:25:30:230 || UCommon.loadoldproject Start
+05.02.2018 13:25:30:230 || UCommon.initnewproject Start
+05.02.2018 13:25:30:230 || UInitForms.InitPanelPrepare
+05.02.2018 13:25:30:230 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+05.02.2018 13:25:30:230 || UGrid.initgrid Grid=GridGRTemplate Width=349
+05.02.2018 13:25:30:230 || UDrawTimelines.TTLNames.SetDefaultFonts;
+05.02.2018 13:25:30:230 || UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:25:30:230 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:25:30:230 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:25:30:230 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:25:30:230 || UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:25:30:230 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:25:30:230 || UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:25:30:230 || UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:25:30:230 || UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:25:30:230 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:25:30:230 || UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:25:30:230 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+05.02.2018 13:25:30:230 || UGrid.GridClear Row=1
+05.02.2018 13:25:30:230 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:25:30:230 || UGrid.GridClear Row=1
+05.02.2018 13:25:30:230 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+05.02.2018 13:25:30:230 || UGrid.GridClear Row=1
+05.02.2018 13:25:30:230 || UCommon.initnewproject Finish
+05.02.2018 13:25:30:230 || UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:25:30:230 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:25:30:230 || UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:25:30:230 || UCommon.loadoldproject Finish
+05.02.2018 13:25:30:230 || UInitForms.UpdatePanelAir
+05.02.2018 13:25:30:230 || Form1.Create Finish
+05.02.2018 13:25:30:230 || UInitForms.InitNewProject
+05.02.2018 13:25:30:230 || UInitForms.InitPlaylists
+05.02.2018 13:25:30:230 || UInitForms.InitEditTimeline
+05.02.2018 13:25:31:231 || UInitForms.InitFrButtonOptions
+05.02.2018 13:25:31:231 || UGrid.initgrid Grid=StringGrid1 Width=512
+05.02.2018 13:25:31:231 || UInitForms.InitImportFiles
+05.02.2018 13:25:31:231 || UInitForms.InitTextTemplates
+05.02.2018 13:25:31:231 || UInitForms.InitMyMessage
+05.02.2018 13:25:31:231 || UInitForms.InitImageTemplate
+05.02.2018 13:25:31:231 || UGrid.initgrid Grid=GridImgTemplate Width=386
+05.02.2018 13:25:31:231 || UInitForms.InitFrSetTemplate
+05.02.2018 13:25:31:231 || UInitForms.InitFrSetEventData
+05.02.2018 13:25:31:231 || UInitForms.InitFrSortGrid
+05.02.2018 13:25:31:231 || UInitForms.InitFrShiftTL
+05.02.2018 13:25:31:231 || UInitForms.InitFrShortNum
+05.02.2018 13:25:31:231 || UInitForms.InitFrMediaCopy
+05.02.2018 13:25:31:231 || UInitForms.InitFPageSetup
+05.02.2018 13:25:31:231 || UInitForms.InitfrMyPrint
+05.02.2018 13:25:31:231 || UInitForms.InitFrLTC
+05.02.2018 13:25:31:231 || UInitForms.InitfrTimeCode
+05.02.2018 13:25:31:231 || UInitForms.InitfrMyTextTemplate
+05.02.2018 13:25:31:231 || UInitForms.InitfrNewList
+05.02.2018 13:25:32:232 || UMyFiles.ReadProjectFromFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:25:32:232 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridLists
+05.02.2018 13:25:32:232 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:32:232 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridClips
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridImgTemplate
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.GridClear Row=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:25:33:233 |201822133847263| UMyFiles.ReadProjectFromFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:25:33:233 |201822133847263| TForm1.Label2Click Start
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+05.02.2018 13:25:33:233 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+05.02.2018 13:25:33:233 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+05.02.2018 13:25:33:233 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:25:33:233 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+05.02.2018 13:25:33:233 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:25:33:233 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=-1
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+05.02.2018 13:25:33:233 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+05.02.2018 13:25:33:233 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+05.02.2018 13:25:33:233 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:25:33:233 |201822133847263| UInitForms.UpdatePanelPrepare
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.initgrid Grid=GridGRTemplate Width=355
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.GridClear Row=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:25:33:233 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+05.02.2018 13:25:33:233 |201822133847263| UInitForms.UpdatePanelAir
+05.02.2018 13:25:33:233 |201822133847263| UCommon.TemplateToScreen-2 Clear
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+05.02.2018 13:25:33:233 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Clear
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+05.02.2018 13:25:33:233 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+05.02.2018 13:25:33:233 |201822133847263| TForm1.Label2Click Finish
+05.02.2018 13:25:33:233 |201822133847263| UCommon.SetMainGridPanel Start
+05.02.2018 13:25:33:233 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:25:33:233 |201822133847263| UCommon.SetMainGridPanel MainGrid=projects
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:25:33:233 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:25:33:233 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:25:33:233 |201822133847263| UCommon.SetMainGridPanel Finish
+05.02.2018 13:25:33:233 |201822133847263| UCommon.ClearClipsStatusPlay
+05.02.2018 13:25:33:233 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:25:33:233 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:25:35:235 |201822133847263| TForm1.sbClipsClick
+05.02.2018 13:25:35:235 |201822133847263| UCommon.SetMainGridPanel Start
+05.02.2018 13:25:35:235 |201822133847263| Message:WMEraseBackGround
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:25:35:235 |201822133847263| UCommon.SetMainGridPanel MainGrid=clips
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList GridClips File=V:\Video\Дюна (1984. Dune).mkvНайден
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+05.02.2018 13:25:35:235 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+05.02.2018 13:25:35:235 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:25:35:235 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:25:35:235 |201822133847263| UCommon.SetMainGridPanel Finish
+05.02.2018 13:25:36:236 |201822133847263| TForm1.GridClipsMouseUp X=247 Y=133
+05.02.2018 13:25:36:236 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=247 Result=3
+05.02.2018 13:25:36:236 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=133 Result=-1
+05.02.2018 13:25:36:236 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=133 Result=-1
+05.02.2018 13:25:36:236 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=133 Result=3
+05.02.2018 13:25:36:236 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:25:36:236 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:25:37:237 |201822133847263| TForm1.GridClipsMouseUp X=247 Y=138
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=247 Result=3
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=138 Result=-1
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=138 Result=-1
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=138 Result=3
+05.02.2018 13:25:37:237 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:25:37:237 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:25:37:237 |201822133847263| TForm1.GridClipsMouseUp X=247 Y=138
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridColX-1 Grid=GridClips X=247 Result=3
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=138 Result=-1
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridClickRow-4 Grid=GridClips Y=138 Result=-1
+05.02.2018 13:25:37:237 |201822133847263| UGrid.GridClickRow-2 Grid=GridClips Y=138 Result=3
+05.02.2018 13:25:38:238 |201822133847263| UCommon.ReloadClipInList Grid=GridClips ARow3
+05.02.2018 13:30:59:259 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+05.02.2018 13:30:59:259 |201822133847263| UMain.StopMyTimer
+05.02.2018 13:31:01:21 |201822133847263| UCommon.ReloadClipInList Grid=GridClips ARow3 File=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4v Загружен
+05.02.2018 13:31:03:23 |201822133847263| UCommon.UpdateClipDataInWinPrepare Start Grid=GridClips ClipID=201822133934657 Position=3
+05.02.2018 13:31:03:23 |201822133847263| UCommon.UpdateClipDataInWinPrepare Finish Grid=GridClips ClipID=201822133934657 Position=3
+05.02.2018 13:31:03:23 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+05.02.2018 13:31:03:23 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+05.02.2018 13:31:27:227 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.*
+05.02.2018 13:31:27:227 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+05.02.2018 13:31:27:227 |201822133847263| Начало записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:31:27:227 |201822133847263| Окончание записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+05.02.2018 13:31:27:227 |201822133847263| TForm1.MyTextMessage UMyMessage=Сохранить текущий проект G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj? Buttons=2
+05.02.2018 13:31:41:241 |201822133847263| TFMyMessage.spbYesClick Modalresult:=mrOk
+05.02.2018 13:31:41:241 |201822133847263| UMyFiles.SaveProjectToFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:31:41:241 |201822133847263| UMyFiles.SaveGridTimelinesToStream Finish Grid=GridTimeLines
+05.02.2018 13:31:41:241 |201822133847263| UMyFiles.SaveProjectToFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+05.02.2018 13:31:41:241 |201822133847263| TForm1.FormClose

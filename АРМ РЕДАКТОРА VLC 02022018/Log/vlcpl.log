@@ -290,3 +290,123 @@ Load
 Load
 stat Stopped
 SetTime
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+Load
+stat Stopped
+SetTime
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+SetTime
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcCreate
+vlcInit
+Load
+SetTime
+Release
+stat Stopped
+Stop

@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, Buttons, StdCtrls, ExtCtrls, Grids, ImgList, ucommon,
-  UMyLists;
+  UMyLists,system.json;
 
 Type
 
@@ -27,6 +27,18 @@ Type
     Constructor Create;
     Destructor  Destroy; override;
   end;
+  TMyPhraseJSON = Class helper for TMyPhrase
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
+  TRectJSON = record helper for TRect
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
 
   TMyPhrases = Class(TObject)
     public
@@ -41,9 +53,16 @@ Type
     Constructor Create;
     Destructor  Destroy; override;
   end;
+  TMyPhrasesJSON = Class helper for TMyPhrases
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
 
   TMyEvent = Class(TObject)
     public
+    jsonstr : string;
     IDEvent : longint;
     Color : TColor;
     FontColor : TColor;
@@ -88,6 +107,13 @@ Type
     Constructor Create;
     Destructor  Destroy; override;
   end;
+
+  TMyEventJSON = Class helper for TMyEvent
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
 
 var
   EventDevice, EventText, EventMedia : TMyEvent;
@@ -301,12 +327,14 @@ begin
   end;
 end;
 
+
 procedure TMyEvent.EventSelectFalse;
 var i, j : integer;
 begin
   for i:=0 to count-1 do
     for j:=0 to Rows[i].Count-1 do Rows[i].Phrases[j].Select:=false;
 end;
+
 
 function TMyEvent.SelectionPhrase : string;
 var i, j : integer;
@@ -676,6 +704,192 @@ begin
     Rows[i] := TMyPhrases.Create;
     Rows[i].ReadFromStream(F);
   end;
+end;
+
+{ TMyEventJSON }
+
+
+function TMyEventJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
+begin
+
+end;
+
+function TMyEventJSON.LoadFromJSONstr(JSONstr: string): boolean;
+begin
+
+end;
+
+function TMyEventJSON.SaveToJSONObject: tJSONObject;
+var
+  str1 : string;
+  js1, json: tjsonobject;
+  i1, i2 : integer;
+  (*
+    ** сохранение всех переменных в строку JSONDATA в формате JSON
+  *)
+begin
+  json := tjsonobject.Create;
+  try
+//    jsonstr : string;
+//    IDEvent : longint;
+    addVariableToJson(json,'IDEvent',IDEvent);
+//    Color : TColor;
+    addVariableToJson(json,'Color',Color);
+//    FontColor : TColor;
+    addVariableToJson(json,'FontColor',FontColor);
+//    FontSize : integer;
+    addVariableToJson(json,'FontSize',FontSize);
+//    FontSizeSub : integer;
+    addVariableToJson(json,'FontSizeSub',FontSizeSub);
+//    FontName : tfontname;
+    addVariableToJson(json,'FontName',FontName);
+//    SafeZone : integer;
+    addVariableToJson(json,'SafeZone',SafeZone);
+//    Editing : boolean;
+    addVariableToJson(json,'Editing',Editing);
+//    Select : boolean;
+    addVariableToJson(json,'Select',Select);
+//    Start : longint;
+    addVariableToJson(json,'Start',Start);
+//    Finish: longint;
+    addVariableToJson(json,'Finish',Finish);
+//    Count : integer;
+    addVariableToJson(json,'Count',Count);
+//    Rows : array of TMyPhrases;
+   for i1 := Low(Rows) to High(Rows) do begin
+      json.AddPair('Rows'+IntToStr(i1),rows[i1].SaveToJSONObject)
+   end;
+  except
+    on E: Exception do
+  end;
+  result := json;
+  str1 := json.ToString;
+end;
+
+function TMyEventJSON.SaveToJSONstr: string;
+
+var
+ jsontmp : tjsonobject;
+begin
+  jsontmp := SaveToJsonObject;
+  JsonStr := jsontmp.Tostring;
+  result := jsonStr;
+end;
+
+{ TMyPhraseJSON }
+
+function TMyPhraseJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
+begin
+
+end;
+
+function TMyPhraseJSON.LoadFromJSONstr(JSONstr: string): boolean;
+begin
+
+end;
+
+function TMyPhraseJSON.SaveToJSONObject: tjsonObject;
+var
+ json : tjsonobject;
+begin
+ json := tjsonobject.create;
+ addVariableToJson(json,'Name',Name);
+//    Name     : string;
+ addVariableToJson(json,'Text',Text);
+//    Text     : string;
+ addVariableToJson(json,'Data',data);
+//    Data     : longint;
+ addVariableToJson(json,'Data',Data);
+//    Command  : widestring;
+ addVariableToJson(json,'Command',command);
+//    Tag      : integer;
+ addVariableToJson(json,'Tag',tag);
+//    Rect     : TRect;
+ json.AddPair('Rect',Rect.saveToJsonObject);
+//    Select   : boolean;
+ addVariableToJson(json,'Select',Select);
+//    WorkData : string;
+ addVariableToJson(json,'WorkData',WorkData);
+//    ListName : string;
+ addVariableToJson(json,'ListName',ListName);
+//    Maxlength: integer;
+ addVariableToJson(json,'Maxlength',Maxlength);
+//    Visible  : boolean;
+ addVariableToJson(json,'Visible',Visible);
+ result := json;
+end;
+
+function TMyPhraseJSON.SaveToJSONStr: string;
+begin
+  result := SaveToJSONObject.ToString;
+end;
+
+{ TMyPhrasesJSON }
+
+function TMyPhrasesJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
+begin
+
+end;
+
+function TMyPhrasesJSON.LoadFromJSONstr(JSONstr: string): boolean;
+begin
+
+end;
+
+function TMyPhrasesJSON.SaveToJSONObject: tjsonObject;
+var
+ json : tjsonobject;
+ i1 : integer;
+begin
+ json := tjsonobject.Create;
+ addVariableToJson(json,'Top',Top);
+//    Top : integer;
+ addVariableToJson(json,'Bottom',Bottom);
+//    Bottom : integer;
+ addVariableToJson(json,'Count',Count);
+//    Count : integer;
+   for i1 := Low(Phrases) to High(Phrases) do begin
+      json.AddPair('Phrases'+IntToStr(i1),Phrases[i1].SaveToJSONObject)
+   end;
+ result := json;
+
+end;
+
+function TMyPhrasesJSON.SaveToJSONStr: string;
+begin
+  result := SaveToJSONObject.ToString;
+end;
+
+{ TMyWventJSON }
+
+
+{ TRectJSON }
+
+function TRectJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
+begin
+
+end;
+
+function TRectJSON.LoadFromJSONstr(JSONstr: string): boolean;
+begin
+
+end;
+
+function TRectJSON.SaveToJSONObject: tjsonObject;
+var
+ json : tjsonobject;
+begin
+ json := tjsonobject.Create;
+ addVariableToJson(json,'Top',Top);
+ addVariableToJson(json,'Bottom',Bottom);
+ addVariableToJson(json,'Left',left);
+ addVariableToJson(json,'Right',Right);
+ result := json;
+end;
+
+function TRectJSON.SaveToJSONStr: string;
+begin
+  result := SaveToJSONObject.ToString;
 end;
 
 initialization

@@ -60,6 +60,23 @@ type
   old_pos : double = 0;
 implementation
 uses umain;
+//function Utf8Decode(const S: _RawByteStr): _WideStr;
+//var
+//  L: Integer;
+//  Temp: _WideStr;
+//begin
+//  Result := '';
+//  if S = '' then Exit;
+//  L := Length(S);
+//  SetLength(Temp, L);
+//
+//  L := Utf8ToUnicode(PWideChar(Temp), L + 1, _PAnsiChr(S), L);
+//  if L > 0 then
+//    SetLength(Temp, L - 1)
+//  else
+//    Temp := '';
+//  Result := Temp;
+//end;
 
 Procedure WriteLog(Logname,LogData:ansiString);overload;
 var
@@ -164,7 +181,7 @@ begin
   end;
 
   with TArgcArgs.Create([libvlc_dynamic_dll_path, '--intf=dummy',
-    '--ignore-config', '--quiet', '--no-video-title-show','--high-priority',
+    '--ignore-config', '--quiet', '--no-video-title-show','--high-priority','sout="#description"',
     '--no-video-on-top']) do
   begin
     p_li := libvlc_new(ARGC, ARGS);
@@ -193,6 +210,7 @@ var
 //  tracks : array[0..3] of libvlc_media_track_info_t;
   lw : longword;
   track_count : integer;
+  asp : PAnsiChar;
 Function CodecName(lw : longword):string;
 begin
     result := char(lw and $000000FF)+
@@ -258,7 +276,7 @@ begin
         libvlc_track_unknown : tracks := tracks+IntToStr(i1)+' track unknown; ';
         libvlc_track_audio   : begin
                                     tracks := tracks+IntToStr(i1)+' audio '+codecName(lw)+'; ';
-                                    audioCodec:=codecName(lw);
+//                                    audioCodec:=codecName(lw);
                                end;
         libvlc_track_video   : begin
                                     tracks := tracks+IntToStr(i1)+' video '+codecName(lw)+'; ';
@@ -278,7 +296,8 @@ begin
     libvlc_video_get_crop_geometry(p_mi) + '/' +
     IntToStr(libvlc_video_get_track_count(p_mi));
   TD := libvlc_video_get_track_description(p_mi);
-  if td <> nil then Aspect := Aspect + '/' + UTF8decode(TD.psz_name);
+  aspect := libvlc_video_get_aspect_ratio(p_mi);
+  asp := libvlc_video_get_aspect_ratio(p_mi);
   libvlc_media_player_pause(p_mi);
   while (libvlc_media_player_get_state(p_mi) <> libvlc_Paused) do
   begin

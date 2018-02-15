@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, Buttons, StdCtrls, ExtCtrls, Grids, UGrid, uwaiting, JPEG,
   Math, FastDIB, FastFX, FastSize, FastFiles, FConvert, FastBlend, PasLibVlcUnit,
-  vlcpl, ustartwindow, ufrhotkeys;
+  vlcpl, ustartwindow, ufrhotkeys,system.json;
 
 Type
   TGridPlayer = (grClips, grPlaylist, grDefault);
@@ -324,6 +324,8 @@ procedure updateImageTemplateGrids;
 procedure ClearClipsStatusPlay;
 procedure Delay(const AMilliseconds: Cardinal);
 Function GetHotKeysCommand(Key: Word; Shift: TShiftState) : word;
+Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
+  function getVariableFromJson(json:tjsonobject; varName: string;var  varvalue: variant): boolean;
 
 implementation
 uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimelines,
@@ -332,6 +334,38 @@ uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimeli
      UGridSort, UImageTemplate, UTextTemplate, umyprint, umediacopy, UMyTextTemplate;
 
 //function BoolToStr(Val :
+  function getVariableFromJson(json:tjsonobject; varName: string;var  varvalue: variant): boolean;
+  var
+    tmpjson: tjsonvalue;
+    tmpstr : string;
+  begin
+    tmpjson := json.GetValue(varName);
+    if (tmpjson <> nil) then
+    begin
+     tmpStr:= tmpjson.Value;
+     varValue := tmpStr;
+    end;
+
+  end;
+
+  Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
+  var
+    teststr: ansistring;
+    list: TStringList;
+    numElement: integer;
+    utf8val: string;
+    tmpjson: tjsonvalue;
+    retval: string;
+    strValue : string;
+    vType : tvarType;
+    tmpInt : integer;
+  begin
+    FormatSettings.DecimalSeparator := '.';
+    vtype:=varType(varValue);
+    strValue := varValue;
+    utf8val := stringOf(tencoding.UTF8.GetBytes(strValue));
+    json.AddPair(varName, strvalue);
+  end;
 
 Function GetHotKeysCommand(Key: Word; Shift: TShiftState) : word;
 var s, serr1, serr2 : string;

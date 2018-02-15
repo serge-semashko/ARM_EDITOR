@@ -5,13 +5,14 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, ExtCtrls, StdCtrls, Grids, ImgList, UIMGButtons, Spin, ucommon,
-  umyevents;
+  umyevents,system.json;
 
 type
   //TTypeTimeline = (tldevice, tltext, tlmedia);
 
   TTimelineOptions = Class(TObject)
     public
+    jsonStr : string;
     TypeTL : TTypeTimeline;                            //Тип тайм-линии
     NumberBmp : integer;                               //Номер рисунка для заданного типа
     Name : string;                                     //Название тайм-линии
@@ -31,7 +32,15 @@ type
     Procedure ReadFromStream(F : tStream);
     constructor Create;
     destructor  Destroy; override;
+
   end;
+  TTimelineOptionsJSON  = Class helper for TTimelineOptions
+  public
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSON(JSON:TJsonObject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
 
   TFEditTimeline = class(TForm)
     Panel1: TPanel;
@@ -125,6 +134,66 @@ implementation
 uses UMain, UButtonOptions, uinitforms, umymessage, ugrtimelines, umyfiles;
 
 {$R *.dfm}
+
+function TTimelineOptionsJSON.LoadFromJSON(JSON: TJsonObject): boolean;
+begin
+
+end;
+
+function TTimelineOptionsJSON.LoadFromJSONstr(JSONstr: string): boolean;
+var
+  json: tjsonobject;
+begin
+  json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+  result := true;
+  if json=nil  then begin
+   result := false;
+  end else LoadFromJson(json);
+
+end;
+function TTimelineOptionsJson.SaveToJSONObject: tJsonObject;
+var
+  str1 : string;
+  js1, json: tjsonobject;
+  i1, i2 : integer;
+    jsondata :string;
+  (*
+    ** сохранение всех переменных в строку JSONDATA в формате JSON
+  *)
+
+begin
+  json := tjsonobject.Create;
+  try
+       addVariableToJson(json,'TypeTL',TypeTL);
+       addVariableToJson(json,'TypeTL',TypeTL);
+       addVariableToJson(json,'NumberBmp',NumberBmp);
+       addVariableToJson(json,'Name',Name);
+       addVariableToJson(json,'UserLock',UserLock);
+       addVariableToJson(json,'IDTimeline',IDTimeline);
+       addVariableToJson(json,'CountDev',CountDev);
+       for i1  := 0  to high(DevEvents) do
+         json.AddPair('DevEvents'+IntToStr(i1),DevEvents[i1].SaveToJSONObject);
+       json.AddPair('MediaEvent',MediaEvent.SaveToJSONObject);
+       json.AddPair('TextEvent',TextEvent.SaveToJSONObject);
+       addVariableToJson(json,'MediaColor',MediaColor);
+       addVariableToJson(json,'TextColor',TextColor);
+       addVariableToJson(json,'CharDuration',CharDuration);
+       addVariableToJson(json,'EventDuration',EventDuration);
+
+  except
+    on E: Exception do
+  end;
+  result := json;
+  str1 := json.ToString;
+end;
+function TTimelineOptionsJson.SaveToJSONStr: string;
+var
+ jsontmp : tjsonobject;
+begin
+  jsontmp := SaveToJsonObject;
+  JsonStr := jsontmp.ToJSON;
+  result := jsonStr;
+end;
 
 Procedure TFEditTimeline.DrawIcons(ttl : TTypeTimeline; Selection : integer);
 var i, clx, nx, deltx, delty, wx, hy : integer;
@@ -251,7 +320,7 @@ begin
       BTNSDEVICE.Rows[i].Btns[j].Enable:=true;
     end;
   end;
-  
+
   BTNSDEVICE.Draw(cv);
 end;
 
@@ -281,6 +350,7 @@ begin
   TextEvent := tmyevent.Create;
   TextEvent.Assign(EventText);
   TextEvent.Color:=TLParameters.ForeGround;
+  jsonstr :=SaveToJSONStr;
 end;
 
 destructor TTimelineOptions.Destroy;
