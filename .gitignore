@@ -4,3 +4,5 @@
 *.dcu
 *.~*
 *.exe
+*.msi
+*.zip
