@@ -27,18 +27,6 @@ Type
     Constructor Create;
     Destructor  Destroy; override;
   end;
-  TMyPhraseJSON = Class helper for TMyPhrase
-    Function SaveToJSONStr:string;
-    Function SaveToJSONObject:tjsonObject;
-    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
-    Function LoadFromJSONstr(JSONstr:string):boolean;
-  End;
-  TRectJSON = record helper for TRect
-    Function SaveToJSONStr:string;
-    Function SaveToJSONObject:tjsonObject;
-    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
-    Function LoadFromJSONstr(JSONstr:string):boolean;
-  End;
 
   TMyPhrases = Class(TObject)
     public
@@ -107,13 +95,26 @@ Type
     Constructor Create;
     Destructor  Destroy; override;
   end;
-
+///// SSSSSSSSSS JSON
   TMyEventJSON = Class helper for TMyEvent
     Function SaveToJSONStr:string;
     Function SaveToJSONObject:tjsonObject;
     Function LoadFromJSONObject(JSON:tjsonobject):boolean;
     Function LoadFromJSONstr(JSONstr:string):boolean;
   End;
+  TMyPhraseJSON = Class helper for TMyPhrase
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
+  TRectJSON = record helper for TRect
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSONObject(JSON:tjsonobject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
+///// SSSSSSSSSS end
 
 var
   EventDevice, EventText, EventMedia : TMyEvent;
@@ -705,17 +706,64 @@ begin
     Rows[i].ReadFromStream(F);
   end;
 end;
-
+//////// SSSSSSSSSSSSSSSSSSSSSS SAVE LOAD JSON
 { TMyEventJSON }
 
 
 function TMyEventJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
+var
+ i1 : integer;
+ tmpjson : tJsonObject;
 begin
+  try
+//    IDEvent : longint;
+    IDEvent := GetVariableFromJson(json,'IDEvent',IDEvent);
+//    Color : TColor;
+    Color := GetVariableFromJson(json,'Color',Color);
+//    FontColor : TColor;
+    FontColor := GetVariableFromJson(json,'FontColor',FontColor);
+//    FontSize : integer;
+    FontSize := GetVariableFromJson(json,'FontSize',FontSize);
+//    FontSizeSub : integer;
+    FontSizeSub := GetVariableFromJson(json,'FontSizeSub',FontSizeSub);
+//    FontName : tfontname;
+    FontName := GetVariableFromJson(json,'FontName',FontName);
+//    SafeZone : integer;
+    SafeZone := GetVariableFromJson(json,'SafeZone',SafeZone);
+//    Editing : boolean;
+    Editing := GetVariableFromJson(json,'Editing',Editing);
+//    Select : boolean;
+    Select := GetVariableFromJson(json,'Select',Select);
+//    Start : longint;
+    Start := GetVariableFromJson(json,'Start',Start);
+//    Finish: longint;
+    Finish := GetVariableFromJson(json,'Finish',Finish);
+//    Count : integer;
+    Count := GetVariableFromJson(json,'Count',Count);
+   SetLength(rows,0);
+   SetLength(rows,count);
+   for i1 := 0 to count - 1  do begin
+      tmpjson :=  tjsonObject(json.GetValue('Rows'+IntToStr(i1)));
+      assert(tmpJson <> nil,'TMyEvents нет значения  '+'Rows'+IntToStr(i1));
+      if tmpjson = nil then break;
+      rows[i1] := TMyPhrases.Create;
+      rows[i1].LoadFromJSONObject(tmpjson);
+   end;
+  except
+    on E: Exception do
+  end;
 
 end;
 
 function TMyEventJSON.LoadFromJSONstr(JSONstr: string): boolean;
+var
+  json: tjsonobject;
 begin
+  json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+  result := true;
+  if json=nil  then begin
+   result := false;
+  end else LoadFromJsonObject(json);
 
 end;
 
@@ -780,12 +828,40 @@ end;
 
 function TMyPhraseJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
 begin
-
+  Name := GetVariableFromJson(json,'Name',Name);
+//    Name     : string;
+  Text := GetVariableFromJson(json,'Text',Text);
+//    Text     : string;
+  data := GetVariableFromJson(json,'Data',data);
+//    Data     : longint;
+  Data := GetVariableFromJson(json,'Data',Data);
+//    Command  : widestring;
+  command := GetVariableFromJson(json,'Command',command);
+//    Tag      : integer;
+  tag := GetVariableFromJson(json,'Tag',tag);
+//    Rect     : TRect;
+ rect.LoadFromJSONObject(TJsonObject(json.GetValue('Rect')));
+//    Select   : boolean;
+ Select := GetVariableFromJson(json,'Select',Select);
+//    WorkData : string;
+ WorkData := GetVariableFromJson(json,'WorkData',WorkData);
+//    ListName : string;
+ ListName := GetVariableFromJson(json,'ListName',ListName);
+//    Maxlength: integer;
+ Maxlength := GetVariableFromJson(json,'Maxlength',Maxlength);
+//    Visible  : boolean;
+ Visible := GetVariableFromJson(json,'Visible',Visible);
 end;
 
 function TMyPhraseJSON.LoadFromJSONstr(JSONstr: string): boolean;
+var
+  json: tjsonobject;
 begin
-
+  json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+  result := true;
+  if json=nil  then begin
+   result := false;
+  end else LoadFromJsonObject(json);
 end;
 
 function TMyPhraseJSON.SaveToJSONObject: tjsonObject;
@@ -827,13 +903,38 @@ end;
 { TMyPhrasesJSON }
 
 function TMyPhrasesJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
+var
+ tmpjson : tjsonobject;
+ i1 : integer;
 begin
+  Top := GetVariableFromJson(json,'Top',Top);
+//    Top : integer;
+  Bottom := GetVariableFromJson(json,'Bottom',Bottom);
+//    Bottom : integer;
+  Count := GetVariableFromJson(json,'Count',Count);
+//    Count : integer;
+   SetLength(Phrases,0);
+   SetLength(Phrases,count);
+   for i1 := 0 to count - 1  do begin
+
+      tmpjson :=  tjsonObject(json.GetValue('Phrases'+IntToStr(i1)));
+      assert(tmpJson <> nil,'TMyPhrasesJSON нет фразы для '+'Phrases'+IntToStr(i1));
+      if tmpjson = nil then break;
+      Phrases[i1] := TMyPhrase.Create;
+      Phrases[i1].LoadFromJSONObject(tmpjson);
+   end;
 
 end;
 
 function TMyPhrasesJSON.LoadFromJSONstr(JSONstr: string): boolean;
+var
+  json: tjsonobject;
 begin
-
+  json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+  result := true;
+  if json=nil  then begin
+   result := false;
+  end else LoadFromJsonObject(json);
 end;
 
 function TMyPhrasesJSON.SaveToJSONObject: tjsonObject;
@@ -867,12 +968,22 @@ end;
 
 function TRectJSON.LoadFromJSONObject(JSON: tjsonobject): boolean;
 begin
+ Top := GetVariableFromJson(json,'Top',Top);
+ Bottom := GetVariableFromJson(json,'Bottom',Bottom);
+ left := GetVariableFromJson(json,'Left',left);
+ Right := GetVariableFromJson(json,'Right',Right);
 
 end;
 
 function TRectJSON.LoadFromJSONstr(JSONstr: string): boolean;
+var
+  json: tjsonobject;
 begin
-
+  json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+  result := true;
+  if json=nil  then begin
+   result := false;
+  end else LoadFromJsonObject(json);
 end;
 
 function TRectJSON.SaveToJSONObject: tjsonObject;
@@ -891,7 +1002,7 @@ function TRectJSON.SaveToJSONStr: string;
 begin
   result := SaveToJSONObject.ToString;
 end;
-
+///// SSSSSSSSSSSSSSSSSSSSSSSSSSSSS end
 initialization
 //Событие тайм-линии устройств
 EventDevice := TMyEvent.Create;

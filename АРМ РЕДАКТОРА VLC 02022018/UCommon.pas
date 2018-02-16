@@ -325,7 +325,7 @@ procedure ClearClipsStatusPlay;
 procedure Delay(const AMilliseconds: Cardinal);
 Function GetHotKeysCommand(Key: Word; Shift: TShiftState) : word;
 Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
-  function getVariableFromJson(json:tjsonobject; varName: string;var  varvalue: variant): boolean;
+  Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
 
 implementation
 uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimelines,
@@ -334,18 +334,19 @@ uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimeli
      UGridSort, UImageTemplate, UTextTemplate, umyprint, umediacopy, UMyTextTemplate;
 
 //function BoolToStr(Val :
-  function getVariableFromJson(json:tjsonobject; varName: string;var  varvalue: variant): boolean;
+  Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
   var
     tmpjson: tjsonvalue;
     tmpstr : string;
+    res : variant;
   begin
     tmpjson := json.GetValue(varName);
     if (tmpjson <> nil) then
     begin
      tmpStr:= tmpjson.Value;
-     varValue := tmpStr;
+//     varValue := tmpStr;
+     result :=tmpstr;
     end;
-
   end;
 
   Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);

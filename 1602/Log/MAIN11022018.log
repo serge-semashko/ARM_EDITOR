@@ -1,0 +1,2269 @@
+11.02.2018 00:06:53:253 || Form1.Create Start
+11.02.2018 00:06:53:253 || 
+11.02.2018 00:06:53:253 || *****************************************************************************************
+11.02.2018 00:06:53:253 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:06:53:253 || *************************            Время старта: 00:06:53:14             *************************
+11.02.2018 00:06:53:253 || *****************************************************************************************
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:06:53:253 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:06:53:253 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:06:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:06:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:06:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:06:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:06:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:06:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:06:53:253 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:06:53:253 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:06:53:253 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:06:53:253 || UInitForms.InputInSystem
+11.02.2018 00:06:53:253 || UInitForms.InitMyStartWindow
+11.02.2018 00:06:53:253 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:06:53:253 || UInitForms.InitMainForm
+11.02.2018 00:06:53:253 || UInitForms.InitPanelControl
+11.02.2018 00:06:53:253 || UCommon.SetMainGridPanel Start
+11.02.2018 00:06:53:253 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:06:53:253 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:06:53:253 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:06:53:253 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:06:53:253 || UInitForms.InitPanelClips
+11.02.2018 00:06:53:253 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:06:53:253 || UInitForms.InitPanelPlayList
+11.02.2018 00:06:53:253 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:06:53:253 || UInitForms.InitPanelProject
+11.02.2018 00:06:53:253 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:06:53:253 || UInitForms.InitPanelPrepare
+11.02.2018 00:06:53:253 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:06:53:253 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:06:53:253 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:06:53:253 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:06:53:253 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:06:53:253 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:06:53:253 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:06:53:253 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:06:53:253 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:06:53:253 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:06:53:253 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:06:53:253 || UInitForms.InitPanelAir
+11.02.2018 00:06:53:253 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:06:53:253 || UCommon.loadoldproject Start
+11.02.2018 00:06:53:253 || UCommon.initnewproject Start
+11.02.2018 00:08:09:29 || Form1.Create Start
+11.02.2018 00:08:09:29 || 
+11.02.2018 00:08:09:29 || *****************************************************************************************
+11.02.2018 00:08:09:29 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:08:09:29 || *************************            Время старта: 00:08:09:17             *************************
+11.02.2018 00:08:09:29 || *****************************************************************************************
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:08:09:29 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:08:09:29 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:08:09:29 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:08:09:29 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:08:09:29 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:08:09:29 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:08:09:29 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:08:09:29 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:08:09:29 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:08:09:29 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:08:09:29 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:08:09:29 || UInitForms.InputInSystem
+11.02.2018 00:08:09:29 || UInitForms.InitMyStartWindow
+11.02.2018 00:08:09:29 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:08:09:29 || UInitForms.InitMainForm
+11.02.2018 00:08:09:29 || UInitForms.InitPanelControl
+11.02.2018 00:08:09:29 || UCommon.SetMainGridPanel Start
+11.02.2018 00:08:09:29 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:08:09:29 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:08:09:29 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:08:09:29 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:08:09:29 || UInitForms.InitPanelClips
+11.02.2018 00:08:09:29 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:08:09:29 || UInitForms.InitPanelPlayList
+11.02.2018 00:08:09:29 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:08:09:29 || UInitForms.InitPanelProject
+11.02.2018 00:08:09:29 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:08:09:29 || UInitForms.InitPanelPrepare
+11.02.2018 00:08:09:29 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:08:09:29 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:08:09:29 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:08:09:29 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:08:09:29 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:08:09:29 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:08:09:29 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:08:09:29 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:08:09:29 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:08:09:29 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:08:09:29 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:08:09:29 || UInitForms.InitPanelAir
+11.02.2018 00:08:09:29 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:08:09:29 || UCommon.loadoldproject Start
+11.02.2018 00:08:09:29 || UCommon.initnewproject Start
+11.02.2018 00:10:22:222 || Form1.Create Start
+11.02.2018 00:10:22:222 || 
+11.02.2018 00:10:22:222 || *****************************************************************************************
+11.02.2018 00:10:22:222 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:10:22:222 || *************************            Время старта: 00:10:22:22             *************************
+11.02.2018 00:10:22:222 || *****************************************************************************************
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:10:22:222 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:10:22:222 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:10:22:222 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:22:222 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:22:222 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:22:222 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:22:222 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:22:222 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:22:222 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:10:22:222 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:10:22:222 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:10:22:222 || UInitForms.InputInSystem
+11.02.2018 00:10:22:222 || UInitForms.InitMyStartWindow
+11.02.2018 00:10:22:222 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:10:22:222 || UInitForms.InitMainForm
+11.02.2018 00:10:22:222 || UInitForms.InitPanelControl
+11.02.2018 00:10:22:222 || UCommon.SetMainGridPanel Start
+11.02.2018 00:10:22:222 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:10:22:222 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:10:22:222 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:10:22:222 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:10:22:222 || UInitForms.InitPanelClips
+11.02.2018 00:10:22:222 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:10:22:222 || UInitForms.InitPanelPlayList
+11.02.2018 00:10:22:222 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:10:22:222 || UInitForms.InitPanelProject
+11.02.2018 00:10:22:222 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:10:23:223 || UInitForms.InitPanelPrepare
+11.02.2018 00:10:23:223 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:10:23:223 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:10:23:223 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:10:23:223 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:10:23:223 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:10:23:223 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:10:23:223 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:10:23:223 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:10:23:223 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:10:23:223 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:10:23:223 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:10:23:223 || UInitForms.InitPanelAir
+11.02.2018 00:10:23:223 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:10:23:223 || UCommon.loadoldproject Start
+11.02.2018 00:10:23:223 || UCommon.initnewproject Start
+11.02.2018 00:10:40:240 || Form1.Create Start
+11.02.2018 00:10:40:240 || 
+11.02.2018 00:10:40:240 || *****************************************************************************************
+11.02.2018 00:10:40:240 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:10:40:240 || *************************            Время старта: 00:10:40:07             *************************
+11.02.2018 00:10:40:240 || *****************************************************************************************
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:10:40:240 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:10:40:240 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:10:40:240 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:40:240 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:40:240 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:40:240 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:40:240 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:40:240 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:10:40:240 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:10:40:240 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:10:40:240 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:10:40:240 || UInitForms.InputInSystem
+11.02.2018 00:10:40:240 || UInitForms.InitMyStartWindow
+11.02.2018 00:10:40:240 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:10:40:240 || UInitForms.InitMainForm
+11.02.2018 00:10:40:240 || UInitForms.InitPanelControl
+11.02.2018 00:10:40:240 || UCommon.SetMainGridPanel Start
+11.02.2018 00:10:40:240 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:10:40:240 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:10:40:240 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:10:40:240 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:10:40:240 || UInitForms.InitPanelClips
+11.02.2018 00:10:40:240 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:10:40:240 || UInitForms.InitPanelPlayList
+11.02.2018 00:10:40:240 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:10:40:240 || UInitForms.InitPanelProject
+11.02.2018 00:10:40:240 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:10:40:240 || UInitForms.InitPanelPrepare
+11.02.2018 00:10:40:240 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:10:40:240 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:10:40:240 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:10:40:240 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:10:40:240 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:10:40:240 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:10:40:240 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:10:40:240 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:10:40:240 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:10:40:240 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:10:40:240 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:10:40:240 || UInitForms.InitPanelAir
+11.02.2018 00:10:40:240 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:10:40:240 || UCommon.loadoldproject Start
+11.02.2018 00:10:40:240 || UCommon.initnewproject Start
+11.02.2018 00:13:02:22 || Form1.Create Start
+11.02.2018 00:13:02:22 || 
+11.02.2018 00:13:02:22 || *****************************************************************************************
+11.02.2018 00:13:02:22 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:13:02:22 || *************************            Время старта: 00:13:02:10             *************************
+11.02.2018 00:13:02:22 || *****************************************************************************************
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:13:02:22 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:13:02:22 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:13:02:22 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:02:22 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:02:22 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:02:22 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:02:22 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:02:22 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:02:22 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:13:02:22 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:13:02:22 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:13:02:22 || UInitForms.InputInSystem
+11.02.2018 00:13:02:22 || UInitForms.InitMyStartWindow
+11.02.2018 00:13:02:22 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:13:02:22 || UInitForms.InitMainForm
+11.02.2018 00:13:02:22 || UInitForms.InitPanelControl
+11.02.2018 00:13:02:22 || UCommon.SetMainGridPanel Start
+11.02.2018 00:13:02:22 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:13:02:22 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:13:02:22 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:13:02:22 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:13:02:22 || UInitForms.InitPanelClips
+11.02.2018 00:13:02:22 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:13:02:22 || UInitForms.InitPanelPlayList
+11.02.2018 00:13:02:22 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:13:02:22 || UInitForms.InitPanelProject
+11.02.2018 00:13:02:22 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:13:02:22 || UInitForms.InitPanelPrepare
+11.02.2018 00:13:02:22 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:13:02:22 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:13:02:22 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:13:02:22 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:13:02:22 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:13:02:22 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:13:02:22 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:13:02:22 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:13:02:22 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:13:02:22 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:13:02:22 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:13:02:22 || UInitForms.InitPanelAir
+11.02.2018 00:13:02:22 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:13:02:22 || UCommon.loadoldproject Start
+11.02.2018 00:13:02:22 || UCommon.initnewproject Start
+11.02.2018 00:13:18:218 || Form1.Create Start
+11.02.2018 00:13:18:218 || 
+11.02.2018 00:13:18:218 || *****************************************************************************************
+11.02.2018 00:13:18:218 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:13:18:218 || *************************            Время старта: 00:13:18:09             *************************
+11.02.2018 00:13:18:218 || *****************************************************************************************
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:13:18:218 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:13:18:218 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:13:18:218 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:18:218 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:18:218 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:18:218 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:18:218 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:18:218 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:13:18:218 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:13:18:218 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:13:18:218 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:13:18:218 || UInitForms.InputInSystem
+11.02.2018 00:13:18:218 || UInitForms.InitMyStartWindow
+11.02.2018 00:13:18:218 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:13:18:218 || UInitForms.InitMainForm
+11.02.2018 00:13:18:218 || UInitForms.InitPanelControl
+11.02.2018 00:13:18:218 || UCommon.SetMainGridPanel Start
+11.02.2018 00:13:18:218 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:13:18:218 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:13:18:218 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:13:18:218 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:13:18:218 || UInitForms.InitPanelClips
+11.02.2018 00:13:18:218 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:13:18:218 || UInitForms.InitPanelPlayList
+11.02.2018 00:13:18:218 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:13:18:218 || UInitForms.InitPanelProject
+11.02.2018 00:13:18:218 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:13:18:218 || UInitForms.InitPanelPrepare
+11.02.2018 00:13:18:218 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:13:18:218 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:13:18:218 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:13:18:218 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:13:18:218 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:13:18:218 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:13:18:218 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:13:18:218 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:13:18:218 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:13:18:218 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:13:18:218 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:13:18:218 || UInitForms.InitPanelAir
+11.02.2018 00:13:18:218 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:13:18:218 || UCommon.loadoldproject Start
+11.02.2018 00:13:18:218 || UCommon.initnewproject Start
+11.02.2018 00:14:14:214 || Form1.Create Start
+11.02.2018 00:14:14:214 || 
+11.02.2018 00:14:14:214 || *****************************************************************************************
+11.02.2018 00:14:14:214 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:14:14:214 || *************************            Время старта: 00:14:14:02             *************************
+11.02.2018 00:14:14:214 || *****************************************************************************************
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:14:14:214 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:14:14:214 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:14:14:214 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:14:214 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:14:214 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:14:214 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:14:214 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:14:214 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:14:214 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:14:14:214 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:14:14:214 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:14:14:214 || UInitForms.InputInSystem
+11.02.2018 00:14:14:214 || UInitForms.InitMyStartWindow
+11.02.2018 00:14:14:214 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:14:14:214 || UInitForms.InitMainForm
+11.02.2018 00:14:14:214 || UInitForms.InitPanelControl
+11.02.2018 00:14:14:214 || UCommon.SetMainGridPanel Start
+11.02.2018 00:14:14:214 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:14:14:214 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:14:14:214 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:14:14:214 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:14:14:214 || UInitForms.InitPanelClips
+11.02.2018 00:14:14:214 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:14:14:214 || UInitForms.InitPanelPlayList
+11.02.2018 00:14:14:214 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:14:14:214 || UInitForms.InitPanelProject
+11.02.2018 00:14:14:214 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:14:14:214 || UInitForms.InitPanelPrepare
+11.02.2018 00:14:14:214 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:14:14:214 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:14:14:214 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:14:14:214 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:14:14:214 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:14:14:214 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:14:14:214 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:14:14:214 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:14:14:214 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:14:14:214 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:14:14:214 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:14:14:214 || UInitForms.InitPanelAir
+11.02.2018 00:14:14:214 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:14:14:214 || UCommon.loadoldproject Start
+11.02.2018 00:14:14:214 || UCommon.initnewproject Start
+11.02.2018 00:14:52:252 || Form1.Create Start
+11.02.2018 00:14:52:252 || 
+11.02.2018 00:14:52:252 || *****************************************************************************************
+11.02.2018 00:14:52:252 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:14:52:252 || *************************            Время старта: 00:14:52:14             *************************
+11.02.2018 00:14:52:252 || *****************************************************************************************
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:14:52:252 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:14:52:252 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:14:52:252 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:52:252 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:52:252 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:52:252 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:52:252 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:52:252 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:14:52:252 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:14:52:252 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:14:52:252 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:14:52:252 || UInitForms.InputInSystem
+11.02.2018 00:14:52:252 || UInitForms.InitMyStartWindow
+11.02.2018 00:14:52:252 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:14:52:252 || UInitForms.InitMainForm
+11.02.2018 00:14:52:252 || UInitForms.InitPanelControl
+11.02.2018 00:14:52:252 || UCommon.SetMainGridPanel Start
+11.02.2018 00:14:52:252 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:14:52:252 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:14:52:252 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:14:52:252 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:14:52:252 || UInitForms.InitPanelClips
+11.02.2018 00:14:52:252 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:14:52:252 || UInitForms.InitPanelPlayList
+11.02.2018 00:14:52:252 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:14:52:252 || UInitForms.InitPanelProject
+11.02.2018 00:14:52:252 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:14:52:252 || UInitForms.InitPanelPrepare
+11.02.2018 00:14:52:252 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:14:52:252 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:14:52:252 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:14:52:252 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:14:52:252 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:14:52:252 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:14:52:252 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:14:52:252 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:14:52:252 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:14:52:252 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:14:52:252 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:14:52:252 || UInitForms.InitPanelAir
+11.02.2018 00:14:52:252 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:14:52:252 || UCommon.loadoldproject Start
+11.02.2018 00:14:52:252 || UCommon.initnewproject Start
+11.02.2018 00:15:58:258 || Form1.Create Start
+11.02.2018 00:15:58:258 || 
+11.02.2018 00:15:58:258 || *****************************************************************************************
+11.02.2018 00:15:58:258 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:15:58:258 || *************************            Время старта: 00:15:58:17             *************************
+11.02.2018 00:15:58:258 || *****************************************************************************************
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:15:58:258 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:15:58:258 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:15:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:15:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:15:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:15:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:15:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:15:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:15:58:258 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:15:58:258 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:15:58:258 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:15:58:258 || UInitForms.InputInSystem
+11.02.2018 00:15:58:258 || UInitForms.InitMyStartWindow
+11.02.2018 00:15:58:258 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:15:58:258 || UInitForms.InitMainForm
+11.02.2018 00:15:58:258 || UInitForms.InitPanelControl
+11.02.2018 00:15:58:258 || UCommon.SetMainGridPanel Start
+11.02.2018 00:15:58:258 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:15:58:258 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:15:58:258 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:15:58:258 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:15:58:258 || UInitForms.InitPanelClips
+11.02.2018 00:15:58:258 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:15:58:258 || UInitForms.InitPanelPlayList
+11.02.2018 00:15:58:258 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:15:58:258 || UInitForms.InitPanelProject
+11.02.2018 00:15:58:258 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:15:58:258 || UInitForms.InitPanelPrepare
+11.02.2018 00:15:58:258 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:15:58:258 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:15:58:258 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:15:58:258 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:15:58:258 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:15:58:258 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:15:58:258 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:15:58:258 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:15:58:258 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:15:58:258 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:15:58:258 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:15:58:258 || UInitForms.InitPanelAir
+11.02.2018 00:15:58:258 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:15:58:258 || UCommon.loadoldproject Start
+11.02.2018 00:15:58:258 || UCommon.initnewproject Start
+11.02.2018 00:20:13:213 || Form1.Create Start
+11.02.2018 00:20:13:213 || 
+11.02.2018 00:20:13:213 || *****************************************************************************************
+11.02.2018 00:20:13:213 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:20:13:213 || *************************            Время старта: 00:20:13:12             *************************
+11.02.2018 00:20:13:213 || *****************************************************************************************
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:20:13:213 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:20:13:213 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:20:13:213 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:13:213 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:13:213 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:13:213 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:13:213 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:13:213 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:13:213 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:20:13:213 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:20:13:213 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:20:13:213 || UInitForms.InputInSystem
+11.02.2018 00:20:13:213 || UInitForms.InitMyStartWindow
+11.02.2018 00:20:13:213 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:20:13:213 || UInitForms.InitMainForm
+11.02.2018 00:20:13:213 || UInitForms.InitPanelControl
+11.02.2018 00:20:13:213 || UCommon.SetMainGridPanel Start
+11.02.2018 00:20:13:213 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:20:13:213 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:20:13:213 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:20:13:213 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:20:13:213 || UInitForms.InitPanelClips
+11.02.2018 00:20:13:213 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:20:13:213 || UInitForms.InitPanelPlayList
+11.02.2018 00:20:13:213 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:20:13:213 || UInitForms.InitPanelProject
+11.02.2018 00:20:13:213 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:20:13:213 || UInitForms.InitPanelPrepare
+11.02.2018 00:20:13:213 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:20:13:213 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:20:13:213 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:20:13:213 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:20:13:213 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:20:13:213 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:20:13:213 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:20:13:213 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:20:13:213 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:20:13:213 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:20:13:213 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:20:13:213 || UInitForms.InitPanelAir
+11.02.2018 00:20:13:213 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:20:13:213 || UCommon.loadoldproject Start
+11.02.2018 00:20:13:213 || UCommon.initnewproject Start
+11.02.2018 00:20:43:243 || Form1.Create Start
+11.02.2018 00:20:43:243 || 
+11.02.2018 00:20:43:243 || *****************************************************************************************
+11.02.2018 00:20:43:243 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:20:43:243 || *************************            Время старта: 00:20:43:11             *************************
+11.02.2018 00:20:43:243 || *****************************************************************************************
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:20:43:243 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:20:43:243 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:20:43:243 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:43:243 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:43:243 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:43:243 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:43:243 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:43:243 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:20:43:243 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:20:43:243 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:20:43:243 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:20:43:243 || UInitForms.InputInSystem
+11.02.2018 00:20:43:243 || UInitForms.InitMyStartWindow
+11.02.2018 00:20:43:243 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:20:43:243 || UInitForms.InitMainForm
+11.02.2018 00:20:43:243 || UInitForms.InitPanelControl
+11.02.2018 00:20:43:243 || UCommon.SetMainGridPanel Start
+11.02.2018 00:20:43:243 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:20:43:243 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:20:43:243 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:20:43:243 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:20:43:243 || UInitForms.InitPanelClips
+11.02.2018 00:20:43:243 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:20:43:243 || UInitForms.InitPanelPlayList
+11.02.2018 00:20:43:243 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:20:43:243 || UInitForms.InitPanelProject
+11.02.2018 00:20:43:243 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:20:43:243 || UInitForms.InitPanelPrepare
+11.02.2018 00:20:43:243 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:20:43:243 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:20:43:243 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:20:43:243 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:20:43:243 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:20:43:243 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:20:43:243 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:20:43:243 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:20:43:243 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:20:43:243 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:20:43:243 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:20:43:243 || UInitForms.InitPanelAir
+11.02.2018 00:20:43:243 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:20:43:243 || UCommon.loadoldproject Start
+11.02.2018 00:20:43:243 || UCommon.initnewproject Start
+11.02.2018 00:21:53:253 || Form1.Create Start
+11.02.2018 00:21:53:253 || 
+11.02.2018 00:21:53:253 || *****************************************************************************************
+11.02.2018 00:21:53:253 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:21:53:253 || *************************            Время старта: 00:21:53:15             *************************
+11.02.2018 00:21:53:253 || *****************************************************************************************
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:21:53:253 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:21:53:253 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:21:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:21:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:21:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:21:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:21:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:21:53:253 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:21:53:253 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:21:53:253 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:21:53:253 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:21:53:253 || UInitForms.InputInSystem
+11.02.2018 00:21:53:253 || UInitForms.InitMyStartWindow
+11.02.2018 00:21:53:253 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:21:53:253 || UInitForms.InitMainForm
+11.02.2018 00:21:53:253 || UInitForms.InitPanelControl
+11.02.2018 00:21:53:253 || UCommon.SetMainGridPanel Start
+11.02.2018 00:21:53:253 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:21:53:253 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:21:53:253 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:21:53:253 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:21:53:253 || UInitForms.InitPanelClips
+11.02.2018 00:21:53:253 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:21:53:253 || UInitForms.InitPanelPlayList
+11.02.2018 00:21:53:253 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:21:53:253 || UInitForms.InitPanelProject
+11.02.2018 00:21:53:253 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:21:53:253 || UInitForms.InitPanelPrepare
+11.02.2018 00:21:53:253 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:21:53:253 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:21:53:253 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:21:53:253 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:21:53:253 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:21:53:253 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:21:53:253 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:21:53:253 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:21:53:253 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:21:53:253 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:21:53:253 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:21:53:253 || UInitForms.InitPanelAir
+11.02.2018 00:21:53:253 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:21:53:253 || UCommon.loadoldproject Start
+11.02.2018 00:21:53:253 || UCommon.initnewproject Start
+11.02.2018 00:23:08:28 || Form1.Create Start
+11.02.2018 00:23:08:28 || 
+11.02.2018 00:23:08:28 || *****************************************************************************************
+11.02.2018 00:23:08:28 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:23:08:28 || *************************            Время старта: 00:23:08:21             *************************
+11.02.2018 00:23:08:28 || *****************************************************************************************
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:23:08:28 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:23:08:28 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:23:08:28 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:23:08:28 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:23:08:28 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:23:08:28 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:23:08:28 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:23:08:28 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:23:08:28 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:23:08:28 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:23:08:28 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:23:08:28 || UInitForms.InputInSystem
+11.02.2018 00:23:08:28 || UInitForms.InitMyStartWindow
+11.02.2018 00:23:08:28 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:23:08:28 || UInitForms.InitMainForm
+11.02.2018 00:23:08:28 || UInitForms.InitPanelControl
+11.02.2018 00:23:08:28 || UCommon.SetMainGridPanel Start
+11.02.2018 00:23:08:28 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:23:08:28 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:23:08:28 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:23:08:28 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:23:08:28 || UInitForms.InitPanelClips
+11.02.2018 00:23:08:28 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:23:08:28 || UInitForms.InitPanelPlayList
+11.02.2018 00:23:08:28 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:23:08:28 || UInitForms.InitPanelProject
+11.02.2018 00:23:08:28 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:23:08:28 || UInitForms.InitPanelPrepare
+11.02.2018 00:23:08:28 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:23:08:28 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:23:08:28 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:23:08:28 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:23:08:28 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:23:08:28 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:23:08:28 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:23:08:28 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:23:08:28 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:23:08:28 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:23:08:28 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:23:08:28 || UInitForms.InitPanelAir
+11.02.2018 00:23:09:29 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:23:09:29 || UCommon.loadoldproject Start
+11.02.2018 00:23:09:29 || UCommon.initnewproject Start
+11.02.2018 00:25:49:249 || Form1.Create Start
+11.02.2018 00:25:49:249 || 
+11.02.2018 00:25:49:249 || *****************************************************************************************
+11.02.2018 00:25:49:249 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:25:49:249 || *************************            Время старта: 00:25:49:19             *************************
+11.02.2018 00:25:49:249 || *****************************************************************************************
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:25:49:249 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:25:49:249 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:25:49:249 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:25:49:249 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:25:49:249 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:25:49:249 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:25:49:249 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:25:49:249 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:25:49:249 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:25:49:249 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:25:49:249 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:25:49:249 || UInitForms.InputInSystem
+11.02.2018 00:25:49:249 || UInitForms.InitMyStartWindow
+11.02.2018 00:25:49:249 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:25:49:249 || UInitForms.InitMainForm
+11.02.2018 00:25:49:249 || UInitForms.InitPanelControl
+11.02.2018 00:25:49:249 || UCommon.SetMainGridPanel Start
+11.02.2018 00:25:49:249 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:25:49:249 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:25:49:249 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:25:49:249 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:25:49:249 || UInitForms.InitPanelClips
+11.02.2018 00:25:49:249 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:25:49:249 || UInitForms.InitPanelPlayList
+11.02.2018 00:25:49:249 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:25:49:249 || UInitForms.InitPanelProject
+11.02.2018 00:25:49:249 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:25:49:249 || UInitForms.InitPanelPrepare
+11.02.2018 00:25:49:249 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:25:49:249 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:25:49:249 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:25:49:249 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:25:49:249 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:25:49:249 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:25:49:249 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:25:49:249 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:25:49:249 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:25:49:249 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:25:49:249 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:25:49:249 || UInitForms.InitPanelAir
+11.02.2018 00:25:49:249 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:25:49:249 || UCommon.loadoldproject Start
+11.02.2018 00:25:49:249 || UCommon.initnewproject Start
+11.02.2018 00:27:44:244 || Form1.Create Start
+11.02.2018 00:27:44:244 || 
+11.02.2018 00:27:44:244 || *****************************************************************************************
+11.02.2018 00:27:44:244 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:27:44:244 || *************************            Время старта: 00:27:44:04             *************************
+11.02.2018 00:27:44:244 || *****************************************************************************************
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:27:44:244 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:27:44:244 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:27:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:44:244 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:27:44:244 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:27:44:244 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:27:44:244 || UInitForms.InputInSystem
+11.02.2018 00:27:44:244 || UInitForms.InitMyStartWindow
+11.02.2018 00:27:44:244 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:27:44:244 || UInitForms.InitMainForm
+11.02.2018 00:27:44:244 || UInitForms.InitPanelControl
+11.02.2018 00:27:44:244 || UCommon.SetMainGridPanel Start
+11.02.2018 00:27:44:244 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:27:44:244 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:27:44:244 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:27:44:244 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:27:44:244 || UInitForms.InitPanelClips
+11.02.2018 00:27:44:244 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:27:44:244 || UInitForms.InitPanelPlayList
+11.02.2018 00:27:44:244 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:27:44:244 || UInitForms.InitPanelProject
+11.02.2018 00:27:44:244 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:27:44:244 || UInitForms.InitPanelPrepare
+11.02.2018 00:27:44:244 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:27:44:244 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:27:44:244 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:27:44:244 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:27:44:244 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:27:44:244 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:27:44:244 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:27:44:244 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:27:44:244 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:27:44:244 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:27:44:244 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:27:44:244 || UInitForms.InitPanelAir
+11.02.2018 00:27:44:244 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:27:44:244 || UCommon.loadoldproject Start
+11.02.2018 00:27:44:244 || UCommon.initnewproject Start
+11.02.2018 00:27:58:258 || Form1.Create Start
+11.02.2018 00:27:58:258 || 
+11.02.2018 00:27:58:258 || *****************************************************************************************
+11.02.2018 00:27:58:258 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:27:58:258 || *************************            Время старта: 00:27:58:03             *************************
+11.02.2018 00:27:58:258 || *****************************************************************************************
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:27:58:258 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:27:58:258 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:27:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:58:258 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:27:58:258 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:27:58:258 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:27:58:258 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:27:58:258 || UInitForms.InputInSystem
+11.02.2018 00:27:58:258 || UInitForms.InitMyStartWindow
+11.02.2018 00:27:58:258 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:27:58:258 || UInitForms.InitMainForm
+11.02.2018 00:27:58:258 || UInitForms.InitPanelControl
+11.02.2018 00:27:58:258 || UCommon.SetMainGridPanel Start
+11.02.2018 00:27:58:258 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:27:58:258 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:27:58:258 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:27:58:258 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:27:58:258 || UInitForms.InitPanelClips
+11.02.2018 00:27:58:258 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:27:58:258 || UInitForms.InitPanelPlayList
+11.02.2018 00:27:58:258 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:27:58:258 || UInitForms.InitPanelProject
+11.02.2018 00:27:58:258 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:27:58:258 || UInitForms.InitPanelPrepare
+11.02.2018 00:27:58:258 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:27:58:258 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:27:58:258 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:27:58:258 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:27:58:258 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:27:58:258 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:27:58:258 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:27:58:258 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:27:58:258 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:27:58:258 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:27:58:258 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:27:58:258 || UInitForms.InitPanelAir
+11.02.2018 00:27:58:258 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:27:58:258 || UCommon.loadoldproject Start
+11.02.2018 00:27:58:258 || UCommon.initnewproject Start
+11.02.2018 00:28:48:248 || Form1.Create Start
+11.02.2018 00:28:48:248 || 
+11.02.2018 00:28:48:248 || *****************************************************************************************
+11.02.2018 00:28:48:248 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:28:48:248 || *************************            Время старта: 00:28:48:07             *************************
+11.02.2018 00:28:48:248 || *****************************************************************************************
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:28:48:248 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:28:48:248 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:28:48:248 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:28:48:248 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:28:48:248 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:28:48:248 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:28:48:248 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:28:48:248 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:28:48:248 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:28:48:248 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:28:48:248 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:28:48:248 || UInitForms.InputInSystem
+11.02.2018 00:28:48:248 || UInitForms.InitMyStartWindow
+11.02.2018 00:28:48:248 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:28:48:248 || UInitForms.InitMainForm
+11.02.2018 00:28:48:248 || UInitForms.InitPanelControl
+11.02.2018 00:28:48:248 || UCommon.SetMainGridPanel Start
+11.02.2018 00:28:48:248 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:28:48:248 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:28:48:248 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:28:48:248 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:28:48:248 || UInitForms.InitPanelClips
+11.02.2018 00:28:48:248 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:28:48:248 || UInitForms.InitPanelPlayList
+11.02.2018 00:28:48:248 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:28:48:248 || UInitForms.InitPanelProject
+11.02.2018 00:28:48:248 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:28:48:248 || UInitForms.InitPanelPrepare
+11.02.2018 00:28:48:248 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:28:48:248 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:28:48:248 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:28:48:248 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:28:48:248 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:28:48:248 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:28:48:248 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:28:48:248 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:28:48:248 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:28:48:248 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:28:48:248 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:28:48:248 || UInitForms.InitPanelAir
+11.02.2018 00:28:48:248 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:28:48:248 || UCommon.loadoldproject Start
+11.02.2018 00:28:48:248 || UCommon.initnewproject Start
+11.02.2018 00:30:01:21 || Form1.Create Start
+11.02.2018 00:30:01:21 || 
+11.02.2018 00:30:01:21 || *****************************************************************************************
+11.02.2018 00:30:01:21 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:30:01:21 || *************************            Время старта: 00:30:01:06             *************************
+11.02.2018 00:30:01:21 || *****************************************************************************************
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:30:01:21 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:30:01:21 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:30:01:21 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:30:01:21 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:30:01:21 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:30:01:21 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:30:01:21 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:30:01:21 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:30:01:21 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:30:01:21 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:30:01:21 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:30:01:21 || UInitForms.InputInSystem
+11.02.2018 00:30:01:21 || UInitForms.InitMyStartWindow
+11.02.2018 00:30:01:21 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:30:01:21 || UInitForms.InitMainForm
+11.02.2018 00:30:01:21 || UInitForms.InitPanelControl
+11.02.2018 00:30:01:21 || UCommon.SetMainGridPanel Start
+11.02.2018 00:30:01:21 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:30:01:21 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:30:01:21 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:30:01:21 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:30:01:21 || UInitForms.InitPanelClips
+11.02.2018 00:30:01:21 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:30:01:21 || UInitForms.InitPanelPlayList
+11.02.2018 00:30:01:21 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:30:01:21 || UInitForms.InitPanelProject
+11.02.2018 00:30:01:21 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:30:01:21 || UInitForms.InitPanelPrepare
+11.02.2018 00:30:01:21 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:30:01:21 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:30:01:21 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:30:01:21 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:30:01:21 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:30:01:21 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:30:01:21 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:30:01:21 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:30:01:21 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:30:01:21 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:30:01:21 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:30:01:21 || UInitForms.InitPanelAir
+11.02.2018 00:30:01:21 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:30:01:21 || UCommon.loadoldproject Start
+11.02.2018 00:30:01:21 || UCommon.initnewproject Start
+11.02.2018 00:31:17:217 || Form1.Create Start
+11.02.2018 00:31:17:217 || 
+11.02.2018 00:31:17:217 || *****************************************************************************************
+11.02.2018 00:31:17:217 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:31:17:217 || *************************            Время старта: 00:31:17:18             *************************
+11.02.2018 00:31:17:217 || *****************************************************************************************
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:31:17:217 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:31:17:217 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:31:17:217 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:31:17:217 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:31:17:217 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:31:17:217 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:31:17:217 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:31:17:217 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:31:17:217 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:31:17:217 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:31:17:217 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:31:17:217 || UInitForms.InputInSystem
+11.02.2018 00:31:17:217 || UInitForms.InitMyStartWindow
+11.02.2018 00:31:17:217 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:31:17:217 || UInitForms.InitMainForm
+11.02.2018 00:31:17:217 || UInitForms.InitPanelControl
+11.02.2018 00:31:17:217 || UCommon.SetMainGridPanel Start
+11.02.2018 00:31:17:217 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:31:17:217 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:31:17:217 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:31:17:217 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:31:17:217 || UInitForms.InitPanelClips
+11.02.2018 00:31:17:217 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:31:17:217 || UInitForms.InitPanelPlayList
+11.02.2018 00:31:17:217 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:31:17:217 || UInitForms.InitPanelProject
+11.02.2018 00:31:17:217 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:31:17:217 || UInitForms.InitPanelPrepare
+11.02.2018 00:31:17:217 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:31:17:217 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:31:17:217 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:31:17:217 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:31:17:217 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:31:17:217 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:31:17:217 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:31:17:217 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:31:17:217 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:31:17:217 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:31:17:217 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:31:17:217 || UInitForms.InitPanelAir
+11.02.2018 00:31:17:217 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:31:17:217 || UCommon.loadoldproject Start
+11.02.2018 00:31:17:217 || UCommon.initnewproject Start
+11.02.2018 00:31:21:221 || UInitForms.InitPanelPrepare
+11.02.2018 00:31:21:221 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:31:21:221 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:31:21:221 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:31:21:221 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:31:21:221 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:31:21:221 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:31:21:221 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:31:21:221 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:31:21:221 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:31:21:221 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:31:21:221 || UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:31:21:221 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:31:21:221 || UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:31:21:221 || UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:31:21:221 || UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:31:21:221 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:31:21:221 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:31:21:221 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+11.02.2018 00:31:21:221 || UGrid.GridClear Row=1
+11.02.2018 00:31:21:221 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 00:31:21:221 || UGrid.GridClear Row=1
+11.02.2018 00:31:21:221 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+11.02.2018 00:31:21:221 || UGrid.GridClear Row=1
+11.02.2018 00:31:21:221 || UCommon.initnewproject Finish
+11.02.2018 00:31:21:221 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:31:21:221 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+11.02.2018 00:31:21:221 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:31:21:221 || UCommon.loadoldproject Finish
+11.02.2018 00:31:21:221 || UInitForms.UpdatePanelAir
+11.02.2018 00:31:21:221 || Form1.Create Finish
+11.02.2018 00:31:22:222 || UInitForms.InitNewProject
+11.02.2018 00:31:22:222 || UInitForms.InitPlaylists
+11.02.2018 00:31:22:222 || UInitForms.InitEditTimeline
+11.02.2018 00:33:25:225 || Form1.Create Start
+11.02.2018 00:33:25:225 || 
+11.02.2018 00:33:25:225 || *****************************************************************************************
+11.02.2018 00:33:25:225 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:33:25:225 || *************************            Время старта: 00:33:25:05             *************************
+11.02.2018 00:33:25:225 || *****************************************************************************************
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:33:25:225 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:33:25:225 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:33:25:225 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:25:225 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:25:225 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:25:225 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:25:225 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:25:225 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:25:225 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:33:25:225 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:33:25:225 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:33:25:225 || UInitForms.InputInSystem
+11.02.2018 00:33:25:225 || UInitForms.InitMyStartWindow
+11.02.2018 00:33:25:225 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:33:25:225 || UInitForms.InitMainForm
+11.02.2018 00:33:25:225 || UInitForms.InitPanelControl
+11.02.2018 00:33:25:225 || UCommon.SetMainGridPanel Start
+11.02.2018 00:33:25:225 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:33:25:225 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:33:25:225 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:33:25:225 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:33:25:225 || UInitForms.InitPanelClips
+11.02.2018 00:33:25:225 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:33:25:225 || UInitForms.InitPanelPlayList
+11.02.2018 00:33:25:225 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:33:25:225 || UInitForms.InitPanelProject
+11.02.2018 00:33:25:225 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:33:25:225 || UInitForms.InitPanelPrepare
+11.02.2018 00:33:25:225 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:33:25:225 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:33:25:225 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:33:25:225 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:33:25:225 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:33:25:225 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:33:25:225 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:33:25:225 || UInitForms.InitPanelAir
+11.02.2018 00:33:25:225 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:33:25:225 || UCommon.loadoldproject Start
+11.02.2018 00:33:25:225 || UCommon.initnewproject Start
+11.02.2018 00:33:25:225 || UInitForms.InitPanelPrepare
+11.02.2018 00:33:25:225 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:33:25:225 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:33:25:225 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:33:25:225 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:33:25:225 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:33:25:225 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:33:25:225 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:33:25:225 || UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:33:25:225 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:33:25:225 || UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:33:25:225 || UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:33:25:225 || UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:33:25:225 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:33:25:225 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:33:25:225 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+11.02.2018 00:33:25:225 || UGrid.GridClear Row=1
+11.02.2018 00:33:25:225 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 00:33:25:225 || UGrid.GridClear Row=1
+11.02.2018 00:33:25:225 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+11.02.2018 00:33:25:225 || UGrid.GridClear Row=1
+11.02.2018 00:33:25:225 || UCommon.initnewproject Finish
+11.02.2018 00:33:25:225 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:33:25:225 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+11.02.2018 00:33:25:225 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:33:25:225 || UCommon.loadoldproject Finish
+11.02.2018 00:33:25:225 || UInitForms.UpdatePanelAir
+11.02.2018 00:33:25:225 || Form1.Create Finish
+11.02.2018 00:33:25:225 || UInitForms.InitNewProject
+11.02.2018 00:33:25:225 || UInitForms.InitPlaylists
+11.02.2018 00:33:25:225 || UInitForms.InitEditTimeline
+11.02.2018 00:33:26:226 || UInitForms.InitFrButtonOptions
+11.02.2018 00:33:26:226 || UGrid.initgrid Grid=StringGrid1 Width=512
+11.02.2018 00:33:26:226 || UInitForms.InitImportFiles
+11.02.2018 00:33:26:226 || UInitForms.InitTextTemplates
+11.02.2018 00:33:26:226 || UInitForms.InitMyMessage
+11.02.2018 00:33:26:226 || UInitForms.InitImageTemplate
+11.02.2018 00:33:26:226 || UGrid.initgrid Grid=GridImgTemplate Width=386
+11.02.2018 00:33:26:226 || UInitForms.InitFrSetTemplate
+11.02.2018 00:33:26:226 || UInitForms.InitFrSetEventData
+11.02.2018 00:33:26:226 || UInitForms.InitFrSortGrid
+11.02.2018 00:33:26:226 || UInitForms.InitFrShiftTL
+11.02.2018 00:33:26:226 || UInitForms.InitFrShortNum
+11.02.2018 00:33:26:226 || UInitForms.InitFrMediaCopy
+11.02.2018 00:33:26:226 || UInitForms.InitFPageSetup
+11.02.2018 00:33:26:226 || UInitForms.InitfrMyPrint
+11.02.2018 00:33:26:226 || UInitForms.InitFrLTC
+11.02.2018 00:33:26:226 || UInitForms.InitfrTimeCode
+11.02.2018 00:33:26:226 || UInitForms.InitfrMyTextTemplate
+11.02.2018 00:33:26:226 || UInitForms.InitfrNewList
+11.02.2018 00:33:30:230 || UMyFiles.ReadProjectFromFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:33:30:230 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridLists
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridClips
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridImgTemplate
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:33:30:230 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+11.02.2018 00:33:30:230 |201822133847263| UGrid.GridClear Row=1
+11.02.2018 00:33:30:230 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:33:30:230 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:33:30:230 |201822133847263| UMyFiles.ReadProjectFromFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:33:30:230 |201822133847263| TForm1.Label2Click Start
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+11.02.2018 00:33:30:230 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+11.02.2018 00:33:30:230 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+11.02.2018 00:33:30:230 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+11.02.2018 00:33:30:230 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+11.02.2018 00:33:30:230 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 00:33:30:230 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+11.02.2018 00:33:30:230 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+11.02.2018 00:33:30:230 |201822133847263| UMain.StopMyTimer
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=-1
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:33:30:230 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:33:30:230 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+11.02.2018 00:33:30:230 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+11.02.2018 00:33:30:230 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+11.02.2018 00:33:30:230 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+11.02.2018 00:33:30:230 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+11.02.2018 00:33:30:230 |201822133847263| Message:WMEraseBackGround
+11.02.2018 00:33:30:230 |201822133847263| UInitForms.UpdatePanelPrepare
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:33:31:231 |201822133847263| UGrid.initgrid Grid=GridGRTemplate Width=355
+11.02.2018 00:33:31:231 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+11.02.2018 00:33:31:231 |201822133847263| UGrid.GridClear Row=1
+11.02.2018 00:33:31:231 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:33:31:231 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:33:31:231 |201822133847263| UInitForms.UpdatePanelAir
+11.02.2018 00:33:31:231 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:33:31:231 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:33:31:231 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:33:31:231 |201822133847263| TForm1.Label2Click Finish
+11.02.2018 00:33:31:231 |201822133847263| UCommon.SetMainGridPanel Start
+11.02.2018 00:33:31:231 |201822133847263| Message:WMEraseBackGround
+11.02.2018 00:33:31:231 |201822133847263| UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4vНайден
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+11.02.2018 00:33:31:231 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:33:31:231 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+11.02.2018 00:33:31:231 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 00:33:31:231 |201822133847263| UCommon.SetMainGridPanel Finish
+11.02.2018 00:33:31:231 |201822133847263| UCommon.ClearClipsStatusPlay
+11.02.2018 00:33:31:231 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+11.02.2018 00:33:31:231 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 00:33:35:235 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.*
+11.02.2018 00:33:35:235 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+11.02.2018 00:33:35:235 |201822133847263| Начало записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:33:35:235 |201822133847263| Окончание записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:33:35:235 |201822133847263| TForm1.MyTextMessage UMyMessage=Сохранить текущий проект G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj? Buttons=2
+11.02.2018 00:33:37:237 |201822133847263| TFMyMessage.spbYesClick Modalresult:=mrOk
+11.02.2018 00:33:37:237 |201822133847263| UMyFiles.SaveProjectToFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:33:37:237 |201822133847263| UMyFiles.SaveGridTimelinesToStream Finish Grid=GridTimeLines
+11.02.2018 00:33:37:237 |201822133847263| UMyFiles.SaveProjectToFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:33:37:237 |201822133847263| TForm1.FormClose
+11.02.2018 00:40:32:232 || Form1.Create Start
+11.02.2018 00:40:32:232 || 
+11.02.2018 00:40:32:232 || *****************************************************************************************
+11.02.2018 00:40:32:232 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 00:40:32:232 || *************************            Время старта: 00:40:32:03             *************************
+11.02.2018 00:40:32:232 || *****************************************************************************************
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 00:40:32:232 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 00:40:32:232 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:40:32:232 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:32:232 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:32:232 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:32:232 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:32:232 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:32:232 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:32:232 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:40:32:232 || UMyFiles.ExecTaskOnDelete
+11.02.2018 00:40:32:232 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 00:40:32:232 || UInitForms.InputInSystem
+11.02.2018 00:40:32:232 || UInitForms.InitMyStartWindow
+11.02.2018 00:40:32:232 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 00:40:32:232 || UInitForms.InitMainForm
+11.02.2018 00:40:32:232 || UInitForms.InitPanelControl
+11.02.2018 00:40:32:232 || UCommon.SetMainGridPanel Start
+11.02.2018 00:40:32:232 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:40:32:232 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:40:32:232 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:40:32:232 || UCommon.SetMainGridPanel Finish
+11.02.2018 00:40:32:232 || UInitForms.InitPanelClips
+11.02.2018 00:40:32:232 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 00:40:32:232 || UInitForms.InitPanelPlayList
+11.02.2018 00:40:32:232 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 00:40:32:232 || UInitForms.InitPanelProject
+11.02.2018 00:40:32:232 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 00:40:32:232 || UInitForms.InitPanelPrepare
+11.02.2018 00:40:32:232 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:40:32:232 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:40:32:232 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:40:32:232 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 00:40:32:232 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 00:40:32:232 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:40:32:232 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:40:32:232 || UInitForms.InitPanelAir
+11.02.2018 00:40:32:232 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 00:40:32:232 || UCommon.loadoldproject Start
+11.02.2018 00:40:32:232 || UCommon.initnewproject Start
+11.02.2018 00:40:32:232 || UInitForms.InitPanelPrepare
+11.02.2018 00:40:32:232 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 00:40:32:232 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 00:40:32:232 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 00:40:32:232 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:40:32:232 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:40:32:232 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:40:32:232 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:40:32:232 || UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:40:32:232 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:40:32:232 || UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:40:32:232 || UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:40:32:232 || UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:40:32:232 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:40:32:232 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:40:32:232 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+11.02.2018 00:40:32:232 || UGrid.GridClear Row=1
+11.02.2018 00:40:32:232 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 00:40:32:232 || UGrid.GridClear Row=1
+11.02.2018 00:40:32:232 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+11.02.2018 00:40:32:232 || UGrid.GridClear Row=1
+11.02.2018 00:40:32:232 || UCommon.initnewproject Finish
+11.02.2018 00:40:32:232 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:40:32:232 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+11.02.2018 00:40:32:232 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:40:32:232 || UCommon.loadoldproject Finish
+11.02.2018 00:40:32:232 || UInitForms.UpdatePanelAir
+11.02.2018 00:40:32:232 || Form1.Create Finish
+11.02.2018 00:40:32:232 || UInitForms.InitNewProject
+11.02.2018 00:40:32:232 || UInitForms.InitPlaylists
+11.02.2018 00:40:32:232 || UInitForms.InitEditTimeline
+11.02.2018 00:40:33:233 || UInitForms.InitFrButtonOptions
+11.02.2018 00:40:33:233 || UGrid.initgrid Grid=StringGrid1 Width=512
+11.02.2018 00:40:33:233 || UInitForms.InitImportFiles
+11.02.2018 00:40:33:233 || UInitForms.InitTextTemplates
+11.02.2018 00:40:33:233 || UInitForms.InitMyMessage
+11.02.2018 00:40:33:233 || UInitForms.InitImageTemplate
+11.02.2018 00:40:33:233 || UGrid.initgrid Grid=GridImgTemplate Width=386
+11.02.2018 00:40:33:233 || UInitForms.InitFrSetTemplate
+11.02.2018 00:40:33:233 || UInitForms.InitFrSetEventData
+11.02.2018 00:40:33:233 || UInitForms.InitFrSortGrid
+11.02.2018 00:40:33:233 || UInitForms.InitFrShiftTL
+11.02.2018 00:40:33:233 || UInitForms.InitFrShortNum
+11.02.2018 00:40:33:233 || UInitForms.InitFrMediaCopy
+11.02.2018 00:40:33:233 || UInitForms.InitFPageSetup
+11.02.2018 00:40:33:233 || UInitForms.InitfrMyPrint
+11.02.2018 00:40:33:233 || UInitForms.InitFrLTC
+11.02.2018 00:40:33:233 || UInitForms.InitfrTimeCode
+11.02.2018 00:40:33:233 || UInitForms.InitfrMyTextTemplate
+11.02.2018 00:40:33:233 || UInitForms.InitfrNewList
+11.02.2018 00:40:34:234 || UMyFiles.ReadProjectFromFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:40:34:234 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridLists
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridClips
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:34:234 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:35:235 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridImgTemplate
+11.02.2018 00:40:35:235 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:35:235 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.GridClear Row=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:40:35:235 |201822133847263| UMyFiles.ReadProjectFromFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:40:35:235 |201822133847263| TForm1.Label2Click Start
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+11.02.2018 00:40:35:235 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+11.02.2018 00:40:35:235 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+11.02.2018 00:40:35:235 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 00:40:35:235 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+11.02.2018 00:40:35:235 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+11.02.2018 00:40:35:235 |201822133847263| UMain.StopMyTimer
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=-1
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+11.02.2018 00:40:35:235 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+11.02.2018 00:40:35:235 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+11.02.2018 00:40:35:235 |201822133847263| Message:WMEraseBackGround
+11.02.2018 00:40:35:235 |201822133847263| UInitForms.UpdatePanelPrepare
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.initgrid Grid=GridGRTemplate Width=355
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.GridClear Row=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:40:35:235 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 00:40:35:235 |201822133847263| UInitForms.UpdatePanelAir
+11.02.2018 00:40:35:235 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 00:40:35:235 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 00:40:35:235 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 00:40:35:235 |201822133847263| TForm1.Label2Click Finish
+11.02.2018 00:40:35:235 |201822133847263| UCommon.SetMainGridPanel Start
+11.02.2018 00:40:35:235 |201822133847263| Message:WMEraseBackGround
+11.02.2018 00:40:35:235 |201822133847263| UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4vНайден
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+11.02.2018 00:40:35:235 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 00:40:35:235 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 00:40:35:235 |201822133847263| UCommon.SetMainGridPanel Finish
+11.02.2018 00:40:35:235 |201822133847263| UCommon.ClearClipsStatusPlay
+11.02.2018 00:40:35:235 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+11.02.2018 00:40:35:235 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 00:40:41:241 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.*
+11.02.2018 00:40:41:241 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+11.02.2018 00:40:41:241 |201822133847263| Начало записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:40:41:241 |201822133847263| Окончание записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 00:40:41:241 |201822133847263| TForm1.MyTextMessage UMyMessage=Сохранить текущий проект G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj? Buttons=2
+11.02.2018 00:40:43:243 |201822133847263| TFMyMessage.spbYesClick Modalresult:=mrOk
+11.02.2018 00:40:43:243 |201822133847263| UMyFiles.SaveProjectToFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:40:43:243 |201822133847263| UMyFiles.SaveGridTimelinesToStream Finish Grid=GridTimeLines
+11.02.2018 00:40:43:243 |201822133847263| UMyFiles.SaveProjectToFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 00:40:43:243 |201822133847263| TForm1.FormClose
+11.02.2018 23:30:44:244 || Form1.Create Start
+11.02.2018 23:30:44:244 || 
+11.02.2018 23:30:44:244 || *****************************************************************************************
+11.02.2018 23:30:44:244 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 23:30:44:244 || *************************            Время старта: 23:30:44:14             *************************
+11.02.2018 23:30:44:244 || *****************************************************************************************
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 23:30:44:244 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 23:30:44:244 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:30:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:30:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:30:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:30:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:30:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:30:44:244 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:30:44:244 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:30:44:244 || UMyFiles.ExecTaskOnDelete
+11.02.2018 23:30:44:244 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 23:30:44:244 || UInitForms.InputInSystem
+11.02.2018 23:30:44:244 || UInitForms.InitMyStartWindow
+11.02.2018 23:30:44:244 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 23:30:44:244 || UInitForms.InitMainForm
+11.02.2018 23:30:44:244 || UInitForms.InitPanelControl
+11.02.2018 23:30:44:244 || UCommon.SetMainGridPanel Start
+11.02.2018 23:30:44:244 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 23:30:44:244 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:30:44:244 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:30:44:244 || UCommon.SetMainGridPanel Finish
+11.02.2018 23:30:44:244 || UInitForms.InitPanelClips
+11.02.2018 23:30:44:244 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 23:30:44:244 || UInitForms.InitPanelPlayList
+11.02.2018 23:30:44:244 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 23:30:44:244 || UInitForms.InitPanelProject
+11.02.2018 23:30:44:244 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 23:30:44:244 || UInitForms.InitPanelPrepare
+11.02.2018 23:30:44:244 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 23:30:44:244 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 23:30:44:244 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 23:30:44:244 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:30:44:244 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:30:44:244 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:30:44:244 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 23:30:44:244 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 23:30:44:244 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:30:44:244 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:30:44:244 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:30:44:244 || UInitForms.InitPanelAir
+11.02.2018 23:30:44:244 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 23:30:44:244 || UCommon.loadoldproject Start
+11.02.2018 23:30:44:244 || UCommon.initnewproject Start
+11.02.2018 23:35:23:223 || Form1.Create Start
+11.02.2018 23:35:23:223 || 
+11.02.2018 23:35:23:223 || *****************************************************************************************
+11.02.2018 23:35:23:223 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 23:35:23:223 || *************************            Время старта: 23:35:23:18             *************************
+11.02.2018 23:35:23:223 || *****************************************************************************************
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 23:35:23:223 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 23:35:23:223 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:35:23:223 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:35:23:223 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:35:23:223 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:35:23:223 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:35:23:223 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:35:23:223 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:35:23:223 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:35:23:223 || UMyFiles.ExecTaskOnDelete
+11.02.2018 23:35:23:223 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 23:35:23:223 || UInitForms.InputInSystem
+11.02.2018 23:35:23:223 || UInitForms.InitMyStartWindow
+11.02.2018 23:35:23:223 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 23:35:23:223 || UInitForms.InitMainForm
+11.02.2018 23:35:23:223 || UInitForms.InitPanelControl
+11.02.2018 23:35:23:223 || UCommon.SetMainGridPanel Start
+11.02.2018 23:35:23:223 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 23:35:23:223 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:35:23:223 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:35:23:223 || UCommon.SetMainGridPanel Finish
+11.02.2018 23:35:23:223 || UInitForms.InitPanelClips
+11.02.2018 23:35:23:223 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 23:35:23:223 || UInitForms.InitPanelPlayList
+11.02.2018 23:35:23:223 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 23:35:23:223 || UInitForms.InitPanelProject
+11.02.2018 23:35:23:223 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 23:35:23:223 || UInitForms.InitPanelPrepare
+11.02.2018 23:35:23:223 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 23:35:23:223 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 23:35:23:223 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 23:35:23:223 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:35:23:223 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:35:23:223 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:35:23:223 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 23:35:23:223 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 23:35:23:223 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:35:23:223 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:35:23:223 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:35:23:223 || UInitForms.InitPanelAir
+11.02.2018 23:35:23:223 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 23:35:23:223 || UCommon.loadoldproject Start
+11.02.2018 23:35:23:223 || UCommon.initnewproject Start
+11.02.2018 23:36:00:20 || Form1.Create Start
+11.02.2018 23:36:00:20 || 
+11.02.2018 23:36:00:20 || *****************************************************************************************
+11.02.2018 23:36:00:20 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 23:36:00:20 || *************************            Время старта: 23:36:00:22             *************************
+11.02.2018 23:36:00:20 || *****************************************************************************************
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 23:36:00:20 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 23:36:00:20 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:36:00:20 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:36:00:20 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:36:00:20 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:36:00:20 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:36:00:20 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:36:00:20 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:36:00:20 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:36:00:20 || UMyFiles.ExecTaskOnDelete
+11.02.2018 23:36:00:20 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 23:36:00:20 || UInitForms.InputInSystem
+11.02.2018 23:36:00:20 || UInitForms.InitMyStartWindow
+11.02.2018 23:36:00:20 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 23:36:00:20 || UInitForms.InitMainForm
+11.02.2018 23:36:01:21 || UInitForms.InitPanelControl
+11.02.2018 23:36:01:21 || UCommon.SetMainGridPanel Start
+11.02.2018 23:36:01:21 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 23:36:01:21 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:36:01:21 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:36:01:21 || UCommon.SetMainGridPanel Finish
+11.02.2018 23:36:01:21 || UInitForms.InitPanelClips
+11.02.2018 23:36:01:21 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 23:36:01:21 || UInitForms.InitPanelPlayList
+11.02.2018 23:36:01:21 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 23:36:01:21 || UInitForms.InitPanelProject
+11.02.2018 23:36:01:21 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 23:36:01:21 || UInitForms.InitPanelPrepare
+11.02.2018 23:36:01:21 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 23:36:01:21 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 23:36:01:21 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 23:36:01:21 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:36:01:21 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:36:01:21 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:36:01:21 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 23:36:01:21 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 23:36:01:21 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:36:01:21 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:36:01:21 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:36:01:21 || UInitForms.InitPanelAir
+11.02.2018 23:36:01:21 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 23:36:01:21 || UCommon.loadoldproject Start
+11.02.2018 23:36:01:21 || UCommon.initnewproject Start
+11.02.2018 23:38:33:233 || Form1.Create Start
+11.02.2018 23:38:33:233 || 
+11.02.2018 23:38:33:233 || *****************************************************************************************
+11.02.2018 23:38:33:233 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 23:38:33:233 || *************************            Время старта: 23:38:33:10             *************************
+11.02.2018 23:38:33:233 || *****************************************************************************************
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 23:38:33:233 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 23:38:33:233 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:38:33:233 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:38:33:233 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:38:33:233 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:38:33:233 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:38:33:233 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:38:33:233 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:38:33:233 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:38:33:233 || UMyFiles.ExecTaskOnDelete
+11.02.2018 23:38:33:233 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 23:38:33:233 || UInitForms.InputInSystem
+11.02.2018 23:38:33:233 || UInitForms.InitMyStartWindow
+11.02.2018 23:38:33:233 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 23:38:33:233 || UInitForms.InitMainForm
+11.02.2018 23:38:33:233 || UInitForms.InitPanelControl
+11.02.2018 23:38:33:233 || UCommon.SetMainGridPanel Start
+11.02.2018 23:38:33:233 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 23:38:33:233 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:38:33:233 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:38:33:233 || UCommon.SetMainGridPanel Finish
+11.02.2018 23:38:33:233 || UInitForms.InitPanelClips
+11.02.2018 23:38:33:233 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 23:38:33:233 || UInitForms.InitPanelPlayList
+11.02.2018 23:38:33:233 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 23:38:33:233 || UInitForms.InitPanelProject
+11.02.2018 23:38:33:233 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 23:38:33:233 || UInitForms.InitPanelPrepare
+11.02.2018 23:38:33:233 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 23:38:33:233 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 23:38:33:233 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 23:38:33:233 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:38:33:233 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:38:33:233 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:38:33:233 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 23:38:33:233 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 23:38:33:233 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:38:33:233 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:38:33:233 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:38:33:233 || UInitForms.InitPanelAir
+11.02.2018 23:38:33:233 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 23:38:33:233 || UCommon.loadoldproject Start
+11.02.2018 23:38:33:233 || UCommon.initnewproject Start
+11.02.2018 23:39:16:216 || Form1.Create Start
+11.02.2018 23:39:16:216 || 
+11.02.2018 23:39:16:216 || *****************************************************************************************
+11.02.2018 23:39:16:216 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 23:39:16:216 || *************************            Время старта: 23:39:16:12             *************************
+11.02.2018 23:39:16:216 || *****************************************************************************************
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 23:39:16:216 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 23:39:16:216 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:39:16:216 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:16:216 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:16:216 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:16:216 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:16:216 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:16:216 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:16:216 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:39:16:216 || UMyFiles.ExecTaskOnDelete
+11.02.2018 23:39:16:216 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 23:39:16:216 || UInitForms.InputInSystem
+11.02.2018 23:39:16:216 || UInitForms.InitMyStartWindow
+11.02.2018 23:39:16:216 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 23:39:16:216 || UInitForms.InitMainForm
+11.02.2018 23:39:16:216 || UInitForms.InitPanelControl
+11.02.2018 23:39:16:216 || UCommon.SetMainGridPanel Start
+11.02.2018 23:39:16:216 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 23:39:16:216 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:39:16:216 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:39:16:216 || UCommon.SetMainGridPanel Finish
+11.02.2018 23:39:16:216 || UInitForms.InitPanelClips
+11.02.2018 23:39:16:216 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 23:39:16:216 || UInitForms.InitPanelPlayList
+11.02.2018 23:39:16:216 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 23:39:16:216 || UInitForms.InitPanelProject
+11.02.2018 23:39:16:216 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 23:39:16:216 || UInitForms.InitPanelPrepare
+11.02.2018 23:39:16:216 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 23:39:16:216 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 23:39:16:216 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 23:39:16:216 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:39:16:216 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:39:16:216 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:39:16:216 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 23:39:16:216 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 23:39:16:216 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:39:16:216 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:39:16:216 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:39:16:216 || UInitForms.InitPanelAir
+11.02.2018 23:39:16:216 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 23:39:16:216 || UCommon.loadoldproject Start
+11.02.2018 23:39:16:216 || UCommon.initnewproject Start
+11.02.2018 23:39:41:241 || UInitForms.InitPanelPrepare
+11.02.2018 23:39:41:241 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 23:39:41:241 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 23:39:41:241 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 23:39:41:241 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:39:41:241 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:39:41:241 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:39:41:241 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 23:39:41:241 || UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 23:39:41:241 || UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 23:39:41:241 || UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 23:39:41:241 || UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 23:39:41:241 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:39:41:241 || UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 23:39:41:241 || UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 23:39:41:241 || UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 23:39:41:241 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:39:41:241 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:39:41:241 || UGrid.MyGridDeleteRow Grid=GridClips Row=1
+11.02.2018 23:39:41:241 || UGrid.GridClear Row=1
+11.02.2018 23:39:41:241 || UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 23:39:41:241 || UGrid.GridClear Row=1
+11.02.2018 23:39:41:241 || UGrid.MyGridDeleteRow Grid=GridLists Row=1
+11.02.2018 23:39:41:241 || UGrid.GridClear Row=1
+11.02.2018 23:39:41:241 || UCommon.initnewproject Finish
+11.02.2018 23:39:41:241 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:39:41:241 || UCommon.CheckedClipsInList-2 GridClips File=Не существует
+11.02.2018 23:39:41:241 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:39:41:241 || UCommon.loadoldproject Finish
+11.02.2018 23:39:41:241 || UInitForms.UpdatePanelAir
+11.02.2018 23:39:41:241 || Form1.Create Finish
+11.02.2018 23:39:41:241 || UInitForms.InitNewProject
+11.02.2018 23:39:41:241 || UInitForms.InitPlaylists
+11.02.2018 23:39:41:241 || UInitForms.InitEditTimeline
+11.02.2018 23:39:43:243 || UInitForms.InitFrButtonOptions
+11.02.2018 23:39:43:243 || UGrid.initgrid Grid=StringGrid1 Width=512
+11.02.2018 23:39:43:243 || UInitForms.InitImportFiles
+11.02.2018 23:39:43:243 || UInitForms.InitTextTemplates
+11.02.2018 23:39:43:243 || UInitForms.InitMyMessage
+11.02.2018 23:39:43:243 || UInitForms.InitImageTemplate
+11.02.2018 23:39:43:243 || UGrid.initgrid Grid=GridImgTemplate Width=386
+11.02.2018 23:39:43:243 || UInitForms.InitFrSetTemplate
+11.02.2018 23:39:43:243 || UInitForms.InitFrSetEventData
+11.02.2018 23:39:43:243 || UInitForms.InitFrSortGrid
+11.02.2018 23:39:43:243 || UInitForms.InitFrShiftTL
+11.02.2018 23:39:43:243 || UInitForms.InitFrShortNum
+11.02.2018 23:39:43:243 || UInitForms.InitFrMediaCopy
+11.02.2018 23:39:43:243 || UInitForms.InitFPageSetup
+11.02.2018 23:39:43:243 || UInitForms.InitfrMyPrint
+11.02.2018 23:39:43:243 || UInitForms.InitFrLTC
+11.02.2018 23:39:43:243 || UInitForms.InitfrTimeCode
+11.02.2018 23:39:43:243 || UInitForms.InitfrMyTextTemplate
+11.02.2018 23:39:43:243 || UInitForms.InitfrNewList
+11.02.2018 23:39:49:249 || UMyFiles.ReadProjectFromFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 23:39:49:249 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridLists
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridClips
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UMyFiles.LoadGridFromStream Start Grid=GridImgTemplate
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:39:49:249 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+11.02.2018 23:39:49:249 |201822133847263| UGrid.GridClear Row=1
+11.02.2018 23:39:49:249 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 23:39:49:249 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 23:39:49:249 |201822133847263| UMyFiles.ReadProjectFromFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 23:39:49:249 |201822133847263| TForm1.Label2Click Start
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Start
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer - Очистка памяти
+11.02.2018 23:39:49:249 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer-Очистка UNDO
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer |  | File:  | Clip:  | ClipID= | Start= | Duration= 00:07:00:00
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyStartPlay=-00:00:00:01 Synchro=false
+11.02.2018 23:39:49:249 |201822133847263| UCommon.SwitcherVideoPanels Command=1
+11.02.2018 23:39:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false SwitcherVideoPanels-2
+11.02.2018 23:39:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false SwitcherVideoPanels-2
+11.02.2018 23:39:49:249 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 23:39:49:249 |201822133847263| UMyFiles.LoadClipEditingFromFile Start ClipName=defaultclip
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLParameters.UpdateParameters
+11.02.2018 23:39:49:249 |201822133847263| UPlayer.MediaPause mode=paused | Файл : Пусто
+11.02.2018 23:39:49:249 |201822133847263| UMain.StopMyTimer
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=-1
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TypeTL=tlDevise
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Edit.IDTimeline=1 Position=1
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:39:49:249 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer ZoneNames.Draw
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=-1
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=-1
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=-1
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 23:39:49:249 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawBitmap
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TLZone.DrawTimelines
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer CurrentEvents : Number=-1 Image=
+11.02.2018 23:39:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=0 Mark:=false LoadDefaultClipToPlayer-2
+11.02.2018 23:39:49:249 |201822133847263| UGrid.MarkRowPhraseInGrid Grid=GridGRTemplate MarkCell=0 WorkCell=2 Name=File Text Row=1 Mark:=false LoadDefaultClipToPlayer-2
+11.02.2018 23:39:49:249 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer TemplateToScreen
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.AirDevices.Init TLZone.TLEditor.Index=1
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer MyPanelAir.SetValues
+11.02.2018 23:39:49:249 |201822133847263| UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.
+11.02.2018 23:39:49:249 |201822133847263| Message:WMEraseBackGround
+11.02.2018 23:39:49:249 |201822133847263| UInitForms.UpdatePanelPrepare
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 23:39:50:250 |201822133847263| UGrid.initgrid Grid=GridGRTemplate Width=355
+11.02.2018 23:39:50:250 |201822133847263| UGrid.MyGridDeleteRow Grid=GridGRTemplate Row=1
+11.02.2018 23:39:50:250 |201822133847263| UGrid.GridClear Row=1
+11.02.2018 23:39:50:250 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 23:39:50:250 |201822133847263| UGrid.GridAddRow Grid=GridGRTemplate Result=1
+11.02.2018 23:39:50:250 |201822133847263| UInitForms.UpdatePanelAir
+11.02.2018 23:39:50:250 |201822133847263| UCommon.TemplateToScreen-2 Clear
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.InitTimelines Start
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.WriteToBuffer
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.ClearTimeline
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=1 Position=0
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=1 Result=0
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=21 Position=1
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=21 Result=1
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.AddTimeline IDTimeline=41 Position=2
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.FindInBuffer IDTimeline=41 Result=2
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.ClearBuffer
+11.02.2018 23:39:50:250 |201822133847263| UGRTimelines.TTLZone.InitTimelines Finish
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=1 IDTimeline=1
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Clear
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Add Result=0 IDTimeline=1
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Add Result=1 IDTimeline=21
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Add Result=2 IDTimeline=41
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Init Result=113
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=0
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=1
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTimeLineName.Draw Position=2
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:39:50:250 |201822133847263| UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:39:50:250 |201822133847263| TForm1.Label2Click Finish
+11.02.2018 23:39:50:250 |201822133847263| UCommon.SetMainGridPanel Start
+11.02.2018 23:39:50:250 |201822133847263| Message:WMEraseBackGround
+11.02.2018 23:39:50:250 |201822133847263| UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\Брейгель поклонение волхвов fin.movНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Брегель\I_S_Bah_Fantaziya_Bolshoj_Organ_Kafedralnogo_-_Esli_muzyka_Mocarta_prakticheski_dostigla_sovershenstva_i (1).mp3Не существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\Детские\Вове посмотреть\Fantomas Collection HD\Fanto?mas se de?chai?ne (HD).m4vНайден
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-2 GridClips File=Не существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0729.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0734.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0738.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0671.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0672.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0677.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0678.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708 (2).MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList-1 GridClips File=C:\last\Погоня\DSC_0708.MOVНе существует
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList GridClips File=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02032018\Projects\Clips\DSC_0739.MOVНайден
+11.02.2018 23:39:50:250 |201822133847263| UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:39:50:250 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+11.02.2018 23:39:50:250 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 23:39:50:250 |201822133847263| UCommon.SetMainGridPanel Finish
+11.02.2018 23:39:50:250 |201822133847263| UCommon.ClearClipsStatusPlay
+11.02.2018 23:39:50:250 |201822133847263| Start Uplaylists.findclipposition Grid=GridClips ClipID=
+11.02.2018 23:39:50:250 |201822133847263| UGrid.MyGridDeleteRow Grid=GridActPlayList Row=1
+11.02.2018 23:39:54:254 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.*
+11.02.2018 23:39:54:254 |201822133847263| UMyFiles.DeleteFilesMask Dir=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp Mask=*.undo
+11.02.2018 23:39:54:254 |201822133847263| Начало записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:39:54:254 |201822133847263| Окончание записи IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:39:54:254 |201822133847263| TForm1.MyTextMessage UMyMessage=Сохранить текущий проект G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj? Buttons=2
+11.02.2018 23:39:56:256 |201822133847263| TFMyMessage.spbYesClick Modalresult:=mrOk
+11.02.2018 23:39:56:256 |201822133847263| UMyFiles.SaveProjectToFile Start FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 23:39:56:256 |201822133847263| UMyFiles.SaveGridTimelinesToStream Finish Grid=GridTimeLines
+11.02.2018 23:39:56:256 |201822133847263| UMyFiles.SaveProjectToFile Finish FileName=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\test3 - копия.proj
+11.02.2018 23:39:56:256 |201822133847263| TForm1.FormClose
+11.02.2018 23:40:15:215 || Form1.Create Start
+11.02.2018 23:40:15:215 || 
+11.02.2018 23:40:15:215 || *****************************************************************************************
+11.02.2018 23:40:15:215 || *************************               ЗАПУСК ПРОГРАММЫ             *************************
+11.02.2018 23:40:15:215 || *************************            Время старта: 23:40:15:06             *************************
+11.02.2018 23:40:15:215 || *****************************************************************************************
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories PathFiles=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Clips
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories DirProject=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories PathClips=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Clips
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories PathTemplates=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Templates
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories PathPlayLists=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\PlayLists
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Temp
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories PathTemp=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\Projects\Keylayouts
+11.02.2018 23:40:15:215 || UCommon.CreateDirectories PathLog=G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\\Log
+11.02.2018 23:40:15:215 || Начало чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:40:15:215 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:40:15:215 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:40:15:215 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:40:15:215 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:40:15:215 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:40:15:215 || UGrid.TGridRows.SetDefaultFonts
+11.02.2018 23:40:15:215 || Окончание чтения IniFile: G:\home\ARM_editor\АРМ РЕДАКТОРА VLC 02022018\ARM_Director.ini
+11.02.2018 23:40:15:215 || UMyFiles.ExecTaskOnDelete
+11.02.2018 23:40:15:215 || UInitForms.InputInSystem - Вход в систему выполнен
+11.02.2018 23:40:15:215 || UInitForms.InputInSystem
+11.02.2018 23:40:15:215 || UInitForms.InitMyStartWindow
+11.02.2018 23:40:15:215 || UInitForms.InitMyStartWindow - Вход в систему выполнен
+11.02.2018 23:40:15:215 || UInitForms.InitMainForm
+11.02.2018 23:40:15:215 || UInitForms.InitPanelControl
+11.02.2018 23:40:15:215 || UCommon.SetMainGridPanel Start
+11.02.2018 23:40:15:215 || UCommon.SetMainGridPanel MainGrid=projects
+11.02.2018 23:40:15:215 || UCommon.CheckedClipsInList Start GridClips
+11.02.2018 23:40:15:215 || UCommon.CheckedClipsInList Finish GridClips
+11.02.2018 23:40:15:215 || UCommon.SetMainGridPanel Finish
+11.02.2018 23:40:15:215 || UInitForms.InitPanelClips
+11.02.2018 23:40:15:215 || UGrid.initgrid Grid=GridClips Width=1560
+11.02.2018 23:40:15:215 || UInitForms.InitPanelPlayList
+11.02.2018 23:40:15:215 || UGrid.initgrid Grid=GridActPlayList Width=1560
+11.02.2018 23:40:15:215 || UInitForms.InitPanelProject
+11.02.2018 23:40:15:215 || UGrid.initgrid Grid=GridLists Width=1560
+11.02.2018 23:40:15:215 || UInitForms.InitPanelPrepare
+11.02.2018 23:40:15:215 || TForm1.CheckBox1Click GridGRTemplate.Visible:=false
+11.02.2018 23:40:15:215 || UGrid.initgrid Grid=GridGRTemplate Width=349
+11.02.2018 23:40:15:215 || UDrawTimelines.TTLNames.SetDefaultFonts;
+11.02.2018 23:40:15:215 || UDrawTimelines.TTLNames.Draw Start
+11.02.2018 23:40:15:215 || UDrawTimelines.TZoneScaler.Draw Height=25
+11.02.2018 23:40:15:215 || UDrawTimelines.TZoneEditTL.Draw Grid=GridTimeLines Top=45 Height=105
+11.02.2018 23:40:15:215 || UDrawTimelines.TZoneEditTL.GridPosition Grid=GridTimeLines Position=-1 IDTimeline=1
+11.02.2018 23:40:15:215 || UDrawTimelines.TNamesTL.Init Result=152
+11.02.2018 23:40:15:215 || UDrawTimelines.TNamesTL.Draw Grid=GridTimeLines Top=162 Height=113
+11.02.2018 23:40:15:215 || UDrawTimelines.TZoneReview.Draw Top=283 Height=45
+11.02.2018 23:40:15:215 || UDrawTimelines.TTLNames.Draw Finish
+11.02.2018 23:40:15:215 || UInitForms.InitPanelAir
+11.02.2018 23:40:15:215 || UInitForms.MyStartWindow - Вход в систему выполнен
+11.02.2018 23:40:15:215 || UCommon.loadoldproject Start
+11.02.2018 23:40:15:215 || UCommon.initnewproject Start
