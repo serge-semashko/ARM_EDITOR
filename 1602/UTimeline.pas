@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, ExtCtrls, StdCtrls, Grids, ImgList, UIMGButtons, Spin, ucommon,
-  umyevents;
+  umyevents,system.json;
 
 type
   //TTypeTimeline = (tldevice, tltext, tlmedia);
@@ -32,6 +32,16 @@ type
     constructor Create;
     destructor  Destroy; override;
   end;
+  ///// SSSSSSSSSS JSON
+
+  TTimelineOptionsJSON  = Class helper for TTimelineOptions
+  public
+    Function SaveToJSONStr:string;
+    Function SaveToJSONObject:tjsonObject;
+    Function LoadFromJSONObject(JSON:TJsonObject):boolean;
+    Function LoadFromJSONstr(JSONstr:string):boolean;
+  End;
+  ///// SSSSSSSSSS JSON end
 
   TFEditTimeline = class(TForm)
     Panel1: TPanel;
@@ -127,6 +137,92 @@ uses UMain, UButtonOptions, uinitforms, umymessage, ugrtimelines, umyfiles,
      ufrprotocols;
 
 {$R *.dfm}
+///////////////////////////// SSSSSSSSSS JSON
+function TTimelineOptionsJSON.LoadFromJSONObject(JSON: TJsonObject): boolean;
+var
+ i1 : integer;
+ tmpjson : tjsonObject;
+begin
+  try
+      TypeTL:=  GetVariableFromJson(json,'TypeTL',TypeTL);
+      NumberBmp:=GetVariableFromJson(json,'NumberBmp',NumberBmp);
+      name :=  GetVariableFromJson(json,'Name',Name);
+      UserLock := GetVariableFromJson(json,'UserLock',UserLock);
+      IDTimeline := GetVariableFromJson(json,'IDTimeline',IDTimeline);
+      CountDev := GetVariableFromJson(json,'CountDev',CountDev);
+       for i1  := 0  to high(DevEvents) do begin
+           tmpjson := tJsonObject(json.getvalue('DevEvents'+IntToStr(i1)));
+           DevEvents[i1].LoadFromJSONObject(tmpjson);
+       end;
+       MediaEvent.LoadFromJSONObject( tJsonObject(json.getvalue('MediaEvent')));
+       textEvent.LoadFromJSONObject( tJsonObject(json.getvalue('TextEvent')));
+       MediaColor := GetVariableFromJson(json,'MediaColor',MediaColor);
+       TextColor := GetVariableFromJson(json,'TextColor',TextColor);
+       CharDuration := GetVariableFromJson(json,'CharDuration',CharDuration);
+       EventDuration := GetVariableFromJson(json,'EventDuration',EventDuration);
+
+  except
+    on E: Exception do
+  end;
+
+end;
+
+function TTimelineOptionsJSON.LoadFromJSONstr(JSONstr: string): boolean;
+var
+  json: tjsonobject;
+begin
+  json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+  result := true;
+  if json=nil  then begin
+   result := false;
+  end else LoadFromJsonObject(json);
+
+end;
+function TTimelineOptionsJson.SaveToJSONObject: tJsonObject;
+var
+  str1 : string;
+  js1, json: tjsonobject;
+  i1, i2 : integer;
+    jsondata :string;
+  (*
+    ** сохранение всех переменных в строку JSONDATA в формате JSON
+  *)
+
+begin
+  json := tjsonobject.Create;
+  try
+       addVariableToJson(json,'TypeTL',TypeTL);
+       addVariableToJson(json,'TypeTL',TypeTL);
+       addVariableToJson(json,'NumberBmp',NumberBmp);
+       addVariableToJson(json,'Name',Name);
+       addVariableToJson(json,'UserLock',UserLock);
+       addVariableToJson(json,'IDTimeline',IDTimeline);
+       addVariableToJson(json,'CountDev',CountDev);
+       for i1  := 0  to high(DevEvents) do
+         json.AddPair('DevEvents'+IntToStr(i1),DevEvents[i1].SaveToJSONObject);
+       json.AddPair('MediaEvent',MediaEvent.SaveToJSONObject);
+       json.AddPair('TextEvent',TextEvent.SaveToJSONObject);
+       addVariableToJson(json,'MediaColor',MediaColor);
+       addVariableToJson(json,'TextColor',TextColor);
+       addVariableToJson(json,'CharDuration',CharDuration);
+       addVariableToJson(json,'EventDuration',EventDuration);
+
+  except
+    on E: Exception do
+  end;
+  result := json;
+end;
+function TTimelineOptionsJson.SaveToJSONStr: string;
+var
+ jsontmp : tjsonobject;
+ JsonStr : string;
+begin
+  jsontmp := SaveToJsonObject;
+  JsonStr := jsontmp.ToJSON;
+  result := jsonStr;
+end;
+
+///////////////////////////// SSSSSSSSSS JSON end
 
 Procedure TFEditTimeline.DrawIcons(ttl : TTypeTimeline; Selection : integer);
 var i, clx, nx, deltx, delty, wx, hy : integer;
@@ -397,6 +493,7 @@ begin
   MediaEvent.ReadFromStream(F);
   TextEvent.ReadFromStream(F);
   For i:=0 to 31 do DevEvents[i].ReadFromStream(F);
+  LoadFromJsonStr(savetojsonStr); //SSSSS
 end;
 
 function CanDelete(ARow : integer) : boolean;

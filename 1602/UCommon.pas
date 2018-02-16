@@ -370,7 +370,8 @@ function FindPredClipTime(Grid : tstringgrid; dtime : tdatetime) : integer;
 function SynchroLoadClip(Grid : tstringgrid) : boolean;
 procedure SortGridStartTime(Grid : tstringgrid; Direction : boolean);
 function TColorToTfcolor(Color : TColor) : TFColor;
-Procedure addVariableToJson(json: tjsonobject; varName: string; varvalue: string);
+Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
+Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
 
 implementation
 uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimelines,
@@ -379,21 +380,41 @@ uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimeli
      UGridSort, UImageTemplate, UTextTemplate, umyprint, umediacopy, UMyTextTemplate,
      umymenu, ufrlisterrors, umytexttable;
 
-Procedure addVariableToJson(json: tjsonobject; varName: string; varvalue: string);
-var
-  teststr: ansistring;
-  list: TStringList;
-  numElement: integer;
-  utf8val: string;
-  tmpjson: tjsonvalue;
-  retval: string;
-begin
-  utf8val := stringOf(tencoding.UTF8.GetBytes(varvalue));
-  varvalue := varvalue;
-  json.AddPair(varName, varvalue);
-  tmpjson := json.GetValue(varName);
-  tmpjson := json.GetValue(varName + ' ');
-end;
+///////////////////////////// SSSSSSSSSS JSON
+
+  Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
+  var
+    tmpjson: tjsonvalue;
+    tmpstr : string;
+    res : variant;
+  begin
+    tmpjson := json.GetValue(varName);
+    if (tmpjson <> nil) then
+    begin
+     tmpStr:= tmpjson.Value;
+//     varValue := tmpStr;
+     result :=tmpstr;
+    end;
+  end;
+
+  Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
+  var
+    teststr: ansistring;
+    list: TStringList;
+    numElement: integer;
+    utf8val: string;
+    tmpjson: tjsonvalue;
+    retval: string;
+    strValue : string;
+    vType : tvarType;
+    tmpInt : integer;
+  begin
+    FormatSettings.DecimalSeparator := '.';
+    vtype:=varType(varValue);
+    strValue := varValue;
+    utf8val := stringOf(tencoding.UTF8.GetBytes(strValue));
+    json.AddPair(varName, strvalue);
+  end;
 
 function TColorToTfcolor(Color : TColor) : TFColor;
 //Преобразование TColor в RGB
