@@ -1,0 +1,520 @@
+vlcPlay
+vlcWaitFrState
+vlcCreate
+vlcInit
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcCreate
+vlcInit
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcCreate
+vlcInit
+vlcLoad
+vlcCreate
+vlcInit
+vlcLoad
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcLoad
+vlcCreate
+vlcInit
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPlay
+vlcPlay
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcCreate
+vlcInit
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPlay
+vlcPlay
+vlcPlay
+vlcCreate
+vlcInit
+vlcLoad
+vlcPlay
+vlcWaitFrState
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+position changed
+vlcPause
+vlcWaitFrState
+vlcCreate
+vlcInit
+vlcLoad
+vlcPlay
+vlcWaitFrState
+vlcPause
+vlcWaitFrState
+vlcPlay
+vlcWaitFrState
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+vlcPause
+vlcWaitForState
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+vlcPause
+vlcWaitForState
+vlcPlay
+vlcWaitForState
+vlcPlay
+vlcPlay
+vlcPlay
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+vlcPause
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+vlcPause
+vlcWaitForState
+vlcWaitForState fail for timelimit
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+vlcPlay
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+vlcPause
+vlcWaitForState
+vlcWaitForState fail for timelimit
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+Playing
+vlcPause
+vlcWaitForState
+vlcWaitForState fail for timelimit
+vlcCreate
+vlcInit
+Load
+SetTime
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+Load
+stat Stopped
+Load
+stat Stopped
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcCreate
+vlcInit
+Load
+Load
+stat Stopped
+SetTime
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+Load
+stat Stopped
+SetTime
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+SetTime
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+Load
+vlcCreate
+vlcInit
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcCreate
+vlcInit
+Load
+SetTime
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Release
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+Load
+stat Stopped
+SetTime
+vlcPlay
+stat Playing
+vlcWaitForState
+vlcPause
+vlcWaitForState
+stat Paused
+Release
+stat Stopped
+Stop
+vlcCreate
+vlcInit
+Load
+SetTime
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+vlcPlay
+stat Playing
+vlcWaitForState
+vlcPause
+vlcWaitForState
+stat Paused
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+stat Paused
+vlcWaitForState
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+vlcWaitForState
+stat Paused
+vlcPlay
+vlcWaitForState
+stat Playing
+vlcPause
+stat Paused
+vlcWaitForState
+Release
+stat Stopped
+Stop

@@ -52,7 +52,7 @@ uses UMain, UCommon, UImgButtons, UDrawTimelines, UTimeline, UProject, UGrid,
      UGRTimelines, umyevents, uplaylists, utexttemplate, umymessage, uimagetemplate,
      uairdraw, uimportfiles, umyfiles, usettemplate, useteventdata, ubuttonoptions,
      ugridsort, UMyMediaSwitcher, ushifttl, ushortnum, umyprint, upagesetup, umyltc,
-     umytexttemplate, umynewlist, uplayer, umymenu, ufrsaveproject, ufrHotKeys,
+      umynewlist, uplayer, umymenu, ufrsaveproject, ufrHotKeys,
      ufrlisterrors, umytexttable, umyoptions;
 
 

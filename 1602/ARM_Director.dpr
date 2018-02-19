@@ -47,7 +47,6 @@ uses
   UPageDraw in 'UPageDraw.pas',
   UMyLTC in 'UMyLTC.pas' {frLTC},
   USetTC in 'USetTC.pas' {frSetTC},
-  UMyTextTemplate in 'UMyTextTemplate.pas' {frMyTextTemplate},
   UMyNewList in 'UMyNewList.pas' {frNewList},
   USetProcent in 'USetProcent.pas' {frSetProcent},
   UMyMenu in 'UMyMenu.pas',
@@ -63,7 +62,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  AApplication.CreateForm(TForm1, Form1);
   Application.CreateForm(TFNewProject, FNewProject);
   Application.CreateForm(TFPlayLists, FPlayLists);
   Application.CreateForm(TFDelGridRow, FDelGridRow);
@@ -81,7 +80,7 @@ begin
   Application.CreateForm(TFrMyOptions, FrMyOptions);
   Application.CreateForm(TFrProtocols, FrProtocols);
   Application.CreateForm(TFrListErrors, FrListErrors);
-  //Application.CreateForm(THTTPSRVForm, HTTPSRVForm);
+  /Application.CreateForm(THTTPSRVForm, HTTPSRVForm);
   Application.CreateForm(TfrShiftTL, frShiftTL);
   Application.CreateForm(TfrShortNum, frShortNum);
   Application.CreateForm(TfrLock, frLock);

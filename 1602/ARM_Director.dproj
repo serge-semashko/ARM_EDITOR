@@ -193,9 +193,6 @@
         <DCCReference Include="USetTC.pas">
             <Form>frSetTC</Form>
         </DCCReference>
-        <DCCReference Include="UMyTextTemplate.pas">
-            <Form>frMyTextTemplate</Form>
-        </DCCReference>
         <DCCReference Include="UMyNewList.pas">
             <Form>frNewList</Form>
         </DCCReference>
