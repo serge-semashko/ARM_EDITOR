@@ -18,7 +18,7 @@ Type
     Position : integer;
     Button : TTLButton;
   end;
-//
+
    TZoneScaler = Class(TObject)
      public
        Rect : Trect;
@@ -184,7 +184,7 @@ Type
     Constructor Create;
     Destructor Destroy; override;
   end;
-//ssss  Export To JSON
+
   TTLNames = Class(TObject)
     public
       BackGround : tcolor;
@@ -220,8 +220,7 @@ Var HScale,HEditTL,HTimelines,HView,HDelt : integer;
 
 implementation
 
-uses umain, uinitforms, ucommon, uimgbuttons, ugrtimelines, uplayer, umyfiles,
-     usetprocent;
+uses umain, ucommon, ugrtimelines, uplayer, umyfiles;
 
 //Класс TTLNames отвечает за работу с зоной имен тайм-линий
 
@@ -351,19 +350,19 @@ begin
      btplusW   : TLZone.PlusHoriz;
      btminusW  : TLZone.MinusHoriz;
      btprocent : if vlcmode<>play then begin
-                    MyY:=form1.panel4.top + form1.PanelControl.Height + (form1.Width - form1.ClientWidth);
-                    SetProcent(Scaler.procent.Left,MyY + Scaler.procent.Bottom);
+                    //MyY:=form1.panel4.top + form1.PanelControl.Height + (form1.Width - form1.ClientWidth);
+                    //SetProcent(Scaler.procent.Left,MyY + Scaler.procent.Bottom, 0);
                  end;
         end;
     //TLZone.DrawBitmap(bmptimeline);
     TLZone.TLEditor.DrawEditor(bmptimeline.Canvas,0);
     TLZone.DrawBitmap(bmptimeline);
     //Form1.imgTimelines.Canvas.Lock;
-    Form1.imgTimelines.Canvas.FillRect(Form1.imgTimelines.Canvas.ClipRect);
-    TLZone.DrawTimelines(Form1.imgTimelines.Canvas, bmptimeline);
-    InvalidateRect( Form1.imgTimelines.Canvas.Handle, NIL, FALSE ) ;
+    //Form1.imgTimelines.Canvas.FillRect(Form1.imgTimelines.Canvas.ClipRect);
+    //TLZone.DrawTimelines(Form1.imgTimelines.Canvas, bmptimeline);
+    //InvalidateRect( Form1.imgTimelines.Canvas.Handle, NIL, FALSE ) ;
     //Form1.imgTimelines.Canvas.UnLock;
-    TLZone.DrawLayer2(Form1.imgLayer2.Canvas);
+    //TLZone.DrawLayer2(Form1.imgLayer2.Canvas);
     exit;
   end;
   Result:=Edit.ClickEditTl(cv, Grid, X, Y);
@@ -381,7 +380,7 @@ begin
      //TLZone.DrawBitmap(bmptimeline);
      TLZone.TLEditor.DrawEditor(bmptimeline.Canvas,0);
      NamesTL.Names[Result.Position].Editing:=true;
-     if vlcmode <> play then TLZone.DrawTimelines(Form1.imgtimelines.Canvas,bmptimeline);
+     //if vlcmode <> play then TLZone.DrawTimelines(Form1.imgtimelines.Canvas,bmptimeline);
      exit;
   end;
   Result:=Review.ClickViewer(cv, X, Y);
@@ -456,7 +455,7 @@ end;
 
 function TTLHeights.Height : integer;
 begin
-  Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
+  //Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
   Result := Scaler + IntervalEdit + Edit + IntervalTL + Timelines + 2 * Interval + Review;
   //if makelogging then WriteLog('MAIN', 'UDrawTimelines.TTLHeights.Height Height=' + inttostr(Result));
 end;
@@ -471,16 +470,16 @@ begin
   intrv := trunc(HeightTL / 10);
   if intrv < 4 then intrv := 4;
   rv := HeightTL + 10;
-  hght := Scaler + intervaledit + ed + intervaltl + (htl + intrv) * (Form1.GridTimeLines.RowCount-1) + 2*intrv + rv;
+  //hght := Scaler + intervaledit + ed + intervaltl + (htl + intrv) * (Form1.GridTimeLines.RowCount-1) + 2*intrv + rv;
   if hght <= MaxHeight then begin
     Edit := Edit + Step;
     Review := HeightTL + 10;;
     HeightTL :=HeightTL + Step;
     Interval := intrv;
-    Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
+    //Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
     result := true;
   end;
-  UpdatePanelPrepare;
+  //UpdatePanelPrepare;
   if makelogging then WriteLog('MAIN', 'UDrawTimelines.TTLHeights.StepPlus Timelines=' + inttostr(Timelines) + ' Interval=' + inttostr(Interval));
   except
     on E: Exception do WriteLog('MAIN', 'UDrawTimelines.TTLHeights.StepPlus | ' + E.Message);
@@ -498,7 +497,7 @@ begin
     If Interval < 4 then Interval := 4;
     Edit := 3 * HeightTL;
     Review := HeightTL + 10;
-    Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
+    //Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
     result := false;
     if makelogging then WriteLog('MAIN', 'UDrawTimelines.TTLHeights.StepMinus-1 Timelines=' + inttostr(Timelines) + ' Interval=' + inttostr(Interval));
     exit;
@@ -508,8 +507,8 @@ begin
   Interval := trunc(HeightTL / 10);
   If Interval < 4 then Interval := 4;
   Review := HeightTL + 10;
-  Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
-  UpdatePanelPrepare;
+  //Timelines := (HeightTL + Interval) * (Form1.GridTimeLines.RowCount-1) - Interval;
+  //UpdatePanelPrepare;
   if makelogging then WriteLog('MAIN', 'UDrawTimelines.TTLHeights.StepMinus-2 Timelines=' + inttostr(Timelines) + ' Interval=' + inttostr(Interval));
   except
     on E: Exception do WriteLog('MAIN', 'UDrawTimelines.TTLHeights.StepMinus | ' + E.Message);
@@ -1418,7 +1417,7 @@ begin
 
   if APos > 0 then begin
     if Grid.Objects[0,Apos] is TTimelineOptions then begin
-    SetPanelTypeTL((Grid.Objects[0,Apos] as TTimelineOptions).TypeTL, APos);
+    //SetPanelTypeTL((Grid.Objects[0,Apos] as TTimelineOptions).TypeTL, APos);
     (*        case (Grid.Objects[0,Apos] as TTimelineOptions).TypeTL of
       tldevice : begin
                    Form1.pnDevTL.Visible:=true;
@@ -1445,7 +1444,7 @@ begin
                    btnsmediatl.Draw(Form1.imgMediaTL.Canvas);
                  end;
             end; //case *)
-      UpdatePanelPrepare;
+      //UpdatePanelPrepare;
     end;
     if MakeLogging then WriteLog('MAIN', 'UDrawTimelines.TZoneEditTL.AssignTL Grid=' + Grid.Name + ' Position=' + inttostr(APos) + ' IDTimeline=' + inttostr(IDTimeline));
   end;
@@ -1680,6 +1679,8 @@ var psx, psy: integer;
     sbr : tbrushstyle;
     mpn : tpenmode;
     prcnt : string;
+    len, vid, opr : longint;
+    scr : Real;
 begin
   try
   if MakeLogging then WriteLog('MAIN', 'UDrawTimelines.TZoneScaler.Draw Height=' + inttostr(height));
@@ -1739,9 +1740,18 @@ begin
   procent.Top:=Rect.Top;
   procent.Bottom:=Rect.Bottom;
   if procentSelect then cv.Brush.Color:=SmoothColor(Color, 32) else cv.Brush.Color:=Color;
-  prcnt := inttostr(trunc(100 / TLParameters.FrameSize)) + '%';
+
+  Len := TLParameters.Preroll+Tlparameters.Finish;//+TLparameters.Postroll;
+  Vid := TLParameters.ScreenEndFrame - TLParameters.ScreenStartFrame;
+  opr := Len div 100;
+  scr := Vid  / opr;
+  if scr>=100
+    then prcnt:=FormatFloat('0', scr) + '%'
+    else prcnt:=FormatFloat('0.0', scr) + '%';
+  cv.Font.Size:=cv.Font.Size - 2;
   cv.TextRect(procent,procent.Left + 4, (procent.Bottom-procent.Top - cv.TextHeight('0')) div 2, prcnt);
   cv.Brush.Color:=Color;
+  cv.Font.Size:=cv.Font.Size +1;
   cv.TextOut(Rect.Left + 30, (procent.Bottom-procent.Top - cv.TextHeight('0')) div 2, Text);
 
   cv.Font.Size:=cv.Font.Size + 2;

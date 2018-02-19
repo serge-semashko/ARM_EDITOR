@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F6BA4AA5-B636-46AB-B7E5-96BA1887DC37}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\1602\ARM_Director.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DeviceManager.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ARM_Director">
+        <MSBuild Projects="..\1602\ARM_Director.dproj"/>
+    </Target>
+    <Target Name="ARM_Director:Clean">
+        <MSBuild Projects="..\1602\ARM_Director.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ARM_Director:Make">
+        <MSBuild Projects="..\1602\ARM_Director.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DeviceManager">
+        <MSBuild Projects="DeviceManager.dproj"/>
+    </Target>
+    <Target Name="DeviceManager:Clean">
+        <MSBuild Projects="DeviceManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DeviceManager:Make">
+        <MSBuild Projects="DeviceManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ARM_Director;DeviceManager"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ARM_Director:Clean;DeviceManager:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ARM_Director:Make;DeviceManager:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
