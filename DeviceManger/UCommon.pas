@@ -1251,9 +1251,9 @@ var cColor: Longint;
 begin
   try
   cColor := ColorToRGB(Color);
-  r := cColor;
-  g := cColor shr 8;
-  b := cColor shr 16;
+  r := cColor and $FF;
+  g := (cColor shr 8) and $FF;
+  b := (cColor shr 16) and $FF;
 
     if (r >= g) and (r >= b) then begin
     if (r + step) <= 255 then begin

@@ -3718,10 +3718,13 @@ end;
   function TTLEditorJson.LoadFromJSONstr(JSONstr: string): boolean;
   var
     json: tjsonobject;
+    errstring : string;
   begin
     json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
     result := true;
-    if json=nil  then begin
+    if json = nil  then begin
+     errstring := 'Строка принятая с WEB не корректна для загрузки: '+JSONStr;
+//     MessageBox(Application.Handle,pwidechar(errstring),'Error', mb_ok);
      result := false;
     end else LoadFromJsonObject(json);
 

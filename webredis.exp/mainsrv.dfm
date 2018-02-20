@@ -2,8 +2,8 @@ object HTTPSRVForm: THTTPSRVForm
   Left = 327
   Top = 19
   Caption = 'WEB srv'
-  ClientHeight = 555
-  ClientWidth = 914
+  ClientHeight = 689
+  ClientWidth = 1081
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,11 +18,12 @@ object HTTPSRVForm: THTTPSRVForm
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 914
+    Width = 1081
     Height = 99
     Align = alTop
     TabOrder = 0
     OnClick = Panel1Click
+    ExplicitWidth = 914
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -51,7 +52,7 @@ object HTTPSRVForm: THTTPSRVForm
   object Memo2: TMemo
     Left = 0
     Top = 99
-    Width = 914
+    Width = 1081
     Height = 91
     Align = alTop
     Font.Charset = DEFAULT_CHARSET
@@ -61,21 +62,21 @@ object HTTPSRVForm: THTTPSRVForm
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    ExplicitWidth = 465
+    ExplicitWidth = 914
   end
   object Chart1: TChart
     Left = 0
     Top = 190
-    Width = 914
-    Height = 365
+    Width = 1081
+    Height = 499
     BackWall.Brush.Style = bsClear
     Title.Text.Strings = (
       'TChart')
     View3D = False
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 360
-    ExplicitHeight = 195
+    ExplicitWidth = 914
+    ExplicitHeight = 365
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
     object chartbox: TCheckBox

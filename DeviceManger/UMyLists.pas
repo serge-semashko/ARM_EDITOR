@@ -8,6 +8,7 @@ uses
 
 Type
   TDependentField = Class(Tobject)
+  public
     Name : string;
     visible : boolean;
     TypeObject : string;

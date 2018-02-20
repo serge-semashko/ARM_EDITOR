@@ -89,7 +89,7 @@ var
 
 implementation
 
-uses UTimeline, UDrawTimelines, UGRTimelines, umyevents, UMyFiles, uAirDraw, uwebserv ,ulkjson;
+uses UTimeline, UDrawTimelines, UGRTimelines, umyevents, UMyFiles, uAirDraw, uwebget;
 
 
 {$R *.dfm}
@@ -121,11 +121,15 @@ begin
 end;
 
 procedure TForm1.SpeedButton3Click(Sender: TObject);
+var
+ str1 : ansistring;
+ url : ansistring;
+ slist1 : tstringlist;
 begin
-
-  if not opendialog1.Execute then exit;
   MyTLEdit.Clear;
-  MyTLEdit.LoadFromFile(opendialog1.FileName);
+  url := 'http://localhost:9090/GET_TLEDITOR';
+  str1 := GetJsonStrFromWeb(url);
+  MyTLEdit.LoadFromJSONstr(str1);
 end;
 
 procedure TForm1.WM_GETMINMAXINFO(var msg: TWMGETMINMAXINFO);
@@ -526,8 +530,8 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 var Step, i, ps : integer;
     ext, nm : string;
-    //vlc_state: libvlc_state_t;
 begin
+
   Try
   WriteLog('MAIN', 'Form1.Create Start');
   WriteLog('MAIN', '');

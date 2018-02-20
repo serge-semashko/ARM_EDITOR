@@ -6,7 +6,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Buttons, ExtCtrls, HTTPSend, blcksock, winsock, Synautil,
-  strutils,
+  strutils,system.json,
   AppEvnts, Menus, inifiles, das_const, ipcthrd,
   TeEngine, Series, TeeProcs, Chart, VclTee.TeeGDIPlus;
 
@@ -65,7 +65,9 @@ type
     DateTimeSTR: array [0 .. 5] of ansichar;
     UpdateCounter: int64;
     VersionSignature: array [0 .. 5] of ansichar;
-    JSONAll: array [0 .. 10000000] of ansichar;
+    JSONAll  : array [0 .. 1000000] of ansichar;
+    JSONStore: array [0 .. 1000000] of ansichar;
+
   end;
 
   PHardRec = ^THardRec;
@@ -345,9 +347,11 @@ end;
 function TTCPHttpThrd.ProcessHttpRequest(Request, URI: string): Integer;
 var
   l: TStringList;
-  resp: ansistring;
+  str1, resp: ansistring;
   stmp, jreq: string;
   amppos: Integer;
+  json, json1 : tjsonobject;
+
 begin
   // sample of precessing HTTP request:
   // InputData is uploaded document, headers is stringlist with request headers.
@@ -368,7 +372,17 @@ begin
         if amppos > 0 then
           jreq := copy(stmp, 1, amppos - 2);
       end;
-      resp := HardRec.JSONAll;
+
+      if pos('GET_TLEDITOR',URI)<>0 then   begin
+         str1 :=HardRec.JSONStore;
+         json:=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(str1), 0) as TJSONObject;
+         if json = nil then resp :='{status:" Error TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(HardRec.JSONStore), 0)"}'
+         else begin
+            json1 := tjsonobject(json.GetValue('TLEDITOR'));
+            if json1 = nil  then resp :='{status:" Error tjsonobject(json.GetValue(''TLEDITOR''))"}'
+            else resp := json1.ToString;
+         end;
+      end else   resp := HardRec.JSONAll;
       resp := jreq + '(' + resp + ');';
       l.add(resp);
       l.SaveToStream(OutputData);
@@ -467,7 +481,7 @@ var
 
 initialization
 
-shared := tsharedmem.Create('webredis tempore mutanur', 10000000);
+shared := tsharedmem.Create('webredis tempore mutanur', sizeof(ThardRec)+1000);
 
 HardRec := Pointer(Integer(shared.Buffer) + 100);
 

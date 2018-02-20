@@ -244,7 +244,7 @@
   implementation
   uses umain, uinitforms, uimgbuttons, udrawtimelines, uplayer,  UAirDraw,
        usettemplate, ugrid, USetEventData, umyfiles, ulock, umyundo, uactplaylist,
-       UMyTextTemplate, umymessage;
+       UMyTextTemplate, umymessage,uwebserv;
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   //процедуры и функции для отрисовки зоны курсоров
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -2468,6 +2468,7 @@
   var
      i : integer;
      d1, d2 : double;
+     slist1 : tstringlist;
   begin
     try
     F.WriteBuffer(Index, SizeOf(integer));
@@ -2493,11 +2494,15 @@
       on E: Exception do WriteLog('MAIN', 'UGRTimelines.TTLEditor.ReadFromStream | ' + E.Message);
     end;
     d1 := now;
-    for i :=  0 to 1000 do
+    for i :=  0 to 100 do
         LoadFromJSONObject(SaveToJSONObject);
     d2 := now -  d1;
-    showmessage(floattostr(d2*24*3600*1000));
-
+//    showmessage(floattostr(d2*24*3600*1000));
+      slist1 := tstringlist.create;
+    AddToJsonStore('TLEDITOR',SaveToJSONObject);
+    slist1.text := SaveToJSONstr;
+    slist1.SaveToFile('g:\home\tleditor.txt');
+    slist1.Free;
   end;
 
   procedure TTLEditor.LoadFromFile(TLType : TTypeTimeline; FileName : string);

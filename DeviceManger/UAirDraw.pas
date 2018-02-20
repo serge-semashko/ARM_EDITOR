@@ -131,7 +131,7 @@ var
 
 implementation
 
-uses umain, ucommon, ugrtimelines, utimeline, udrawtimelines, uwebserv,
+uses umain, ucommon, ugrtimelines, utimeline, udrawtimelines, uwebget,
   umyfiles, system.json;
 
 Function GetDeviceValueS(nom: integer): longint;

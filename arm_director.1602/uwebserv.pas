@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ExtCtrls,strutils;
+  Dialogs, StdCtrls, Buttons, ExtCtrls,strutils,system.json,system.win.crtl;
 
 type
   THandledObject = class(TObject)
@@ -32,11 +32,14 @@ type
 
 // Function setVariable(ObjName,VarName:widestring;value:string);
   THardRec = packed record
-     DateTimeSTR           :array[0..5] of ansichar;
-     UpdateCounter         :int64;
-     VersionSignature      :array[0..5] of ansichar;
-     JSONAll : array[0..10000000] of ansichar;
+    DateTimeSTR: array [0 .. 5] of ansichar;
+    UpdateCounter: int64;
+    VersionSignature: array [0 .. 5] of ansichar;
+    JSONAll  : array [0 .. 1000000] of ansichar;
+    JSONStore: array [0 .. 1000000] of ansichar;
+
   end;
+
   PHardRec = ^THardRec;
 var
 HardRec :phardrec;
@@ -54,9 +57,29 @@ procedure BeginJson;
 procedure SaveJson;
 Function addVariable (ObjNum : integer; varname, VarValue : string) : integer; overload;
 Function addVariable (ObjNum : integer; arrName, Elementid, varname, VarValue : string) : integer; overload;
-
-
+Procedure AddToJSONStore(varName : string; json:tjsonobject);
 implementation
+Procedure AddToJSONStore(varName : string; json:tjsonobject);
+var
+ tmjson : tjsonobject;
+ tmpstr : ansistring;
+ i1 : integer;
+begin
+  tmjson := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(HardRec.JSONStore), 0) as TJSONObject;
+  if tmjson = nil  then tmjson := TJSONObject.create;
+
+  tmjson.RemovePair(varName);
+  tmjson.AddPair(varName,json);
+  tmpstr := tmjson.ToString;
+  i1 := length(tmpstr);
+  for I1 := 0 to high(HardRec.JSONStore) do
+     HardRec.JSONStore[i1] := #0;
+
+  for I1 := 1 to length(tmpstr) do
+     HardRec.JSONStore[i1-1] := tmpstr[i1];
+
+
+end;
 
 procedure Error(const Msg: string);
 begin
@@ -177,10 +200,11 @@ var
   i : integer;
 
 initialization
-   shared := tsharedmem.Create('webredis tempore mutanur',10000000);
+   shared := tsharedmem.Create('webredis tempore mutanur',sizeof(THardRec)+1000);
    HardRec:=Pointer(Integer(shared.Buffer)+100);
      fillchar(hardrec.JSONAll,1000000,0);
-     hardrec.UpdateCounter := 13131313;
+     fillchar(hardrec.JSONstore,1000000,0);
+     hardrec.UpdateCounter := 13131313;
 Jevent := TStringList.Create;
 for i := 0 to 255 do
   Jevent.Add ('');
