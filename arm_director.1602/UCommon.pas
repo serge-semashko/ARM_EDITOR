@@ -370,8 +370,15 @@ function FindPredClipTime(Grid : tstringgrid; dtime : tdatetime) : integer;
 function SynchroLoadClip(Grid : tstringgrid) : boolean;
 procedure SortGridStartTime(Grid : tstringgrid; Direction : boolean);
 function TColorToTfcolor(Color : TColor) : TFColor;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
+
 Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
 Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
 
 implementation
 uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimelines,

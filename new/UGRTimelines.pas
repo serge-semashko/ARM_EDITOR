@@ -188,6 +188,49 @@ TTLZone = Class(TObject)
   Constructor Create;
   Destructor Destroy; override;
 end;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
+  TTLParametersJson =  Class helper for  TTLParameters
+    public
+      Function SaveToJSONStr:string;
+      Function SaveToJSONObject:tjsonObject;
+      Function LoadFromJSONObject(JSON:TJsonObject):boolean;
+      Function LoadFromJSONstr(JSONstr:string):boolean;
+    End;
+  TTLScalerJson =  Class helper for  TTLScaler
+    public
+      Function SaveToJSONStr:string;
+      Function SaveToJSONObject:tjsonObject;
+      Function LoadFromJSONObject(JSON:TJsonObject):boolean;
+      Function LoadFromJSONstr(JSONstr:string):boolean;
+    End;
+  TTLTimelineJSON =  Class helper for  TTLTimeline
+    public
+      Function SaveToJSONStr:string;
+      Function SaveToJSONObject:tjsonObject;
+      Function LoadFromJSONObject(JSON:TJsonObject):boolean;
+      Function LoadFromJSONstr(JSONstr:string):boolean;
+    End;
+  TTLEditorJSON =  Class helper for  TTLEditor
+    public
+      Function SaveToJSONStr:string;
+      Function SaveToJSONObject:tjsonObject;
+      Function LoadFromJSONObject(JSON:TJsonObject):boolean;
+      Function LoadFromJSONstr(JSONstr:string):boolean;
+    End;
+  TTLZoneJSON =  Class helper for  TTLZone
+    public
+      Function SaveToJSONStr:string;
+      Function SaveToJSONObject:tjsonObject;
+      Function LoadFromJSONObject(JSON:TJsonObject):boolean;
+      Function LoadFromJSONstr(JSONstr:string):boolean;
+    End;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//======================== END  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
+
+
 
 Var TLZone : TTLZone;
     TLParameters : TTLParameters;
@@ -3634,6 +3677,535 @@ begin
     on E: Exception do WriteLog('MAIN', 'UGRTimelines.TTLZone.ReadFromStream | ' + E.Message);
   end;
 end;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
+  function TTLParametersJson.LoadFromJSONObject(JSON: TJsonObject): boolean;
+  var
+   i1 : integer;
+   tmpjson : tjsonObject;
+  begin
+    // BackGround : tcolor;        //Фоновый цвет
+        BackGround := getVariableFromJson(json, 'BackGround', BackGround);
+
+
+
+    // ForeGround : tcolor;        //Цвет пустых тайм-линий
+        ForeGround := getVariableFromJson(json, 'ForeGround', ForeGround);
+
+    // MaxFrameSize : integer;     //Максимальный размер кадра в пиксилях
+        MaxFrameSize := getVariableFromJson(json, 'MaxFrameSize', MaxFrameSize);
+
+    // FrameSize : integer;        //Текущий размер кадра
+        FrameSize := getVariableFromJson(json, 'FrameSize', FrameSize);
+
+    // Start  : longint;           //Позиция курсора начала воспроизведения (кадры)
+        Start := getVariableFromJson(json, 'Start', Start);
+
+    // Finish : longint;           //Позиция курсора конца воспроизведения (кадры)
+        Finish := getVariableFromJson(json, 'Finish', Finish);
+
+    // //NTK    : longint;           //Начальный тайм код (кадры)
+    // ZeroPoint : longint;        //Нулевая точка отсчета начальный тайм-код (кадры)
+        ZeroPoint := getVariableFromJson(json, 'ZeroPoint', ZeroPoint);
+
+    // MyCursor : longint;         //Положение курсора относительно начала экрана (пиксили)
+        MyCursor := getVariableFromJson(json, 'MyCursor', MyCursor);
+
+    // ScreenStart : longint;      //Относительная позиция начала экрана (пиксили)
+        ScreenStart := getVariableFromJson(json, 'ScreenStart', ScreenStart);
+    // ScreenEnd   : longint;      //Относительная позиция конца экрана (пиксли)
+        ScreenEnd := getVariableFromJson(json, 'ScreenEnd', ScreenEnd);
+    // Preroll   : longint;        //Начальный буффер (кадры)
+        Preroll := getVariableFromJson(json, 'Preroll', Preroll);
+    // Postroll  : longint;        //Конечный буффер (кадры)
+        Postroll := getVariableFromJson(json, 'Postroll', Postroll);
+    // Duration  : longint;        //Общая длителность клипа (кадры)
+        Duration := getVariableFromJson(json, 'Duration', Duration);
+    // EndPoint  : longint;        //Положение конца клипа Preroll+Duration (кадры)
+        EndPoint := getVariableFromJson(json, 'EndPoint', EndPoint);
+    // lrTransperent0 : tcolor;    //Цвет прозрачности для слоя 0
+        lrTransperent0 := getVariableFromJson(json, 'lrTransperent0', lrTransperent0);
+    // lrTransperent1 : tcolor;    //Цвет прозрачности для слоя 1
+        lrTransperent1 := getVariableFromJson(json, 'lrTransperent1', lrTransperent1);
+    // lrTransperent2 : tcolor;    //Цвет прозрачности для слоя 2
+        lrTransperent2 := getVariableFromJson(json, 'lrTransperent2', lrTransperent2);
+    // Position : longint;         //Tекущая позиция клипа (кадры)
+        Position := getVariableFromJson(json, 'Position', Position);
+    // ScreenStartFrame : longint; //Абсолютная позиция начала экрана (кадры)
+        ScreenStartFrame := getVariableFromJson(json, 'ScreenStartFrame', ScreenStartFrame);
+    // ScreenEndFrame : longint;   //Абсолютная позиция конца экрана (кадры)
+        ScreenEndFrame := getVariableFromJson(json, 'ScreenEndFrame', ScreenEndFrame);
+    // StopPosition : longint;     //Позиция остановки клип (кадры)
+        StopPosition := getVariableFromJson(json, 'StopPosition', StopPosition);
+    // Scaler : real;              //Отношение ширины Bitmap к ширине экрана
+        Scaler := getVariableFromJson(json, 'Scaler', Scaler);
+
+  end;
+
+  function TTLParametersJson.LoadFromJSONstr(JSONstr: string): boolean;
+  var
+    json: tjsonobject;
+  begin
+    json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+    result := true;
+    if json=nil  then begin
+     result := false;
+    end else LoadFromJsonObject(json);
+
+  end;
+
+  function TTLParametersJson.SaveToJSONObject: tjsonObject;
+  var
+    str1 : string;
+    js1, json: tjsonobject;
+    i1, i2 : integer;
+    jsondata :string;
+    (*
+      ** сохранение всех переменных в строку JSONDATA в формате JSON
+    *)
+  begin
+    json := tjsonobject.Create;
+    try
+  //  BackGround : tcolor;        //Фоновый цвет
+       addVariableToJson(json,'BackGround',BackGround);
+  //  ForeGround : tcolor;        //Цвет пустых тайм-линий
+      addVariableToJson(json,'ForeGround',ForeGround);
+  //  MaxFrameSize : integer;     //Максимальный размер кадра в пиксилях
+      addVariableToJson(json,'MaxFrameSize',MaxFrameSize);
+  //  FrameSize : integer;        //Текущий размер кадра
+      addVariableToJson(json,'FrameSize',FrameSize);
+  //  Start  : longint;           //Позиция курсора начала воспроизведения (кадры)
+      addVariableToJson(json,'Start',Start);
+  //  Finish : longint;           //Позиция курсора конца воспроизведения (кадры)
+      addVariableToJson(json,'Finish',Finish);
+  //  //NTK    : longint;           //Начальный тайм код (кадры)
+  //  ZeroPoint : longint;        //Нулевая точка отсчета начальный тайм-код (кадры)
+      addVariableToJson(json,'ZeroPoint',ZeroPoint);
+  //  MyCursor : longint;         //Положение курсора относительно начала экрана (пиксили)
+      addVariableToJson(json,'MyCursor',MyCursor);
+  //  ScreenStart : longint;      //Относительная позиция начала экрана (пиксили)
+      addVariableToJson(json,'ScreenStart',ScreenStart);
+  //  ScreenEnd   : longint;      //Относительная позиция конца экрана (пиксли)
+      addVariableToJson(json,'ScreenEnd',ScreenEnd);
+  //  Preroll   : longint;        //Начальный буффер (кадры)
+      addVariableToJson(json,'Preroll',Preroll);
+  //  Postroll  : longint;        //Конечный буффер (кадры)
+      addVariableToJson(json,'Postroll',Postroll);
+  //  Duration  : longint;        //Общая длителность клипа (кадры)
+      addVariableToJson(json,'Duration',Duration);
+  //  EndPoint  : longint;        //Положение конца клипа Preroll+Duration (кадры)
+      addVariableToJson(json,'EndPoint',EndPoint);
+  //  lrTransperent0 : tcolor;    //Цвет прозрачности для слоя 0
+      addVariableToJson(json,'lrTransperent0',lrTransperent0);
+  //  lrTransperent1 : tcolor;    //Цвет прозрачности для слоя 1
+      addVariableToJson(json,'lrTransperent1',lrTransperent1);
+  //  lrTransperent2 : tcolor;    //Цвет прозрачности для слоя 2
+      addVariableToJson(json,'lrTransperent2',lrTransperent2);
+  //  Position : longint;         //Tекущая позиция клипа (кадры)
+      addVariableToJson(json,'Position',Position);
+  //  ScreenStartFrame : longint; //Абсолютная позиция начала экрана (кадры)
+      addVariableToJson(json,'ScreenStartFrame',ScreenStartFrame);
+  //  ScreenEndFrame : longint;   //Абсолютная позиция конца экрана (кадры)
+      addVariableToJson(json,'ScreenEndFrame',ScreenEndFrame);
+  //  StopPosition : longint;     //Позиция остановки клип (кадры)
+      addVariableToJson(json,'StopPosition',StopPosition);
+  //  Scaler : real;              //Отношение ширины Bitmap к ширине экрана
+      addVariableToJson(json,'Scaler',Scaler);
+    except
+      on E: Exception do
+      end;
+    result := json;
+
+  end;
+
+  function TTLParametersJson.SaveToJSONStr: string;
+  var
+   jsontmp : tjsonobject;
+   JsonStr : string;
+  begin
+    jsontmp := SaveToJsonObject;
+    JsonStr := jsontmp.ToJSON;
+    result := jsonStr;
+  end;
+
+  { TTLScalerJson }
+
+  function TTLScalerJson.LoadFromJSONObject(JSON: TJsonObject): boolean;
+  var
+   i1 : integer;
+   tmpjson : tjsonObject;
+  begin
+    // PenColor : tcolor;
+        PenColor := getVariableFromJson(json, 'PenColor', PenColor);
+    // FontColor : tcolor;
+        FontColor := getVariableFromJson(json, 'FontColor', FontColor);
+
+    // FontSize : integer;
+         FontSize:= getVariableFromJson(json, 'FontSize', FontSize);
+    // FontName : tfontname;
+        FontName := getVariableFromJson(json, 'FontName', FontName);
+    // Rect   : TRect;
+         Rect.LoadFromJSONObject( tJsonObject(json.getvalue('Rect')));
+  end;
+
+  function TTLScalerJson.LoadFromJSONstr(JSONstr: string): boolean;
+  var
+    json: tjsonobject;
+  begin
+    json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+    result := true;
+    if json=nil  then begin
+     result := false;
+    end else LoadFromJsonObject(json);
+
+  end;
+
+  function TTLScalerJson.SaveToJSONObject: tjsonObject;
+  var
+    str1 : string;
+    js1, json: tjsonobject;
+    i1, i2 : integer;
+    jsondata :string;
+    (*
+      ** сохранение всех переменных в строку JSONDATA в формате JSON
+    *)
+  begin
+      json := tjsonobject.Create;
+      result := json;
+    // PenColor : tcolor;
+        addVariableToJson(json,'PenColor',PenColor);
+
+    // FontColor : tcolor;
+        addVariableToJson(json,'FontColor',FontColor);
+    // FontSize : integer;
+        addVariableToJson(json,'FontSize',FontSize);
+
+    // FontName : tfontname;
+        addVariableToJson(json,'FontName',FontName);
+
+    // Rect   : TRect;
+        json.AddPair('Rect',Rect.SaveToJSONObject);
+
+
+  end;
+
+  function TTLScalerJson.SaveToJSONStr: string;
+  var
+   jsontmp : tjsonobject;
+   JsonStr : string;
+  begin
+    jsontmp := SaveToJsonObject;
+    JsonStr := jsontmp.ToJSON;
+    result := jsonStr;
+  end;
+
+  { TTLTimelineJSON }
+
+  function TTLTimeLineJson.LoadFromJSONObject(JSON: TJsonObject): boolean;
+  var
+   i1 : integer;
+   tmpjson : tjsonObject;
+  begin
+    // IDTimeline : longint;
+        IDTimeline := getVariableFromJson(json, 'IDTimeline', IDTimeline);
+    // TypeTL :  TTypeTimeline;
+        TypeTL := getVariableFromJson(json, 'TypeTL', TypeTL);
+    // Block : boolean;
+        Block := getVariableFromJson(json, 'Block', Block);
+    // Status : integer;
+        Status := getVariableFromJson(json, 'Status', Status);
+    // Rect : TRect;
+        Rect.LoadFromJSONObject( tJsonObject(json.getvalue('Rect')));
+    // Count : integer;
+         Count:= getVariableFromJson(json,'Count', Count);
+    // Events : Array of TMyEvent;
+        SetLength( Events, 0 );
+        SetLength( Events , count);
+        for i1 := 0 to count - 1  do begin
+          tmpjson :=  tjsonObject(json.GetValue('Events'+IntToStr(i1)));
+          assert(tmpJson <> nil,'Events нет для '+IntToStr(i1));
+          if tmpjson = nil then break;
+          Events[i1] := TMyEvent.Create;
+          Events[i1].LoadFromJSONObject(tmpjson);
+        end;
+  end;
+
+  function TTLTimeLineJson.LoadFromJSONstr(JSONstr: string): boolean;
+  var
+    json: tjsonobject;
+  begin
+    json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+    result := true;
+    if json=nil  then begin
+     result := false;
+    end else LoadFromJsonObject(json);
+
+  end;
+
+  function TTLTimeLineJson.SaveToJSONObject: tjsonObject;
+  var
+    str1 : string;
+    js1, json: tjsonobject;
+    i1, i2 : integer;
+    jsondata :string;
+    (*
+      ** сохранение всех переменных в строку JSONDATA в формате JSON
+    *)
+  begin
+      json := tjsonobject.Create;
+      result := json;
+
+    // IDTimeline : longint;
+        addVariableToJson(json,'IDTimeline',IDTimeline);
+
+    // TypeTL :  TTypeTimeline;
+        addVariableToJson(json,'TypeTL',TypeTL);
+
+    // Block : boolean;
+        addVariableToJson(json,'Block',Block);
+
+    // Status : integer;
+        addVariableToJson(json,'Status',Status);
+
+    // Rect : TRect;
+       json.addPair('Rect',Rect.SaveToJSONObject);
+    // Count : integer;
+        addVariableToJson(json,'Count',Count);
+
+    // Events : Array of TMyEvent;
+        for i1  := 0  to count - 1 do
+         json.AddPair('Events'+IntToStr(i1),Events[i1].SaveToJSONObject);
+
+  end;
+
+  function TTLTimeLineJson.SaveToJSONStr: string;
+  var
+   jsontmp : tjsonobject;
+   JsonStr : string;
+  begin
+    jsontmp := SaveToJsonObject;
+    JsonStr := jsontmp.ToJSON;
+    result := jsonStr;
+  end;
+
+
+  { TTLEditorJSON }
+
+  function TTLEditorJson.LoadFromJSONObject(JSON: TJsonObject): boolean;
+  var
+   i1 : integer;
+   tmpjson : tjsonObject;
+  begin
+    // Index   : integer;
+         Index := getVariableFromJson(json, 'Index', Index);
+    // isZoneEditor : boolean;
+         isZoneEditor := getVariableFromJson(json, 'isZoneEditor', isZoneEditor);
+    // DoubleClick : boolean;
+         DoubleClick:= getVariableFromJson(json, 'DoubleClick', DoubleClick);
+    // IDTimeline : longint;
+        IDTimeline := getVariableFromJson(json, 'IDTimeline', IDTimeline);
+    // Block : boolean;
+        Block := getVariableFromJson(json, 'Block', Block);
+    // Status : integer;
+        Status := getVariableFromJson(json, 'Status', Status);
+    // TypeTL :  TTypeTimeline;
+        TypeTL := getVariableFromJson(json, 'TypeTL', TypeTL);
+    // Rect       : TRect;
+        Rect.LoadFromJSONObject( tJsonObject(json.getvalue('Rect')));
+    // Count : integer;
+        Count := getVariableFromJson(json, 'Count', Count);
+    // Events : Array of TMyEvent;
+        SetLength( Events, 0 );
+        SetLength( Events , count);
+        for i1 := 0 to count - 1  do begin
+          tmpjson :=  tjsonObject(json.GetValue('Events'+IntToStr(i1)));
+          assert(tmpJson <> nil,'Events нет для '+IntToStr(i1));
+          if tmpjson = nil then break;
+          Events[i1] := TMyEvent.Create;
+          Events[i1].LoadFromJSONObject(tmpjson);
+        end;
+
+
+  end;
+
+  function TTLEditorJson.LoadFromJSONstr(JSONstr: string): boolean;
+  var
+    json: tjsonobject;
+  begin
+    json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+    result := true;
+    if json=nil  then begin
+     result := false;
+    end else LoadFromJsonObject(json);
+
+  end;
+
+  function TTLEditorJson.SaveToJSONObject: tjsonObject;
+  var
+    str1 : string;
+    js1, json: tjsonobject;
+    i1, i2 : integer;
+    jsondata :string;
+    (*
+      ** сохранение всех переменных в строку JSONDATA в формате JSON
+    *)
+  begin
+      json := tjsonobject.Create;
+      result := json;
+
+    // Index   : integer;
+        addVariableToJson(json,'Index',Index);
+
+    // isZoneEditor : boolean;
+        addVariableToJson(json,'isZoneEditor',isZoneEditor);
+
+    // DoubleClick : boolean;
+        addVariableToJson(json,'DoubleClick',DoubleClick);
+
+    // IDTimeline : longint;
+        addVariableToJson(json,'IDTimeline',IDTimeline);
+
+    // Block : boolean;
+        addVariableToJson(json,'Block',Block);
+
+    // Status : integer;
+        addVariableToJson(json,'',Status);
+
+    // TypeTL :  TTypeTimeline;
+        addVariableToJson(json,'TypeTL',TypeTL);
+
+    // Rect       : TRect;
+
+      json.addPair('Rect',rect.SaveToJSONObject);
+    // Count : integer;
+        addVariableToJson(json,'Count',Count);
+
+    // Events : Array of TMyEvent;
+        for i1  := 0  to count - 1 do
+        json.AddPair('Events'+IntToStr(i1),Events[i1].SaveToJSONObject);
+
+  end;
+
+  function TTLEditorJson.SaveToJSONStr: string;
+  var
+   jsontmp : tjsonobject;
+   JsonStr : string;
+  begin
+    jsontmp := SaveToJsonObject;
+    JsonStr := jsontmp.ToJSON;
+    result := jsonStr;
+  end;
+
+  { TTLZoneJSON }
+
+
+  function TTLZoneJson.LoadFromJSONObject(JSON: TJsonObject): boolean;
+  var
+   i1 : integer;
+   tmpjson : tjsonObject;
+  begin
+    // XViewer : integer;
+        XViewer := getVariableFromJson(json, 'XViewer', XViewer);
+    // DownViewer : boolean;
+        DownViewer := getVariableFromJson(json, 'DownViewer', DownViewer);
+    // DownTimeline : boolean;
+        DownTimeline := getVariableFromJson(json, 'DownTimeline', DownTimeline);
+    // DownEditor : boolean;
+        DownEditor := getVariableFromJson(json, 'DownEditor', DownEditor);
+    // DownScaler : boolean;
+        DownScaler := getVariableFromJson(json, 'DownScaler', DownScaler);
+    // TLScaler : TTLScaler;
+        TLScaler.LoadFromJSONObject( tJsonObject(json.getvalue('TLScaler')));
+    // TLEditor : TTLEditor;
+        TLEditor.LoadFromJSONObject( tJsonObject(json.getvalue('TLEditor')));
+    // Count : integer;
+        Count := getVariableFromJson(json, 'Count', Count);
+    // Timelines : array of TTLTimeline;
+        SetLength( Timelines, 0 );
+        SetLength( Timelines , count);
+        for i1 := 0 to count - 1  do begin
+          tmpjson :=  tjsonObject(json.GetValue('Timelines'+IntToStr(i1)));
+          assert(tmpJson <> nil,'Timelines нет для '+IntToStr(i1));
+          if tmpjson = nil then break;
+          Timelines[i1] := TTLTimeline.Create;
+          Timelines[i1].LoadFromJSONObject(tmpjson);
+        end;
+
+
+  end;
+
+  function TTLZoneJson.LoadFromJSONstr(JSONstr: string): boolean;
+  var
+    json: tjsonobject;
+  begin
+    json :=  TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONStr), 0) as TJSONObject;
+    result := true;
+    if json=nil  then begin
+     result := false;
+    end else LoadFromJsonObject(json);
+
+  end;
+
+  function TTLZoneJson.SaveToJSONObject: tjsonObject;
+  var
+    str1 : string;
+    js1, json: tjsonobject;
+    i1, i2 : integer;
+    jsondata :string;
+    (*
+      ** сохранение всех переменных в строку JSONDATA в формате JSON
+    *)
+  begin
+      json := tjsonobject.Create;
+     result := json;
+
+    // XViewer : integer;
+        addVariableToJson(json,'XViewer',XViewer);
+
+    // DownViewer : boolean;
+        addVariableToJson(json,'DownViewer',DownViewer);
+
+    // DownTimeline : boolean;
+        addVariableToJson(json,'DownTimeline',DownTimeline);
+
+    // DownEditor : boolean;
+        addVariableToJson(json,'',DownEditor);
+
+    // DownScaler : boolean;
+        addVariableToJson(json,'DownScaler',DownScaler);
+
+    // TLScaler : TTLScaler;
+        json.addPair('TLScaler', TLScaler.SaveToJSONObject);
+
+    // TLEditor : TTLEditor;
+        json.addPair('TLEditor', TLEditor.SaveToJSONObject);
+
+
+
+    // Count : integer;
+        addVariableToJson(json,'Count',Count);
+
+    // Timelines : array of TTLTimeline;
+        for i1  := 0  to count - 1 do
+        json.AddPair('Timelines'+IntToStr(i1),Timelines[i1].SaveToJSONObject);
+
+
+  end;
+
+  function TTLZoneJson.SaveToJSONStr: string;
+  var
+   jsontmp : tjsonobject;
+   JsonStr : string;
+  begin
+    jsontmp := SaveToJsonObject;
+    JsonStr := jsontmp.ToJSON;
+    result := jsonStr;
+  end;
+
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  END Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
 
 initialization
 TLParameters := TTLParameters.Create;

@@ -88,7 +88,9 @@ Type
     Constructor Create;
     Destructor  Destroy; override;
   end;
-///// SSSSSSSSSS JSON
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
   TMyEventJSON = Class helper for TMyEvent
     Function SaveToJSONStr:string;
     Function SaveToJSONObject:tjsonObject;
@@ -114,7 +116,9 @@ Type
     Function LoadFromJSONObject(JSON:tjsonobject):boolean;
     Function LoadFromJSONstr(JSONstr:string):boolean;
   End;
-///// SSSSSSSSSS end
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
 
 var
   EventDevice, EventText, EventMedia : TMyEvent;

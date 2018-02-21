@@ -222,7 +222,7 @@ begin
   result := jsonStr;
 end;
 
-///////////////////////////// SSSSSSSSSS JSON end
+// SSSSSSSSSS JSON end
 
 Procedure TFEditTimeline.DrawIcons(ttl : TTypeTimeline; Selection : integer);
 var i, clx, nx, deltx, delty, wx, hy : integer;

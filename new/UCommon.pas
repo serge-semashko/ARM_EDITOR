@@ -370,13 +370,21 @@ function FindPredClipTime(Grid : tstringgrid; dtime : tdatetime) : integer;
 function SynchroLoadClip(Grid : tstringgrid) : boolean;
 procedure SortGridStartTime(Grid : tstringgrid; Direction : boolean);
 function TColorToTfcolor(Color : TColor) : TFColor;
-Procedure addVariableToJson(json: tjsonobject; varName: string; varvalue: string);
 procedure readlistvisiblewindows(handle : hwnd);
 function WindowInVisibleList(Name : string) : boolean;
 //procedure GetProtocolsList(SrcStr, Name : widestring; var List : tstrings); overload;
 procedure GetProtocolsList(SrcStr, Name : string; List : tstrings); //overload;
 function GetProtocolsStr(SrcStr, Name : string) : string;
 function GetProtocolsParam(SrcStr, Name : string) : string;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
+
+Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
+Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
 
 implementation
 uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimelines,
@@ -384,6 +392,48 @@ uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimeli
      ushifttl, UShortNum, UEvSwapBuffer, UMyMessage, uairdraw, UMyMediaSwitcher,
      UGridSort, UImageTemplate, UTextTemplate, umyprint, umediacopy, UMyTextTemplate,
      umymenu, ufrlisterrors, umytexttable;
+
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
+  Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
+  var
+    tmpjson: tjsonvalue;
+    tmpstr : string;
+    res : variant;
+  begin
+    tmpjson := json.GetValue(varName);
+    if (tmpjson <> nil) then
+    begin
+     tmpStr:= tmpjson.Value;
+//     varValue := tmpStr;
+     result :=tmpstr;
+    end;
+  end;
+
+  Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
+  var
+    teststr: ansistring;
+    list: TStringList;
+    numElement: integer;
+    utf8val: string;
+    tmpjson: tjsonvalue;
+    retval: string;
+    strValue : string;
+    vType : tvarType;
+    tmpInt : integer;
+  begin
+    FormatSettings.DecimalSeparator := '.';
+    vtype:=varType(varValue);
+    strValue := varValue;
+    utf8val := stringOf(tencoding.UTF8.GetBytes(strValue));
+    json.AddPair(varName, strvalue);
+  end;
+//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================  END Helpers для классов. Сохранения в JSON и загрузка ==
+//==============================================================================
+
+
 
 //procedure GetProtocolsList(SrcStr, Name : widestring; var List : tstrings); overload;
 //var slst,ssrc, sstr, estr, stmp : string;
@@ -497,21 +547,6 @@ begin
   end;
 end;
 
-Procedure addVariableToJson(json: tjsonobject; varName: string; varvalue: string);
-var
-  teststr: ansistring;
-  list: TStringList;
-  numElement: integer;
-  utf8val: string;
-  tmpjson: tjsonvalue;
-  retval: string;
-begin
-  utf8val := stringOf(tencoding.UTF8.GetBytes(varvalue));
-  varvalue := varvalue;
-  json.AddPair(varName, varvalue);
-  tmpjson := json.GetValue(varName);
-  tmpjson := json.GetValue(varName + ' ');
-end;
 
 function TColorToTfcolor(Color : TColor) : TFColor;
 //Преобразование TColor в RGB
