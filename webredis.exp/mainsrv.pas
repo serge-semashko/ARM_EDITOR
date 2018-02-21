@@ -1,4 +1,4 @@
-unit mainsrv;
+п»їunit mainsrv;
 
 // fdgsdfgsdf
 interface
@@ -17,28 +17,35 @@ type
     Memo2: TMemo;
     URLED: TEdit;
     SpeedButton1: TSpeedButton;
-    PopupMenu1: TPopupMenu;
     Chart1: TChart;
     Series1: TLineSeries;
     Series2: TLineSeries;
     Series3: TLineSeries;
     Series4: TLineSeries;
     chartbox: TCheckBox;
-    terminate1: TMenuItem;
     BitBtn1: TBitBtn;
+    PopupMenu2: TPopupMenu;
+    Restore1: TMenuItem;
+    Minimize1: TMenuItem;
+    quit1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure terminate1Click(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormDestroy(Sender: TObject);
+    procedure Restore1Click(Sender: TObject);
+    procedure Minimize1Click(Sender: TObject);
+    procedure quit1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
-    { Private declarations }
   protected
-    Procedure ControlWindow(Var Msg: TMessage); message WM_SYSCOMMAND;
-    Procedure IconMouse(var Msg: TMessage); message WM_USER + 1;
-
+    procedure ControlWindow(var Msg: TMessage); message WM_SYSCOMMAND;
+    procedure IconMouse(var Msg: TMessage); message WM_USER + 1;
   public
-    Procedure Ic(n: Integer; Icon: TIcon);
+    procedure Ic(n: Integer; Icon: TIcon);
   end;
+
 
   TTCPHttpDaemon = class(TThread)
   private
@@ -101,32 +108,67 @@ implementation
 
 uses shellapi;
 {$R *.dfm}
-
 procedure THTTPSRVForm.IconMouse(var Msg: TMessage);
-Var
+var
   p: tpoint;
 begin
-  GetCursorPos(p); // Запоминаем координаты курсора мыши
-  Case Msg.LParam OF // Проверяем какая кнопка была нажата
-    WM_LBUTTONUP, WM_LBUTTONDBLCLK
-      : { Действия, выполняемый по одинарному или двойному щелчку левой кнопки мыши на значке. В нашем случае это просто активация приложения }
-      Begin
-        Ic(2, Application.Icon); // Удаляем значок из трея
-        ShowWindow(Application.Handle, SW_SHOW);
-        // Восстанавливаем кнопку программы
-        ShowWindow(Handle, SW_SHOW); // Восстанавливаем окно программы
-      End;
-    WM_RBUTTONUP
-      : { Действия, выполняемый по одинарному щелчку правой кнопки мыши }
-      Begin
-        SetForegroundWindow(Handle);
-        // Восстанавливаем программу в качестве переднего окна
-        PopupMenu1.Popup(p.X, p.Y);
-        // Заставляем всплыть тот самый TPopUp о котором я говорил чуть раньше
+  GetCursorPos(p); // Р—Р°РїРѕРјРёРЅР°РµРј РєРѕРѕСЂРґРёРЅР°С‚С‹ РєСѓСЂСЃРѕСЂР° РјС‹С€Рё
+  case Msg.LParam of  // РџСЂРѕРІРµСЂСЏРµРј РєР°РєР°СЏ РєРЅРѕРїРєР° Р±С‹Р»Р° РЅР°Р¶Р°С‚Р°
+    WM_LBUTTONUP, WM_LBUTTONDBLCLK: {Р”РµР№СЃС‚РІРёСЏ, РІС‹РїРѕР»РЅСЏРµРјС‹Р№ РїРѕ РѕРґРёРЅР°СЂРЅРѕРјСѓ РёР»Рё РґРІРѕР№РЅРѕРјСѓ С‰РµР»С‡РєСѓ Р»РµРІРѕР№ РєРЅРѕРїРєРё РјС‹С€Рё РЅР° Р·РЅР°С‡РєРµ. Р’ РЅР°С€РµРј СЃР»СѓС‡Р°Рµ СЌС‚Рѕ РїСЂРѕСЃС‚Рѕ Р°РєС‚РёРІР°С†РёСЏ РїСЂРёР»РѕР¶РµРЅРёСЏ}
+      begin
+//        ShowWindow(Application.Handle, SW_SHOW); // Р’РѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµРј РєРЅРѕРїРєСѓ РїСЂРѕРіСЂР°РјРјС‹
+        ShowWindow(Handle, SW_SHOW); // Р’РѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµРј РѕРєРЅРѕ РїСЂРѕРіСЂР°РјРјС‹
+      end;
+    WM_RBUTTONUP: {Р”РµР№СЃС‚РІРёСЏ, РІС‹РїРѕР»РЅСЏРµРјС‹Р№ РїРѕ РѕРґРёРЅР°СЂРЅРѕРјСѓ С‰РµР»С‡РєСѓ РїСЂР°РІРѕР№ РєРЅРѕРїРєРё РјС‹С€Рё}
+      begin
+        SetForegroundWindow(Handle);                   // Р’РѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµРј РїСЂРѕРіСЂР°РјРјСѓ РІ РєР°С‡РµСЃС‚РІРµ РїРµСЂРµРґРЅРµРіРѕ РѕРєРЅР°
+        PopupMenu2.Popup(p.X, p.Y);  // Р—Р°СЃС‚Р°РІР»СЏРµРј РІСЃРїР»С‹С‚СЊ С‚РѕС‚ СЃР°РјС‹Р№ TPopUp Рѕ РєРѕС‚РѕСЂРѕРј СЏ РіРѕРІРѕСЂРёР» С‡СѓС‚СЊ СЂР°РЅСЊС€Рµ
         PostMessage(Handle, WM_NULL, 0, 0);
       end;
-  End;
+  end;
 end;
+
+procedure THTTPSRVForm.Minimize1Click(Sender: TObject);
+begin
+  ShowWindow(Handle, SW_hide); // Г‚Г®Г±Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г®ГЄГ­Г® ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»
+  application.Minimize;
+end;
+
+procedure THTTPSRVForm.Ic(n: Integer; Icon: TIcon);
+var
+  Nim: TNotifyIconData;
+begin
+   Nim.cbSize := SizeOf(Nim);
+  with Nim do
+  begin
+    Wnd := Handle;
+    uID := 1;
+    uFlags := NIF_ICON or NIF_MESSAGE or NIF_TIP;
+    hicon := Icon.Handle;
+    uCallbackMessage := wm_user + 1;
+    szTip := 'WEB-Shell interface server';
+  end;
+  case n of
+    1:
+      Shell_NotifyIcon(Nim_Add, @Nim);
+    2:
+      Shell_NotifyIcon(Nim_Delete, @Nim);
+    3:
+      Shell_NotifyIcon(Nim_Modify, @Nim);
+  end;
+end;
+
+procedure THTTPSRVForm.ControlWindow(var Msg: TMessage);
+begin
+  if Msg.WParam = SC_MINIMIZE then
+  begin
+    ShowWindow(Handle, SW_HIDE);  // ???????? ?????????
+//    ShowWindow(Application.Handle, SW_HIDE);  // ???????? ?????? ? TaskBar'?
+  end
+  else
+    inherited;
+end;
+
 
 procedure THTTPSRVForm.Panel1Click(Sender: TObject);
 begin
@@ -142,41 +184,25 @@ begin
   end;
 end;
 
-Procedure THTTPSRVForm.Ic(n: Integer; Icon: TIcon);
-Var
-  Nim: TNotifyIconData;
+
+procedure THTTPSRVForm.quit1Click(Sender: TObject);
 begin
-  With Nim do
-  Begin
-    cbSize := system.SizeOf(Nim);
-    Wnd := Handle;
-    uID := 1;
-    uFlags := NIF_ICON or NIF_MESSAGE or NIF_TIP;
-    hicon := Icon.Handle;
-    uCallbackMessage := WM_USER + 1;
-    szTip := 'WEB-Shell interface server';
-  End;
-  Case n OF
-    1:
-      Shell_NotifyIcon(Nim_Add, @Nim);
-    2:
-      Shell_NotifyIcon(Nim_Delete, @Nim);
-    3:
-      Shell_NotifyIcon(Nim_Modify, @Nim);
-  End;
+  halt;
 end;
 
-Procedure THTTPSRVForm.ControlWindow(Var Msg: TMessage);
-Begin
-  IF Msg.WParam = SC_MINIMIZE then
-  Begin
-    Ic(1, Application.Icon); // ????????? ?????? ? ????
-    ShowWindow(Handle, SW_HIDE); // ???????? ?????????
-    ShowWindow(Application.Handle, SW_HIDE); // ???????? ?????? ? TaskBar'?
-  End
-  else
-    inherited;
-End;
+procedure THTTPSRVForm.Restore1Click(Sender: TObject);
+begin
+  ShowWindow(Handle, SW_SHOW);
+end;
+
+procedure THTTPSRVForm.FormClose(Sender: TObject; var Action: TCloseAction);
+
+begin
+  ShowWindow(Handle, SW_hide);
+  Action := caNone;
+
+
+end;
 
 procedure THTTPSRVForm.FormCreate(Sender: TObject);
 var
@@ -185,9 +211,6 @@ var
   objFileName: string;
   strlist: TStringList;
 begin
-  Ic(2, Application.Icon); // Удаляем значок из трея
-  ShowWindow(Application.Handle, SW_SHOW); // Восстанавливаем кнопку программы
-  ShowWindow(Handle, SW_SHOW); // Восстанавливаем окно программы
 
   starttime := now;
   while (now - starttime) * 24 * 3600 < 3 do
@@ -195,7 +218,22 @@ begin
 
   HTTPsrv := TTCPHttpDaemon.Create;
   lastReq := -1;
+  Ic(1, Application.Icon);
   Timer1.Enabled := true;
+   application.Minimize;
+
+end;
+
+procedure THTTPSRVForm.FormDestroy(Sender: TObject);
+begin
+   Ic(2, Application.Icon);
+end;
+
+procedure THTTPSRVForm.FormShow(Sender: TObject);
+begin
+  ShowWindow(Application.Handle, SW_HIDE);
+  ShowWindow(Application.MainForm.Handle, SW_HIDE);
+
 end;
 
 Constructor TTCPHttpDaemon.Create;
@@ -424,7 +462,7 @@ var
   st: double;
 begin
   caption := formatDateTime('dd/mm/yyyy HH:NN:SS', now) +
-    formatDateTime(' Старт:dd/mm/yyyy HH:NN:SS', starttime);
+    formatDateTime(' РЎС‚Р°СЂС‚:dd/mm/yyyy HH:NN:SS', starttime);
   Timer1.Enabled := false;
   Application.ProcessMessages;
   while true do

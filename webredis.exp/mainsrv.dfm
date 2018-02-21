@@ -12,7 +12,10 @@ object HTTPSRVForm: THTTPSRVForm
   Font.Style = []
   OldCreateOrder = True
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
   PixelsPerInch = 120
   TextHeight = 16
   object Panel1: TPanel
@@ -23,7 +26,6 @@ object HTTPSRVForm: THTTPSRVForm
     Align = alTop
     TabOrder = 0
     OnClick = Panel1Click
-    ExplicitWidth = 914
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -62,7 +64,6 @@ object HTTPSRVForm: THTTPSRVForm
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    ExplicitWidth = 914
   end
   object Chart1: TChart
     Left = 0
@@ -75,8 +76,6 @@ object HTTPSRVForm: THTTPSRVForm
     View3D = False
     Align = alClient
     TabOrder = 2
-    ExplicitWidth = 914
-    ExplicitHeight = 365
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 13
     object chartbox: TCheckBox
@@ -144,12 +143,20 @@ object HTTPSRVForm: THTTPSRVForm
     Left = 368
     Top = 128
   end
-  object PopupMenu1: TPopupMenu
-    Left = 656
+  object PopupMenu2: TPopupMenu
+    Left = 552
     Top = 24
-    object terminate1: TMenuItem
-      Caption = 'terminate'
-      OnClick = terminate1Click
+    object Restore1: TMenuItem
+      Caption = 'Restore'
+      OnClick = Restore1Click
+    end
+    object Minimize1: TMenuItem
+      Caption = 'Minimize'
+      OnClick = Minimize1Click
+    end
+    object quit1: TMenuItem
+      Caption = 'quit'
+      OnClick = quit1Click
     end
   end
 end

@@ -24,8 +24,20 @@ uses
 // http in 'http.pas';
 
 {$R *.res}
+function UniqueApp :Boolean;
+Var HM :THandle;
+begin
+  HM:=CreateMutex(nil, False, PChar(Application.Title));
+  Result:=GetLastError<>ERROR_ALREADY_EXISTS;
+end;
 
 begin
+  if not UniqueApp then
+  begin
+       showmessage('Приложение уже работает');
+       exit;
+  end;
+
   Application.Initialize;
   Application.CreateForm(THTTPSRVForm, HTTPSRVForm);
   Application.Run;

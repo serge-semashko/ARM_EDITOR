@@ -1,0 +1,139 @@
+<TLDevices>
+  <TypeDevices=Видеомикшер>
+    <Firms=Sony>
+      <Protocol=Sony BVS/DVS>
+        <Ports> 
+             <PortIP>
+                <IPAdress=187.152.240.002>
+                <IPPort=7605>
+                <Login=SONY01>
+                <Password=sony#001>
+             </PortIP>
+           </Ports>  
+      </Protocol=Sony BVS/DVS>
+    </Firms=Sony> 
+    <Firms=SAM(Snell & Wilcox Ltd)>
+      <Device=Kahuna>
+         <Protocol=GVG100>
+           <Ports> 
+             <PortIP>
+                <IPAdress=167.192.200.002>
+                <IPPort=7605>
+                <Login=SONY01>
+                <Password=sony#001>
+             </PortIP>
+           </Ports> 
+           <MainOptions>
+            <Count=1>
+            <1:EffectAdress=ME1|ME1|ME2|Key1|Key2|key3|Key4>  
+           </MainOptions>
+           <AddOptions>
+             <Count=32>
+             <1:Device1=Xpt1|AUX[0..9]|Xpt[0..96]>
+             <2:Device1=Xpt2|AUX[0..9]|Xpt[0..96]>
+             <3:Device1=Xpt3|AUX[0..9]|Xpt[0..96]>
+             <4:Device1=Xpt4|AUX[0..9]|Xpt[0..96]>
+             <5:Device1=Xpt5|AUX[0..9]|Xpt[0..96]>
+             <6:Device1=Xpt6|AUX[0..9]|Xpt[0..96]>
+             <7:Device1=Xpt7|AUX[0..9]|Xpt[0..96]>
+             <8:Device1=Xpt8|AUX[0..9]|Xpt[0..96]>
+             <9:Device1=Xpt9|AUX[0..9]|Xpt[0..96]>
+             <10:Device1=Xpt10|AUX[0..9]|Xpt[0..96]>
+             <11:Device1=Xpt11|AUX[0..9]|Xpt[0..96]>
+             <12:Device1=Xpt12|AUX[0..9]|Xpt[0..96]>
+             <13:Device1=Xpt13|AUX[0..9]|Xpt[0..96]>
+             <14:Device1=Xpt14|AUX[0..9]|Xpt[0..96]>
+             <15:Device1=Xpt15|AUX[0..9]|Xpt[0..96]>
+             <16:Device1=Xpt16|AUX[0..9]|Xpt[0..96]>
+             <17:Device1=Xpt17|AUX[0..9]|Xpt[0..96]>
+             <18:Device1=Xpt18|AUX[0..9]|Xpt[0..96]>
+             <19:Device1=Xpt19|AUX[0..9]|Xpt[0..96]>
+             <20:Device1=Xpt20|AUX[0..9]|Xpt[0..96]>
+             <21:Device1=Xpt21|AUX[0..9]|Xpt[0..96]>
+             <22:Device1=Xpt22|AUX[0..9]|Xpt[0..96]>
+             <23:Device1=Xpt23|AUX[0..9]|Xpt[0..96]>
+             <24:Device1=Xpt24|AUX[0..9]|Xpt[0..96]>
+             <25:Device1=Xpt25|AUX[0..9]|Xpt[0..96]>
+             <26:Device1=Xpt26|AUX[0..9]|Xpt[0..96]>
+             <27:Device1=Xpt27|AUX[0..9]|Xpt[0..96]>
+             <28:Device1=Xpt28|AUX[0..9]|Xpt[0..96]>
+             <29:Device1=Xpt29|AUX[0..9]|Xpt[0..96]>
+             <30:Device1=Xpt30|AUX[0..9]|Xpt[0..96]> 
+             <31:Device1=Xpt31|AUX[0..9]|Xpt[0..96]>
+             <32:Device1=Xpt32|AUX[0..9]|Xpt[0..96]>   
+           </AddOptions>
+         </Protocol=GVG100>
+         <Protocol=Sony BVS/DVS>
+           <Ports> 
+             <Port422>
+                <Speed=38400>
+                <Bits=8>
+                <Parity=Нечет>
+                <Stop=1>
+                <Flow=Нет>
+             </Port422>             
+             <PortIP>
+                <IPAdress=197.168.100.022>
+                <IPPort=7605>
+                <Login=SAM01>
+                <Password=sam#001>
+             </PortIP>
+           </Ports>        
+         </Protocol=Sony BVS/DVS>
+      </Device=Kahuna>
+    </Firms=SAM(Snell & Wilcox Ltd)> 
+    <Firms=Ross Video>
+      <Device=Carbone> 
+         <Protocol=GVG100>
+           <Ports> 
+             <Port422>
+                <Speed=38400>
+                <Bits=8>
+                <Parity=Нечет>
+                <Stop=1>
+                <Flow=Нет>
+             </Port422>             
+             <PortIP>
+                <IPAdress=196.188.050.122>
+                <IPPort=1605>
+                <Login=ROSS01>
+                <Password=ross#001>
+             </PortIP>
+           </Ports>
+         </Protocol=GVG100>
+      </Device=Carbone> 
+    </Firms=Ross Video>
+    <Firms=Grass Valey>
+      <Device=Kayak> 
+         <Protocol=GVG100>
+           <Ports> 
+             <Port422>
+                <Speed=38400>
+                <Bits=8>
+                <Parity=Нечет>
+                <Stop=1>
+                <Flow=Нет>
+             </Port422>             
+           </Ports>
+         </Protocol=GVG100>
+      </Device=Kayak>       
+      <Device=Carrera> 
+         <Protocol=GVG100>
+           <Ports> 
+             <Port422>
+                <Speed=38400>
+                <Bits=8>
+                <Parity=Нечет>
+                <Stop=1>
+                <Flow=Нет>
+             </Port422>             
+           </Ports>
+         </Protocol=GVG100>
+      </Device=Carrera>
+    </Firms=Grass Valey>
+  </TypeDevices=Видеомикшер>
+</TLDevices>
+<TLText>
+</TLText>
+<TLMedia>
+</TLMedia>

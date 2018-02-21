@@ -392,6 +392,7 @@ var
   log1:string;
   tname :string;
 begin
+ exit;
   try
     tname:=formatdatetime('yyyy-mm-dd',now)+'.dat';
     If FileExists(tName)
@@ -425,6 +426,7 @@ exit;
 end;
 Procedure WriteTimeLog(LogData:String);
 begin
+
   WriteLog(FormatdateTime('DD/MM/YYYY HH:NN:SS',now)+' '+LogData+#10);
 end;
 
