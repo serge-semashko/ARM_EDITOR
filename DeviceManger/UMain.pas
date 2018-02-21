@@ -129,7 +129,8 @@ begin
   MyTLEdit.Clear;
   url := 'http://localhost:9090/GET_TLEDITOR';
   str1 := GetJsonStrFromWeb(url);
-  MyTLEdit.LoadFromJSONstr(str1);
+  if length(str1)>10 then  MyTLEdit.LoadFromJSONstr(str1) else
+  showmessage('Некорретная строка с сервера');
 end;
 
 procedure TForm1.WM_GETMINMAXINFO(var msg: TWMGETMINMAXINFO);

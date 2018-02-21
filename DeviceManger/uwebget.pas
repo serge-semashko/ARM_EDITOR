@@ -53,9 +53,10 @@ var
 begin
     result := '';
     strlist := tstringlist.create;
-    httpgettext(url,strlist);
+    if not httpgettext(url,strlist) then exit;
+    if length(strlist.text) <6  then result := '';
 
-    strlist.savetofile('g:\home\gettext.js');
+//    strlist.savetofile('g:\home\gettext.js');
     result := system.copy(strlist.text,2,length(strlist.text)-2);
     while ( result[length(result)] <> '}') and  (length(result) > 0) do system.delete(result,length(result),1);
 
