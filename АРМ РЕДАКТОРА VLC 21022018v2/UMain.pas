@@ -636,6 +636,7 @@ begin
        form1.lbTypeTC.Font.Color := clLime;
        MyRemainTime := MyStartPlay - ftm;
        TLParameters.Position := TLParameters.Start;
+         //SSSSSSSSSSSSSS Сохранение TTLParameters.position
        TLZone.DrawTimelines(Form1.imgtimelines.Canvas,bmptimeline);
      //  WriteLog('Synchro', '2) Старт TLParameters.Position=' + inttostr(TLParameters.Position)
      //            + ' Время до запуска MyRemainTime=' + inttostr(MyRemainTime));
@@ -665,6 +666,7 @@ begin
        application.ProcessMessages;
        if ftm < fen then begin
          TLParameters.Position := TLParameters.Start + ftm-MyStartPlay;
+         //SSSSSSSSSSSSSS Сохранение TTLParameters.position
          //WriteLog('Synchro', '5) ftm < fen');
          MediaSetPosition(TLParameters.Position, false, 'TMyThread.DoWork-2'); //2
          //WriteLog('Synchro', '201) MediaPosition ------------------333333333');
@@ -712,6 +714,7 @@ begin
         if ftm >= fen then begin
           form1.lbTypeTC.Font.Color := SmoothColor(ProgrammFontColor,72);
           TLParameters.Position := TLParameters.Finish;
+         //SSSSSSSSSSSSSS Сохранение TTLParameters.position
           TLZone.DrawTimelines(Form1.imgtimelines.Canvas,bmptimeline);
           //MyStartPlay := -1;
         end;
@@ -726,6 +729,7 @@ begin
         //  WriteLog('Synchro', '8) ftm < fen - TRUE');
           if ftm < MyStartPlay then begin
             TLParameters.Position := TLParameters.Start;
+         //SSSSSSSSSSSSSS Сохранение TTLParameters.position
         //    WriteLog('Synchro', '8) ftm < MyStartPlay - TRUE  TLParameters.Position=' + inttostr(TLParameters.Position));
           end else begin
             TLParameters.Position := TLParameters.Start + ftm-MyStartPlay;
@@ -857,6 +861,7 @@ begin
        //WriteLog('Synchro', '     108) DrawTimelines Position=' + inttostr(TLParameters.Position));
        if OldParamPosition <> TLParameters.Position
          then TLZone.DrawTimelines(Form1.imgtimelines.Canvas,bmptimeline);
+         //SSSSSSSSSSSSSS Сохранение TTLParameters.position
        OldParamPosition := TLParameters.Position;
        //if makelogging then WriteLog('TC', '----------' + floattostr(db0-OldTCTime) + '------------------' + Framestostr(TLParameters.Position) + '------------------> 2');
        //dbld2 := MyTimer.ReadTimer;//========
