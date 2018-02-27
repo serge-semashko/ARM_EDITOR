@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, Buttons, StdCtrls, ExtCtrls, Grids, ImgList, AppEvnts,
-  DirectShow9, ActiveX, UPlayer, UHRTimer,  MMSystem, OpenGL, UCommon;
+  DirectShow9, ActiveX, UPlayer, UHRTimer,  MMSystem, OpenGL, UCommon, SYSTEM.JSON;
 
 Const
 
@@ -122,15 +122,32 @@ end;
 
 procedure TForm1.SpeedButton3Click(Sender: TObject);
 var
- str1 : ansistring;
+ str1, str2 : ansistring;
  url : ansistring;
  slist1 : tstringlist;
+ JS1 : TJSONOBJECT;
+ d1, d2 : double;
+ i1, i2 , maxcnt: integer;
 begin
   MyTLEdit.Clear;
-  url := 'http://localhost:9090/GET_TLEDITOR';
-  str1 := GetJsonStrFromWeb(url);
-  if length(str1)>10 then  MyTLEdit.LoadFromJSONstr(str1) else
-  showmessage('Некорретная строка с сервера');
+  JS1 := TJSONOBJECT.Create;
+
+  while js1.Count<1000 do js1.AddPair(IntToStr(js1.count), 'aaa'+IntToStr(js1.count));
+  maxcnt := 100;
+  url := 'http://localhost:9090/SET_TLE='+js1.ToString;
+  str2 :=js1.ToString;
+   d1 := now;
+   for i1 := 0 to maxcnt do begin
+      url := 'http://localhost:9090/SET_TLE'+IntToStr(i1)+'='+str2;
+       str1 := GetJsonStrFromWeb(url);
+   end;
+  showmessage ('get = '+str1+' speed ='+format('%.0n time=%n',[length(url)*maxcnt*1.0/((now-d1)*3600*24),((now-d1)*3600*24.0*1000)/maxcnt]));
+//  if length(str1)>10 then  MyTLEdit.LoadFromJSONstr(str1) else
+//  showmessage('Некорретная строка с сервера');
+//  url := 'http://localhost:9090/PUT=TLEDITOR';
+//  str1 := PutJsonStrToWeb(url,'&{ksgflskhgskjgkjshdf}');
+//  showmessage ('put = '+str1);
+
 end;
 
 procedure TForm1.WM_GETMINMAXINFO(var msg: TWMGETMINMAXINFO);

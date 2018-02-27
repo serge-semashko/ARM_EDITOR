@@ -3,7 +3,9 @@ program DeviceManager;
 uses
   Vcl.Forms,
   UMain in 'UMain.pas' {Form1},
-  uwebget in 'uwebget.pas';
+  uwebget in 'uwebget.pas',
+  blcksock in 'blcksock.pas',
+  httpsend in 'httpsend.pas';
 
 {$R *.res}
 

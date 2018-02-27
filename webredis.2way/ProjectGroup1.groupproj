@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DBD0D6B2-F463-49A8-B3E1-702D5E2F7DF9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="webredis.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DeviceManger\DeviceManager.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="webredis">
+        <MSBuild Projects="webredis.dproj"/>
+    </Target>
+    <Target Name="webredis:Clean">
+        <MSBuild Projects="webredis.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="webredis:Make">
+        <MSBuild Projects="webredis.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DeviceManager">
+        <MSBuild Projects="..\DeviceManger\DeviceManager.dproj"/>
+    </Target>
+    <Target Name="DeviceManager:Clean">
+        <MSBuild Projects="..\DeviceManger\DeviceManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DeviceManager:Make">
+        <MSBuild Projects="..\DeviceManger\DeviceManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="webredis;DeviceManager"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="webredis:Clean;DeviceManager:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="webredis:Make;DeviceManager:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
