@@ -1,0 +1,100 @@
+object frOptions: TfrOptions
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1072' COM '#1087#1086#1088#1090#1072
+  ClientHeight = 465
+  ClientWidth = 493
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poOwnerFormCenter
+  StyleElements = []
+  PixelsPerInch = 120
+  TextHeight = 16
+  object Panel1: TPanel
+    Left = 0
+    Top = 433
+    Width = 493
+    Height = 32
+    Align = alBottom
+    Caption = 'Panel1'
+    ShowCaption = False
+    TabOrder = 0
+    StyleElements = []
+    object SpeedButton1: TSpeedButton
+      Left = 360
+      Top = 2
+      Width = 120
+      Height = 25
+      Caption = #1059#1089#1090#1072#1085#1086#1074#1080#1090#1100
+      OnClick = SpeedButton1Click
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 239
+      Top = 2
+      Width = 120
+      Height = 25
+      Caption = #1054#1090#1084#1077#1085#1072
+      OnClick = SpeedButton2Click
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 493
+    Height = 433
+    Align = alClient
+    Caption = 'Panel2'
+    ShowCaption = False
+    TabOrder = 1
+    StyleElements = []
+    object ImgOptions: TImage
+      Left = 1
+      Top = 1
+      Width = 491
+      Height = 431
+      Align = alClient
+      OnMouseMove = ImgOptionsMouseMove
+      OnMouseUp = ImgOptionsMouseUp
+      ExplicitLeft = 184
+      ExplicitTop = 144
+      ExplicitWidth = 105
+      ExplicitHeight = 105
+    end
+    object Edit1: TEdit
+      Left = 120
+      Top = 48
+      Width = 121
+      Height = 22
+      Ctl3D = False
+      ParentCtl3D = False
+      TabOrder = 0
+      Text = 'Edit1'
+      Visible = False
+      StyleElements = []
+      OnChange = Edit1Change
+      OnKeyDown = Edit1KeyDown
+      OnKeyPress = Edit1KeyPress
+    end
+    object ComboBox1: TComboBox
+      Left = 152
+      Top = 96
+      Width = 145
+      Height = 22
+      BevelInner = bvNone
+      BevelKind = bkSoft
+      Style = csOwnerDrawFixed
+      Ctl3D = False
+      ParentCtl3D = False
+      TabOrder = 1
+      Visible = False
+      StyleElements = []
+      OnChange = ComboBox1Change
+    end
+  end
+end

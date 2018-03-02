@@ -91,7 +91,7 @@ begin
     if not httpgettext(putcommand, strlist) then
         exit;
     result := strlist.text;
-    showmessage(' answ = '+result);
+//    showmessage(' answ = '+result);
     if length(strlist.text) < 6 then exit;
     i1 := pos('{',strlist.text);
     if i1<1  then exit;
@@ -100,7 +100,7 @@ begin
     result := system.copy(strlist.text, i1, length(strlist.text) - 2);
     while (result[length(result)] <> '}') and (length(result) > 0) do
         system.delete(result, length(result), 1);
-    showmessage(result);
+//    showmessage(result);
 end;
 
 end.

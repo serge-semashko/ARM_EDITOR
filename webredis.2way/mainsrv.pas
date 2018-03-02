@@ -7,7 +7,8 @@ uses
     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
     Dialogs, StdCtrls, Buttons, ExtCtrls, HTTPSend, blcksock, winsock, Synautil,
     strutils, system.json, AppEvnts, Menus, inifiles, das_const, ipcthrd,
-    TeEngine, Series, TeeProcs, Chart, VclTee.TeeGDIPlus, System.Generics.Collections;
+    TeEngine, Series, TeeProcs, Chart, VclTee.TeeGDIPlus, System.Generics.Collections,
+    mmsystem;
 
 type
     THTTPSRVForm = class(TForm)
@@ -76,8 +77,18 @@ type
 
     PHardRec = ^THardRec;
 
+    TWebVar = packed record
+        Name: ansistring;
+        baseName: ansistring;
+        changed: int64;
+        jsonStr: ansistring;
+        json: TJSONObject;
+    end;
+
 var
-    keys: TDictionary<ansistring, ansistring>;
+    EmptyWebVar: TWebVar = (); //'','',-1,'',nil);
+    VarCount: integer = 0;
+    webvars: array[0..10000] of twebvar;
     KeyNames: tstringlist;
     Keyvalues: tstringlist;
     JsonVars: tstringlist;
@@ -369,17 +380,145 @@ begin
     Sock.CloseSocket;
 end;
 
+procedure AddWebVar(keyname: ansistring; KeyValue: ansistring; json: tjsonobject);
+var
+    i1, i2, i3: integer;
+    tnow: int64;
+begin
+    tnow := timeGetTime;
+
+    for i1 := 0 to VarCount - 1 do begin
+        if ansiuppercase(webvars[i1].Name) <> ansiuppercase(keyname) then
+            continue;
+        webvars[i1].BaseName := keyname;
+
+        if pos('[', keyname) > 1 then
+            webvars[i1].BaseName := system.Copy(keyname, 1, pos('[', keyname) - 1);
+        webvars[i1].changed := tnow;
+        webvars[i1].jsonstr := KeyValue;
+        webvars[i1].json := json;
+        exit;
+    end;
+    inc(varCount);
+    i1 := varCount - 1;
+    if pos('[', keyname) > 1 then
+        webvars[i1].BaseName := system.Copy(keyname, 1, pos('[', keyname) - 1);
+    webvars[i1].changed := tnow;
+    webvars[i1].jsonstr := KeyValue;
+    webvars[i1].name := keyname;
+
+end;
+
+procedure RemoveWebVar(keyname: ansistring);
+var
+    i1, i2, i3: integer;
+    tnow: int64;
+begin
+    for i1 := 0 to VarCount - 1 do begin
+        if ansiuppercase(webvars[i1].Name) <> ansiuppercase(keyname) then
+            continue;
+        webvars[i1].changed := -1;
+        exit;
+    end;
+end;
+
+function getWebVarTime(keyname: ansistring): int64;
+var
+    i1, i2, i3: integer;
+    tnow: int64;
+begin
+    result := -1;
+    for i1 := 0 to VarCount - 1 do begin
+        if ansiuppercase(webvars[i1].Name) <> ansiuppercase(keyname) then
+            continue;
+        result := webvars[i1].changed;
+        exit;
+    end;
+end;
+
+procedure ParseKeyName(KeyName: ansistring; var baseName: ansistring; var Selkey: ansistring; var SelValue: ansistring);
+var
+    pair: string;
+    st, fn: integer;
+begin
+    Selkey := '';
+    baseName := KeyName;
+    if pos('(', KeyName) = 0 then
+        exit;
+    if pos(')', KeyName) = 0 then
+        exit;
+    baseName := system.Copy(KeyName, 1, pos('(', KeyName) - 1);
+    st := pos('(', KeyName) + 1;
+    fn := pos(')', KeyName);
+    pair := system.Copy(KeyName, st, fn - st);
+
+    Selkey := system.Copy(pair, 1, pos(':', pair) - 1);
+    SelValue := system.Copy(pair, pos(':', pair) + 1, Length(pair));
+end;
+
+function GetVarBySelection(baseName, SelName, Selvalue: string): twebvar;
+var
+    i1, i2, i3: integer;
+    jvalue: tjsonvalue;
+    jstr: string;
+begin
+    for i1 := 0 to VarCount - 1 do begin
+        if ansiuppercase(webvars[i1].baseName) <> ansiuppercase(baseName) then
+            continue;
+        jvalue := webvars[i1].json.GetValue(SelName);
+        if jvalue = nil then
+            Continue;
+        jstr := jvalue.Value;
+        if jstr <> Selvalue then
+            continue;
+        result := webvars[i1];
+        exit;
+    end;
+    Result := EmptyWebVar;
+
+end;
+
+function GetWebVar(keyName: ansistring): TWebVar;
+var
+    i1, i2, i3: integer;
+    str1: string;
+    json: tjsonobject;
+    baseName: ansistring;
+    SelName: AnsiString;
+    Selvalue: AnsiString;
+begin
+    result := EmptyWebVar;
+    ;
+    ParseKeyName(keyName, baseName, SelName, Selvalue);
+    if SelName <> '' then begin
+        Result := GetVarBySelection(baseName, SelName, Selvalue);
+        exit;
+    end;
+
+    for i1 := 0 to VarCount - 1 do begin
+        if ansiuppercase(webvars[i1].Name) <> ansiuppercase(keyName) then
+            continue;
+        result := webvars[i1];
+        exit;
+    end;
+
+end;
+
 function TTCPHttpThrd.ProcessHttpRequest(Request, URI: string): Integer;
 var
     l: TStringList;
-    str1, str2,  resp: ansistring;
-    str3 : string;
+    str1, str2, resp: ansistring;
+    pos_var_name: integer;
+    str3: string;
     stmp, jreq: string;
     amppos: Integer;
     json, json1: tjsonobject;
     i1, i2, i3: integer;
     keyname: ansistring;
     keyval: ansistring;
+    I: Integer;
+    MyRequest: string;
+    jSONSTR: string;
 begin
   // sample of precessing HTTP request:
   // InputData is uploaded document, headers is stringlist with request headers.
@@ -399,39 +538,28 @@ begin
                     jreq := copy(stmp, 1, amppos - 2);
             end;
             resp := HardRec.JSONAll;
-            if pos('GET_TLEDITOR', URI) <> 0 then begin
-                str1 := HardRec.JSONStore;
-                json := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(str1), 0) as TJSONObject;
-                if json = nil then
-                    resp := '{status:" Error TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(HardRec.JSONStore), 0)"}'
-                else begin
-                    json1 := tjsonobject(json.GetValue('TLEDITOR'));
-                    if json1 = nil then
-                        resp := '{status:" Error tjsonobject(json.GetValue(''TLEDITOR''))"}'
-                    else
-                        resp := json1.ToString;
-                end;
+
+            i1 := pos('&', URI);
+            if i1 <= 0 then
+                i1 := length(URI) + 1;
+            MyRequest := System.Copy(URI, 2, i1 - 2);
+            if pos('GET_', MyRequest) <> 0 then begin
+                resp := GetWebVar(system.copy(MyRequest, 5, Length(MyRequest))).jSONSTR;
             end;
-            if pos('SET_', ansiuppercase(URI)) <> 0 then begin
-                resp := 'errformat No = :' + URI;
+            pos_var_name := pos('SET_', ansiuppercase(URI)) + 4;
+            if pos_var_name > 5 then begin
+                resp := '{"status":"ok"}';
                 i1 := pos('=', URI);
                 if i1 > 5 then begin
-                    keyname := copy(URI, 6, i1 - 6);
-                    str1 := copy(URI, i1+1, Length(URI));
+                    keyname := copy(URI, pos_var_name, i1 - pos_var_name);
+                    str1 := copy(URI, i1 + 1, Length(URI));
                     while (str1[length(str1)] <> '}') and (length(str1) > 1) do
                         system.delete(str1, length(str1), 1);
                     json := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(str1), 0) as TJSONObject;
-                    if json = nil then begin
-                        resp := '{status:" Error TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(HardRec.JSONStore), 0)"}';
-                        showmessage(resp);
-                    end
-                    else begin
-
-                        keys.AddOrSetValue(keyname, str1);
-                        resp := '{"status":"ok"}';
-//                        showmessage('Ok size ='+IntTostr(length(json.ToString)));
-                        json.Free;
-                    end;
+                    if json <> nil then
+                        AddWebVar(keyname, str1, json)
+                    else
+                        resp := '{"status":"errformat"}';
                 end;
             end;
 
@@ -535,9 +663,13 @@ initialization
     end;
     HardRec.UpdateCounter := 0;
     lastReq := now;
-    keys := TDictionary<ansistring, ansistring>.Create();
 //    varNames := tstringlist.Create;
 //    Varvalues:= tstringlist.Create;
+      EmptyWebVar.Name := '';
+      EmptyWebVar.baseName := '';
+      EmptyWebVar.jsonStr := '';
+      EmptyWebVar.changed := -1;
+      EmptyWebVar.json := nil;
 
 end.
 
