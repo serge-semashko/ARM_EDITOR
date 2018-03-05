@@ -34,7 +34,7 @@ type
     constructor Create;
     destructor  Destroy; override;
   end;
-///// SSSSSSSSSS JSON
+///// SSSS JSON
 
   TTimelineOptionsJSON  = Class helper for TTimelineOptions
   public
@@ -43,7 +43,7 @@ type
     Function LoadFromJSONObject(JSON:TJsonObject):boolean;
     Function LoadFromJSONstr(JSONstr:string):boolean;
   End;
-  ///// SSSSSSSSSS JSON end
+  ///// SSSS JSON end
 
   TFEditTimeline = class(TForm)
     Panel1: TPanel;
@@ -139,7 +139,7 @@ uses UMain, UButtonOptions, uinitforms, umymessage, ugrtimelines, umyfiles,
      ufrprotocols;
 
 {$R *.dfm}
-///////////////////////////// SSSSSSSSSS JSON
+///////////////////////////// SSSS JSON Helper TTimelineOptions
 function TTimelineOptionsJSON.LoadFromJSONObject(JSON: TJsonObject): boolean;
 var
  i1 : integer;
@@ -234,7 +234,7 @@ begin
   result := jsonStr;
 end;
 
-///////////////////////////// SSSSSSSSSS JSON end
+///////////////////////////// SSSS JSON end
 
 Procedure TFEditTimeline.DrawIcons(ttl : TTypeTimeline; Selection : integer);
 var i, clx, nx, deltx, delty, wx, hy : integer;

@@ -328,6 +328,7 @@ begin
     if URI = '' then
         Exit;
     protocol := fetch(s, ' ');
+//    protocol :=  'HTTP/1.0';
     Headers.Clear;
     size := -1;
   // read request headers
@@ -396,6 +397,7 @@ begin
             webvars[i1].BaseName := system.Copy(keyname, 1, pos('[', keyname) - 1);
         webvars[i1].changed := tnow;
         webvars[i1].jsonstr := KeyValue;
+        webvars[i1].json.free;
         webvars[i1].json := json;
         exit;
     end;

@@ -88,7 +88,7 @@ Type
     Constructor Create;
     Destructor  Destroy; override;
   end;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//================ssss========================
 //========================  Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
   TMyEventJSON = Class helper for TMyEvent
@@ -116,7 +116,7 @@ Type
     Function LoadFromJSONObject(JSON:tjsonobject):boolean;
     Function LoadFromJSONstr(JSONstr:string):boolean;
   End;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//===========end=============================
 //========================  Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 
@@ -127,7 +127,7 @@ var
 implementation
 uses umain, udrawtimelines, UTimeline, umyfiles;
 
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//===========SSSS=============================
 //========================  Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 { TMyEventJSON }
@@ -426,7 +426,7 @@ function TRectJSON.SaveToJSONStr: string;
 begin
   result := SaveToJSONObject.ToString;
 end;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//========================================
 //========================  END Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 

@@ -188,7 +188,7 @@ TTLZone = Class(TObject)
   Constructor Create;
   Destructor Destroy; override;
 end;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//===========SSSS=============================
 //========================  Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
   TTLParametersJson =  Class helper for  TTLParameters
@@ -226,7 +226,7 @@ end;
       Function LoadFromJSONObject(JSON:TJsonObject):boolean;
       Function LoadFromJSONstr(JSONstr:string):boolean;
     End;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//===========SSSS=============================
 //======================== END  Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 
@@ -3677,7 +3677,7 @@ begin
     on E: Exception do WriteLog('MAIN', 'UGRTimelines.TTLZone.ReadFromStream | ' + E.Message);
   end;
 end;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//===========SSSs=============================
 //========================  Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
   function TTLParametersJson.LoadFromJSONObject(JSON: TJsonObject): boolean;
@@ -4203,7 +4203,7 @@ end;
     result := jsonStr;
   end;
 
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
+//===========SSSS=============================
 //========================  END Helpers для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 

@@ -385,14 +385,14 @@ function GetProtocolsParam(SrcStr, Name : string) : string;
 function GetProtocolsParamEx(SrcStr : string; Number : integer) : TListParam;
 procedure GetListParam(SrcStr : string; lst : tstrings);
 
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
-//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//===========SSSS=============================
+//========================  для Helper классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 
 Procedure addVariableToJson(var json:tjsonobject; varName: string; varvalue: variant);
 Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
-//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//===========SSSS=============================
+//========================  длф Helper для классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 
 implementation
@@ -402,8 +402,8 @@ uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimeli
      UGridSort, UImageTemplate, UTextTemplate, umyprint, umediacopy, UMyTextTemplate,
      umymenu, ufrlisterrors, umytexttable;
 
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
-//========================  Helpers для классов. Сохранения в JSON и загрузка ==
+//===========SSSS=============================
+//========================  для Helper классов. Сохранения в JSON и загрузка ==
 //==============================================================================
   Function getVariableFromJson(var json:tjsonobject; varName: string;varvalue: variant):variant;
   var
@@ -438,8 +438,8 @@ uses umain, uproject, uinitforms, umyfiles, utimeline, udrawtimelines, ugrtimeli
     utf8val := stringOf(tencoding.UTF8.GetBytes(strValue));
     json.AddPair(varName, strvalue);
   end;
-//===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
-//========================  END Helpers для классов. Сохранения в JSON и загрузка ==
+//===========SSSS=============================
+//========================  END для Helper  классов. Сохранения в JSON и загрузка ==
 //==============================================================================
 
 
