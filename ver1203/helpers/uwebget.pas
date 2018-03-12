@@ -16,6 +16,7 @@ function PutJsonStrToServer(varName: ansistring; varValue: ansistring)
 var
   jsonware_url: string;
   LoadProject_active : boolean = true;
+  webredis_errlasttime : double = -1;
 implementation
 
 var
@@ -78,15 +79,23 @@ var
 begin
   result := '';
   if LoadProject_active then  exit;
+  if (now-webredis_errlasttime)*24*3600<10 then exit;
+
   strlist := TStringList.create;
   if pos('HTTP://',AnsiUpperCase(varName)) < 1 then
      putcommand := jsonware_url + 'GET_' + varName
      else putcommand :=varName;
   if not httpgettext(putcommand, strlist) then
+  begin
+    webredis_errlasttime := now;
     exit;
+  end;
   result := strlist.text;
   if length(strlist.text) < 6 then
+  begin
+    webredis_errlasttime := now;
     exit;
+  end;
   i1 := pos('{', strlist.text);
   if i1 < 1 then
     exit;
@@ -107,17 +116,22 @@ var
   ff: tfilestream;
   putcommand: ansistring;
 begin
-  result := '';
     if LoadProject_active then exit;
+  if (now-webredis_errlasttime)*24*3600<10 then exit;
+  result := '';
   strlist := TStringList.create;
   putcommand := jsonware_url + 'SET_' + varName + '=' + varValue;
   if not httpgettext(putcommand, strlist) then
   begin
+    webredis_errlasttime := now;
     exit;
   end;
   result := strlist.text;
   if length(strlist.text) < 6 then
+  begin
+    webredis_errlasttime := now;
     exit;
+  end;
   i1 := pos('{', strlist.text);
   if i1 < 1 then
     exit;

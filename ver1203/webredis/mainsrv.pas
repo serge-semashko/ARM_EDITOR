@@ -382,7 +382,7 @@ var
     tnow: int64;
 begin
     tnow := timeGetTime;
-    HTTPSRVForm.memo1.lines.Values[keyname] := formatdatetime('HH:NN:SS ZZZ',now);
+//    HTTPSRVForm.memo1.lines.Values[keyname] := formatdatetime('HH:NN:SS ZZZ',now);
     for i1 := 0 to VarCount - 1 do begin
         if ansiuppercase(webvars[i1].Name) <> ansiuppercase(keyname) then
             continue;

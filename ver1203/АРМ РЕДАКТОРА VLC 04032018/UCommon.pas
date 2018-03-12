@@ -50,7 +50,6 @@ Const
     '0123456789абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz';
 
 Var
-  LoadProject_active : boolean = true;
 
   // Временно используемые параметрв для отладки программы
   // IDTL : longint = 0;     // Для формирования IDTimeline

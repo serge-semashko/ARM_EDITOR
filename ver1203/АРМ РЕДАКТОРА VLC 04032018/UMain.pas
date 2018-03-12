@@ -3216,6 +3216,7 @@ var
   i, oldcount: Integer;
   clpid: string;
 begin
+  LoadProject_active := true;
   // if mode=play then
   try
     FrSaveProject.Label1.Caption := '';

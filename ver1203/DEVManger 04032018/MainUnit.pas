@@ -106,10 +106,17 @@ var
   isduration : boolean = false;
   isendevent : boolean = false;
   isstartevent : boolean = false;
+  tlp_str : string;
+  old_tlp_str : string = '';
+  old_tle_str : string = '';
+  tlp_changed :Boolean = false;
+  webrequest_time : double = -1;
+  tle_request_time : double = -1;
 
   procedure StartMyTimer;
   procedure StopMyTimer;
   Function ReadMyTimer : Double;
+Procedure Update_TLEditor;
 
 implementation
 
@@ -203,7 +210,29 @@ begin
      InfoWEB.SetData(0,MyDateTimeToStr(now)); //'Тайм код системы:
 
       // 'Текущий кадр:'
-     if InfoWEB.Options[0].Text<>'' then TLParameters.Position :=TLParameters.Preroll + StrTimeCodeToFrames(InfoWEB.Options[1].Text);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     if InfoWEB.Options[0].Text<>'' then TLParameters.Position :=TLParameters.Preroll + StrTimeCodeToFrames(InfoWEB.Options[1].Text);
+     Update_TLEDITOR;
+     if (now - webrequest_time)*24*3600*1000 >20  then
+     begin
+       tlp_str := GetJsonStrFromServer('TLP');
+       if Length(tlp_str)>10 then begin
+         if tlp_str <> old_tlp_str then
+         begin
+             TLP_server.LoadFromJSONstr(tlp_str);
+             old_tlp_str := tlp_str;
+             tlp_changed := true;
+         end
+         else begin
+             tlp_changed := false;
+         end;
+
+         //caption := IntToStr(TLP_server.Position)+formatdatetime(' HH:NN:SS ZZZ',now);;
+         if InfoWEB.Options[0].Text<>'' then TLParameters.Position := TLP_server.Position;
+       end;
+       webrequest_time := now;
+     end;
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      InfoWEB.SetData(2,inttostr(TLParameters.Position));
      //if FmMain.label6.Caption<>'' then TLParameters.Position :=TLParameters.Preroll + StrTimeCodeToFrames(FmMain.label6.Caption);
      //FmMain.label12.Caption:=inttostr(TLParameters.Position-TLParameters.Preroll);
@@ -682,7 +711,35 @@ procedure TfmMain.SpeedButton4Click(Sender: TObject);
 begin
   setoptions;
 end;
+Procedure Update_TLEditor;
+var
+ str1 : ansistring;
+ url : ansistring;
+ slist1 : tstringlist;
+begin
+  //FmMain.Memo2.Clear;
+  if abs(now - tle_request_time)*24*3600*1000<10000 then exit;
+  TLE_request_time := now;
+//  InfoWEB.SetData(1,'00:00:00:00');
+  CurrDt:=now;
+  MyTLEdit.Clear;
+  url := URLServer;
+  LoadProject_active := false;
+  str1 := GetJsonStrFromserver(url);
 
+  if trim(str1)<>''
+    then begin
+      if str1<>old_tle_str then
+         if  MyTLEdit.LoadFromJSONstr(str1) then begin
+            InfoProtocol.SetData('Статус:','Доступен');
+            old_tle_str := str1;
+            tle_request_time := now;
+         end
+         else InfoProtocol.SetData('Статус:','Не доступен');
+    end
+    else
+    InfoProtocol.SetData('Статус:','Не доступен');
+end;
 procedure TfmMain.SpeedButton8Click(Sender: TObject);
 var
  str1 : ansistring;
@@ -690,6 +747,7 @@ var
  slist1 : tstringlist;
 begin
   //FmMain.Memo2.Clear;
+  if abs(now - tle_request_time)*24*3600<10 then exit;
 
   InfoWEB.SetData(1,'00:00:00:00');
   CurrDt:=now;
@@ -697,10 +755,14 @@ begin
   url := URLServer;
   LoadProject_active := false;
   str1 := GetJsonStrFromserver(url);
+
   if trim(str1)<>''
     then begin
+      if str1<>old_tle_str then
          if  MyTLEdit.LoadFromJSONstr(str1) then begin
             InfoProtocol.SetData('Статус:','Доступен');
+            old_tle_str := str1;
+            tle_request_time := now;
          end
          else InfoProtocol.SetData('Статус:','Не доступен');
     end
@@ -712,11 +774,11 @@ var
   lstrs : string;
   tlp_str : string;
 begin
-  tlp_str := GetJsonStrFromServer('TLP');
-  if Length(tlp_str)>10 then begin
-     TLP_server.LoadFromJSONstr(tlp_str);
-     caption := IntToStr(TLP_server.Position)+formatdatetime(' HH:NN:SS ZZZ',now);;
-  end;
+//  tlp_str := GetJsonStrFromServer('TLP');
+//  if Length(tlp_str)>10 then begin
+//     TLP_server.LoadFromJSONstr(tlp_str);
+//     caption := IntToStr(TLP_server.Position)+formatdatetime(' HH:NN:SS ZZZ',now);;
+//  end;
 
    if port422select then begin
     if port422init then begin
