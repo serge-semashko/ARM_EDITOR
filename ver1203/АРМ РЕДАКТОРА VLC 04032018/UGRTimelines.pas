@@ -9,7 +9,6 @@ uses
   umyevents, OpenGL, System.json,uwebget;
 
 Type
-
   TEditingArea = (edNone, edStart, edCenter, edFinish);
 
   TTLParameters = Class(TObject)
@@ -37,6 +36,7 @@ Type
     ScreenEndFrame: longint; // Абсолютная позиция конца экрана (кадры)
     StopPosition: longint; // Позиция остановки клип (кадры)
     Scaler: real; // Отношение ширины Bitmap к ширине экрана
+    VLCMode: TPlayerMode;
     procedure InitParameters;
     procedure UpdateParameters;
     procedure SetScreenBoanders;
@@ -398,7 +398,7 @@ begin
         // cv.Rectangle(rt);
 
         // cv.Brush.Style:=bsClear;
-        if vlcmode <> play then
+        if TLParameters.vlcmode <> play then
         begin
           if TLZone.TLEditor.TypeTL = tldevice then
           begin
@@ -3479,10 +3479,10 @@ begin
         form1.imgLayer0.Canvas.Brush.Color := TLParameters.lrTransperent0;
         // Form1.ImgLayer0.Picture.Bitmap.TransparentColor;
         form1.imgLayer0.Canvas.FillRect(form1.imgLayer0.Canvas.ClipRect);
-        if vlcmode <> play then
+        if TLParameters.vlcmode <> play then
           DrawTimelines(form1.imgTimelines.Canvas, bmptimeline);
       end;
-
+      LoadProject(false);
       DownTimeline := false;
       DownEditor := false;
       DownScaler := false;
@@ -3591,7 +3591,7 @@ begin
         end
         else
         begin
-          if vlcmode = play then
+          if TLParameters.vlcmode = play then
             exit;
           TLEditor.AllSelectFalse;
           TLEditor.MouseMove(cv, X, Y);
@@ -3599,7 +3599,7 @@ begin
         end;
 
         TLEditor.UpdateScreen(bmptimeline.Canvas);
-        if vlcmode <> play then
+        if TLParameters.vlcmode <> play then
         begin
           TLZone.DrawTimelines(form1.imgTimelines.Canvas, bmptimeline);
           form1.imgLayer0.Repaint;
@@ -3617,7 +3617,7 @@ begin
         MouseInLayer2 := true;
         if DownTimeline then
         begin
-          if vlcmode = play then
+          if TLParameters.vlcmode = play then
             exit;
           shft := trunc((X - XDown) / TLParameters.FrameSize);
           TLParameters.Position := TLParameters.Position - shft;

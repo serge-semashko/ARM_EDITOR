@@ -29,7 +29,6 @@ var
 //  hr: HRESULT = 1;                                    //задаем начальное значение ложь
   pCurrent, pDuration, pStart: Double;                // Текужее положение и длительность фильма
   OldParamPosition : longint = -1;                    //Старая позиция курсораэ
-  VLCMode: TPlayerMode;                                  // режим воспроизведения
   Rate: Double;                                       // нормальная скорость воспроизведения
   FullScreen: boolean = false;                        //индикатор перехода в полноэкранный режим
   i: integer = 0;                                     // счетчик загруженных файлов

@@ -141,7 +141,7 @@ begin
     inttostr(GridPlayerRow));
   SetButtonsPredNext;
   MediaStop;
-  vlcmode := paused;
+  TLParameters.vlcmode := paused;
   LoadClipsToPlayer;
   SetMediaButtons;
   WriteLog('MAIN', 'UActPlayList.LoadPredClipToPlayer Finish GridPlayerRow=' +
@@ -282,7 +282,7 @@ begin
     SetButtonsPredNext;
   end;
   MediaStop;
-  vlcmode := paused;
+  TLParameters.vlcmode := paused;
   LoadClipsToPlayer;
   SetMediaButtons;
   WriteLog('MAIN', 'UActPlayList.LoadNextClipToPlayer Finish GridPlayerRow=' +
@@ -368,7 +368,7 @@ begin
     SwitcherVideoPanels(1);
     // dur:=FramesToDouble(defdur);
     dur := defdur;
-    vlcmode := paused;
+    TLParameters.vlcmode := paused;
 
     if not LoadClipEditingFromFile('defaultclip') then
     begin
@@ -720,7 +720,7 @@ begin
       // VLCPlayerWindow(Form1.pnMovie);
       // pMediaControl.Pause;
       // vlcplayer.Pause;
-      // vlcmode:=Paused;
+      // TLParameters.vlcmode:=Paused;
       // pMediaPosition.get_Rate(Rate);
       Rate := 1;
       WriteLog('MAIN', 'UActPlayList.LoadClipsToPlayer FileLoads Name=' + fn);
@@ -739,7 +739,7 @@ begin
 
     // MediaPause;
     // if VLCPlayer.p_mi <> nil then vlcplayer.Pause;
-    // vlcmode:=paused;
+    // TLParameters.vlcmode:=paused;
 
     if not LoadClipEditingFromFile(trim(Form1.lbActiveClipID.Caption)) then
     begin
@@ -925,7 +925,7 @@ begin
   dur := vlcplayer.Duration div 40;
   vlcplayer.Pause;
   // Rate:=vlcplayer.Time;
-  vlcmode := paused;
+  TLParameters.vlcmode := paused;
 
   TLParameters.Duration := dur;
   // TLParameters.NTK:=0; //###### Warming

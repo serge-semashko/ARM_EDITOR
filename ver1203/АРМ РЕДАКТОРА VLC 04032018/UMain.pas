@@ -566,7 +566,7 @@ end;
 procedure TForm1.WMEraseBackGround(var Msg: TMessage);
 begin
   try
-    if vlcmode = play then
+    if TLParameters.vlcmode = play then
       InvalidateRect(Form1.imgTimelines.Canvas.Handle, NIL, FALSE);
     WriteLog('MAIN', 'Message:WMEraseBackGround');
   except
@@ -621,7 +621,7 @@ begin
     { Если Вы хотите, чтобы процедура DoWork выполнялась лишь один раз - удалите цикл while }
     while not Terminated do
     begin
-      if vlcmode <> play then
+      if TLParameters.vlcmode <> play then
         sleep(1);
       Synchronize(DoWork);
     end;
@@ -692,7 +692,7 @@ begin
         // 1
         // WriteLog('Synchro', '200) MediaPosition ------------------222222222');
       end;
-      if (MyStartPlay <= ftm) and (vlcmode <> play) and (MyStartPlay <> -1)
+      if (MyStartPlay <= ftm) and (TLParameters.VLCMode <> play) and (MyStartPlay <> -1)
       { and MyStartReady } then
       begin
         Form1.lbTypeTC.Font.Color := ProgrammFontColor;
@@ -761,7 +761,7 @@ begin
           // WriteLog('Synchro', '7) MySinhro=chltc - FALSE');
         end;
       end;
-      if (TimeToFrames(msd) >= SynchDelay) and (vlcmode = play) then
+      if (TimeToFrames(msd) >= SynchDelay) and (TLParameters.vlcmode = play) then
       begin
         // if (MyShiftDelta<>0) and (mode=play) then begin
         dtc := now - TimeCodeDelta;
@@ -832,7 +832,7 @@ begin
         // WriteLog('TCPlayer', '2) DrawTimelines Position=' + inttostr(TLParameters.Position));
         PredDt := CurrDt;
         // WriteLog('Synchro', '100)');
-        if vlcmode = paused then
+        if TLParameters.vlcmode = paused then
           exit;
         // WriteLog('Synchro', '101)');
       end
@@ -877,7 +877,7 @@ begin
         Rate := libvlc_media_player_get_rate(VLCPlayer.p_mi);
         // WriteLog('Synchro', '      105) DBO=' + floattostr(db0)+ ' 3) Rate=' + floattostr(Rate));
         mycpos2 := TLParameters.Preroll + (db0 div 40);
-        if vlcmode = play then
+        if TLParameters.vlcmode = play then
         begin
           if mycpos2 < mycpos1 then
             mycpos2 := mycpos1;
@@ -947,7 +947,7 @@ begin
 
       if crpos.SafeZone then
       begin
-        if vlcmode = play then
+        if TLParameters.vlcmode = play then
           TLZone.DrawFlash(crpos.Number);
       end
       else
@@ -1514,7 +1514,7 @@ begin
         Image3.Repaint;
     end;
     // Если клип не воспроизводится, то перерисовываем тайм-линии в памяти, иначе если режим эфира отриосвываем события.
-    if vlcmode <> play then
+    if TLParameters.vlcmode <> play then
       TLZone.DrawBitmap(bmptimeline)
     else
     begin
@@ -1829,7 +1829,7 @@ begin
   if not fileexists(Form1.lbPlayerFile.Caption) then
     exit;
   pnMovie.Width := (pnMovie.Height div 9) * 16;
-  if vlcmode = play then
+  if TLParameters.vlcmode = play then
   begin
     // pVideoWindow.SetWindowPosition(0,0,pnMovie.ClientRect.Right,pnMovie.ClientRect.Bottom);
   end;
@@ -2062,7 +2062,7 @@ begin
       end
       else
       begin
-        if vlcmode = play then
+        if TLParameters.vlcmode = play then
           exit;
         if MouseInLayer2 then
         begin
@@ -2329,7 +2329,7 @@ var
   i: Integer;
 begin
   try
-    if (vlcmode = play) then
+    if (TLParameters.vlcmode = play) then
     begin
       for i := 0 to 3 do
         btnsctlleft.Rows[0].Btns[i].Visible := FALSE;
@@ -2377,7 +2377,7 @@ begin
         end;
       5:
         begin
-          if vlcmode <> play then
+          if TLParameters.vlcmode <> play then
           begin
             // if Not FileExists(lbPlayerFile.Caption) then begin
             // MyTextMessage('Сообщение','Не найден ассоциируемый с клипом файл:' +#10#13
@@ -2813,7 +2813,7 @@ begin
     end
     else
       LBTimeCode1.Visible := FALSE;
-    if vlcmode <> play then
+    if TLParameters.vlcmode <> play then
     begin
       if (not Compartido^.State) and (MySinhro = chltc) then
         lbCTLTimeCode.Caption := '*' + MyDateTimeToStr(now - TimeCodeDelta)
@@ -2833,7 +2833,7 @@ var
   wnd: hwnd;
   buff: array [0 .. 127] of char;
 begin
-  if vlcmode = play then
+  if TLParameters.vlcmode = play then
     exit;
   application.ProcessMessages;
   // ListBox1.clear;
@@ -2883,7 +2883,7 @@ begin
         // TLZone.DrawTimelines(imgtimelines.Canvas,bmptimeline);
         exit;
       end;
-      if (TLZone.DownTimeline) and (vlcmode <> play) then
+      if (TLZone.DownTimeline) and (TLParameters.vlcmode <> play) then
       begin
         if not PanelAir.Visible then
         begin
@@ -2899,7 +2899,7 @@ begin
         end;
       end;
 
-      if (TLZone.DownViewer) and (vlcmode <> play) then
+      if (TLZone.DownViewer) and (TLParameters.vlcmode <> play) then
       begin
         Step := trunc((TLParameters.Finish - TLParameters.Start) /
           Form1.imgTimelines.Width);
@@ -3559,13 +3559,13 @@ begin
           end;
         30:
           begin // '4|30|На один кадр влево|LEFT'
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ControlPlayerFastSlow(1);
             exit;
           end;
         31:
           begin // '4|31|На один кадр вправо|RIGHT'
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ControlPlayerFastSlow(2);
             exit;
           end;
@@ -3581,13 +3581,13 @@ begin
           end;
         34:
           begin // '4|34|На десять кадров влево|CTRL+LEFT'
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ControlPlayerFastSlow(0);
             exit;
           end;
         35:
           begin // '4|35|На десять кадров вправо|CTRL+RIGHT'
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ControlPlayerFastSlow(3);
             exit;
           end;
@@ -3664,25 +3664,25 @@ begin
           end;
         41:
           begin // '4|41|Уменьшить скорость воспроизведения в 2 раза|CTRL+<'
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
               ControlPlayerFastSlow(1);
             exit;
           end;
         42:
           begin // '4|42|Увеличить скорость воспроизведения в 2 раза|CTRL+>'
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
               ControlPlayerFastSlow(2);
             exit;
           end;
         43:
           begin // '4|43|Уменьшить скорость воспроизведения в 4 раза|SHIFT+<'
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
               ControlPlayerFastSlow(0);
             exit;
           end;
         44:
           begin // '4|44|Увеличить скорость воспроизведения в 4 раза|SHIFT+>'
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
               ControlPlayerFastSlow(3);
             exit;
           end;
@@ -3816,19 +3816,19 @@ begin
           end;
         70:
           begin // '4|70|Установить нулевую точку|CTRL+O');
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ButtonsControlMedia(1);
             exit;
           end;
         71:
           begin // '4|71|Установить время запуска клипа|CTRL+ALT+M');
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               SetLTC(2);
             exit;
           end;
         80:
           begin // '4|80|Выделить все события на тайм-линии редактирования|CTRL+ALT+S'
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
               exit;
             if TLZone.TLEditor.Count > 0 then
             begin
@@ -3843,7 +3843,7 @@ begin
           end;
         81:
           begin // '4|81|Отменить все выделенные события|CTRL+ALT+D'
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
               exit;
             if TLZone.TLEditor.Count > 0 then
             begin
@@ -4092,7 +4092,7 @@ begin
             end;
           end;
         // 61  : begin //'4|61|Установить нулевую точку|ALT+Z'
-        // if vlcmode<>play then ButtonsControlMedia(1);
+        // if TLParameters.vlcmode<>play then ButtonsControlMedia(1);
         // exit;
         // end;
         62:
@@ -4275,13 +4275,13 @@ begin
           end;
         8:
           begin // '1|8|Открыть проект|CTRL+O'
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ButtonsControlProjects(3);
             exit;
           end;
         9:
           begin // '1|9|Сохранить проект как|SHIFT+ S'
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ButtonsControlProjects(5);
             exit;
           end;
@@ -4320,7 +4320,7 @@ begin
           end;
         17:
           begin // '1|17|Сохранить изменения сделанные в окне проекта|CTRL+S'
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
               ButtonsControlProjects(4);
             // ButtonControlLists(6);
             exit;
@@ -4585,7 +4585,7 @@ begin
   begin
     Form1.sbPredClip.Enabled := true;
     Form1.sbNextClip.Enabled := true;
-    if vlcmode = play then
+    if TLParameters.vlcmode = play then
       exit;
     if ListBox1.ItemIndex < 0 then
     begin
@@ -4695,7 +4695,7 @@ begin
         flnm := MyCells[Count - 1].ReadPhrase('File');
       end;
       bl := FALSE;
-      if vlcmode <> play then
+      if TLParameters.vlcmode <> play then
       begin
         for i := 0 to TLZone.TLEditor.Count - 1 do
         begin
@@ -4723,7 +4723,7 @@ begin
             if not CheckBox2.Checked then
               TLZone.TLEditor.Events[i].SetPhraseText('Text', txt);
             TLZone.TLEditor.Events[i].SetPhraseCommand('Text', flnm);
-            if vlcmode <> play then
+            if TLParameters.vlcmode <> play then
             begin
               crpos := TLZone.TLEditor.CurrentEvents;
               TemplateToScreen(crpos);
@@ -4739,7 +4739,7 @@ begin
     // TLzone.TLEditor.DrawEditor(bmptimeline.Canvas,evst);
     TLZone.TLEditor.UpdateScreen(bmptimeline.Canvas);
     TLZone.Timelines[ps].DrawTimeline(bmptimeline.Canvas, ps, evst);
-    if vlcmode <> play then
+    if TLParameters.vlcmode <> play then
       TLZone.DrawTimelines(imgTimelines.Canvas, bmptimeline);
     GridGRTemplate.Repaint;
   except
@@ -4867,7 +4867,7 @@ begin
     end;
     SaveToUNDO;
     bl := FALSE;
-    if vlcmode <> play then
+    if TLParameters.vlcmode <> play then
     begin
       for i := 0 to TLZone.TLEditor.Count - 1 do
       begin
@@ -4898,7 +4898,7 @@ begin
     // TLzone.TLEditor.DrawEditor(bmptimeline.Canvas,0);
     TLZone.TLEditor.UpdateScreen(bmptimeline.Canvas);
     TLZone.Timelines[ps].DrawTimeline(bmptimeline.Canvas, ps, 0);
-    if vlcmode <> play then
+    if TLParameters.vlcmode <> play then
       TLZone.DrawTimelines(imgTimelines.Canvas, bmptimeline);
     GridGRTemplate.Repaint;
   except
@@ -5080,7 +5080,7 @@ end;
 
 procedure TForm1.SpeedButton2Click(Sender: TObject);
 begin
-  if vlcmode = play then
+  if TLParameters.vlcmode = play then
     exit;
   WriteLog('MAIN', 'TForm1.sbSinhronizationClick SetLTC(2)');
   SetLTC(2);
@@ -5153,7 +5153,7 @@ end;
 
 procedure TForm1.sbSinhronizationClick(Sender: TObject);
 begin
-  if vlcmode = play then
+  if TLParameters.vlcmode = play then
     exit;
   WriteLog('MAIN', 'TForm1.sbSinhronizationClick SetLTC(1)');
   SetLTC(1);

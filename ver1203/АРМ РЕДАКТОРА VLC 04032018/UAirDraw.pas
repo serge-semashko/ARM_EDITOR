@@ -1458,7 +1458,7 @@ begin
     (* HTTP *) addVariable(1, 'ZeroPoint', inttostr(TLParameters.ZeroPoint));
     (* HTTP *) addVariable(1, 'FrameSize', inttostr(TLParameters.FrameSize));
     (* HTTP *) addVariable(1, 'ClipName', form1.Label2.Caption);
-    case vlcmode of
+    case TLParameters.vlcmode of
       play: (* HTTP *)
         addVariable(1, 'StatePlayer', 'Play');
       Stop: (* HTTP *)

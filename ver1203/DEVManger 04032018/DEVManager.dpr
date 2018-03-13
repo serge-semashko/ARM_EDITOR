@@ -20,10 +20,11 @@ uses
 {$R *.RES}
 
 begin
-  Application.Initialize;
-  Application.CreateForm(TfmMain, fmMain);
+    Application.Initialize;
+    Application.CreateForm(TfmMain, fmMain);
   Application.CreateForm(TfrOptions, frOptions);
   Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TFrSetTC, FrSetTC);
   Application.Run;
+
 end.

@@ -371,7 +371,7 @@ begin
         btminusW:
           TLZone.MinusHoriz;
         btprocent:
-          if vlcmode <> play then
+          if TLParameters.vlcmode <> play then
           begin
             MyY := form1.panel4.Top + form1.PanelControl.height +
               (form1.Width - form1.ClientWidth);
@@ -409,7 +409,7 @@ begin
       // TLZone.DrawBitmap(bmptimeline);
       TLZone.TLEditor.DrawEditor(bmptimeline.Canvas, 0);
       NamesTL.Names[Result.Position].Editing := true;
-      if vlcmode <> play then
+      if TLParameters.vlcmode <> play then
         TLZone.DrawTimelines(form1.imgTimelines.Canvas, bmptimeline);
       exit;
     end;

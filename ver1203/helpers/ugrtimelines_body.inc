@@ -25,6 +25,9 @@ begin
   // ZeroPoint : longint;        //Нулевая точка отсчета начальный тайм-код (кадры)
   ZeroPoint := getVariableFromJson(json, 'ZeroPoint', ZeroPoint);
 
+  // vlcmode
+  vlcmode := getVariableFromJson(json, 'vlcMode', vlcMode);
+
   // MyCursor : longint;         //Положение курсора относительно начала экрана (пиксили)
   MyCursor := getVariableFromJson(json, 'MyCursor', MyCursor);
 
@@ -103,6 +106,8 @@ begin
     // //NTK    : longint;           //Начальный тайм код (кадры)
     // ZeroPoint : longint;        //Нулевая точка отсчета начальный тайм-код (кадры)
     addVariableToJson(json, 'ZeroPoint', ZeroPoint);
+    // vlcMode
+    addVariableToJson(json, 'vlcMode', vlcMode);
     // MyCursor : longint;         //Положение курсора относительно начала экрана (пиксили)
     addVariableToJson(json, 'MyCursor', MyCursor);
     // ScreenStart : longint;      //Относительная позиция начала экрана (пиксили)

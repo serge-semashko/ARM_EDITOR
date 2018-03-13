@@ -454,6 +454,7 @@ begin
      str2 := GetJsonStrFromServer('TLP');
 //     if str1 <> str2  then
 //        showmessage('!error retrieve '+'TLineparameters');
+//sssscheck
     PutJsonStrToServer('TLEDITOR', TLZone.TLEditor.SaveToJSONstr);
 
 //     str1:=TLEditor.SaveToJSONStr;
@@ -1127,7 +1128,7 @@ begin
     GridPlayer := grPlaylist;
     // appllc
   end;
-  if vlcmode = play then
+  if TLParameters.vlcmode = play then
     exit;
   dtnow := now;
   // if lowercase(trim(Form1.lbActiveClipID.Caption))<>'' then begin
@@ -2095,6 +2096,7 @@ procedure InsertEventToEditTimeline(nom: integer);
 var
   ps: integer;
 begin
+//ssscheck
   LoadProject_active := true;
   try
     WriteLog('MAIN', 'UCommon.InsertEventToEditTimeline Number=' +
@@ -2103,7 +2105,7 @@ begin
     ps := TLZone.FindTimeline(TLZone.TLEditor.IDTimeline);
     if TLZone.Timelines[ps].Block then
             begin
-                LoadProject_active := false;
+                LoadProject(false);
                 exit;
             end;
     case TLZone.TLEditor.TypeTL of
@@ -2112,7 +2114,7 @@ begin
           if nom > (form1.GridTimeLines.Objects[0, ps + 1] as TTimeLineOptions)
             .CountDev - 1 then
             begin
-                LoadProject_active := false;
+                LoadProject(false);
                 exit;
             end;
           if ps <> -1 then
@@ -2129,11 +2131,11 @@ begin
               'UCommon.InsertEventToEditTimeline TypeTL=tlDevice Number=' +
               inttostr(nom));
             // ssssjson
-                  PutGridTimeLinesToServer(Form1.GridTimeLines);
+                LoadProject(false);
 
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
             begin
-                LoadProject_active := false;
+                LoadProject(false);
                 exit;
             end;
             // TLZone.DrawTimelines(Form1.imgtimelines.Canvas,bmptimeline);
@@ -2145,12 +2147,12 @@ begin
           begin
             if TLParameters.Position < TLParameters.Preroll then
             begin
-                LoadProject_active := false;
-                exit;
+              LoadProject(false);
+                  exit;
             end;
             if TLParameters.Position >= TLParameters.EndPoint then
             begin
-                LoadProject_active := false;
+                LoadProject(false);
                 exit;
             end;
             TLZone.TLEditor.AddEvent(TLParameters.Position, ps + 1, nom);
@@ -2165,11 +2167,11 @@ begin
               'UCommon.InsertEventToEditTimeline TypeTL=tlText Number=' +
               inttostr(nom));
             // ssssjson
-                  PutGridTimeLinesToServer(Form1.GridTimeLines);
+                LoadProject(false);
 
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
             begin
-                LoadProject_active := false;
+                LoadProject(false);
                 exit;
             end;
           end;
@@ -2181,12 +2183,12 @@ begin
           begin
             if TLParameters.Position <= TLParameters.Preroll then
             begin
-                LoadProject_active := false;
-                exit;
+              LoadProject(false);
+                  exit;
             end;
             if TLParameters.Position >= TLParameters.EndPoint then
             begin
-                LoadProject_active := false;
+                LoadProject(false);
                 exit;
             end;
             TLZone.TLEditor.AddEvent(TLParameters.Position, ps + 1, nom);
@@ -2201,11 +2203,11 @@ begin
               'UCommon.InsertEventToEditTimeline TypeTL=tlMedia Number=' +
               inttostr(nom));
             // ssssjson
-                  PutGridTimeLinesToServer(Form1.GridTimeLines);
+              LoadProject(false);
 
-            if vlcmode = play then
+            if TLParameters.vlcmode = play then
             begin
-                LoadProject_active := false;
+                LoadProject(false);
                 exit;
             end;
           end;
@@ -2214,9 +2216,14 @@ begin
     TLZone.DrawTimelines(form1.imgtimelines.Canvas, bmpTimeline);
   except
     on E: Exception do
-      WriteLog('MAIN', 'UCommon.InsertEventToEditTimeline Number=' +
-        inttostr(nom) + ' | ' + E.Message);
-  end;
+       begin
+             WriteLog('MAIN', 'UCommon.InsertEventToEditTimeline Number=' +
+                     inttostr(nom) + ' | ' + E.Message);
+            LoadProject(false);
+       end;
+    end;
+    LoadProject(false);
+
 end;
 
 Procedure PlayClipFromActPlaylist;
@@ -2264,7 +2271,7 @@ begin
   // StartMyTimer;
   try
     WriteLog('MAIN', 'UCommon.ControlPlayer Start');
-    if vlcmode = paused then
+    if TLParameters.vlcmode = paused then
     begin
       Rate := 1;
       WriteLog('MAIN', 'UCommon.ControlPlayer mode=paused');
@@ -4314,7 +4321,7 @@ begin
             ZoneNames.Draw(imgTLNames.Canvas, form1.GridTimeLines, true);
             TLZone.DrawBitmap(bmpTimeline);
             TLZone.DrawTimelines(imgtimelines.Canvas, bmpTimeline);
-            if (vlcmode <> play) then
+            if (TLParameters.vlcmode <> play) then
             begin
               MediaSetPosition(TLParameters.Position, false,
                 'UCommon.ControlButtonsPrepare');
@@ -4603,7 +4610,7 @@ begin
     case command of
       0:
         begin
-          if vlcmode = play then
+          if TLParameters.vlcmode = play then
           begin
             SpeedMultiple := SpeedMultiple / 4;
             MediaSlow(4);
@@ -4644,7 +4651,7 @@ begin
         end;
       1:
         begin
-          if vlcmode = play then
+          if TLParameters.vlcmode = play then
           begin
             SpeedMultiple := SpeedMultiple / 2;
             MediaSlow(2);
@@ -4685,7 +4692,7 @@ begin
         end;
       2:
         begin
-          if vlcmode = play then
+          if TLParameters.vlcmode = play then
           begin
             SpeedMultiple := SpeedMultiple * 2;
             MediaFast(2);
@@ -4730,7 +4737,7 @@ begin
         end;
       3:
         begin
-          if vlcmode = play then
+          if TLParameters.vlcmode = play then
           begin
             SpeedMultiple := SpeedMultiple * 4;
             MediaFast(4);
