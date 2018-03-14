@@ -295,8 +295,8 @@ object FEditTimeline: TFEditTimeline
     object Label4: TLabel
       Left = 0
       Top = 0
-      Width = 48
-      Height = 16
+      Width = 329
+      Height = 81
       Align = alClient
       Alignment = taCenter
       Caption = 'Label4'
@@ -308,6 +308,8 @@ object FEditTimeline: TFEditTimeline
       ParentFont = False
       Layout = tlCenter
       StyleElements = []
+      ExplicitWidth = 48
+      ExplicitHeight = 16
     end
   end
   object pnText: TPanel
@@ -396,7 +398,7 @@ object FEditTimeline: TFEditTimeline
       Left = 280
       Top = 72
       Width = 73
-      Height = 26
+      Height = 22
       MaxValue = 600
       MinValue = 1
       TabOrder = 1
@@ -406,7 +408,7 @@ object FEditTimeline: TFEditTimeline
       Left = 280
       Top = 39
       Width = 247
-      Height = 22
+      Height = 19
       TabOrder = 0
       Text = #1058#1077#1082#1089#1090
       StyleElements = []
@@ -415,7 +417,7 @@ object FEditTimeline: TFEditTimeline
       Left = 280
       Top = 104
       Width = 73
-      Height = 26
+      Height = 22
       Increment = 10
       MaxValue = 1000
       MinValue = 0
@@ -477,7 +479,7 @@ object FEditTimeline: TFEditTimeline
       Left = 196
       Top = 63
       Width = 300
-      Height = 22
+      Height = 19
       TabOrder = 0
       Text = 'Media'
       StyleElements = []

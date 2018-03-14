@@ -260,6 +260,8 @@ begin
   TLParameters.vlcmode := Paused; // устанавливаем playmode -> пауза
   WriteLog('MAIN', 'UPlayer.MediaPause mode=paused | Файл : Пусто');
   StopMyTimer;
+   PutJsonStrToServer('TLP',TLParameters.SaveToJSONStr);
+
   // end else begin
   // end;
 end;

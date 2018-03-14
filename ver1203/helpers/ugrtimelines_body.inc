@@ -27,6 +27,8 @@ begin
 
   // vlcmode
   vlcmode := getVariableFromJson(json, 'vlcMode', vlcMode);
+  command := getVariableFromJson(json, 'Command', Command);
+  TLTimeCode := getVariableFromJson(json, 'TLTimeCode', TLTimeCode);
 
   // MyCursor : longint;         //Положение курсора относительно начала экрана (пиксили)
   MyCursor := getVariableFromJson(json, 'MyCursor', MyCursor);
@@ -108,6 +110,9 @@ begin
     addVariableToJson(json, 'ZeroPoint', ZeroPoint);
     // vlcMode
     addVariableToJson(json, 'vlcMode', vlcMode);
+    addVariableToJson(json, 'Command', Command);
+    addVariableToJson(json, 'TLTimeCode', TLTimeCode);
+
     // MyCursor : longint;         //Положение курсора относительно начала экрана (пиксили)
     addVariableToJson(json, 'MyCursor', MyCursor);
     // ScreenStart : longint;      //Относительная позиция начала экрана (пиксили)

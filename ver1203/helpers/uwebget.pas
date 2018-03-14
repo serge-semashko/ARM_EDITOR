@@ -6,15 +6,14 @@ uses
     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
     Dialogs, StdCtrls, Buttons, ExtCtrls, strutils, httpsend, system.win.crtl,
     ucommon, system.json;
-    const
-//    stop : integer = 0;
-//    Play : integer = 1;
-//    Paused : integer =2;
-    stop  = 0;
-    Play  = 1;
-    Paused  =2;
+
+const
+    stop = 0;
+    Play = 1;
+    Paused = 2;
+
 type
- TPlayerMode = integer;
+    TPlayerMode = integer;
 
 Procedure addVariableToJson(var json: tjsonobject; varName: string;
   varvalue: variant);
@@ -29,7 +28,7 @@ var
     jsonware_url: string;
     LoadProject_active: boolean = true;
     webredis_errlasttime: double = -1;
-
+    local_vlcMode :Integer = -1;
 implementation
 
 var

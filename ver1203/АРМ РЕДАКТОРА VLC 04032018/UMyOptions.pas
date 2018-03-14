@@ -18,6 +18,7 @@ type
     rtname: trect;
     Value: String;
     rtval: trect;
+    select : boolean;
     TypeData: TMyTypeOption;
     Variants: tstrings;
     procedure Draw(dib: tfastdib);
@@ -41,6 +42,7 @@ type
     procedure ClearVariants(Posi: integer); overload;
     procedure setborder(Posi, Left, Width: integer);
     procedure Draw(cv: tcanvas);
+    procedure MouseMove(cv: tcanvas; X, Y: integer);
     function MouseClick(cv: tcanvas; X, Y: integer): integer;
     procedure clear;
     constructor Create;
@@ -109,6 +111,10 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);
     procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure imgOptionsMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure imgPartitionsMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
   private
     { Private declarations }
     TypeEditor: TMyTypeOption;
@@ -127,8 +133,7 @@ procedure SetOptions;
 implementation
 
 uses umain, ucommon, uinitforms, uimgbuttons, umytexttable, ugrid,
-  ubuttonoptions,
-  uimagetemplate;
+  ubuttonoptions, uimagetemplate, uwebget;
 
 {$R *.dfm}
 
@@ -322,6 +327,10 @@ begin
   ps := ps + FrMyOptions.ComboBox1.Height;
   Groups[ARow].adddata('Шаг перемещения колеса мыши (кадры)',
     inttostr(StepMouseWheel), tomInteger, 10, ps, 300,
+    FrMyOptions.ComboBox1.Height);
+  ps := ps + FrMyOptions.ComboBox1.Height;
+  Groups[ARow].adddata('URL подключения к web-серверу',
+    jsonware_url, tomString, 10, ps, 300,
     FrMyOptions.ComboBox1.Height);
   // PrintEventShift      : integer = 30;
   // Основные параметры программы
@@ -967,6 +976,12 @@ begin
     StepMouseWheel := StepMouseWheel
   else
     StepMouseWheel := strtoint(s);
+
+  s := trim(Groups[APos].getdata('URL подключения к web-серверу'));
+  if s = '' then
+    jsonware_url := jsonware_url
+  else
+    jsonware_url := s;
 
   // ==============================================================================
 
@@ -2037,6 +2052,15 @@ begin
       setborder(i, 10, wdth - 20);
       tmp.DrawText(Options[i].Name, Options[i].rtname, DT_VCENTER or
         DT_SINGLELINE);
+
+      if Options[i].select then begin
+        tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor));
+      end else begin
+        tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      end;
+      tmp.Rectangle(Options[i].rtval.Left,Options[i].rtval.Top,
+                    Options[i].rtval.Right,Options[i].rtval.Bottom);
+
       if Options[i].TypeData <> tomColor then
       begin
         tmp.DrawText(Options[i].Value, Options[i].rtval, DT_VCENTER or
@@ -2067,6 +2091,21 @@ begin
     tmp.Free;
     tmp := nil;
   end
+end;
+
+procedure TGroupOptions.MouseMove(cv: tcanvas; X, Y: integer);
+var i : integer;
+begin
+  for i := 0 to Count - 1 do Options[i].select := false;
+  for i := 0 to Count - 1 do begin
+    //if (X > Options[i].rtval.Left + 1) and (X < Options[i].rtval.Right - 1) and
+    //  (Y > Options[i].rtval.Top + 1) and (Y < Options[i].rtval.Bottom - 1)
+    if (Y > Options[i].rtval.Top + 1) and (Y < Options[i].rtval.Bottom - 1)
+    then begin
+      Options[i].select := true;
+      exit;
+    end;
+  end;
 end;
 
 function TGroupOptions.MouseClick(cv: tcanvas; X, Y: integer): integer;
@@ -2151,6 +2190,7 @@ begin
   rtval.Right := Left + Width;
   rtval.Top := Top;
   rtval.Bottom := Top + Height;
+  select := false;
 end;
 
 destructor TOneOption.destroy;
@@ -2163,6 +2203,7 @@ begin
   Variants.clear;
   Variants.Free;
   freemem(@Variants);
+  freemem(@select);
 end;
 
 procedure TOneOption.Draw(dib: tfastdib);
@@ -2170,6 +2211,12 @@ begin
   dib.SetTextColor(colortorgb(FormsFontColor));
   dib.SetFont(FormsFontName, MTFontSize);
   dib.DrawText(Name, rtname, DT_LEFT);
+  if select then begin
+    dib.SetPen(ps_dot,1,colortorgb(FormsFontColor));
+  end else begin
+    dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  end;
+  dib.Rectangle(rtval.Left,rtval.Top,rtval.Right,rtval.Bottom);
   dib.DrawText(Value, Rect(rtval.Left + 5, rtval.Top, rtval.Right,
     rtval.Bottom), DT_LEFT);
 end;
@@ -2281,6 +2328,15 @@ begin
   end;
 end;
 
+procedure TFrMyOptions.imgOptionsMouseMove(Sender: TObject; Shift: TShiftState;
+  X, Y: Integer);
+begin
+  Combobox1.Visible:=false;
+  ListOptions.Groups[IndexPartition].MouseMove(imgOptions.Canvas, X, Y);
+  ListOptions.Groups[IndexPartition].Draw(imgOptions.Canvas);
+  imgOptions.Repaint;
+end;
+
 procedure TFrMyOptions.imgOptionsMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: integer);
 var
@@ -2306,6 +2362,18 @@ procedure TFrMyOptions.imgPartitionsMouseDown(Sender: TObject;
 begin
   Edit1.Visible := false;
   ComboBox1.Visible := false;
+end;
+
+procedure TFrMyOptions.imgPartitionsMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+var i : integer;
+begin
+  if IndexPartition <> -1 then begin
+    for i := 0 to ListOptions.Groups[IndexPartition].Count - 1
+      do ListOptions.Groups[IndexPartition].Options[i].select := false;
+    ListOptions.Groups[IndexPartition].Draw(FrMyOptions.imgOptions.Canvas);
+    FrMyOptions.imgOptions.Repaint;
+  end;
 end;
 
 procedure TFrMyOptions.imgPartitionsMouseUp(Sender: TObject;

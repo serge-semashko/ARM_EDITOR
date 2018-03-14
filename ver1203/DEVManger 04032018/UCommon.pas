@@ -214,7 +214,7 @@ function GetDigit(value, posdig: string): string;
 implementation
 
 uses mainunit, utimeline, udrawtimelines, ugrtimelines, ComPortUnit,
-     umyprotocols;
+    umyprotocols;
 { TRectJSON }
 
 function TRectJSON.LoadFromJSONObject(JSON: tjsonObject): boolean;

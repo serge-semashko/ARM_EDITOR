@@ -5,7 +5,7 @@ interface
 uses
     Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
     StdCtrls, ExtCtrls, Buttons, ComCtrls, Variants, MMSystem, Menus, UHRTimer,
-    Vcl.Samples.Spin, UCommon;
+    Vcl.Samples.Spin, UCommon,UTimeline, UGRTimelines;
 
 CONST
     WM_TRANSFER = WM_USER + 1; // Определяем сообщение
@@ -93,6 +93,8 @@ type
     end;
 
 var
+    TLO_server : array[0..10] of TTimelineOptions = (nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil);
+    TLT_server : array[0..10] of TTlTimeline = (nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil);
     fmMain: TfmMain;
     AppPath, AppName, AppExt: string;
     GridFile: string = '';
@@ -111,6 +113,7 @@ var
     old_tle_str: string = '';
     tlp_changed: Boolean = false;
     webrequest_time: Double = -1;
+    tl_to_request_time : double = -1;
     tle_request_time: Double = -1;
 
 procedure StartMyTimer;
@@ -121,7 +124,7 @@ Procedure Update_TLEditor;
 implementation
 
 uses ComPortUnit, umychars, UMyWork, UMyInitFile, ShellApi, shlobj, registry,
-    umain, UTimeline, UDrawTimelines, UGRTimelines, umyevents, uwebget,
+    umain,  UDrawTimelines, umyevents, uwebget,
     UPortOptions,
     umyinfo, umyprotocols;
 
@@ -227,10 +230,11 @@ begin
                     if tlp_str <> old_tlp_str then
                     begin
                         TLP_server.LoadFromJSONstr(tlp_str);
-                        if tlp_server.vlcmode = play then
-//                          showmessage('Play')
-                          ;
-                        
+                        local_vlcMode := TLP_server.vlcmode;
+                        if TLP_server.vlcmode = play then
+                            // showmessage('Play')
+                              ;
+
                         old_tlp_str := tlp_str;
                         tlp_changed := true;
                     end
@@ -244,6 +248,9 @@ begin
                         TLParameters.Position := TLP_server.Position;
                 end;
                 webrequest_time := now;
+//                WriteLog('vlcmode = ', IntToStr(local_vlcMode)+' position = '+IntToStr(TLParameters.Position));
+
+
             end;
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             InfoWEB.SetData(2, inttostr(TLParameters.Position));
@@ -329,8 +336,12 @@ begin
                 sstart := FramesToStr(framestostart - 1);
 
                 InfoWEB.SetData(3, inttostr(MyTLEdit.Count) + '  (' +
+
                   inttostr(crpos.Number + 1) + ')');
+
                 // 'Кол-во событий (текущее):'
+//                WriteLog('vlcmode', IntToStr(local_vlcMode));
+
                 InfoWEB.SetData(4, ''); // 'Режим воспроизведения:'
                 InfoWEB.SetData(5,
                   FramesToStr(MyTLEdit.Events[crpos.Number].Finish -
@@ -810,6 +821,40 @@ procedure TfmMain.SpeedButton4Click(Sender: TObject);
 begin
     setoptions;
 end;
+Procedure GetTimeLinesFromServer;
+var
+  i: integer;
+  str1: ansistring;
+  str2: ansistring;
+  TLO: TTimeLineOptions;
+  TlTimeline :TTlTimeline;
+  sl : tstringlist;
+  tle : ansistring;
+begin
+  for I := 0 to 10do
+  begin
+     str2 := GetJsonStrFromServer('TLO['+IntToStr(i)+']');
+     if length(str2) < 30 then begin
+        TLO_server[i] := nil;
+        continue;
+     end;
+     if TLO_server[i] = nil  then TLO_server[i] := TTimeLineOptions.Create;
+     if not TLO_server[i].LoadFromJSONstr(str2)  then TLO_server[i] := nil;
+  end;
+    for I := 0 to 10 do
+  begin
+     str2 := GetJsonStrFromServer('TLT['+IntToStr(i)+']');
+     if length(str2) < 30 then begin
+        TLT_server[i] := nil;
+        continue;
+     end;
+     if TLT_server[i] = nil  then TLT_server[i] := TTlTimeline.Create;
+     if not TLT_server[i].LoadFromJSONstr(str2)  then TLT_server[i] := nil;
+  end;
+
+
+end;
+
 
 Procedure Update_TLEditor;
 var
@@ -826,7 +871,7 @@ begin
     url := URLServer;
     LoadProject_active := false;
     str1 := GetJsonStrFromServer(url);
-
+    GetTimeLinesFromServer;
     if trim(str1) <> '' then
     begin
         if str1 <> old_tle_str then

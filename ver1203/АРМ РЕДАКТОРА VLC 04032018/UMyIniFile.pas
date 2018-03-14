@@ -11,7 +11,7 @@ procedure ReadMyIniFile;
 
 implementation
 
-uses umain, ucommon, ugrid, utimeline, umyfiles;
+uses umain, ucommon, ugrid, utimeline, umyfiles, uwebget;
 
 procedure WriteMyIniFile;
 var
@@ -51,6 +51,7 @@ begin
       ini.WriteString('MAIN', 'WorkDirClips', WorkDirClips);
       ini.WriteString('MAIN', 'WorkDirSubtitors', WorkDirSubtitors);
       ini.WriteInteger('MAIN', 'DeltaDateDelete', DeltaDateDelete);
+      ini.WriteString('MAIN', 'jsonware_url', jsonware_url);
       // ini.WriteBool('MAIN','CurrentMode',CurrentMode);
       ini.WriteInteger('MAIN', 'MainGrid', ord(MainGrid));
       ini.WriteInteger('MAIN', 'ProgrammColor', ProgrammColor);
@@ -285,6 +286,7 @@ begin
       WorkDirClips := ini.ReadString('MAIN', 'WorkDirClips', '');
       WorkDirSubtitors := ini.ReadString('MAIN', 'WorkDirSubtitors', '');
       DeltaDateDelete := ini.ReadInteger('MAIN', 'DeltaDateDelete', 30);
+      jsonware_url := ini.ReadString('MAIN', 'jsonware_url', 'http://localhost:9090/');
       // CurrentMode := ini.ReadBool('MAIN','CurrentMode',false);
       zn := ini.ReadInteger('MAIN', 'MainGrid', 0);
       case zn of

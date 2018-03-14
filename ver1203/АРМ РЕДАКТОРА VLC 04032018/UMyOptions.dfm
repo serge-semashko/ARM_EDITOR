@@ -4,7 +4,7 @@ object FrMyOptions: TFrMyOptions
   BorderStyle = bsDialog
   Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099
   ClientHeight = 551
-  ClientWidth = 684
+  ClientWidth = 773
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -46,6 +46,7 @@ object FrMyOptions: TFrMyOptions
       Height = 506
       Align = alClient
       OnMouseDown = imgPartitionsMouseDown
+      OnMouseMove = imgPartitionsMouseMove
       OnMouseUp = imgPartitionsMouseUp
       ExplicitLeft = -2
       ExplicitTop = -2
@@ -54,7 +55,7 @@ object FrMyOptions: TFrMyOptions
   object Panel2: TPanel
     Left = 0
     Top = 510
-    Width = 684
+    Width = 773
     Height = 41
     Align = alBottom
     BevelOuter = bvNone
@@ -63,7 +64,7 @@ object FrMyOptions: TFrMyOptions
     TabOrder = 1
     StyleElements = []
     object imgButtons: TImage
-      Left = 351
+      Left = 440
       Top = 0
       Width = 333
       Height = 41
@@ -76,7 +77,7 @@ object FrMyOptions: TFrMyOptions
   object Panel3: TPanel
     Left = 282
     Top = 0
-    Width = 402
+    Width = 491
     Height = 510
     Align = alClient
     BevelInner = bvLowered
@@ -88,9 +89,10 @@ object FrMyOptions: TFrMyOptions
     object imgOptions: TImage
       Left = 2
       Top = 2
-      Width = 398
+      Width = 487
       Height = 506
       Align = alClient
+      OnMouseMove = imgOptionsMouseMove
       OnMouseUp = imgOptionsMouseUp
       ExplicitLeft = 88
       ExplicitTop = 96

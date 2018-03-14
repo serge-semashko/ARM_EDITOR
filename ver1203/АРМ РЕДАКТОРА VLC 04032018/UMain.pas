@@ -914,6 +914,8 @@ begin
         Form1.lbCTLTimeCode.Caption :=
           '' + MyDateTimeToStr(now - TimeCodeDelta);
       PutJsonStrToServer('CTC',Form1.lbCTLTimeCode.SaveToJSONStr);
+      TLParameters.TLTimeCode :=Form1.lbCTLTimeCode.Caption;
+
       SetClipTimeParameters;
       // application.ProcessMessages;
       // WriteLog('Synchro', '107) DrawTimelines Position=' + inttostr(TLParameters.Position));
@@ -2809,6 +2811,7 @@ begin
       else
         LBTimeCode1.Caption := '' + MyDateTimeToStr(now - TimeCodeDelta);
       PutJsonStrToServer('CTC',lbTimeCode1.SaveToJSONStr);
+      TLParameters.TLTimeCode :=Form1.lbCTLTimeCode.Caption;
 
     end
     else
@@ -2820,6 +2823,7 @@ begin
       else
         lbCTLTimeCode.Caption := '' + MyDateTimeToStr(now - TimeCodeDelta);
       PutJsonStrToServer('CTC',lbCTLTimeCode.SaveToJSONStr);
+      TLParameters.TLTimeCode :=Form1.lbCTLTimeCode.Caption;
     end;
     Form1.Compartido^.Cadena := 'request';
   except

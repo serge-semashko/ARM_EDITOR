@@ -5,7 +5,7 @@ interface
 uses
     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
     Dialogs, Buttons, ExtCtrls, StdCtrls, Grids, ImgList, Spin, ucommon,
-    umyevents;
+    umyevents,system.json;
 
 type
     // TTypeTimeline = (tldevice, tltext, tlmedia);
@@ -30,6 +30,8 @@ type
         CharDuration: integer;
         // Значение длительности одного символа в милисекундах для события типа тектс
         EventDuration: integer;
+        Protocol: string; // Название протокола и данные для протокола
+        Manager: string; // Номер менеджера управления.
         // Минимальное значение пустого события типа текст.
         procedure Assign(obj: TTimelineOptions);
         procedure Clear;
@@ -38,7 +40,7 @@ type
         constructor Create;
         destructor Destroy; override;
     end;
-
+{$INCLUDE ..\helpers\utimeline_hdr.inc}
 var
     OPTTimeline: TTimelineOptions;
     IconsLocation: array [1 .. 10] of Trect;
@@ -86,6 +88,10 @@ function SetTypeTimeline(ps: integer): TTypeTimeline;
 implementation
 
 uses UMain, ugrtimelines;
+
+/// ////////////////////////// SSSSSSSSSS JSON
+{$INCLUDE ..\helpers\utimeline_body.inc}
+/// ////////////////////////// SSSSSSSSSS JSON end
 
 function SetOffset(LenCV, CntElem, LenElem, ZnDel: integer): integer;
 begin

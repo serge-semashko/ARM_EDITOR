@@ -14,7 +14,7 @@ uses
   UDrawTimelines in 'UDrawTimelines.pas',
   UInitForms in 'UInitForms.pas',
   UImportFiles in 'UImportFiles.pas' {FImportFiles},
-  UPlayer in 'UPlayer.pas',
+  UPlayer in '..\helpers\UPlayer.pas',
   UActPlayList in 'UActPlayList.pas',
   UGRTimelines in 'UGRTimelines.pas',
   UMyEvents in 'UMyEvents.pas',

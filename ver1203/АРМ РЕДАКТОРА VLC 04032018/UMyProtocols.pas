@@ -14,31 +14,38 @@ type
   TPort422 = class
     rt0: trect;
     rtcm: trect;
+    cmselect : boolean;
     ComPort: String;
     rt1: trect;
     rtsp: trect;
+    spselect : boolean;
     Speed: string;
     LSpeed: string;
     rt2: trect;
     rtbt: trect;
+    btselect : boolean;
     Bits: string;
     LBits: string;
     rt3: trect;
     rtpr: trect;
+    prselect : boolean;
     Parity: string;
     LParity: string;
     rt4: trect;
     rtst: trect;
+    stselect : boolean;
     Stop: string;
     LStop: string;
     rt5: trect;
     rtfl: trect;
+    flselect : boolean;
     Flow: string;
     LFlow: string;
     function GetString: string;
     procedure GetListString(lst: tstrings);
     procedure SetString(stri: string);
     procedure draw(dib: tfastdib; Top, HgRw: integer);
+    procedure MouseMove(cv: tcanvas; X, Y: integer);
     function ClickMouse(cv: tcanvas; X, Y: integer): integer;
     constructor create;
     destructor destroy;
@@ -47,20 +54,25 @@ type
   TPortIP = class
     rt1: trect;
     rtip: trect;
+    ipselect : boolean;
     IPAdress: String;
     rt2: trect;
     rtpr: trect;
+    prselect : boolean;
     IPPort: String;
     rt3: trect;
     rtlg: trect;
     Login: String;
+    lgselect : boolean;
     rt4: trect;
     rtps: trect;
+    psselect : boolean;
     Password: String;
     function GetString: string;
     procedure GetListString(lst: tstrings);
     procedure SetString(stri: string);
     procedure draw(dib: tfastdib; Top, HgRw: integer);
+    procedure MouseMove(cv: tcanvas; X, Y: integer);
     function ClickMouse(cv: tcanvas; X, Y: integer): integer;
     constructor create;
     destructor destroy;
@@ -74,6 +86,7 @@ type
     rtip: trect;
     rt1: trect;
     rtdm: trect;
+    dmselect : boolean;
     devicemanager: string;
     port422: TPort422;
     portip: TPortIP;
@@ -81,6 +94,8 @@ type
     procedure GetListString(lst: tstrings);
     procedure SetString(stri: string);
     procedure draw(cv: tcanvas; HghtRw: integer);
+    procedure unselect;
+    procedure MouseMove(cv: tcanvas; X, Y: integer);
     function ClickMouse(cv: tcanvas; X, Y: integer): integer;
     constructor create;
     destructor destroy;
@@ -92,6 +107,7 @@ type
     Text: string;
     VarText: string;
     rttxt: trect;
+    txtselect : boolean;
     constructor create(SName, SText, SVText: string);
     destructor destroy;
   end;
@@ -103,6 +119,8 @@ type
     procedure GetListString(lst: tstrings);
     procedure SetString(stri: string);
     procedure draw(cv: tcanvas; HgRw: integer);
+    procedure unselect;
+    procedure MouseMove(cv: tcanvas; X, Y: integer);
     function ClickMouse(cv: tcanvas; X, Y: integer): integer;
     procedure clear;
     constructor create;
@@ -118,6 +136,8 @@ type
     procedure GetListString(lst: tstrings);
     procedure SetString(stri: string);
     procedure draw(cv: tcanvas; HgRw: integer);
+    procedure unselect;
+    procedure MouseMove(cv: tcanvas; X, Y: integer);
     function ClickMouse(cv: tcanvas; X, Y: integer): integer;
     procedure clear;
     constructor create;
@@ -128,6 +148,7 @@ type
     rt4: trect;
     Protocol: string;
     rtp: trect;
+    pselect : boolean;
     Ports: TMyPort;
     ProtocolMain: TProtocolMain;
     ProtocolAdd: TProtocolAdd;
@@ -143,6 +164,7 @@ type
     rt3: trect;
     Device: string;
     rtd: trect;
+    dselect : boolean;
     Count: integer;
     ListProtocols: array of TOneProtocol;
     function GetString: string;
@@ -160,6 +182,7 @@ type
     rt2: trect;
     Vendor: string;
     rtv: trect;
+    vselect : boolean;
     Count: integer;
     FirmDevices: array of TFirmDevice;
     function Add(Name: string): integer;
@@ -179,6 +202,7 @@ type
     rt1: trect;
     TypeDevice: string;
     rttd: trect;
+    tdselect : boolean;
     Count: integer;
     Vendors: Array of TVendors;
     function Add(SName: string): integer;
@@ -203,7 +227,8 @@ type
     procedure GetListString(lst: tstrings);
     procedure SetString(SrcStr: string);
     function ClickMouse(cv: tcanvas; X, Y: integer): integer;
-    // function MouseMouse(cv : tcanvas; X, Y : integer) : integer;
+    procedure unselect;
+    procedure MouseMove(cv: tcanvas; X, Y: integer);
     procedure LoadFromFile(FileName, TypeProtocols: string);
     procedure SaveToFile(FileName, TypeProtocols: string);
     procedure clear;
@@ -338,6 +363,96 @@ begin
   end;
 end;
 
+procedure TListTypeDevices.unselect;
+begin
+  if index = -1 then index := 0;
+  with TypeDevices[index] do
+  begin
+    tdselect := false;
+    if index = -1 then index := 0;
+    with Vendors[index] do
+    begin
+      vselect := false;
+      if index = -1 then index := 0;
+      with FirmDevices[index] do
+      begin
+        dselect := false;
+        if index = -1 then index := 0;
+        with ListProtocols[index] do
+        begin
+          pselect := false;
+        end;
+      end;
+    end;
+  end;
+end;
+
+procedure TListTypeDevices.MouseMove(cv: tcanvas; X, Y: integer);
+begin
+//  if index = -1 then index := 0;
+//  with TypeDevices[index] do
+//  begin
+//    tdselect := false;
+//    if index = -1 then index := 0;
+//    with Vendors[index] do
+//    begin
+//      vselect := false;
+//      if index = -1 then index := 0;
+//      with FirmDevices[index] do
+//      begin
+//        dselect := false;
+//        if index = -1 then index := 0;
+//        with ListProtocols[index] do
+//        begin
+//          pselect := false;
+//        end;
+//      end;
+//    end;
+//  end;
+  unselect;
+
+  if index = -1 then index := 0;
+
+  with TypeDevices[index] do
+  begin
+    if (Y > rttd.Top) and (Y < rttd.Bottom) then
+    begin
+      tdselect := true;
+      exit;
+    end;
+    if index = -1 then
+      index := 0;
+    with Vendors[index] do
+    begin
+      if (Y > rtv.Top) and (Y < rtv.Bottom) then
+      begin
+        vselect := true;
+        exit;
+      end;
+      if index = -1 then
+        index := 0;
+      with FirmDevices[index] do
+      begin
+        if (Y > rtd.Top) and (Y < rtd.Bottom) then
+        begin
+          dselect := true;
+          exit;
+        end;
+        if index = -1 then
+          index := 0;
+        with ListProtocols[index] do
+        begin
+          if (Y > rtp.Top) and (Y < rtp.Bottom) then
+          begin
+            pselect := true;
+            exit;
+          end;
+        end;
+      end;
+    end;
+  end;
+end;
+
 function TListTypeDevices.ClickMouse(cv: tcanvas; X, Y: integer): integer;
 begin
   result := -1;
@@ -469,6 +584,7 @@ begin
   index := -1;
   Device := '';
   Count := 0;
+  dselect := false;
 end;
 
 procedure TFirmDevice.clear;
@@ -495,6 +611,7 @@ begin
   clear;
   freemem(@Count);
   freemem(@ListProtocols);
+  freemem(@dselect);
 end;
 
 function TFirmDevice.Add(Name: string): integer;
@@ -580,6 +697,7 @@ begin
   initrect(rt1);
   initrect(rttd);
   Count := 0;
+  tdselect := false;
 end;
 
 procedure TTypeDevice.clear;
@@ -606,6 +724,7 @@ begin
   clear;
   freemem(@Count);
   freemem(@Vendors);
+  freemem(@tdselect);
 end;
 
 procedure TTypeDevice.draw(cv: tcanvas; HghtRw: integer);
@@ -638,6 +757,10 @@ begin
     rttd.Top := rt1.Top;
     rttd.Right := wdth - 5;
     rttd.Bottom := rt1.Bottom;
+    if tdselect
+      then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+      else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+    tmp.Rectangle(rttd.Left,rttd.Top,rttd.Right,rttd.Bottom);
     tmp.DrawText('Тип оборудования:', rt1, DT_VCENTER or DT_SINGLELINE);
     tmp.DrawText(TypeDevice, rttd, DT_VCENTER or DT_SINGLELINE);
 
@@ -652,6 +775,11 @@ begin
     Vendors[index].rtv.Top := Vendors[index].rt2.Top;
     Vendors[index].rtv.Right := wdth - 5;
     Vendors[index].rtv.Bottom := Vendors[index].rt2.Bottom;
+    if Vendors[index].vselect
+      then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+      else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+    tmp.Rectangle(Vendors[index].rtv.Left,Vendors[index].rtv.Top,
+                  Vendors[index].rtv.Right,Vendors[index].rtv.Bottom);
     tmp.DrawText('Производитель:', Vendors[index].rt2, DT_VCENTER or
       DT_SINGLELINE);
     tmp.DrawText(Vendors[index].Vendor, Vendors[index].rtv,
@@ -670,6 +798,11 @@ begin
       FirmDevices[index].rtd.Top := FirmDevices[index].rt3.Top;
       FirmDevices[index].rtd.Right := wdth - 5;
       FirmDevices[index].rtd.Bottom := FirmDevices[index].rt3.Bottom;
+      if FirmDevices[index].dselect
+        then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+        else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      tmp.Rectangle(FirmDevices[index].rtd.Left,FirmDevices[index].rtd.Top,
+                    FirmDevices[index].rtd.Right,FirmDevices[index].rtd.Bottom);
       tmp.DrawText('Устройство:', FirmDevices[index].rt3,
         DT_VCENTER or DT_SINGLELINE);
       tmp.DrawText(FirmDevices[index].Device, FirmDevices[index].rtd,
@@ -689,6 +822,11 @@ begin
         ListProtocols[index].rtp.Top := ListProtocols[index].rt4.Top;
         ListProtocols[index].rtp.Right := wdth - 5;
         ListProtocols[index].rtp.Bottom := ListProtocols[index].rt4.Bottom;
+        if ListProtocols[index].pselect
+          then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+          else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+        tmp.Rectangle(ListProtocols[index].rtp.Left,ListProtocols[index].rtp.Top,
+                    ListProtocols[index].rtp.Right,ListProtocols[index].rtp.Bottom);
         tmp.DrawText('Протокол:', ListProtocols[index].rt4,
           DT_VCENTER or DT_SINGLELINE);
         tmp.DrawText(ListProtocols[index].Protocol, ListProtocols[index].rtp,
@@ -792,6 +930,7 @@ begin
   devicemanager := '';
   port422 := TPort422.create;
   portip := TPortIP.create;
+  dmselect := false;
 end;
 
 destructor TMyPort.destroy;
@@ -806,6 +945,7 @@ begin
   freemem(@devicemanager);
   freemem(@port422);
   freemem(@portip);
+  freemem(@dmselect);
 end;
 
 function TMyPort.GetString: string;
@@ -937,6 +1077,10 @@ begin
       rtdm.Right := wdth - 5;
       rtdm.Top := rt1.Top;
       rtdm.Bottom := rt1.Bottom;
+      if dmselect
+        then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+        else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      tmp.Rectangle(rtdm.Left,rtdm.Top,rtdm.Right,rtdm.Bottom);
       tmp.DrawText('Модуль упр.:', rt1, DT_VCENTER or DT_SINGLELINE);
       tmp.DrawText(devicemanager, rtdm, DT_VCENTER or DT_SINGLELINE);
       if select422 then
@@ -955,6 +1099,10 @@ begin
       rtdm.Right := wdth - 5;
       rtdm.Top := rt1.Top;
       rtdm.Bottom := rt1.Bottom;
+      if dmselect
+        then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+        else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      tmp.Rectangle(rtdm.Left,rtdm.Top,rtdm.Right,rtdm.Bottom);
       tmp.DrawText('Модуль упр.:', rt1, DT_VCENTER or DT_SINGLELINE);
       tmp.DrawText(devicemanager, rtdm, DT_VCENTER or DT_SINGLELINE);
       portip.draw(tmp, rt1.Bottom, HghtRw);
@@ -970,6 +1118,10 @@ begin
       rtdm.Right := wdth - 5;
       rtdm.Top := rt1.Top;
       rtdm.Bottom := rt1.Bottom;
+      if dmselect
+        then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+        else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      tmp.Rectangle(rtdm.Left,rtdm.Top,rtdm.Right,rtdm.Bottom);
       tmp.DrawText('Модуль упр.:', rt1, DT_VCENTER or DT_SINGLELINE);
       tmp.DrawText(devicemanager, rtdm, DT_VCENTER or DT_SINGLELINE);
       port422.draw(tmp, rt1.Bottom, HghtRw);
@@ -986,6 +1138,11 @@ begin
       rtdm.Right := wdth - 5;
       rtdm.Top := rt1.Top;
       rtdm.Bottom := rt1.Bottom;
+      if dmselect
+        then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+        else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      tmp.Rectangle(rtdm.Left,rtdm.Top,rtdm.Right,rtdm.Bottom);
+
       tmp.DrawText('Модуль упр.:', rt1, DT_VCENTER or DT_SINGLELINE);
       tmp.DrawText(devicemanager, rtdm, DT_VCENTER or DT_SINGLELINE);
       if select422 then
@@ -1002,6 +1159,46 @@ begin
     tmp.Free;
     tmp := nil;
   end
+end;
+
+procedure TMyPort.unselect;
+begin
+  dmselect := false;
+  port422.cmselect := false;
+  port422.spselect := false;
+  port422.btselect := false;
+  port422.prselect := false;
+  port422.stselect := false;
+  port422.flselect := false;
+  portip.ipselect := false;
+  portip.prselect := false;
+  portip.lgselect := false;
+  portip.psselect := false;
+end;
+
+procedure TMyPort.MouseMove(cv: tcanvas; X, Y: integer);
+begin
+  //dmselect := false;
+  //port422.cmselect := false;
+  //port422.spselect := false;
+  //port422.btselect := false;
+  //port422.prselect := false;
+  //port422.stselect := false;
+  //port422.flselect := false;
+  //portip.ipselect := false;
+  //portip.prselect := false;
+  //portip.lgselect := false;
+  //portip.psselect := false;
+  unselect;
+  if (Y > rtdm.Top) and (Y < rtdm.Bottom) then
+  begin
+    dmselect := true;
+    exit
+  end;
+  if select422 then
+    port422.MouseMove(cv, X, Y)
+  else
+    portip.MouseMove(cv, X, Y);
 end;
 
 function TMyPort.ClickMouse(cv: tcanvas; X, Y: integer): integer;
@@ -1048,6 +1245,10 @@ begin
   initrect(rt4);
   initrect(rtps);
   Password := '';
+  ipselect := false;
+  prselect := false;
+  lgselect := false;
+  psselect := false;
 end;
 
 destructor TPortIP.destroy;
@@ -1064,6 +1265,10 @@ begin
   freemem(@rt4);
   freemem(@rtps);
   freemem(@Password);
+  freemem(@ipselect);
+  freemem(@prselect);
+  freemem(@lgselect);
+  freemem(@psselect);
 end;
 
 function TPortIP.GetString: string;
@@ -1110,6 +1315,10 @@ begin
   rtip.Right := dib.Width - 5;
   rtip.Top := rt1.Top;
   rtip.Bottom := rt1.Bottom;
+  if ipselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtip.Left,rtip.Top,rtip.Right,rtip.Bottom);
   dib.DrawText('IP Адрес:', rt1, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(IPAdress, rtip, DT_VCENTER or DT_SINGLELINE);
   rt2.Left := 5;
@@ -1120,6 +1329,10 @@ begin
   rtpr.Right := dib.Width - 5;
   rtpr.Top := rt2.Top;
   rtpr.Bottom := rt2.Bottom;
+  if prselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtpr.Left,rtpr.Top,rtpr.Right,rtpr.Bottom);
   dib.DrawText('Порт:', rt2, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(IPPort, rtpr, DT_VCENTER or DT_SINGLELINE);
   rt3.Left := 5;
@@ -1130,6 +1343,10 @@ begin
   rtlg.Right := dib.Width - 5;
   rtlg.Top := rt3.Top;
   rtlg.Bottom := rt3.Bottom;
+  if lgselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtlg.Left,rtlg.Top,rtlg.Right,rtlg.Bottom);
   dib.DrawText('Логин:', rt3, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(Login, rtlg, DT_VCENTER or DT_SINGLELINE);
   rt4.Left := 5;
@@ -1140,8 +1357,40 @@ begin
   rtps.Right := dib.Width - 5;
   rtps.Top := rt4.Top;
   rtps.Bottom := rt4.Bottom;
+  if psselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtps.Left,rtps.Top,rtps.Right,rtps.Bottom);
   dib.DrawText('Пароль:', rt4, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(Password, rtps, DT_VCENTER or DT_SINGLELINE);
+end;
+
+procedure TPortIP.MouseMove(cv: tcanvas; X, Y: integer);
+begin
+  ipselect := false;
+  prselect := false;
+  lgselect := false;
+  psselect := false;
+  if (Y > rtip.Top) and (Y < rtip.Bottom)
+  then begin
+    ipselect := true;
+    exit
+  end;
+  if (Y > rtpr.Top) and (Y < rtpr.Bottom)
+  then begin
+    prselect := true;
+    exit
+  end;
+  if (Y > rtlg.Top) and (Y < rtlg.Bottom)
+  then begin
+    lgselect := true;
+    exit
+  end;
+  if (Y > rtps.Top) and (Y < rtps.Bottom)
+  then begin
+    psselect := true;
+    exit
+  end;
 end;
 
 function TPortIP.ClickMouse(cv: tcanvas; X, Y: integer): integer;
@@ -1195,6 +1444,12 @@ begin
   initrect(rtfl);
   Flow := '';
   LFlow := 'XOn/XOff|Аппаратный|Нет';
+  cmselect := false;
+  spselect := false;
+  btselect := false;
+  prselect := false;
+  stselect := false;
+  flselect := false;
 end;
 
 destructor TPort422.destroy;
@@ -1219,6 +1474,12 @@ begin
   freemem(@rtfl);
   freemem(@Flow);
   freemem(@LFlow);
+  freemem(@cmselect);
+  freemem(@spselect);
+  freemem(@btselect);
+  freemem(@prselect);
+  freemem(@stselect);
+  freemem(@flselect);
 end;
 
 procedure TPort422.draw(dib: tfastdib; Top, HgRw: integer);
@@ -1234,6 +1495,11 @@ begin
   rtcm.Right := dib.Width - 5;
   rtcm.Top := rt0.Top;
   rtcm.Bottom := rt0.Bottom;
+
+  if cmselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtcm.Left,rtcm.Top,rtcm.Right,rtcm.Bottom);
   dib.DrawText('COM Порт:', rt0, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(ComPort, rtcm, DT_VCENTER or DT_SINGLELINE);
 
@@ -1245,6 +1511,10 @@ begin
   rtsp.Right := dib.Width - 5;
   rtsp.Top := rt1.Top;
   rtsp.Bottom := rt1.Bottom;
+  if spselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtsp.Left,rtsp.Top,rtsp.Right,rtsp.Bottom);
   dib.DrawText('Скорость:', rt1, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(Speed, rtsp, DT_VCENTER or DT_SINGLELINE);
   rt2.Left := 5;
@@ -1255,6 +1525,10 @@ begin
   rtbt.Right := dib.Width - 5;
   rtbt.Top := rt2.Top;
   rtbt.Bottom := rt2.Bottom;
+  if btselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtbt.Left,rtbt.Top,rtbt.Right,rtbt.Bottom);
   dib.DrawText('Кол-во бит:', rt2, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(Bits, rtbt, DT_VCENTER or DT_SINGLELINE);
   rt3.Left := 5;
@@ -1265,6 +1539,10 @@ begin
   rtpr.Right := dib.Width - 5;
   rtpr.Top := rt3.Top;
   rtpr.Bottom := rt3.Bottom;
+  if prselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtpr.Left,rtpr.Top,rtpr.Right,rtpr.Bottom);
   dib.DrawText('Четность:', rt3, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(Parity, rtpr, DT_VCENTER or DT_SINGLELINE);
   rt4.Left := 5;
@@ -1275,6 +1553,10 @@ begin
   rtst.Right := dib.Width - 5;
   rtst.Top := rt4.Top;
   rtst.Bottom := rt4.Bottom;
+  if stselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtst.Left,rtst.Top,rtst.Right,rtst.Bottom);
   dib.DrawText('Стоп бит:', rt4, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(Stop, rtst, DT_VCENTER or DT_SINGLELINE);
   rt5.Left := 5;
@@ -1285,8 +1567,52 @@ begin
   rtfl.Right := dib.Width - 5;
   rtfl.Top := rt5.Top;
   rtfl.Bottom := rt5.Bottom;
+  if flselect
+    then dib.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+    else dib.SetPen(ps_solid,1,colortorgb(FormsColor));
+  dib.Rectangle(rtfl.Left,rtfl.Top,rtfl.Right,rtfl.Bottom);
   dib.DrawText('Упр. потоком:', rt5, DT_VCENTER or DT_SINGLELINE);
   dib.DrawText(Flow, rtfl, DT_VCENTER or DT_SINGLELINE);
+end;
+
+procedure TPort422.MouseMove(cv: tcanvas; X, Y: integer);
+begin
+  cmselect := false;
+  spselect := false;
+  btselect := false;
+  prselect := false;
+  stselect := false;
+  flselect := false;
+  if (Y > rtcm.Top) and (Y < rtcm.Bottom) then
+  begin
+    cmselect := true;
+    exit
+  end;
+  if (Y > rtsp.Top) and (Y < rtsp.Bottom) then
+  begin
+    spselect := true;
+    exit
+  end;
+  if (Y > rtbt.Top) and (Y < rtbt.Bottom) then
+  begin
+    btselect := true;
+    exit
+  end;
+  if (Y > rtpr.Top) and (Y < rtpr.Bottom) then
+  begin
+    prselect := true;
+    exit
+  end;
+  if (Y > rtst.Top) and (Y < rtst.Bottom) then
+  begin
+    stselect := true;
+    exit
+  end;
+  if (Y > rtfl.Top) and (Y < rtfl.Bottom) then
+  begin
+    flselect := true;
+    exit
+  end;
 end;
 
 function TPort422.ClickMouse(cv: tcanvas; X, Y: integer): integer;
@@ -1366,6 +1692,7 @@ begin
   Ports := TMyPort.create;
   ProtocolMain := TProtocolMain.create;
   ProtocolAdd := TProtocolAdd.create;
+  pselect:=false;
 end;
 
 destructor TOneProtocol.destroy;
@@ -1378,6 +1705,7 @@ begin
   freemem(@Ports);
   freemem(@ProtocolMain);
   freemem(@ProtocolAdd);
+  freemem(@pselect);
 End;
 
 function TOneProtocol.GetString: string;
@@ -1406,6 +1734,7 @@ begin
   Vendor := '';
   initrect(rtv);
   Count := 0;
+  vselect := false;
 end;
 
 procedure TVendors.clear;
@@ -1433,6 +1762,7 @@ begin
   clear;
   freemem(@Count);
   freemem(@FirmDevices);
+  freemem(@vselect);
 end;
 
 function TVendors.Add(Name: string): integer;
@@ -1550,6 +1880,7 @@ begin
   rttxt.Right := 0;
   rttxt.Bottom := 0;
   VarText := SVText;
+  txtselect := false;
 end;
 
 destructor TOneStringTable.destroy;
@@ -1559,6 +1890,7 @@ begin
   freemem(@Text);
   freemem(@rttxt);
   freemem(@VarText);
+  freemem(@txtselect);
 end;
 
 constructor TProtocolMain.create;
@@ -1670,6 +2002,11 @@ begin
       List[i].rttxt.Top := List[i].rtnm.Top;
       List[i].rttxt.Right := wdth - 5;
       List[i].rttxt.Bottom := List[i].rtnm.Bottom;
+      if List[i].txtselect
+        then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+        else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      tmp.Rectangle(List[i].rttxt.Left,List[i].rttxt.Top,
+                    List[i].rttxt.Right,List[i].rttxt.Bottom);
       tmp.DrawText(List[i].Name, List[i].rtnm, DT_VCENTER or DT_SINGLELINE);
       tmp.DrawText(List[i].Text, List[i].rttxt, DT_VCENTER or DT_SINGLELINE);
       Top := List[i].rtnm.Bottom;
@@ -1682,6 +2019,26 @@ begin
     tmp.Free;
     tmp := nil;
   end
+end;
+
+procedure TProtocolMain.unselect;
+var i: integer;
+begin
+  for i := 0 to Count - 1 do List[i].txtselect := false;
+end;
+
+procedure TProtocolMain.MouseMove(cv: tcanvas; X, Y: integer);
+var i: integer;
+begin
+  //for i := 0 to Count - 1 do List[i].txtselect := false;
+  unselect;
+  for i := 0 to Count - 1 do  begin
+    if (Y > List[i].rttxt.Top) and (Y < List[i].rttxt.Bottom) then
+    begin
+      List[i].txtselect := true;
+      exit;
+    end;
+  end;
 end;
 
 function TProtocolMain.ClickMouse(cv: tcanvas; X, Y: integer): integer;
@@ -1839,7 +2196,13 @@ begin
       List[i].rttxt.Top := rt.Top;
       List[i].rttxt.Right := List[i].rttxt.Left + wdcl - HgRw - 20;
       List[i].rttxt.Bottom := rt.Bottom;
-      tmp.DrawText(inttostr(i), rt, DT_VCENTER or DT_SINGLELINE);
+      if List[i].txtselect
+        then tmp.SetPen(ps_dot,1,colortorgb(FormsFontColor))
+        else tmp.SetPen(ps_solid,1,colortorgb(FormsColor));
+      tmp.Rectangle(List[i].rttxt.Left,List[i].rttxt.Top,
+                    List[i].rttxt.Right,List[i].rttxt.Bottom);
+
+      tmp.DrawText(inttostr(i+1), rt, DT_VCENTER or DT_SINGLELINE);
       tmp.SetFontEx(FormsFontName, trunc(w1 / length(List[i].Name)), MTFontSize,
         1, false, false, false);
       tmp.DrawText(List[i].Name, List[i].rtnm, DT_VCENTER or DT_SINGLELINE);
@@ -1855,6 +2218,26 @@ begin
     tmp.Free;
     tmp := nil;
   end
+end;
+
+procedure TProtocolAdd.unselect;
+var i: integer;
+begin
+  for i := 0 to Count - 1 do List[i].txtselect := false;
+end;
+
+procedure TProtocolAdd.MouseMove(cv: tcanvas; X, Y: integer);
+var i: integer;
+begin
+  for i := 0 to Count - 1 do List[i].txtselect := false;
+  for i := 0 to Count - 1 do begin
+    if (X > List[i].rttxt.Left) and (X < List[i].rttxt.Right) and
+      (Y > List[i].rttxt.Top) and (Y < List[i].rttxt.Bottom) then
+    begin
+      List[i].txtselect := true;
+      exit;
+    end;
+  end;
 end;
 
 function TProtocolAdd.ClickMouse(cv: tcanvas; X, Y: integer): integer;

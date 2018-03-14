@@ -9,6 +9,7 @@ uses
     Vcl.ExtCtrls,
     Math, FastDIB, FastFX, FastSize, FastFiles, FConvert, FastBlend, Utils,
     StrUtils,
+    system.json,
     Vcl.Buttons;
 
 type
@@ -25,6 +26,7 @@ type
     end;
 
     TProgOptions = class
+        description : string;
         Count: integer;
         Options: array of TOneOption;
         procedure draw(cv: tcanvas; HeightRow: integer);
@@ -39,6 +41,26 @@ type
         Destructor destroy;
     end;
 
+    // sss helpers
+    TProgOptionsJson = class helper for TProgOptions
+    public
+        Function SaveToJSONStr: string;
+        Function SaveToJSONObject: tjsonObject;
+        Function LoadFromJSONObject(json: tjsonObject): boolean;
+        Function LoadFromJSONstr(JSONstr: string): boolean;
+
+    end;
+
+    TOneOptionJson = class helper for TOneOption
+    public
+        Function SaveToJSONStr: string;
+        Function SaveToJSONObject: tjsonObject;
+        Function LoadFromJSONObject(json: tjsonObject): boolean;
+        Function LoadFromJSONstr(JSONstr: string): boolean;
+
+    end;
+
+    // sss end
     TfrOptions = class(TForm)
         Panel1: TPanel;
         Panel2: TPanel;
@@ -633,6 +655,50 @@ end;
 procedure TfrOptions.SpeedButton2Click(Sender: TObject);
 begin
     Close;
+end;
+
+{ TProgOptionsJson }
+
+function TProgOptionsJson.LoadFromJSONObject(json: tjsonObject): boolean;
+begin
+
+end;
+
+function TProgOptionsJson.LoadFromJSONstr(JSONstr: string): boolean;
+begin
+
+end;
+
+function TProgOptionsJson.SaveToJSONObject: tjsonObject;
+begin
+
+end;
+
+function TProgOptionsJson.SaveToJSONStr: string;
+begin
+
+end;
+
+{ TOneOptionJson }
+
+function TOneOptionJson.LoadFromJSONObject(json: tjsonObject): boolean;
+begin
+
+end;
+
+function TOneOptionJson.LoadFromJSONstr(JSONstr: string): boolean;
+begin
+
+end;
+
+function TOneOptionJson.SaveToJSONObject: tjsonObject;
+begin
+
+end;
+
+function TOneOptionJson.SaveToJSONStr: string;
+begin
+
 end;
 
 end.

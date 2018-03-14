@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>2011.12.06 11:33:12.802.pas,D:\Примеры программных модулей\Delphi\comport\Example\Unit1.pas=D:\Примеры программных модулей\Delphi\comport\Example\UMTXInput.pas</Transaction>
-    <Transaction>2011.12.06 11:33:12.802.dfm,D:\Примеры программных модулей\Delphi\comport\Example\Unit1.dfm=D:\Примеры программных модулей\Delphi\comport\Example\UMTXInput.dfm</Transaction>
-    <Transaction>2011.12.06 12:12:09.356.pas,D:\Примеры программных модулей\Delphi\comport\Example\Unit2.pas=D:\Примеры программных модулей\Delphi\comport\Example\UMTXEventList.pas</Transaction>
-    <Transaction>2011.12.06 12:12:09.356.dfm,D:\Примеры программных модулей\Delphi\comport\Example\Unit2.dfm=D:\Примеры программных модулей\Delphi\comport\Example\UMTXEventList.dfm</Transaction>
-  </Transactions>
-</BorlandProject>

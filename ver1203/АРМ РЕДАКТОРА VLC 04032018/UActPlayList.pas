@@ -142,6 +142,8 @@ begin
   SetButtonsPredNext;
   MediaStop;
   TLParameters.vlcmode := paused;
+  PutJsonStrToServer('TLP',TLParameters.SaveToJSONStr);
+
   LoadClipsToPlayer;
   SetMediaButtons;
   WriteLog('MAIN', 'UActPlayList.LoadPredClipToPlayer Finish GridPlayerRow=' +
@@ -283,6 +285,8 @@ begin
   end;
   MediaStop;
   TLParameters.vlcmode := paused;
+  PutJsonStrToServer('TLP',TLParameters.SaveToJSONStr);
+
   LoadClipsToPlayer;
   SetMediaButtons;
   WriteLog('MAIN', 'UActPlayList.LoadNextClipToPlayer Finish GridPlayerRow=' +
@@ -369,6 +373,7 @@ begin
     // dur:=FramesToDouble(defdur);
     dur := defdur;
     TLParameters.vlcmode := paused;
+    PutJsonStrToServer('TLP',TLParameters.SaveToJSONStr);
 
     if not LoadClipEditingFromFile('defaultclip') then
     begin
@@ -926,6 +931,7 @@ begin
   vlcplayer.Pause;
   // Rate:=vlcplayer.Time;
   TLParameters.vlcmode := paused;
+  PutJsonStrToServer('TLP',TLParameters.SaveToJSONStr);
 
   TLParameters.Duration := dur;
   // TLParameters.NTK:=0; //###### Warming

@@ -441,6 +441,7 @@ end;
 
 procedure TFrProtocols.imgAddParamMouseMove(Sender: TObject; Shift: TShiftState;
   X, Y: Integer);
+var indx: Integer;
 begin
   if ComboBox1.Visible then
     ComboBox1.Visible := false;
@@ -452,12 +453,40 @@ begin
     ComboBox2.Visible := false;
   if Edit1.Visible then
     Edit1.Visible := false;
+
+  if ListTypeDevices.index = -1 then
+    ListTypeDevices.index := 0;
+  with ListTypeDevices.TypeDevices[ListTypeDevices.index] do
+  begin
+    indx := ListTypeDevices.TypeDevices[ListTypeDevices.index].index;
+    with Vendors[indx] do
+    begin
+      indx := Vendors[indx].index;
+      with FirmDevices[indx] do
+      begin
+        indx := FirmDevices[indx].index;
+        with ListProtocols[indx] do
+        begin
+          ProtocolAdd.MouseMove(imgAddParam.Canvas, X, Y);
+          ProtocolMain.unselect;
+          Ports.unselect;
+          //ProtocolAdd.Draw(imgAddParam.Canvas, ComboBox2.Height);
+          //imgAddParam.Repaint;
+        end;
+      end;
+    end;
+  end;
+  ListTypeDevices.unselect;
+  DrawTableProtocols;
+  FrProtocols.imgDevice.Repaint;
+  FrProtocols.imgPorts.Repaint;
+  FrProtocols.imgMainParam.Repaint;
+  FrProtocols.imgAddParam.Repaint;
 end;
 
 procedure TFrProtocols.imgAddParamMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
-var
-  indx: Integer;
+var indx: Integer;
 begin
   if ListTypeDevices.index = -1 then
     ListTypeDevices.index := 0;
@@ -493,19 +522,6 @@ begin
       end;
     end;
   end;
-  // indxpradd := ProtocolAdd.ClickMouse(imgAddParam.Canvas, X, Y);
-  // if indxpradd<>-1 then begin
-  // ComboBox2.Visible:=false;
-  // ComboBox2.Left:=ProtocolAdd.List[indxprAdd].rttxt.Left;
-  // ComboBox2.Top:=imgAddParam.Top + ProtocolAdd.List[indxpradd].rttxt.Top;
-  // ComboBox2.Width:=Protocoladd.List[indxpradd].rttxt.Right - ProtocolAdd.List[indxpradd].rttxt.Left;
-  // ComboBox2.Clear;
-  // GetListParam(ProtocolAdd.List[indxpradd].VarText, Combobox2.Items);
-  // Combobox2.ItemIndex := Combobox2.Items.IndexOf(ProtocolAdd.List[indxpradd].Text);
-  // ComboBox2.Visible:=true;
-  // end;
-  // ProtocolAdd.draw(imgAddParam.Canvas,ComboBox2.Height);
-  // imgAddParam.Repaint;
 end;
 
 procedure TFrProtocols.imgButtonsMouseMove(Sender: TObject; Shift: TShiftState;
@@ -631,6 +647,7 @@ end;
 
 procedure TFrProtocols.imgDeviceMouseMove(Sender: TObject; Shift: TShiftState;
   X, Y: Integer);
+var indx : integer;
 begin
   if ComboBox3.Visible then
     ComboBox3.Visible := false;
@@ -642,6 +659,33 @@ begin
     ComboBox2.Visible := false;
   if Edit1.Visible then
     Edit1.Visible := false;
+
+  ListTypeDevices.MouseMove(imgDevice.Canvas, X, Y);
+
+  if ListTypeDevices.index = -1 then ListTypeDevices.index := 0;
+  with ListTypeDevices.TypeDevices[ListTypeDevices.index] do
+  begin
+    indx := ListTypeDevices.TypeDevices[ListTypeDevices.index].index;
+    with Vendors[indx] do
+    begin
+      indx := Vendors[indx].index;
+      with FirmDevices[indx] do
+      begin
+        indx := FirmDevices[indx].index;
+        with ListProtocols[indx] do
+        begin
+          ProtocolMain.unselect;
+          ProtocolAdd.unselect;
+          Ports.unselect;
+        end;
+      end;
+    end;
+  end;
+  DrawTableProtocols;
+  FrProtocols.imgDevice.Repaint;
+  FrProtocols.imgPorts.Repaint;
+  FrProtocols.imgMainParam.Repaint;
+  FrProtocols.imgAddParam.Repaint;
 end;
 
 procedure TFrProtocols.imgDeviceMouseUp(Sender: TObject; Button: TMouseButton;
@@ -777,6 +821,7 @@ end;
 
 procedure TFrProtocols.imgMainParamMouseMove(Sender: TObject;
   Shift: TShiftState; X, Y: Integer);
+var indx: Integer;
 begin
   if ComboBox1.Visible then
     ComboBox1.Visible := false;
@@ -788,12 +833,41 @@ begin
     ComboBox2.Visible := false;
   if Edit1.Visible then
     Edit1.Visible := false;
+
+  if ListTypeDevices.index = -1 then
+    ListTypeDevices.index := 0;
+  with ListTypeDevices.TypeDevices[ListTypeDevices.index] do
+  begin
+    indx := ListTypeDevices.TypeDevices[ListTypeDevices.index].index;
+    with Vendors[indx] do
+    begin
+      indx := Vendors[indx].index;
+      with FirmDevices[indx] do
+      begin
+        indx := FirmDevices[indx].index;
+        with ListProtocols[indx] do
+        begin
+          ProtocolMain.MouseMove(imgMainParam.Canvas, X, Y);
+          ProtocolAdd.unselect;
+          Ports.unselect;
+          //ListTypeDevices.unselect;
+          //ProtocolMain.Draw(imgMainParam.Canvas, ComboBox3.Height);
+          //imgMainParam.Repaint;
+        end;
+      end;
+    end;
+  end;
+  ListTypeDevices.unselect;
+  DrawTableProtocols;
+  FrProtocols.imgDevice.Repaint;
+  FrProtocols.imgPorts.Repaint;
+  FrProtocols.imgMainParam.Repaint;
+  FrProtocols.imgAddParam.Repaint;
 end;
 
 procedure TFrProtocols.imgMainParamMouseUp(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-var
-  indx: Integer;
+var indx: Integer;
 begin
   if ListTypeDevices.index = -1 then
     ListTypeDevices.index := 0;
@@ -834,6 +908,7 @@ end;
 
 procedure TFrProtocols.imgPortsMouseMove(Sender: TObject; Shift: TShiftState;
   X, Y: Integer);
+var indx: Integer;
 begin
   if ComboBox1.Visible then
     ComboBox1.Visible := false;
@@ -843,6 +918,33 @@ begin
     ComboBox3.Visible := false;
   if ComboBox2.Visible then
     ComboBox2.Visible := false;
+  with ListTypeDevices.TypeDevices[ListTypeDevices.index] do
+  begin
+    indx := ListTypeDevices.TypeDevices[ListTypeDevices.index].index;
+    with Vendors[indx] do
+    begin
+      indx := Vendors[indx].index;
+      with FirmDevices[indx] do
+      begin
+        indx := FirmDevices[indx].index;
+        with ListProtocols[indx] do
+        begin
+          Ports.MouseMove(imgPorts.Canvas, X, Y);
+          ProtocolAdd.unselect;
+          ProtocolMain.unselect;
+          //Ports.Draw(imgPorts.Canvas, ComboBox4.Height);
+        end;
+      end;
+    end;
+  end;
+  ListTypeDevices.unselect;
+  DrawTableProtocols;
+  FrProtocols.imgDevice.Repaint;
+  FrProtocols.imgPorts.Repaint;
+  FrProtocols.imgMainParam.Repaint;
+  FrProtocols.imgAddParam.Repaint;
+
+//  imgPorts.Repaint;
   // if Edit1.Visible then Edit1.Visible := false;
 end;
 
