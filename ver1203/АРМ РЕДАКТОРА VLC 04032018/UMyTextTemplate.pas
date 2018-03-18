@@ -425,6 +425,7 @@ var
   i, j, nl: integer;
   snm: string;
 begin
+  if frMyTextTemplate=nil then exit;
 
   for i := frMyTextTemplate.ComponentCount - 1 downto 0 do
   begin

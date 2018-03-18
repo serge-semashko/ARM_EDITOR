@@ -23,6 +23,7 @@ uses
   UMyFiles in 'UMyFiles.pas',
   UTextTemplate in 'UTextTemplate.pas' {FTextTemplate},
   UMyMessage in 'UMyMessage.pas' {FMyMessage},
+  UMyTextTemplate in 'UMyTextTemplate.pas' {frMyTextTemplate},
   UImageTemplate in 'UImageTemplate.pas' {FGRTemplate},
   UAirDraw in 'UAirDraw.pas',
   USubtitrs in 'USubtitrs.pas',
@@ -47,7 +48,6 @@ uses
   UPageDraw in 'UPageDraw.pas',
   UMyLTC in 'UMyLTC.pas' {frLTC},
   USetTC in 'USetTC.pas' {frSetTC},
-  UMyTextTemplate in 'UMyTextTemplate.pas' {frMyTextTemplate},
   UMyNewList in 'UMyNewList.pas' {frNewList},
   USetProcent in 'USetProcent.pas' {frSetProcent},
   UMyMenu in 'UMyMenu.pas',
@@ -59,7 +59,8 @@ uses
   UfrListErrors in 'UfrListErrors.pas' {FrListErrors},
   UMyTextTable in 'UMyTextTable.pas',
   UMyProtocols in 'UMyProtocols.pas',
-  uwebget in '..\helpers\uwebget.pas';
+  uwebget in '..\helpers\uwebget.pas',
+  udevmanagers in '..\helpers\udevmanagers.pas';
 
 {$R *.res}
 
@@ -72,7 +73,9 @@ begin
   Application.CreateForm(TFEditTimeline, FEditTimeline);
   Application.CreateForm(TFButtonOptions, FButtonOptions);
   Application.CreateForm(TFImportFiles, FImportFiles);
+  Application.CreateForm(TfrMyTextTemplate, frMyTextTemplate);
   Application.CreateForm(TFTextTemplate, FTextTemplate);
+  Application.CreateForm(TFrProtocols, FrProtocols);
   Application.CreateForm(TFMyMessage, FMyMessage);
   Application.CreateForm(TFGRTemplate, FGRTemplate);
   Application.CreateForm(TFrSetTemplate, FrSetTemplate);
@@ -81,8 +84,8 @@ begin
   Application.CreateForm(TFrSaveProject, FrSaveProject);
   Application.CreateForm(TfrHotKeys, frHotKeys);
   Application.CreateForm(TFrMyOptions, FrMyOptions);
-  Application.CreateForm(TFrProtocols, FrProtocols);
   Application.CreateForm(TFrListErrors, FrListErrors);
+  //Application.CreateForm(TfrMyTextTemplate, frMyTextTemplate);
   // Application.CreateForm(THTTPSRVForm, HTTPSRVForm);
   Application.CreateForm(TfrShiftTL, frShiftTL);
   Application.CreateForm(TfrShortNum, frShortNum);
@@ -92,7 +95,7 @@ begin
   Application.CreateForm(TfrMyPrint, frMyPrint);
   Application.CreateForm(TfrLTC, frLTC);
   Application.CreateForm(TfrSetTC, frSetTC);
-  Application.CreateForm(TfrMyTextTemplate, frMyTextTemplate);
+  //Application.CreateForm(TfrMyTextTemplate, frMyTextTemplate);
   Application.CreateForm(TfrNewList, frNewList);
   Application.CreateForm(TfrSetProcent, frSetProcent);
   Application.Run;

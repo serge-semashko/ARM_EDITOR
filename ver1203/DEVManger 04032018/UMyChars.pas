@@ -21,7 +21,6 @@ type
         SpeedButton3: TSpeedButton;
         SpeedButton4: TSpeedButton;
         OpenDialog1: TOpenDialog;
-        SpeedButton5: TSpeedButton;
         procedure Edit1KeyPress(Sender: TObject; var Key: Char);
         procedure FormCreate(Sender: TObject);
         procedure SpeedButton2Click(Sender: TObject);
@@ -30,7 +29,6 @@ type
         procedure SpeedButton1Click(Sender: TObject);
         procedure SpeedButton3Click(Sender: TObject);
         procedure SpeedButton4Click(Sender: TObject);
-        procedure SpeedButton5Click(Sender: TObject);
     private
         { Private declarations }
     public
@@ -43,10 +41,11 @@ var
 
 procedure SetAProtocolData(Stri: string);
 procedure LoadAProtocolFromFile(FileName: string);
+procedure SaveAProtocolToFile(FileName, sprotocol: string);
 
 implementation
 
-uses mainunit, ucommon, comportunit, umyinitfile, umyprotocols;
+uses mainunit, ucommon, comportunit, umyinitfile, umyprotocols, UPortOptions;
 
 {$R *.dfm}
 
@@ -228,6 +227,12 @@ begin
         cnt := 3
     else
         cnt := MyProtocol.Main.Count;
+    INFOName1 := '';
+    INFOText1 := '';
+    INFOName2 := '';
+    INFOText2 := '';
+    INFOName3 := '';
+    INFOText3 := '';
     if cnt = 1 then
     begin
         INFOName1 := MyProtocol.Main.List[0].Name;
@@ -252,6 +257,12 @@ begin
     ss := GetProtocolsStr(Stri, 'AddOptions');
     MyProtocol.Options.clear;
     MyProtocol.Options.SetString(ss, 'AddOptions');
+    if ProgOptions=nil then begin
+      ProgOptions := TProgOptions.create;
+      ProgOptions.clear;
+    end;
+    ProgOptions.LoadData;
+
 end;
 
 procedure LoadAProtocolFromFile(FileName: string);
@@ -275,6 +286,25 @@ begin
     end;
 end;
 
+procedure SaveAProtocolToFile(FileName, sprotocol: string);
+var F: TextFile;
+    i, j: integer;
+    Stri: string;
+    lst: tstrings;
+begin
+  try
+      try
+        AssignFile(F, FileName);
+        Rewrite(F);
+        Write(F, sprotocol);
+      finally
+        CloseFile(F);
+      end
+    except
+      CloseFile(F);
+    end;
+end;
+
 procedure TForm3.SpeedButton4Click(Sender: TObject);
 var
     lst: tstrings;
@@ -284,30 +314,6 @@ begin
     if not OpenDialog1.Execute then
         exit;
     LoadAProtocolFromFile(OpenDialog1.FileName);
-end;
-
-procedure TForm3.SpeedButton5Click(Sender: TObject);
-var
-    i, j: integer;
-    s: string;
-    lst: tstrings;
-begin
-    lst := tstringlist.create;
-    lst.clear;
-    try
-        for i := 0 to MyProtocol.CMDTemplates.CMDCount - 1 do
-        begin
-            s := MyProtocol.CMDTemplates.CommandsList[i].GetValue(nil, '0');
-            MyProtocol.CMDTemplates.CMDStart.GetListCommands(nil, lst);
-            MyProtocol.CMDTemplates.CMDTransition.GetListCommands(nil, lst);
-            MyProtocol.CMDTemplates.CMDFinish.GetListCommands(nil, lst);
-            MyProtocol.CMDTemplates.GetCMDStart(nil, lst);
-            MyProtocol.CMDTemplates.GetCMDTransition(nil, lst);
-            MyProtocol.CMDTemplates.GetCMDFinish(nil, lst);
-        end;
-    finally
-        lst.free;
-    end;
 end;
 
 end.

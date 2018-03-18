@@ -224,6 +224,11 @@ begin
       ini.WriteInteger('TABLE', 'MTFontSizeS', MTFontSizeS);
       ini.WriteInteger('TABLE', 'MTFontSizeB', MTFontSizeB);
 
+      //Переход между событиями типа device по умолчанию
+      ini.WriteString('EVENTS', 'DefaultTransition', DefaultTransition);
+      ini.WriteInteger('EVENTS', 'DefTransDuration', DefTransDuration);
+      ini.WriteInteger('EVENTS', 'DefTransSet', DefTransSet);
+
     finally
       ini.Free;
     end;
@@ -574,6 +579,11 @@ begin
       MTFontSize := ini.ReadInteger('TABLE', 'MTFontSize', MTFontSize);
       MTFontSizeS := ini.ReadInteger('TABLE', 'MTFontSizeS', MTFontSizeS);
       MTFontSizeB := ini.ReadInteger('TABLE', 'MTFontSizeB', MTFontSizeB);
+
+      //Переход между событиями типа device по умолчанию
+      DefaultTransition := ini.ReadString('EVENTS', 'DefaultTransition', DefaultTransition);
+      DefTransDuration := ini.ReadInteger('EVENTS', 'DefTransDuration', DefTransDuration);
+      DefTransSet := ini.ReadInteger('EVENTS', 'DefTransSet', DefTransSet);
 
       WriteLog('MAIN', 'Окончание чтения IniFile: ' + AppPath + AppName
         + '.ini');

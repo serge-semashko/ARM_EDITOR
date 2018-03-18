@@ -99,11 +99,11 @@ Function GPIBError(iberr :integer) :string;
   Function   WriteLNRData:Boolean;
 
   Function   SpinByName(component:tcomponent;name:string):TSpinEdit;
-  Procedure  WriteLog(LogName,LogData:String);overload;
-  Procedure  WriteLog(LogData:String);overload;
-  Procedure  WriteTimeLog(LogName,LogData:String);overload;
-  Procedure  WriteTimeLog(LogData:String);overload;
-  Procedure  WriteProtocol(LogData:String);
+  Procedure  WriteLog(LogName,LogData:ansiString);overload;
+  Procedure  WriteLog(LogData:ansiString);overload;
+  Procedure  WriteTimeLog(LogName,LogData:ansiString);overload;
+  Procedure  WriteTimeLog(LogData:ansiString);overload;
+  Procedure  WriteProtocol(LogData:ansiString);
   Function   ChangeChar(const str:string;SrcChar,DstChar:Char):String;
   Function   ConvertFloat(str:string;var Newval:double):boolean;
   Function   ElapshedTime:double;
@@ -357,7 +357,7 @@ begin
      result:=res=0;
   end;
 
-Procedure WriteLog(Logname,LogData:String);
+Procedure WriteLog(Logname,LogData:ansiString);
 var
   ff:TFileStream;
 begin
@@ -386,14 +386,14 @@ begin
   except
   end;
 end;
-Procedure WriteLog(LogData:String);
+Procedure WriteLog(LogData:ansiString);
 var
   ff:TFileStream;
-  log1:string;
+  log1:ansistring;
   tname :string;
 begin
   try
-    tname:=formatdatetime('yyyy-mm-dd',now)+'.dat';
+    tname:=formatdatetime('yyyy-mm-dd',now)+'.txt';
     If FileExists(tName)
        then ff := TFileStream.create(tName,fmOpenWrite or  fmShareDenyNone)
        else ff := TFileStream.create(tName,fmCreate or  fmShareDenyNone);
@@ -404,7 +404,7 @@ begin
   except
   end;
 end;
-Procedure WriteProtocol(LogData:String);
+Procedure WriteProtocol(LogData:ansiString);
 var
   ff:TFileStream;
   log1:string;
@@ -423,13 +423,14 @@ exit;
   except
   end;
 end;
-Procedure WriteTimeLog(LogData:String);
+Procedure WriteTimeLog(LogData:ansiString);
 begin
+
   WriteLog(FormatdateTime('DD/MM/YYYY HH:NN:SS',now)+' '+LogData+#10);
 end;
 
 
-Procedure WriteTimeLog(Logname,LogData:String);
+Procedure WriteTimeLog(Logname,LogData:ansiString);
 begin
   WriteLog(LogName,FormatdateTime(#10+'DD/MM/YYYY HH:NN:SS',now)+' '+LogData+#10);
 end;

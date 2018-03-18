@@ -17,7 +17,7 @@ type
         Phrase: string;
         TypePhrase: string;
         Index: TMyIndex;
-        function GetStr(evnt: TMyEvent): string;
+        function GetStr(evpos: integer): string;
         procedure Assign(TMI: TMyIndex);
         constructor create(srcstr: string); overload;
         constructor create; overload;
@@ -33,7 +33,7 @@ type
         Phrase: string; // Имя фразы в событии
         TypePhrase: string; // Название поля фразы, где храняться данные
         Index: TMyIndex;
-        function GetValue(evnt: TMyEvent): string;
+        function GetValue(evpos: integer): string;
         Constructor create;
         destructor destroy;
     end;
@@ -43,7 +43,7 @@ type
         Count: integer;
         Fields: array of TOneField;
         function Add: integer;
-        function GetValue(evnt: TMyEvent): string;
+        function GetValue(evpos: integer): string;
         // procedure SetString(stri : string);
         procedure clear;
         procedure Assign(TOB: TOneByte);
@@ -61,8 +61,8 @@ type
         function Add: integer;
         procedure SetString(stri: string; TypeData: string);
         procedure Assign(TOC: TOneCommand);
-        function GetValue(evnt: TMyEvent; TypeData: string): string;
-        function GetCommand(evnt: TMyEvent): string;
+        function GetValue(evpos: integer; TypeData: string): string;
+        function GetCommand(evpos : integer): string;
         procedure clear;
         constructor create;
         destructor destroy;
@@ -90,7 +90,7 @@ type
         procedure Assign(TC: TCommands);
         procedure clear;
         procedure SetString(stri, SName: string);
-        procedure GetListCommands(evnt: TMyEvent; lst: tstrings);
+        procedure GetListCommands(evpos : integer; lst: tstrings);
         constructor create;
         destructor destroy;
     end;
@@ -103,6 +103,7 @@ type
         FinishCommand: string;
         CMDCount: integer;
         CommandsList: array of TOneCommand;
+        CMDPaused: TCommands;
         CMDStart: TCommands;
         CMDTransition: TCommands;
         CMDFinish: TCommands;
@@ -111,10 +112,11 @@ type
         Procedure clear;
         function AddCMD(Name: string): integer;
         procedure Assign(TCT: TCommandTemplates);
-        function GetCommand(cmd: string; evnt: TMyEvent): string;
-        procedure GetCMDStart(evnt: TMyEvent; lst: tstrings);
-        procedure GetCMDTransition(evnt: TMyEvent; lst: tstrings);
-        procedure GetCMDFinish(evnt: TMyEvent; lst: tstrings);
+        function GetCommand(cmd: string; evpos : integer): string;
+        procedure GetCMDPaused(evpos : integer; lst: tstrings);
+        procedure GetCMDStart(evpos : integer; lst: tstrings);
+        procedure GetCMDTransition(evpos : integer; lst: tstrings);
+        procedure GetCMDFinish(evpos : integer; lst: tstrings);
         procedure SetString(stri: string);
         constructor create;
         destructor destroy;
@@ -257,14 +259,16 @@ Var
 
 implementation
 
-uses umain, ucommon;
+uses umain, ucommon, UGRTimelines;
 
 Procedure LoadProtocol(FileName, TypeTL, TypeDevice, Vendor, Device,
   Protocol: string);
 begin
     try
-        ListTypeDevices := TListTypeDevices.create;
-        ListTypeDevices.LoadFromFile(FileName, TypeTL);
+        if ListTypeDevices=nil then begin
+          ListTypeDevices := TListTypeDevices.create;
+          ListTypeDevices.LoadFromFile(FileName, TypeTL);
+        end;
         ListTypeDevices.GetProtocol(TypeDevice, Vendor, Device, Protocol,
           MyProtocol);
     finally
@@ -273,7 +277,7 @@ begin
     end;
 end;
 
-function GetCommandValue(evnt: TMyEvent; Source, Param, Phrase, TypePhrase,
+function GetCommandValue(evpos: integer; Source, Param, Phrase, TypePhrase,
   Index: string): string;
 var
     sindx, sphr, stph, stmp: string;
@@ -317,24 +321,24 @@ begin
     end
     else if Source = 'phrase' then
     begin
-        if evnt = nil then
+        if MyTLEdit.Events[evpos] = nil then
         begin
             result := '00';
             exit;
         end;
         stph := ansilowercase(trim(TypePhrase));
         if stph = 'text' then
-            result := evnt.ReadPhraseText(Phrase)
+            result := MyTLEdit.Events[evpos].ReadPhraseText(Phrase)
         else if stph = 'data' then
-            result := inttostr(evnt.ReadPhraseData(Phrase))
+            result := inttostr(MyTLEdit.Events[evpos].ReadPhraseData(Phrase))
         else if stph = 'command' then
-            result := evnt.ReadPhraseCommand(Phrase)
+            result := MyTLEdit.Events[evpos].ReadPhraseCommand(Phrase)
         else if stph = 'tag' then
-            result := inttostr(evnt.ReadPhraseTag(Phrase))
+            result := inttostr(MyTLEdit.Events[evpos].ReadPhraseTag(Phrase))
         else if stph = 'type' then
-            result := evnt.ReadPhraseType(Phrase)
+            result := MyTLEdit.Events[evpos].ReadPhraseType(Phrase)
         else if stph = 'listname' then
-            result := evnt.ReadPhraseListName(Phrase)
+            result := MyTLEdit.Events[evpos].ReadPhraseListName(Phrase)
     end;
     WriteLog('Translator', 'GetCommandValue: Source=' + Source + ' Param=' +
       Param + ' Phrase=' + Phrase + 'TypePhrase=' + TypePhrase + ' Index' +
@@ -417,7 +421,7 @@ begin
     result := Count - 1;
 end;
 
-function TOneByte.GetValue(evnt: TMyEvent): string;
+function TOneByte.GetValue(evpos: integer): string;
 var
     i, res: integer;
     sindx, btstr, svar: string;
@@ -433,8 +437,8 @@ begin
         if Fields[i].Index = nil then
             sindx := ''
         else
-            sindx := Fields[i].Index.GetStr(evnt);
-        btstr := GetCommandValue(evnt, Fields[i].TypeData, Fields[i].Param,
+            sindx := Fields[i].Index.GetStr(evpos);
+        btstr := GetCommandValue(evpos, Fields[i].TypeData, Fields[i].Param,
           Fields[i].Phrase, Fields[i].TypePhrase, sindx);
 
         WriteLog('Translator', 'TOneByte.GetValue Field=' + inttostr(i) +
@@ -645,19 +649,19 @@ begin
     Count := 0;
 end;
 
-function TOneCommand.GetValue(evnt: TMyEvent; TypeData: string): string;
+function TOneCommand.GetValue(evpos: integer; TypeData: string): string;
 var
     i: integer;
 begin
     result := '';
     if (trim(TypeData) = '0') or (trim(TypeData) = '1') then
         for i := 0 to Count - 1 do
-            result := result + Bytes[i].GetValue(evnt)
+            result := result + Bytes[i].GetValue(evpos)
     else
-        result := GetCommand(evnt); // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+        result := GetCommand(evpos); // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 end;
 
-function TOneCommand.GetCommand(evnt: TMyEvent): string;
+function TOneCommand.GetCommand(evpos: integer): string;
 var
     i, j: integer;
     Data: TMyIndex;
@@ -680,7 +684,7 @@ begin
                 Data := nil
             end;
             Data := TMyIndex.create(cmd);
-            cmd := Data.GetStr(evnt);
+            cmd := Data.GetStr(evpos);
             ss := cmds + cmd + cmde;
             pss := posex('@#', ss, 1);
             pse := posex('#@', ss, pss);
@@ -841,6 +845,7 @@ begin
     FinishCommand := '';
     CMDCount := 0;
     // CommandsList : array of TOneCommand;
+    CMDPaused := TCommands.create;
     CMDStart := TCommands.create;
     CMDTransition := TCommands.create;
     CMDFinish := TCommands.create;
@@ -857,6 +862,7 @@ begin
         setlength(CommandsList, CMDCount);
     end;
     CMDCount := 0;
+    CMDPaused.clear;
     CMDStart.clear;
     CMDTransition.clear;
     CMDFinish.clear;
@@ -872,6 +878,7 @@ begin
     clear;
     freemem(@CMDCount);
     freemem(@CommandsList);
+    freemem(@CMDPaused);
     freemem(@CMDStart);
     freemem(@CMDTransition);
     freemem(@CMDFinish);
@@ -931,6 +938,8 @@ begin
     FinishCommand := GetProtocolsParam(ss, 'FinishCommand');
     ss := GetProtocolsStr(stri, 'CommandsList');
     SetCMDString(ss);
+    ss := GetProtocolsStr(stri, 'CommandsPaused');
+    CMDPaused.SetString(ss, 'CommandsPaused');
     ss := GetProtocolsStr(stri, 'CommandsStart');
     CMDStart.SetString(ss, 'CommandsStart');
     ss := GetProtocolsStr(stri, 'CommandsTransition');
@@ -939,7 +948,7 @@ begin
     CMDFinish.SetString(ss, 'CommandsFinish');
 end;
 
-function TCommandTemplates.GetCommand(cmd: string; evnt: TMyEvent): string;
+function TCommandTemplates.GetCommand(cmd: string; evpos : integer): string;
 var
     i: integer;
 begin
@@ -950,7 +959,7 @@ begin
         if ansilowercase(trim(CommandsList[i].Name)) = ansilowercase(trim(cmd))
         then
         begin
-            result := CommandsList[i].GetValue(evnt, TypeData);
+            result := CommandsList[i].GetValue(evpos, TypeData);
             WriteLog('Translator', 'TCommandTemplates.GetCommand  Command=' +
               cmd + ' Result=' + result);
             exit;
@@ -959,21 +968,126 @@ begin
     WriteLog('Translator', 'TCommandTemplates.GetCommand  Finish');
 end;
 
-procedure TCommandTemplates.GetCMDStart(evnt: TMyEvent; lst: tstrings);
-var
-    clst: tstrings;
-    i: integer;
+procedure TCommandTemplates.GetCMDPaused(evpos : integer; lst: tstrings);
+var clst: tstrings;
+    i, j : integer;
+    stmp, scmd, sevnt : string;
+    pss, pse, evnt : integer;
+begin
+    WriteLog('Translator', 'TCommandTemplates.GetCMDPaused  Start');
+    try
+        clst := tstringlist.create;
+        clst.clear;
+        try
+            CMDPaused.GetListCommands(evpos, clst);
+            lst.clear;
+            for i := 0 to clst.Count - 1 do
+            begin
+              stmp := clst.Strings[i];
+              evnt := evpos;
+              pss := posex('[',stmp,1);
+              if pss<>0 then begin
+                scmd := copy(stmp,1,pss-1);
+                sevnt := copy(stmp,pss+1,length(stmp));
+                pss := posex(']',sevnt,1);
+                if pss<>0 then sevnt:=copy(sevnt,1,pss-1);
+                pss := posex('+',sevnt,1);
+                pse := posex('-',sevnt,1);
+                if (pss<>0) then begin
+                  stmp := trim(copy(sevnt,pss+1,length(sevnt)));
+                  if stmp<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos+strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end else if (pse<>0) then begin
+                  stmp := copy(sevnt,pse+1,length(sevnt));
+                  if trim(stmp)<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos-strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end;
+              end else scmd:=stmp;
+              if evnt > MyTLEdit.Count-1 then evnt:=MyTLEdit.Count-1;
+              lst.Add(GetCommand(scmd, evnt));
+            end;
+        finally
+            clst.free;
+        end;
+        WriteLog('Translator', 'TCommandTemplates.GetCMDPaused  Finish');
+    except
+        WriteLog('Translator', 'TCommandTemplates.GetCMDPaused  Error');
+    end;
+end;
+
+procedure TCommandTemplates.GetCMDStart(evpos : integer; lst: tstrings);
+var clst: tstrings;
+    i, j : integer;
+    stmp, scmd, sevnt : string;
+    pss, pse, evnt : integer;
 begin
     WriteLog('Translator', 'TCommandTemplates.GetCMDStart  Start');
     try
         clst := tstringlist.create;
         clst.clear;
         try
-            CMDStart.GetListCommands(evnt, clst);
+            CMDStart.GetListCommands(evpos, clst);
             lst.clear;
             for i := 0 to clst.Count - 1 do
             begin
-                lst.Add(GetCommand(clst.Strings[i], evnt));
+              stmp := clst.Strings[i];
+              evnt := evpos;
+              pss := posex('[',stmp,1);
+              if pss<>0 then begin
+                scmd := copy(stmp,1,pss-1);
+                sevnt := copy(stmp,pss+1,length(stmp));
+                pss := posex(']',sevnt,1);
+                if pss<>0 then sevnt:=copy(sevnt,1,pss-1);
+                pss := posex('+',sevnt,1);
+                pse := posex('-',sevnt,1);
+                if (pss<>0) then begin
+                  stmp := trim(copy(sevnt,pss+1,length(sevnt)));
+                  if stmp<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos+strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end else if (pse<>0) then begin
+                  stmp := copy(sevnt,pse+1,length(sevnt));
+                  if trim(stmp)<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos-strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end;
+              end else scmd:=stmp;
+              if evnt > MyTLEdit.Count-1 then evnt:=MyTLEdit.Count-1;
+              lst.Add(GetCommand(scmd, evnt));
             end;
         finally
             clst.free;
@@ -984,10 +1098,11 @@ begin
     end;
 end;
 
-procedure TCommandTemplates.GetCMDTransition(evnt: TMyEvent; lst: tstrings);
-var
-    clst: tstrings;
-    i: integer;
+procedure TCommandTemplates.GetCMDTransition(evpos : integer;  lst: tstrings);
+var clst: tstrings;
+    i, j : integer;
+    stmp, scmd, sevnt : string;
+    pss, pse, evnt : integer;
     cmd: string;
 begin
     WriteLog('Translator', 'TCommandTemplates.GetCMDTransition  Start');
@@ -995,12 +1110,52 @@ begin
         clst := tstringlist.create;
         clst.clear;
         try
-            CMDTransition.GetListCommands(evnt, clst);
+            CMDTransition.GetListCommands(evpos, clst);
             lst.clear;
             for i := 0 to clst.Count - 1 do
             begin
-                cmd := BeforeStr + GetCommand(clst.Strings[i], evnt) + AfterStr;
-                lst.Add(cmd);
+              stmp := clst.Strings[i];
+              evnt := evpos;
+              pss := posex('[',stmp,1);
+              if pss<>0 then begin
+                scmd := copy(stmp,1,pss-1);
+                sevnt := copy(stmp,pss+1,length(stmp));
+                pss := posex(']',sevnt,1);
+                if pss<>0 then sevnt:=copy(sevnt,1,pss-1);
+                pss := posex('+',sevnt,1);
+                pse := posex('-',sevnt,1);
+                if (pss<>0) then begin
+                  stmp := trim(copy(sevnt,pss+1,length(sevnt)));
+                  if stmp<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos+strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end else if (pse<>0) then begin
+                  stmp := copy(sevnt,pse+1,length(sevnt));
+                  if trim(stmp)<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos-strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end;
+              end else scmd:=stmp;
+              //lst.Add(GetCommand(scmd, evnt));
+              if evnt > MyTLEdit.Count-1 then evnt:=MyTLEdit.Count-1;
+              cmd := BeforeStr + GetCommand(scmd, evnt) + AfterStr;
+              lst.Add(cmd);
             end;
         finally
             clst.free;
@@ -1011,21 +1166,61 @@ begin
     end;
 end;
 
-procedure TCommandTemplates.GetCMDFinish(evnt: TMyEvent; lst: tstrings);
-var
-    clst: tstrings;
-    i: integer;
+procedure TCommandTemplates.GetCMDFinish(evpos : integer;  lst: tstrings);
+var clst: tstrings;
+    i, j : integer;
+    stmp, scmd, sevnt : string;
+    pss, pse, evnt : integer;
 begin
     WriteLog('Translator', 'TCommandTemplates.GetCMDFinish  Start');
     try
         clst := tstringlist.create;
         clst.clear;
         try
-            CMDFinish.GetListCommands(evnt, clst);
+            CMDFinish.GetListCommands(evpos, clst);
             lst.clear;
             for i := 0 to clst.Count - 1 do
             begin
-                lst.Add(GetCommand(clst.Strings[i], evnt));
+              stmp := clst.Strings[i];
+              evnt := evpos;
+              pss := posex('[',stmp,1);
+              if pss<>0 then begin
+                scmd := copy(stmp,1,pss-1);
+                sevnt := copy(stmp,pss+1,length(stmp));
+                pss := posex(']',sevnt,1);
+                if pss<>0 then sevnt:=copy(sevnt,1,pss-1);
+                pss := posex('+',sevnt,1);
+                pse := posex('-',sevnt,1);
+                if (pss<>0) then begin
+                  stmp := trim(copy(sevnt,pss+1,length(sevnt)));
+                  if stmp<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos+strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end else if (pse<>0) then begin
+                  stmp := copy(sevnt,pse+1,length(sevnt));
+                  if trim(stmp)<>'' then begin
+                    sevnt := '';
+                    for j:=1 to length(stmp) do begin
+                      if stmp[j] in ['0'..'9']
+                        then sevnt := sevnt + stmp[j]
+                        else break;
+                    end;
+                    if sevnt<>''
+                      then evnt:=evpos-strtoint(sevnt)
+                      else evnt:=evpos;
+                  end;
+                end;
+              end else scmd:=stmp;
+              if evnt > MyTLEdit.Count-1 then evnt:=MyTLEdit.Count-1;
+              lst.Add(GetCommand(scmd, evnt));
             end;
         finally
             clst.free;
@@ -1054,6 +1249,7 @@ begin
         CommandsList[CMDCount - 1] := TOneCommand.create;
         CommandsList[CMDCount - 1].Assign(TCT.CommandsList[i]);
     end;
+    CMDPaused.Assign(TCT.CMDPaused);
     CMDStart.Assign(TCT.CMDStart);
     CMDTransition.Assign(TCT.CMDTransition);
     CMDFinish.Assign(TCT.CMDFinish);
@@ -1142,17 +1338,17 @@ begin
     freemem(@Index);
 end;
 
-function TMyIndex.GetStr(evnt: TMyEvent): string;
+function TMyIndex.GetStr(evpos: integer): string;
 var
     sindx, sphr, stph, stmp: string;
     indx: integer;
 begin
     result := '';
     if index <> nil then
-        sindx := Index.GetStr(evnt)
+        sindx := Index.GetStr(evpos)
     else
         sindx := '';
-    result := GetCommandValue(evnt, Source, Param, Phrase, TypePhrase, sindx);
+    result := GetCommandValue(evpos, Source, Param, Phrase, TypePhrase, sindx);
     // if MyProtocol=nil then exit;
     // if Source='value' then result:= Param
     // else if Source='main' then begin
@@ -1210,15 +1406,15 @@ begin
     freemem(@Index);
 end;
 
-function TOneField.GetValue(evnt: TMyEvent): string;
+function TOneField.GetValue(evpos: integer): string;
 var
     sindx: string;
 begin
     if Index = nil then
         sindx := ''
     else
-        sindx := Index.GetStr(evnt);
-    result := GetCommandValue(evnt, TypeData, Param, Phrase, TypePhrase, sindx);
+        sindx := Index.GetStr(evpos);
+    result := GetCommandValue(evpos, TypeData, Param, Phrase, TypePhrase, sindx);
 end;
 
 constructor TListTypeDevices.create;
@@ -1330,42 +1526,42 @@ procedure TListTypeDevices.GetProtocol(TypeDevice, Vendor, Device, Prot: string;
 var
     i, j, n, m: integer;
 begin
-    for i := 0 to Count - 1 do
+  for i := 0 to Count - 1 do
+  begin
+    if ansilowercase(trim(TypeDevices[i].TypeDevice))
+      = ansilowercase(trim(TypeDevice)) then
     begin
-        if ansilowercase(trim(TypeDevices[i].TypeDevice))
-          = ansilowercase(trim(TypeDevice)) then
+      for j := 0 to TypeDevices[i].Count - 1 do
+      begin
+        if ansilowercase(trim(TypeDevices[i].Vendors[j].Vendor))
+          = ansilowercase(trim(Vendor)) then
         begin
-            for j := 0 to TypeDevices[i].Count - 1 do
+          with TypeDevices[i].Vendors[j] do
+          begin
+            for n := 0 to Count - 1 do
             begin
-                if ansilowercase(trim(TypeDevices[i].Vendors[j].Vendor))
-                  = ansilowercase(trim(Vendor)) then
+              if ansilowercase(trim(FirmDevices[n].Device))
+                = ansilowercase(trim(Device)) then
+              begin
+                for m := 0 to FirmDevices[n].Count - 1 do
                 begin
-                    with TypeDevices[i].Vendors[j] do
-                    begin
-                        for n := 0 to Count - 1 do
-                        begin
-                            if ansilowercase(trim(FirmDevices[n].Device))
-                              = ansilowercase(trim(Device)) then
-                            begin
-                                for m := 0 to FirmDevices[n].Count - 1 do
-                                begin
-                                    if ansilowercase
-                                      (trim(FirmDevices[i].ListProtocols[m]
-                                      .Protocol)) = ansilowercase(trim(Prot))
-                                    then
-                                    begin
-                                        Protocol.AssignPart
-                                        (FirmDevices[i].ListProtocols[m]);
-                                        exit;
-                                    end;
-                                end;
-                            end;
-                        end;
-                    end;
+                  if ansilowercase
+                    (trim(FirmDevices[i].ListProtocols[m]
+                    .Protocol)) = ansilowercase(trim(Prot))
+                  then
+                  begin
+                    Protocol.AssignPart
+                    (FirmDevices[i].ListProtocols[m]);
+                    exit;
+                  end;
                 end;
+              end;
             end;
+          end;
         end;
+      end;
     end;
+  end;
 end;
 
 procedure TListTypeDevices.LoadFromFile(FileName, TypeDevices: string);
@@ -1704,8 +1900,11 @@ end;
 procedure TOneProtocol.AssignPart(TOPR: TOneProtocol);
 begin
     Protocol := TOPR.Protocol;
+    //CMDTemplates.clear;
     CMDTemplates.Assign(TOPR.CMDTemplates);
+    //ProtocolMain.clear;
     ProtocolMain.Assign(TOPR.ProtocolMain);
+    //ProtocolAdd.clear;
     ProtocolAdd.Assign(TOPR.ProtocolAdd);
 end;
 
@@ -1768,10 +1967,12 @@ begin
     end;
 end;
 
-procedure TCommands.GetListCommands(evnt: TMyEvent; lst: tstrings);
+procedure TCommands.GetListCommands(evpos : integer; lst: tstrings);
 var
     i, j: integer;
     scond, sindx: string;
+    //scmd, sevnt : string;
+    //pss, pse, offset : integer;
 begin
     WriteLog('Translator', 'TCommands.GetListCommands  Start CMDType=' +
       inttostr(CMDType));
@@ -1783,6 +1984,7 @@ begin
         // caseitems[0].List.Clear;
         for i := 0 to CaseItems[0].List.Count - 1 do
         begin
+
             lst.Add(CaseItems[0].List.Strings[i]);
             WriteLog('Translator', 'TCommands.GetListCommands  AddCommand=' +
               CaseItems[0].List.Strings[i]);
@@ -1793,8 +1995,8 @@ begin
         if Condition.Index = nil then
             sindx := ''
         else
-            sindx := Condition.Index.GetStr(evnt);
-        scond := GetCommandValue(evnt, Condition.Source, Condition.Param,
+            sindx := Condition.Index.GetStr(evpos);
+        scond := GetCommandValue(evpos, Condition.Source, Condition.Param,
           Condition.Phrase, Condition.TypePhrase, sindx);
         // scond:='mix';
         WriteLog('Translator', 'TCommands.GetListCommands  Condition=' + scond);

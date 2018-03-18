@@ -143,6 +143,9 @@
         <DCCReference Include="UMyMessage.pas">
             <Form>FMyMessage</Form>
         </DCCReference>
+        <DCCReference Include="UMyTextTemplate.pas">
+            <Form>frMyTextTemplate</Form>
+        </DCCReference>
         <DCCReference Include="UImageTemplate.pas">
             <Form>FGRTemplate</Form>
         </DCCReference>
@@ -193,9 +196,6 @@
         <DCCReference Include="USetTC.pas">
             <Form>frSetTC</Form>
         </DCCReference>
-        <DCCReference Include="UMyTextTemplate.pas">
-            <Form>frMyTextTemplate</Form>
-        </DCCReference>
         <DCCReference Include="UMyNewList.pas">
             <Form>frNewList</Form>
         </DCCReference>
@@ -227,6 +227,7 @@
         <DCCReference Include="UMyTextTable.pas"/>
         <DCCReference Include="UMyProtocols.pas"/>
         <DCCReference Include="..\helpers\uwebget.pas"/>
+        <DCCReference Include="..\helpers\udevmanagers.pas"/>
         <None Include="..\helpers\events_body.inc"/>
         <None Include="..\helpers\events_hdr.inc"/>
         <None Include="..\helpers\ugrtimelines_body.inc"/>
@@ -256,6 +257,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp250.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclFireDACEnt250.bpl">Embarcadero FireDAC C\S Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

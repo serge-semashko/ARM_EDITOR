@@ -50,6 +50,25 @@ object HTTPSRVForm: THTTPSRVForm
       TabOrder = 1
       OnClick = Panel1Click
     end
+    object txt1: TStaticText
+      Left = 160
+      Top = 8
+      Width = 529
+      Height = 21
+      AutoSize = False
+      BevelKind = bkSoft
+      Caption = 'txt1'
+      TabOrder = 2
+    end
+    object txt2: TStaticText
+      Left = 159
+      Top = 32
+      Width = 528
+      Height = 20
+      AutoSize = False
+      Caption = 'txt2'
+      TabOrder = 3
+    end
   end
   object Memo2: TMemo
     Left = 0

@@ -5,7 +5,7 @@ interface
 uses
     Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
     StdCtrls, ExtCtrls, Buttons, ComCtrls, Variants, MMSystem, Menus, UHRTimer,
-    Vcl.Samples.Spin, UCommon,UTimeline, UGRTimelines;
+    Vcl.Samples.Spin, UCommon, UTimeline, UGRTimelines;
 
 CONST
     WM_TRANSFER = WM_USER + 1; // Определяем сообщение
@@ -71,6 +71,7 @@ type
         procedure N1Click(Sender: TObject);
         procedure SpeedButton1Click(Sender: TObject);
         procedure SpeedButton4Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
     private
         { Private declarations }
         ShownOnce: Boolean;
@@ -93,8 +94,13 @@ type
     end;
 
 var
-    TLO_server : array[0..10] of TTimelineOptions = (nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil);
-    TLT_server : array[0..10] of TTlTimeline = (nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil);
+    TLO_server: array [0 .. 16] of TTimelineOptions;
+    TLO_server_changed: array [0 .. 16] of Boolean;
+    TLO_server_old: array [0 .. 16] of string;
+
+    TLT_server: array [0 .. 16] of TTlTimeline;
+    TLT_server_changed: array [0 .. 16] of Boolean;
+    TLT_server_old: array [0 .. 16] of string;
     fmMain: TfmMain;
     AppPath, AppName, AppExt: string;
     GridFile: string = '';
@@ -113,8 +119,11 @@ var
     old_tle_str: string = '';
     tlp_changed: Boolean = false;
     webrequest_time: Double = -1;
-    tl_to_request_time : double = -1;
+    tlp_webrequest_time: Double = -1;
+    tl_to_request_time: Double = -1;
     tle_request_time: Double = -1;
+
+
 
 procedure StartMyTimer;
 procedure StopMyTimer;
@@ -124,7 +133,7 @@ Procedure Update_TLEditor;
 implementation
 
 uses ComPortUnit, umychars, UMyWork, UMyInitFile, ShellApi, shlobj, registry,
-    umain,  UDrawTimelines, umyevents, uwebget,
+    umain, UDrawTimelines, umyevents, uwebget,
     UPortOptions,
     umyinfo, umyprotocols;
 
@@ -209,9 +218,10 @@ var
     next, cmdc, sdur, sset, cmdcmd, sstart, evdur: string;
     i, icmd: Integer;
     StartFrame, DurFrame, EndFrame, nStartFrame, nEndFrame, nDurFrame: longint;
+    DT_tlpupdate: int64;
 begin
+    // WriteLog('vlcmode', 'TRY update TLP dt = '+IntToStr(DT_tlpupdate));
     try
-
         If MyTimer.Enable then
         begin
             // FmMain.label6.Caption:=MyDateTimeToStr(now-CurrDt-TimeCodeDelta);//TimeToTimeCodeStr(dttm);//CurrDt);
@@ -222,13 +232,22 @@ begin
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             // if InfoWEB.Options[0].Text<>'' then TLParameters.Position :=TLParameters.Preroll + StrTimeCodeToFrames(InfoWEB.Options[1].Text);
             Update_TLEditor;
-            if (now - webrequest_time) * 24 * 3600 * 1000 > 20 then
+            DT_tlpupdate := trunc((now - tlp_webrequest_time) * 24 *
+              3600 * 1000);
+
+            // WriteLog('vlcmode', 'check update TLP dt = '+IntToStr(DT_tlpupdate));
+            if DT_tlpupdate > 20 then
             begin
+                // WriteLog('vlcmode', 'begin update TLP dt = '+IntToStr(DT_tlpupdate));
                 tlp_str := GetJsonStrFromServer('TLP');
+                // WriteLog('vlcmode', ' answer= '+tlp_str);
+
                 if Length(tlp_str) > 10 then
                 begin
+                    InfoProtocol.SetData('Статус:', 'Доступен');
                     if tlp_str <> old_tlp_str then
                     begin
+                        // WriteLog('vlcmode', 'update TLP dt = '+IntToStr(DT_tlpupdate));
                         TLP_server.LoadFromJSONstr(tlp_str);
                         local_vlcMode := TLP_server.vlcmode;
                         if TLP_server.vlcmode = play then
@@ -240,18 +259,28 @@ begin
                     end
                     else
                     begin
+                        // WriteLog('vlcmode', 'ERR update TLP not chenged');
                         tlp_changed := false;
                     end;
 
                     // caption := IntToStr(TLP_server.Position)+formatdatetime(' HH:NN:SS ZZZ',now);;
                     if InfoWEB.Options[0].Text <> '' then
                         TLParameters.Position := TLP_server.Position;
-                end;
-                webrequest_time := now;
-//                WriteLog('vlcmode = ', IntToStr(local_vlcMode)+' position = '+IntToStr(TLParameters.Position));
+                    // InfoWEB.SetData(0, TLP_server.TLTimeCode);
+                end
+                else
+                begin
+                    InfoProtocol.SetData('Статус:', 'Не доступен');
+                    WriteLog('vlcmode', 'ERR update TLP answer :' + tlp_str);
+                end;;
+                tlp_webrequest_time := now;
+                // WriteLog('vlcmode', IntToStr(local_vlcMode)+' position = '+IntToStr(TLParameters.Position));
 
-
-            end;
+            end
+            else
+            begin
+                // WriteLog('vlcmode', 'NOT TLP update: dt low');
+            end;;
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             InfoWEB.SetData(2, inttostr(TLParameters.Position));
             // if FmMain.label6.Caption<>'' then TLParameters.Position :=TLParameters.Preroll + StrTimeCodeToFrames(FmMain.label6.Caption);
@@ -261,8 +290,11 @@ begin
             begin
                 strchron := FramesToStr(MyTLEdit.Events[MyTLEdit.Count - 1]
                   .Finish - MyTLEdit.Events[0].Finish);
-                InfoWEB.SetData(1, MyDateTimeToStr(now - CurrDt - TimeCodeDelta)
-                  + '  (' + strchron + ')'); // 'Тайм код воспроизв.:'
+                // InfoWEB.SetData(1, MyDateTimeToStr(now - CurrDt - TimeCodeDelta)
+                // + '  (' + strchron + ')'); // 'Тайм код воспроизв.:'
+                InfoWEB.SetData(1,
+                  FramesToStr(TLP_server.Position - TLP_server.Start) + '  (' +
+                  strchron + ')');
                 // FmMain.label10.Caption:=inttostr(crpos.Number);
                 curr := MyTLEdit.Events[crpos.Number].ReadPhraseText('Device');
 
@@ -304,17 +336,6 @@ begin
                     crcmd := MyTLEdit.Events[crpos.Number].ReadPhraseCommand
                       ('Command');
 
-                    next := MyTLEdit.Events[crpos.Number + 1].ReadPhraseText
-                      ('Device');
-                    cmdcmd := MyTLEdit.Events[crpos.Number + 1]
-                      .ReadPhraseCommand('Command');
-                    cmdc := MyTLEdit.Events[crpos.Number + 1].ReadPhraseText
-                      ('Command');
-                    sdur := inttostr(MyTLEdit.Events[crpos.Number + 1]
-                      .ReadPhraseData('Duration'));
-                    sset := inttostr(MyTLEdit.Events[crpos.Number + 1]
-                      .ReadPhraseData('Set'));
-
                     framestostart := MyTLEdit.Events[crpos.Number + 1].Start -
                       (TLParameters.Position);
                     StartFrame := MyTLEdit.Events[crpos.Number].Start;
@@ -324,14 +345,40 @@ begin
                     if DurFrame > MyTLEdit.Events[crpos.Number].Finish then
                         DurFrame := MyTLEdit.Events[crpos.Number].Finish - 1;
 
-                    nStartFrame := MyTLEdit.Events[crpos.Number + 1].Start;
-                    nEndFrame := MyTLEdit.Events[crpos.Number + 1].Finish;
-                    nDurFrame := MyTLEdit.Events[crpos.Number + 1].Start +
-                      MyTLEdit.Events[crpos.Number + 1].ReadPhraseData
-                      ('Duration');
-                    if nDurFrame > MyTLEdit.Events[crpos.Number + 1].Finish then
-                        DurFrame := MyTLEdit.Events[crpos.Number + 1]
-                          .Finish - 1;
+                    if crpos.Number<MyTLEdit.Count then begin
+                      next := MyTLEdit.Events[crpos.Number + 1].ReadPhraseText
+                        ('Device');
+                      cmdcmd := MyTLEdit.Events[crpos.Number + 1]
+                        .ReadPhraseCommand('Command');
+                      cmdc := MyTLEdit.Events[crpos.Number + 1].ReadPhraseText
+                        ('Command');
+                      sdur := inttostr(MyTLEdit.Events[crpos.Number + 1]
+                        .ReadPhraseData('Duration'));
+                      sset := inttostr(MyTLEdit.Events[crpos.Number + 1]
+                        .ReadPhraseData('Set'));
+
+
+
+                      nStartFrame := MyTLEdit.Events[crpos.Number + 1].Start;
+                      nEndFrame := MyTLEdit.Events[crpos.Number + 1].Finish;
+                      nDurFrame := MyTLEdit.Events[crpos.Number + 1].Start +
+                        MyTLEdit.Events[crpos.Number + 1].ReadPhraseData
+                        ('Duration');
+                      if nDurFrame > MyTLEdit.Events[crpos.Number + 1].Finish then
+                          DurFrame := MyTLEdit.Events[crpos.Number + 1]
+                            .Finish - 1;
+                    end else begin
+                      next:='Стоп';
+                      cmdc:='';
+                      sdur:='0';
+                      sset:='0';
+                      cmdcmd :='';
+                      nStartFrame:=EndFrame;
+                      nEndFrame:=EndFrame;
+                      nDurFrame := 0;
+                    end;
+                   // if DurFrame=0 then DurFrame:=1;
+
                 end;
                 sstart := FramesToStr(framestostart - 1);
 
@@ -340,9 +387,10 @@ begin
                   inttostr(crpos.Number + 1) + ')');
 
                 // 'Кол-во событий (текущее):'
-//                WriteLog('vlcmode', IntToStr(local_vlcMode));
+                // WriteLog('vlcmode', IntToStr(local_vlcMode));
 
-                InfoWEB.SetData(4, ''); // 'Режим воспроизведения:'
+
+                // InfoWEB.SetData(4, ''); // 'Режим воспроизведения:'
                 InfoWEB.SetData(5,
                   FramesToStr(MyTLEdit.Events[crpos.Number].Finish -
                   MyTLEdit.Events[crpos.Number].Start)); // 'Хроном. события:'
@@ -363,6 +411,7 @@ begin
                     txt := curr + '  |  ' + cmdc + '  |  ' + next
                 else
                     txt := next;
+                //if local_vlcMode=1 then WriteLog('CMD', '***********   ' + txt + '    ******************** DurFrame=' + inttostr(DurFrame));
                 InfoWEB.SetData(6, txt); // 'Переход'
                 InfoWEB.SetData(11, next + '  S=' + inttostr(nStartFrame) +
                   '  T=' + inttostr(nDurFrame) + '  F=' + inttostr(nEndFrame));
@@ -372,74 +421,194 @@ begin
                 InfoWEB.SetData(12, cmdc); // 'Тип перехода'
                 InfoWEB.SetData(13, cmdcmd); // 'След. команда:'
 
-                if (TLParameters.Position = DurFrame) and (not isduration) then
-                begin
-                    ListCommands.Clear;
-                    if myprotocol <> nil then
-                        myprotocol.CMDTemplates.GetCMDTransition
-                          (MyTLEdit.Events[crpos.Number + 1], ListCommands);
-                    for icmd := 0 to ListCommands.Count - 1 do
-                    begin
-                        if trim(myprotocol.CMDTemplates.TypeData) = '0' then
-                            WriteBuffToPort
-                              (DataToBuffIn(trim(ListCommands.Strings[icmd])))
-                        else
-                            WriteStrToPort(trim(ListCommands.Strings[icmd]));
-                    end;
-                    // WriteBuffToPort(DataToBuffIn('31313131'));
-                    isduration := true;
-                end;
-                if TLParameters.Position = EndFrame then
-                begin
-                    // WriteBuffToPort(DataToBuffIn('51515151'));
-                    isendevent := true;
-                end;
-                if TLParameters.Position - 1 = StartFrame then
-                begin
-                    // WriteBuffToPort(DataToBuffIn('3967676739'));
-                    isstartevent := true;
-                end;
+                   case local_vlcMode of
+                0,2: begin
+                       if local_vlcMode=0 then InfoWEB.SetData(4, 'Stop');
+                       if local_vlcMode=2 then InfoWEB.SetData(4, 'Paused');
+//++++++++++++++++++++++++++++++   PAUSED   ++++++++++++++++++++++++++++++++++++
+                       if OldList1Index <> crpos.Number then
+                       begin
+                           ListCommands.Clear;
+                           // WriteBuffToPort(DataToBuffIn('30303030'));
+                           if myprotocol <> nil then
+                             if crpos.Number<MyTLEdit.Count then
+                               myprotocol.CMDTemplates.GetCMDPaused
+                                 (crpos.Number, ListCommands);
+                           if ListCommands.Count>0 then WriteLog('CMD', 'Paused ***********   ' + txt + '    *********** DurFrame=' + inttostr(DurFrame));
+                           for icmd := 0 to ListCommands.Count - 1 do begin
+                               if trim(myprotocol.CMDTemplates.TypeData) = '0' then begin
+                                 //infoport.SetData(9, infoport.Options[8].Text);
+                                 //infoport.SetData(8, infoport.Options[7].Text);
+                                 infoport.SetData(7, '');
+                                 WriteBuffToPort
+                                     (DataToBuffIn(trim(ListCommands.Strings[icmd])));
+                                 CountWaitReplay:=0;
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDPaused(byte): ' + ListCommands.Strings[icmd]);
+                               end else begin
+                                 WriteStrToPort(trim(ListCommands.Strings[icmd]));
+                                 CountWaitReplay:=0;
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDSPaused(string): ' + ListCommands.Strings[icmd]);
+                               end;
+                           end;
 
-                if (framestostart - 1 = 0) and (not istrans) then
-                begin
-                    ListCommands.Clear;
-                    if myprotocol <> nil then
-                        myprotocol.CMDTemplates.GetCMDFinish
-                          (MyTLEdit.Events[crpos.Number + 1], ListCommands);
-                    for icmd := 0 to ListCommands.Count - 1 do
-                    begin
-                        if trim(myprotocol.CMDTemplates.TypeData) = '0' then
-                            WriteBuffToPort
-                              (DataToBuffIn(trim(ListCommands.Strings[icmd])))
-                        else
-                            WriteStrToPort(trim(ListCommands.Strings[icmd]));
-                    end;
-                    // WriteBuffToPort(DataToBuffIn('32323232'));
-                    istrans := true;
-                end;
+                           istrans := false;
+                           isduration := false;
+                           isendevent := false;
+                           isstartevent := false;
+                       end;
 
-                // FmMain.Label8.Caption:=sstart;
-                if OldList1Index <> crpos.Number then
-                begin
-                    ListCommands.Clear;
-                    // WriteBuffToPort(DataToBuffIn('30303030'));
-                    if myprotocol <> nil then
-                        myprotocol.CMDTemplates.GetCMDStart
-                          (MyTLEdit.Events[crpos.Number], ListCommands);
-                    for icmd := 0 to ListCommands.Count - 1 do
-                    begin
-                        if trim(myprotocol.CMDTemplates.TypeData) = '0' then
-                            WriteBuffToPort
-                              (DataToBuffIn(trim(ListCommands.Strings[icmd])))
-                        else
-                            WriteStrToPort(trim(ListCommands.Strings[icmd]));
-                    end;
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                     end;
+                1:   begin
+                       InfoWEB.SetData(4, 'Play');
+//++++++++++++++++++++++++++++++   PLAY   ++++++++++++++++++++++++++++++++++++++
+                       if (TLParameters.Position > DurFrame) and (not isduration) then
+                       begin
+                           ListCommands.Clear;
+                           if myprotocol <> nil then
+                              if crpos.Number<MyTLEdit.Count then
+                                myprotocol.CMDTemplates.GetCMDTransition
+                                  (crpos.Number, ListCommands);
+                           if ListCommands.Count>0 then WriteLog('CMD', 'Transition ***********   ' + txt + '    *********** DurFrame=' + inttostr(DurFrame));
+                           for icmd := 0 to ListCommands.Count - 1 do
+                           begin
+                               if trim(myprotocol.CMDTemplates.TypeData) = '0' then begin
+                                 //infoport.SetData(9, infoport.Options[8].Text);
+                                 //infoport.SetData(8, infoport.Options[7].Text);
+                                 infoport.SetData(7, '');
+                                 WriteBuffToPort
+                                     (DataToBuffIn(trim(ListCommands.Strings[icmd])));
+                                 CountWaitReplay:=0;
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDTransition(byte): ' + ListCommands.Strings[icmd]);
+                               end else begin
+                                 WriteStrToPort(trim(ListCommands.Strings[icmd]));
+                                 CountWaitReplay:=0;
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDTransition(string): ' + ListCommands.Strings[icmd]);
+                               end;
+                           end;
+                           // WriteBuffToPort(DataToBuffIn('31313131'));
+                           isduration := true;
+                       end;
+                       if TLParameters.Position = EndFrame then
+                       begin
+                           // WriteBuffToPort(DataToBuffIn('51515151'));
+                           isendevent := true;
+                       end;
+                       if TLParameters.Position - 1 = StartFrame then
+                       begin
+                           // WriteBuffToPort(DataToBuffIn('3967676739'));
+                           isstartevent := true;
+                       end;
 
-                    istrans := false;
-                    isduration := false;
-                    isendevent := false;
-                    isstartevent := false;
-                end;
+                       if (framestostart - 1 = 0) and (not istrans) then
+                       begin
+                           ListCommands.Clear;
+                           if myprotocol <> nil then
+                             if crpos.Number<MyTLEdit.Count then
+                               myprotocol.CMDTemplates.GetCMDFinish
+                                 (crpos.Number, ListCommands);
+                           if ListCommands.Count>0 then WriteLog('CMD', 'Finish ***********   ' + txt + '    *********** DurFrame=' + inttostr(DurFrame));
+                           for icmd := 0 to ListCommands.Count - 1 do
+                           begin
+                               if trim(myprotocol.CMDTemplates.TypeData) = '0' then begin
+                                 WriteBuffToPort
+                                     (DataToBuffIn(trim(ListCommands.Strings[icmd])));
+                                 CountWaitReplay:=0;
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDFinish(byte): ' + ListCommands.Strings[icmd]);
+                               end else begin
+                                 WriteStrToPort(trim(ListCommands.Strings[icmd]));
+                                 CountWaitReplay:=0;
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDFinish(string): ' + ListCommands.Strings[icmd]);
+                               end;
+                           end;
+                           // WriteBuffToPort(DataToBuffIn('32323232'));
+                           istrans := true;
+                       end;
+
+                       // FmMain.Label8.Caption:=sstart;
+                       if OldList1Index <> crpos.Number then
+                       begin
+                           ListCommands.Clear;
+                           // WriteBuffToPort(DataToBuffIn('30303030'));
+                           if myprotocol <> nil then
+                             if crpos.Number<MyTLEdit.Count then
+                               myprotocol.CMDTemplates.GetCMDStart
+                                 (crpos.Number, ListCommands);
+                           if ListCommands.Count>0 then WriteLog('CMD', 'Start ***********   ' + txt + '    *********** DurFrame=' + inttostr(DurFrame));
+                           for icmd := 0 to ListCommands.Count - 1 do begin
+                               if trim(myprotocol.CMDTemplates.TypeData) = '0' then begin
+                                 //infoport.SetData(9, infoport.Options[8].Text);
+                                 //infoport.SetData(8, infoport.Options[7].Text);
+                                 infoport.SetData(7, '');
+                                 WriteBuffToPort
+                                     (DataToBuffIn(trim(ListCommands.Strings[icmd])));
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDStart(byte): ' + ListCommands.Strings[icmd]);
+                               end else begin
+                                 WriteStrToPort(trim(ListCommands.Strings[icmd]));
+                                 while (trim(infoport.Options[7].Text)='')
+                                      and (CountWaitReplay<MaxCountReplay) do
+                                 begin
+                                   CountWaitReplay:=CountWaitReplay+1;
+                                   application.ProcessMessages;
+                                 end;
+                                 WriteLog('CMD', 'CMDStart(string): ' + ListCommands.Strings[icmd]);
+                               end;
+                           end;
+
+                           istrans := false;
+                           isduration := false;
+                           isendevent := false;
+                           isstartevent := false;
+                       end;
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                     end;
+                   end;
+
+
+
+
                 OldList1Index := crpos.Number;
                 // application.ProcessMessages;
 
@@ -454,7 +623,12 @@ begin
             fmMain.imgWeb.Repaint;
             InfoPort.Draw(fmMain.ImgTrans.Canvas, 25);
             fmMain.ImgTrans.Repaint;
-        end;
+        end
+        else
+        begin
+            // WriteLog('vlcmode', 'TRY update TLP mytimer diabled');
+
+        end;;
         application.ProcessMessages;
 
     except
@@ -487,8 +661,9 @@ end;
 
 procedure TfmMain.HideItemClick(Sender: TObject);
 begin
-    HideMainForm;
+    //HideMainForm;
     CreateTrayIcon(1);
+    HideMainForm;
     HideItem.Enabled := false;
     RestoreItem.Enabled := true;
 end;
@@ -591,6 +766,7 @@ begin
 end;
 
 procedure TfmMain.FormClose(Sender: TObject; var Action: TCloseAction);
+var nidata: TNotifyIconData;
 begin
     if not CloseApplication then
     begin
@@ -608,6 +784,15 @@ begin
     if CommThreadExists then
         StopService;
     WriteIniFile(AppPath + AppName + SerialNumber + '.ini');
+    try
+       with nidata do begin
+          Wnd := fmMain.Handle;
+          uID := 1;
+       end;
+       Shell_NotifyIcon(NIM_DELETE, Addr(nidata));
+    finally
+       Application.Terminate;
+    end;
 end;
 
 procedure TfmMain.ComportInit;
@@ -742,17 +927,19 @@ begin
     application.ShowMainForm := false;
     ShowWindow(application.Handle, SW_HIDE);
     HideItem.Enabled := false;
-    // Button1Click(nil);
-    // end;
+
+    // отладка +++++++++++++++++++++++++++++++++++
+
+    LoadAProtocolFromFile(AppPath + 'AProtocol.txt');
+    LoadProtocol('AListProtocols.txt', 'TLDevices', INFOTypeDevice, INFOVendor,
+      INFODevice, INFOProt);
+    // отладка +++++++++++++++++++++++++++++++++++
+    if ProgOptions = nil then ProgOptions := TProgOptions.create;
+    ProgOptions.LoadData;
     Timer1.Enabled := true;
     // FmMain.Memo2.Clear;
     MyTimer.StartTimer;
     CurrDt := now;
-    // отладка +++++++++++++++++++++++++++++++++++
-    LoadAProtocolFromFile(AppPath + 'AProtocol1.txt');
-    LoadProtocol('AListProtocols.txt', 'TLDevices', INFOTypeDevice, INFOVendor,
-      INFODevice, INFOProt);
-    // отладка +++++++++++++++++++++++++++++++++++
 end;
 
 procedure TfmMain.FormDestroy(Sender: TObject);
@@ -817,74 +1004,159 @@ begin
     Form3.Show;
 end;
 
+procedure TfmMain.SpeedButton3Click(Sender: TObject);
+begin
+  ComportDialogOpen;
+end;
+
 procedure TfmMain.SpeedButton4Click(Sender: TObject);
 begin
     setoptions;
 end;
+
 Procedure GetTimeLinesFromServer;
 var
-  i: integer;
-  str1: ansistring;
-  str2: ansistring;
-  TLO: TTimeLineOptions;
-  TlTimeline :TTlTimeline;
-  sl : tstringlist;
-  tle : ansistring;
+    i: Integer;
+    wt_i: Integer;
+    str1: ansistring;
+    str2: ansistring;
+    sl: tstringlist;
+    tle: ansistring;
 begin
-  for I := 0 to 10do
-  begin
-     str2 := GetJsonStrFromServer('TLO['+IntToStr(i)+']');
-     if length(str2) < 30 then begin
-        TLO_server[i] := nil;
-        continue;
+     if ProgOptions <> nil  then begin
+         str2 := 'DEVMAN['+ProgOptions.Options[1].text+']';
+          str1 :=ProgOptions.SaveToJSONStr;
+               PutJsonStrToServer(str2,str1);
      end;
-     if TLO_server[i] = nil  then TLO_server[i] := TTimeLineOptions.Create;
-     if not TLO_server[i].LoadFromJSONstr(str2)  then TLO_server[i] := nil;
-  end;
-    for I := 0 to 10 do
-  begin
-     str2 := GetJsonStrFromServer('TLT['+IntToStr(i)+']');
-     if length(str2) < 30 then begin
-        TLT_server[i] := nil;
-        continue;
-     end;
-     if TLT_server[i] = nil  then TLT_server[i] := TTlTimeline.Create;
-     if not TLT_server[i].LoadFromJSONstr(str2)  then TLT_server[i] := nil;
-  end;
 
+    for i := low(TLO_server) to high(TLO_server) do
+    begin
+        str2 := GetJsonStrFromServer('TLO[' + inttostr(i + 1) + ']');
+        for wt_i := 0 to 10 do
+        begin
+            application.ProcessMessages;
+        end;
+        if TLO_server_old[i] <> str2 then
+        begin
+            TLO_server_changed[i] := true;
+            TLO_server_old[i] := str2;
+            if Length(str2) < 30 then
+            begin
+                TLO_server[i] := nil;
+                continue;
+            end;
+            if TLO_server[i] = nil then
+                TLO_server[i] := TTimelineOptions.Create;
+            if not TLO_server[i].LoadFromJSONstr(str2) then
+                TLO_server[i] := nil;
+        end;
+
+    end;
+    for i := 0 to 16 do
+    begin
+        str2 := GetJsonStrFromServer('TLT[' + inttostr(i) + ']');
+        if TLT_server_old[i] <> str2 then
+        begin
+            TLT_server_changed[i] := true;;
+            if TLT_server[i] = nil then
+                TLT_server[i] := TTlTimeline.Create;
+            if not TLT_server[i].LoadFromJSONstr(str2) then
+                TLT_server[i] := nil;
+        end;
+        TLT_server_old[i] := str2;
+        for wt_i := 0 to 10 do
+        begin
+            application.ProcessMessages;
+        end;
+
+        if Length(str2) < 30 then
+        begin
+            TLT_server[i] := nil;
+        end;
+    end;
 
 end;
 
-
 Procedure Update_TLEditor;
 var
-    str1: ansistring;
+    str1, str2, str3: ansistring;
     url: ansistring;
     slist1: tstringlist;
+    i, wt_i: Integer;
 begin
     // FmMain.Memo2.Clear;
-    if abs(now - tle_request_time) * 24 * 3600 * 1000 < 10000 then
+    if abs(now - tle_request_time) * 24 * 3600 * 1000 < 3000 then
         exit;
     tle_request_time := now;
     // InfoWEB.SetData(1,'00:00:00:00');
     CurrDt := now;
     url := URLServer;
     LoadProject_active := false;
-    str1 := GetJsonStrFromServer(url);
+
     GetTimeLinesFromServer;
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    for i := 0 to 15 do
+    begin
+        // if trim(TLO_server[i].Manager)=trim(ProgOptions.Options[1].Text) then begin  //
+        if TLO_server[i] <> nil then
+        begin
+            if trim(TLO_server[i].Manager) = inttostr(ManagerNumber) then
+            begin
+                NumberManeger := i;
+                break;
+            end;
+        end;
+    end;
+    if TLO_server[NumberManeger] <> nil then
+    begin
+        if TLO_server_changed[NumberManeger] then
+        begin
+          if trim(TLO_server[NumberManeger].Protocol) <> '' then
+            SetAProtocolData(TLO_server[NumberManeger].Protocol);
+            SaveAProtocolToFile('AProtocol.txt', TLO_server[NumberManeger].Protocol);
+            LoadProtocol('AListProtocols.txt', 'TLDevices', INFOTypeDevice, INFOVendor,
+                         INFODevice, INFOProt);
+          TLO_server_changed[NumberManeger] := false;
+          if ProgOptions = nil  then begin
+            ProgOptions := TProgOptions.Create;
+            ProgOptions.Clear;
+          end;
+          str2 := 'DEVMAN['+ProgOptions.Options[1].text+']';
+          str3 :=ProgOptions.SaveToJSONStr;
+          PutJsonStrToServer(str2,str3);
+        end;
+    end;
+
+    if TLT_server[NumberManeger] <> nil then
+    begin
+       // if TLT_server_changed[NumberManeger] then
+       // begin
+            MyTLEdit.Assign(TLT_server[NumberManeger], NumberManeger + 1);
+            TLT_server_changed[NumberManeger] := false;
+       // end;
+    end;
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    // WriteLog('vlcmode','GETTLEDITOR '+ url);
+
+    str1 := GetJsonStrFromServer(url);
     if trim(str1) <> '' then
     begin
         if str1 <> old_tle_str then
         begin
-            MyTLEdit.Clear;
-            if MyTLEdit.LoadFromJSONstr(str1) then
-            begin
-                InfoProtocol.SetData('Статус:', 'Доступен');
-                old_tle_str := str1;
-                tle_request_time := now;
-            end
-            else
-                InfoProtocol.SetData('Статус:', 'Не доступен');
+            // MyTLEdit.Clear;
+            // if MyTLEdit.LoadFromJSONstr(str1) then
+            // begin
+            // WriteLog('vlcmode', 'Load TLEDIT:');
+            // WriteLog('vlcmode', '            '+str1);
+            old_tle_str := str1;
+            tle_request_time := now;
+            // end
+            // else begin
+            // WriteLog('vlcmode', 'ERR load TLEDIT:');
+            // WriteLog('vlcmode',str1);
+            // end;
         end;
     end
     else
@@ -950,6 +1222,7 @@ begin
             else
             begin
                 info422.SetData(7, 'Активен');
+                MyGetCommState;
                 // label13.Caption:='Инициализирован порт ' + port422name + ' ';
                 // exit;
             end;
@@ -966,6 +1239,22 @@ begin
     begin
         DrawProtocolStatus;
     end;
+end;
+
+var
+    i: Integer;
+
+initialization
+
+for i := low(TLO_server) to high(TLO_server) do
+begin
+    TLO_server[i] := nil;
+    TLO_server_changed[i] := true;
+    TLO_server_old[i] := '';
+
+    TLT_server[i] := nil;
+    TLT_server_changed[i] := true;
+    TLT_server_old[i] := '';
 end;
 
 end.

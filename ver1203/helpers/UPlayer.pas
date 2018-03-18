@@ -145,6 +145,7 @@ begin
     // vlc_state := libvlc_media_player_get_state(VLCPlayer.p_li);
     if trim(Form1.lbPlayerFile.Caption) = '' then
       exit;
+    if VLCPlayer.p_mi=nil then exit;//ps := Position - TLParameters.Preroll;
 
     if libvlc_media_player_get_state(VLCPlayer.p_mi) = libvlc_Ended then
     begin

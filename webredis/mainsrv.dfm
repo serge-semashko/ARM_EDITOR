@@ -2,8 +2,8 @@ object HTTPSRVForm: THTTPSRVForm
   Left = 327
   Top = 19
   Caption = 'WEB srv'
-  ClientHeight = 555
-  ClientWidth = 914
+  ClientHeight = 689
+  ClientWidth = 1081
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,16 +12,20 @@ object HTTPSRVForm: THTTPSRVForm
   Font.Style = []
   OldCreateOrder = True
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
   PixelsPerInch = 120
   TextHeight = 16
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 914
+    Width = 1081
     Height = 99
     Align = alTop
     TabOrder = 0
+    OnClick = Panel1Click
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -37,11 +41,30 @@ object HTTPSRVForm: THTTPSRVForm
       TabOrder = 0
       Text = 'http://nucloweb.jinr.ru/kgu/Cache/get_data.php?callback=?'
     end
+    object BitBtn1: TBitBtn
+      Left = 792
+      Top = 24
+      Width = 75
+      Height = 25
+      Caption = 'BitBtn1'
+      TabOrder = 1
+      OnClick = Panel1Click
+    end
+    object txt1: TStaticText
+      Left = 160
+      Top = 8
+      Width = 529
+      Height = 35
+      AutoSize = False
+      BevelKind = bkSoft
+      Caption = 'txt1'
+      TabOrder = 2
+    end
   end
   object Memo2: TMemo
     Left = 0
     Top = 99
-    Width = 914
+    Width = 1081
     Height = 91
     Align = alTop
     Font.Charset = DEFAULT_CHARSET
@@ -52,76 +75,16 @@ object HTTPSRVForm: THTTPSRVForm
     ParentFont = False
     TabOrder = 1
   end
-  object Chart1: TChart
+  object Memo1: TMemo
     Left = 0
     Top = 190
-    Width = 914
-    Height = 365
-    BackWall.Brush.Style = bsClear
-    Title.Text.Strings = (
-      'TChart')
-    View3D = False
+    Width = 1081
+    Height = 499
     Align = alClient
+    Lines.Strings = (
+      'Memo1')
+    ScrollBars = ssBoth
     TabOrder = 2
-    DefaultCanvas = 'TGDIPlusCanvas'
-    ColorPaletteIndex = 13
-    object chartbox: TCheckBox
-      Left = 128
-      Top = 6
-      Width = 97
-      Height = 17
-      Caption = #1043#1088#1072#1092#1080#1082#1080
-      TabOrder = 0
-    end
-    object Series1: TLineSeries
-      SeriesColor = clRed
-      Title = 'Min'
-      Brush.BackColor = clDefault
-      Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-    end
-    object Series2: TLineSeries
-      SeriesColor = clGreen
-      Title = 'Max'
-      Brush.BackColor = clDefault
-      Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-    end
-    object Series3: TLineSeries
-      SeriesColor = clBlue
-      Title = 'mean'
-      Brush.BackColor = clDefault
-      Pointer.HorizSize = 2
-      Pointer.InflateMargins = True
-      Pointer.Pen.Visible = False
-      Pointer.Style = psRectangle
-      Pointer.VertSize = 2
-      Pointer.Visible = True
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-    end
-    object Series4: TLineSeries
-      SeriesColor = clFuchsia
-      Title = 'Updates'
-      VertAxis = aRightAxis
-      Brush.BackColor = clDefault
-      Pointer.InflateMargins = True
-      Pointer.Style = psRectangle
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-    end
   end
   object Timer1: TTimer
     Enabled = False
@@ -130,12 +93,20 @@ object HTTPSRVForm: THTTPSRVForm
     Left = 368
     Top = 128
   end
-  object PopupMenu1: TPopupMenu
-    Left = 656
+  object PopupMenu2: TPopupMenu
+    Left = 552
     Top = 24
-    object terminate1: TMenuItem
-      Caption = 'terminate'
-      OnClick = terminate1Click
+    object Restore1: TMenuItem
+      Caption = 'Restore'
+      OnClick = Restore1Click
+    end
+    object Minimize1: TMenuItem
+      Caption = 'Minimize'
+      OnClick = Minimize1Click
+    end
+    object quit1: TMenuItem
+      Caption = 'quit'
+      OnClick = quit1Click
     end
   end
 end

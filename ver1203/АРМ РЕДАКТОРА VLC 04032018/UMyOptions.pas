@@ -332,6 +332,7 @@ begin
   Groups[ARow].adddata('URL подключения к web-серверу',
     jsonware_url, tomString, 10, ps, 300,
     FrMyOptions.ComboBox1.Height);
+
   // PrintEventShift      : integer = 30;
   // Основные параметры программы
   // MainWindowStayOnTop : boolean = false;
@@ -816,6 +817,23 @@ begin
   ps := ps + FrMyOptions.ComboBox1.Height;
   Groups[ARow].adddata('Цвет курсора КТК', inttostr(EndColorCursor), tomColor,
     10, ps, 300, FrMyOptions.ComboBox1.Height);
+
+
+  ps := ps + FrMyOptions.ComboBox1.Height;
+  Groups[ARow].adddata('Переход между событиями',
+  DefaultTransition, tomString, 10, ps, 300, FrMyOptions.ComboBox1.Height);
+  Groups[ARow].AddVariant(Groups[ARow].Count - 1, 'Cut');
+  Groups[ARow].AddVariant(Groups[ARow].Count - 1, 'Mix');
+  Groups[ARow].AddVariant(Groups[ARow].Count - 1, 'Wipe');
+
+  ps := ps + FrMyOptions.ComboBox1.Height;
+  Groups[ARow].adddata('Длительность перехода', inttostr(DefTransDuration),
+                    tomInteger, 10, ps, 300, FrMyOptions.ComboBox1.Height);
+
+  ps := ps + FrMyOptions.ComboBox1.Height;
+  Groups[ARow].adddata('Номер Wipe перехода', inttostr(DefTransSet),
+                    tomInteger, 10, ps, 300, FrMyOptions.ComboBox1.Height);
+
   // ps:=ps + FrMyOptions.ComboBox1.Height;
   // Groups[ARow].adddata('Цвет шрифта шкалы времени',IntToStr(TLFontColor),tomColor,10,ps,300,FrMyOptions.ComboBox1.Height);
 
@@ -1476,6 +1494,25 @@ begin
     EndColorCursor := EndColorCursor
   else
     EndColorCursor := strtoint(s);
+
+  s := trim(Groups[APos].getdata('Переход между событиями'));
+  if s = '' then
+    DefaultTransition := DefaultTransition
+  else
+    DefaultTransition := trim(s);
+
+  s := trim(Groups[APos].getdata('Длительность перехода'));
+  if s = '' then
+    DefTransDuration := DefTransDuration
+  else
+    DefTransDuration := strtoint(s);
+
+  s := trim(Groups[APos].getdata('Номер Wipe перехода'));
+  if s = '' then
+    DefTransSet := DefTransSet
+  else
+    DefTransSet := strtoint(s);
+
   // s:=trim(Groups[APos].getdata('Цвет шрифта шкалы времени'));
   // if s='' then TLFontColor:=TLFontColor else TLFontColor:=strtoint(s);
 

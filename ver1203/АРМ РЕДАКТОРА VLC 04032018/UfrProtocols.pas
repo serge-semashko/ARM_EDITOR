@@ -4,11 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls,
-  Vcl.StdCtrls,
-  utimeline, Math, FastDIB, FastFX, FastSize, FastFiles, FConvert, FastBlend,
-  UmyProtocols;
+  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
+  Vcl.ExtCtrls, Vcl.StdCtrls, utimeline, Math, FastDIB, FastFX, FastSize,
+  FastFiles, FConvert, FastBlend, UmyProtocols, udevmanagers;
 
 type
 
@@ -109,7 +107,10 @@ procedure SetProtocol(OPTTimeline: TTimelineOptions);
 var
   sprotocols: string;
   lst: tstrings;
+  lstdevmng : string;
+  i, indx : Integer;
 begin
+  UpdateManagerList;
   if ListTypeDevices = nil then
     ListTypeDevices := TListTypeDevices.Create;
   InitFrProtocols;
@@ -119,6 +120,61 @@ begin
   ListTypeDevices.clear;
   ListTypeDevices.LoadFromFile('AListProtocols.txt', 'TLDevices');
   FrProtocols.LoadDataProtocol(STRVendors);
+
+  lstdevmng := '';
+  for i := 0 to 16 do begin
+    if DevManagers[i]<>nil then begin
+      if trim(lstdevmng)=''
+        then lstdevmng := inttostr(i)
+        else lstdevmng := lstdevmng + '|' + inttostr(i);
+    end;
+  end;
+
+
+
+  if ListTypeDevices.index = -1 then
+    ListTypeDevices.index := 0;
+  with ListTypeDevices.TypeDevices[ListTypeDevices.index] do
+  begin
+    indx := ListTypeDevices.TypeDevices[ListTypeDevices.index].index;
+    with Vendors[indx] do
+    begin
+      indx := Vendors[indx].index;
+      with FirmDevices[indx] do
+      begin
+        indx := FirmDevices[indx].index;
+        ListProtocols[indx].Ports.ldevicemanager:=lstdevmng;
+        if trim(STRManager)<>'' then begin
+          if DevManagers[StrToInt(STRManager)]<>nil then begin
+            if trim(DevManagers[StrToInt(STRManager)].Options[2].Text)='RS232/422'
+              then ListProtocols[indx].Ports.select422:=true
+              else ListProtocols[indx].Ports.select422:=false;
+
+            ListProtocols[indx].Ports.port422.ComPort:=
+               DevManagers[StrToInt(STRManager)].Options[3].Text; //имя ком-порта
+            ListProtocols[indx].Ports.port422.Speed:=
+               DevManagers[StrToInt(STRManager)].Options[4].Text; //скорость ком-порта
+            ListProtocols[indx].Ports.port422.Bits:=
+               DevManagers[StrToInt(STRManager)].Options[5].Text; //кол-во бит ком-порта
+            ListProtocols[indx].Ports.port422.Parity:=
+               DevManagers[StrToInt(STRManager)].Options[6].Text; //четность ком-порта
+            ListProtocols[indx].Ports.port422.Stop:=
+               DevManagers[StrToInt(STRManager)].Options[7].Text; //стоп биты ком-порта
+            ListProtocols[indx].Ports.port422.Flow:=
+               DevManagers[StrToInt(STRManager)].Options[8].Text; //управл. потоком ком-порта
+            ListProtocols[indx].Ports.portip.IPAdress:=
+               DevManagers[StrToInt(STRManager)].Options[9].Text; //IP Adress
+            ListProtocols[indx].Ports.portip.IPPort:=
+               DevManagers[StrToInt(STRManager)].Options[10].Text; //IP Port
+            ListProtocols[indx].Ports.portip.Login:=
+               DevManagers[StrToInt(STRManager)].Options[11].Text; //IP Login
+            ListProtocols[indx].Ports.portip.Password:=
+               DevManagers[StrToInt(STRManager)].Options[12].Text; //IP Password
+          end;
+        end;
+      end;
+    end;
+  end;
 
   DrawTableProtocols;
 
@@ -563,8 +619,24 @@ begin
     indxp := 0;
   ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd].
     index := indxp;
-  ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd]
-    .ListProtocols[indxp].Ports.SetString(StrSrc);
+
+  strp := GetProtocolsStr(StrSrc, 'Port422');
+  if (ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd]
+    .ListProtocols[indxp].Ports.exist422) and (trim(strp)<>'') then
+  begin
+    ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd]
+      .ListProtocols[indxp].Ports.port422.SetString(StrSrc);
+  end;
+  strp := GetProtocolsStr(StrSrc, 'PortIP');
+  if ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd]
+    .ListProtocols[indxp].Ports.existip and (trim(strp)<>'') then
+  begin
+    ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd]
+      .ListProtocols[indxp].Ports.portip.SetString(StrSrc);
+  end;
+
+//  ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd]
+//    .ListProtocols[indxp].Ports.SetString(StrSrc);
   if ansilowercase(psel) = 'ipadress' then
   begin
     ListTypeDevices.TypeDevices[indxt].Vendors[indxv].FirmDevices[indxd]
@@ -639,7 +711,7 @@ begin
         ListTypeDevices.SaveToFile('AListProtocols.txt', 'TLDevices');
         FrProtocols.ModalResult := mrOk;
         // ssssjson
-        PutGridTimeLinesToServer(Form1.GridTimeLines);
+        //PutGridTimeLinesToServer(Form1.GridTimeLines);
 
       end;
   end;
@@ -991,11 +1063,7 @@ begin
                 ComboBox4.Width := Ports.rtdm.Right - Ports.rtdm.Left;
                 indxport := 2;
                 ComboBox4.Items.clear;
-                ComboBox4.Items.Add('0');
-                ComboBox4.Items.Add('1');
-                ComboBox4.Items.Add('2');
-                ComboBox4.Items.Add('3');
-                ComboBox4.Items.Add('4');
+                GetListParam(Ports.ldevicemanager, ComboBox4.Items);
                 ComboBox4.ItemIndex := ComboBox4.Items.IndexOf(STRManager);
                 ComboBox4.Visible := true;
               end;

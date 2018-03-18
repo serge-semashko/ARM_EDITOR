@@ -80,13 +80,6 @@ object Form3: TForm3
     Height = 22
     OnClick = SpeedButton4Click
   end
-  object SpeedButton5: TSpeedButton
-    Left = 347
-    Top = 7
-    Width = 23
-    Height = 22
-    OnClick = SpeedButton5Click
-  end
   object Edit1: TEdit
     Left = 8
     Top = 35

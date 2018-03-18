@@ -1,9 +1,9 @@
 {==============================================================================|
-| Project : Ararat Synapse                                       | 009.004.001 |
+| Project : Ararat Synapse                                       | 009.010.000 |
 |==============================================================================|
 | Content: Library base                                                        |
 |==============================================================================|
-| Copyright (c)1999-2007, Lukas Gebauer                                        |
+| Copyright (c)1999-2017, Lukas Gebauer                                        |
 | All rights reserved.                                                         |
 |                                                                              |
 | Redistribution and use in source and binary forms, with or without           |
@@ -33,7 +33,7 @@
 | DAMAGE.                                                                      |
 |==============================================================================|
 | The Initial Developer of the Original Code is Lukas Gebauer (Czech Republic).|
-| Portions created by Lukas Gebauer are Copyright (c)1999-2007.                |
+| Portions created by Lukas Gebauer are Copyright (c)1999-2017.                |
 | All Rights Reserved.                                                         |
 |==============================================================================|
 | Contributor(s):                                                              |
@@ -81,6 +81,20 @@ Core with implementation basic socket classes.
 {$Q-}
 {$H+}
 {$M+}
+{$TYPEDADDRESS OFF}
+
+
+//old Delphi does not have MSWINDOWS define.
+{$IFDEF WIN32}
+  {$IFNDEF MSWINDOWS}
+    {$DEFINE MSWINDOWS}
+  {$ENDIF}
+{$ENDIF}
+
+{$IFDEF UNICODE}
+  {$WARN IMPLICIT_STRING_CAST OFF}
+  {$WARN IMPLICIT_STRING_CAST_LOSS OFF}
+{$ENDIF}
 
 unit blcksock;
 
@@ -99,7 +113,7 @@ uses
 
 const
 
-  SynapseRelease = '38';
+  SynapseRelease = '40';
 
   cLocalhost = '127.0.0.1';
   cAnyHost = '0.0.0.0';
@@ -174,10 +188,10 @@ type
   {:Procedural type for OnStatus event. Sender is calling TBlockSocket object,
    Reason is one of set Status events and value is optional data.}
   THookSocketStatus = procedure(Sender: TObject; Reason: THookSocketReason;
-    const Value: string) of object;
+    const Value: String) of object;
 
   {:This procedural type is used for DataFilter hooks.}
-  THookDataFilter = procedure(Sender: TObject; var Value: string) of object;
+  THookDataFilter = procedure(Sender: TObject; var Value: AnsiString) of object;
 
   {:This procedural type is used for hook OnCreateSocket. By this hook you can
    insert your code after initialisation of socket. (you can set special socket
@@ -192,7 +206,13 @@ type
    insert your code after TCP socket has been sucessfully connected.}
   THookAfterConnect = procedure(Sender: TObject) of object;
 
-  {:This procedural type is used for hook OnHeartbeat. By this hook you can
+  {:This procedural type is used for hook OnVerifyCert. By this hook you can
+   insert your additional certificate verification code. Usefull to verify server
+   CN against URL. }
+
+  THookVerifyCert = function(Sender: TObject):boolean of object;
+
+ {:This procedural type is used for hook OnHeartbeat. By this hook you can
    call your code repeately during long socket operations.
    You must enable heartbeats by @Link(HeartbeatRate) property!}
   THookHeartbeat = procedure(Sender: TObject) of object;
@@ -224,6 +244,7 @@ type
     LT_SSLv3,
     LT_TLSv1,
     LT_TLSv1_1,
+    LT_TLSv1_2,
     LT_SSHv2
     );
 
@@ -267,7 +288,7 @@ type
     FLocalSin: TVarSin;
     FRemoteSin: TVarSin;
     FTag: integer;
-    FBuffer: string;
+    FBuffer: AnsiString;
     FRaiseExcept: Boolean;
     FNonBlockMode: Boolean;
     FMaxLineLength: Integer;
@@ -294,6 +315,10 @@ type
     FStopFlag: Boolean;
     FNonblockSendTimeout: Integer;
     FHeartbeatRate: integer;
+    FConnectionTimeout: integer;
+    {$IFNDEF ONCEWINSOCK}
+    FWsaDataOnce: TWSADATA;
+    {$ENDIF}
     function GetSizeRecvBuffer: Integer;
     procedure SetSizeRecvBuffer(Size: Integer);
     function GetSizeSendBuffer: Integer;
@@ -306,8 +331,10 @@ type
     function GetWsaData: TWSAData;
     function FamilyToAF(f: TSocketFamily): TAddrFamily;
   protected
+    FSocket: TSocket;
     FLastError: Integer;
     FLastErrorDesc: string;
+    FOwner: TObject;
     procedure SetDelayedOption(const Value: TSynaOption);
     procedure DelayedOption(const Value: TSynaOption);
     procedure ProcessDelayedOptions;
@@ -325,8 +352,8 @@ type
     function TestStopFlag: Boolean;
     procedure InternalSendStream(const Stream: TStream; WithSize, Indy: boolean); virtual;
     function InternalCanRead(Timeout: Integer): Boolean; virtual;
+    function InternalCanWrite(Timeout: Integer): Boolean; virtual;
   public
-    FSocket: TSocket;
     constructor Create;
 
     {:Create object and load all necessary socket library. What library is
@@ -382,6 +409,16 @@ type
      type of created socket is determined by address resolving of destination
      address. (Not work properly on prilimitary winsock IPv6 support!)}
     procedure Connect(IP, Port: string); virtual;
+
+    {:Sets socket to receive mode for new incoming connections. It is necessary
+     to use @link(TBlockSocket.BIND) function call before this method to select
+     receiving port!}
+    procedure Listen; virtual;
+
+    {:Waits until new incoming connection comes. After it comes a new socket is
+     automatically created (socket handler is returned by this function as
+     result).}
+    function Accept: TSocket; virtual;
 
     {:Sends data of LENGTH from BUFFER address via connected socket. System
      automatically splits data to packets.}
@@ -440,7 +477,7 @@ type
 
     {:Similar to @link(RecvBufferEx), but readed data is stored in binary
      string, not in memory buffer.}
-    function RecvBufferStr(Length: Integer; Timeout: Integer): AnsiString; virtual;
+    function RecvBufferStr(Len: Integer; Timeout: Integer): AnsiString; virtual;
 
     {:Note: This is high-level receive function. It using internal
      @link(LineBuffer) and you can combine this function freely with other
@@ -672,9 +709,12 @@ type
     {:Return value of protocol type for socket creation.}
     function GetSocketProtocol: integer; Virtual;
 
-    {:WSA structure with information about socket provider. On linux is this
-     structure simulated!}
+    {:WSA structure with information about socket provider. On non-windows 
+     platforms this structure is simulated!}
     property WSAData: TWSADATA read GetWsaData;
+
+    {:FDset structure prepared for usage with this socket.}
+    property FDset: TFDSet read FFDset;
 
     {:Structure describing local socket side.}
     property LocalSin: TVarSin read FLocalSin write FLocalSin;
@@ -698,7 +738,7 @@ type
     {:Buffer used by all high-level receiving functions. This buffer is used for
      optimized reading of data from socket. In normal cases you not need access
      to this buffer directly!}
-    property LineBuffer: string read FBuffer write FBuffer;
+    property LineBuffer: AnsiString read FBuffer write FBuffer;
 
     {:Size of Winsock receive buffer. If it is not supported by socket provider,
      it return as size one kilobyte.}
@@ -794,6 +834,10 @@ type
     {:Timeout for data sending by non-blocking socket mode.}
     property NonblockSendTimeout: Integer read FNonblockSendTimeout Write FNonblockSendTimeout;
 
+    {:Timeout for @link(Connect) call. Default value 0 means default system timeout.
+     Non-zero value means timeout in millisecond.}
+    property ConnectionTimeout: Integer read FConnectionTimeout write FConnectionTimeout;
+
     {:This event is called by various reasons. It is good for monitoring socket,
      create gauges for data transfers, etc.}
     property OnStatus: THookSocketStatus read FOnStatus write FOnStatus;
@@ -821,6 +865,8 @@ type
       on real socket operations too!
       Note: Each heartbeat slowing socket processing.}
     property HeartbeatRate: integer read FHeartbeatRate Write FHeartbeatRate;
+    {:What class own this socket? Used by protocol implementation classes.}
+    property Owner: TObject read FOwner Write FOwner;
   end;
 
   {:@abstract(Support for SOCKS4 and SOCKS5 proxy)
@@ -844,8 +890,8 @@ type
     FSocksRemotePort: string;
     FBypassFlag: Boolean;
     FSocksType: TSocksType;
-    function SocksCode(IP, Port: string): string;
-    function SocksDecode(Value: string): integer;
+    function SocksCode(IP, Port: string): Ansistring;
+    function SocksDecode(Value: Ansistring): integer;
   public
     constructor Create;
 
@@ -923,10 +969,6 @@ type
     constructor CreateWithSSL(SSLPlugin: TSSLClass);
     destructor Destroy; override;
 
-    {:Return descriptive string for @link(LastError). On case of error
-     in SSL/TLS subsystem, it returns right error description.}
-    function GetErrorDescEx: string; override;
-
     {:See @link(TBlockSocket.CloseSocket)}
     procedure CloseSocket; override;
 
@@ -939,7 +981,7 @@ type
 
      If you use SOCKS, activate incoming TCP connection by this proxy. (By BIND
      method of SOCKS.)}
-    procedure Listen; virtual;
+    procedure Listen; override;
 
     {:Waits until new incoming connection comes. After it comes a new socket is
      automatically created (socket handler is returned by this function as
@@ -948,7 +990,7 @@ type
      If you use SOCKS, new socket is not created! In this case is used same
      socket as socket for listening! So, you can accept only one connection in
      SOCKS mode.}
-    function Accept: TSocket;
+    function Accept: TSocket; override;
 
     {:Connects socket to remote IP address and PORT. The same rules as with
      @link(TBlockSocket.BIND) method are valid. The only exception is that PORT
@@ -1017,6 +1059,10 @@ type
     {:@True if is used HTTP tunnel mode.}
     property HTTPTunnel: Boolean read FHTTPTunnel;
   published
+    {:Return descriptive string for @link(LastError). On case of error
+     in SSL/TLS subsystem, it returns right error description.}
+    function GetErrorDescEx: string; override;
+
     {:Specify IP address of HTTP proxy. Assingning non-empty value to this
      property enable HTTP-tunnel mode. This mode is for tunnelling any outgoing
      TCP connection through HTTP proxy server. (If policy on HTTP proxy server
@@ -1136,6 +1182,30 @@ type
     function GetSocketProtocol: integer; override;
   end;
 
+  {:@abstract(Implementation of PGM-message socket.)
+   Not all systems supports this protocol!}
+  TPGMMessageBlockSocket = class(TBlockSocket)
+  public
+    {:Return value of socket type. For PGM-message return SOCK_RDM.}
+    function GetSocketType: integer; override;
+
+    {:Return value of protocol type for socket creation. For PGM-message returns
+     IPPROTO_RM.}
+    function GetSocketProtocol: integer; override;
+  end;
+
+  {:@abstract(Implementation of PGM-stream socket.)
+   Not all systems supports this protocol!}
+  TPGMStreamBlockSocket = class(TBlockSocket)
+  public
+    {:Return value of socket type. For PGM-stream return SOCK_STREAM.}
+    function GetSocketType: integer; override;
+
+    {:Return value of protocol type for socket creation. For PGM-stream returns
+     IPPROTO_RM.}
+    function GetSocketProtocol: integer; override;
+  end;
+
   {:@abstract(Parent class for all SSL plugins.)
    This is abstract class defining interface for other SSL plugins.
 
@@ -1144,7 +1214,9 @@ type
    Warning: not all methods and propertis can work in all existing SSL plugins!
    Please, read documentation of used SSL plugin.}
   TCustomSSL = class(TObject)
+  private
   protected
+    FOnVerifyCert: THookVerifyCert;
     FSocket: TTCPBlockSocket;
     FSSLEnabled: Boolean;
     FLastError: integer;
@@ -1154,13 +1226,13 @@ type
     FCiphers: string;
     FCertificateFile: string;
     FPrivateKeyFile: string;
-    FCertificate: string;
-    FPrivateKey: string;
-    FPFX: string;
+    FCertificate: Ansistring;
+    FPrivateKey: Ansistring;
+    FPFX: Ansistring;
     FPFXfile: string;
-    FCertCA: string;
+    FCertCA: Ansistring;
     FCertCAFile: string;
-    FTrustCertificate: string;
+    FTrustCertificate: Ansistring;
     FTrustCertificateFile: string;
     FVerifyCert: Boolean;
     FUsername: string;
@@ -1168,7 +1240,11 @@ type
     FSSHChannelType: string;
     FSSHChannelArg1: string;
     FSSHChannelArg2: string;
+    FCertComplianceLevel: integer;
+    FSNIHost: string;
     procedure ReturnError;
+    procedure SetCertCAFile(const Value: string); virtual;
+    function DoVerifyCert:boolean;
     function CreateSelfSignedCert(Host: string): Boolean; virtual;
   public
     {: Create plugin class. it is called internally from @link(TTCPBlockSocket)}
@@ -1230,12 +1306,19 @@ type
     {:Return subject of remote SSL peer.}
     function GetPeerSubject: string; virtual;
 
+    {:Return Serial number if remote X509 certificate.}
+    function GetPeerSerialNo: integer; virtual;
+
     {:Return issuer certificate of remote SSL peer.}
     function GetPeerIssuer: string; virtual;
 
     {:Return peer name from remote side certificate. This is good for verify,
      if certificate is generated for remote side IP name.}
     function GetPeerName: string; virtual;
+
+    {:Returns has of peer name from remote side certificate. This is good
+     for fast remote side authentication.}
+    function GetPeerNameHash: cardinal; virtual;
 
     {:Return fingerprint of remote SSL peer.}
     function GetPeerFingerprint: string; virtual;
@@ -1295,15 +1378,15 @@ type
 
     {:Used for loading certificate from binary string. See to plugin documentation
      if this method is supported and how!}
-    property Certificate: string read FCertificate write FCertificate;
+    property Certificate: Ansistring read FCertificate write FCertificate;
 
     {:Used for loading private key from binary string. See to plugin documentation
      if this method is supported and how!}
-    property PrivateKey: string read FPrivateKey write FPrivateKey;
+    property PrivateKey: Ansistring read FPrivateKey write FPrivateKey;
 
     {:Used for loading PFX from binary string. See to plugin documentation
      if this method is supported and how!}
-    property PFX: string read FPFX write FPFX;
+    property PFX: Ansistring read FPFX write FPFX;
 
     {:Used for loading PFX from disk file. See to plugin documentation
      if this method is supported and how!}
@@ -1315,15 +1398,15 @@ type
 
     {:Used for loading trusted certificates from binary string. See to plugin documentation
      if this method is supported and how!}
-    property TrustCertificate: string read FTrustCertificate write FTrustCertificate;
+    property TrustCertificate: Ansistring read FTrustCertificate write FTrustCertificate;
 
     {:Used for loading CA certificates from binary string. See to plugin documentation
      if this method is supported and how!}
-    property CertCA: string read FCertCA write FCertCA;
+    property CertCA: Ansistring read FCertCA write FCertCA;
 
     {:Used for loading CA certificates from disk file. See to plugin documentation
      if this method is supported and how!}
-    property CertCAFile: string read FCertCAFile write FCertCAFile;
+    property CertCAFile: string read FCertCAFile write SetCertCAFile;
 
     {:If @true, then is verified client certificate. (it is good for writing
      SSL/TLS servers.) When you are not server, but you are client, then if this
@@ -1338,6 +1421,20 @@ type
 
     {:Second argument of channel type for possible SSH connections}
     property SSHChannelArg2: string read FSSHChannelArg2 write FSSHChannelArg2;
+
+    {: Level of standards compliance level
+      (CryptLib: values in cryptlib.pas, -1: use default value )  }
+    property CertComplianceLevel:integer read FCertComplianceLevel write FCertComplianceLevel;
+
+    {:This event is called when verifying the server certificate immediatally after
+     a successfull verification in the ssl library.}
+    property OnVerifyCert: THookVerifyCert read FOnVerifyCert write FOnVerifyCert;
+
+    {: Server Name Identification. Host name to send to server. If empty the host name
+       found in URL will be used, which should be the normal use (http Header Host = SNI Host).
+       The value is cleared after the connection is established.
+      (SNI support requires OpenSSL 0.9.8k or later. Cryptlib not supported, yet )  }
+    property SNIHost:string read FSNIHost write FSNIHost;
   end;
 
   {:@abstract(Default SSL plugin with no SSL support.)
@@ -1409,7 +1506,7 @@ var
   SSLImplementation: TSSLClass = TSSLNone;
 
 implementation
-
+uses dialogs;
 {$IFDEF ONCEWINSOCK}
 var
   WsaDataOnce: TWSADATA;
@@ -1457,6 +1554,8 @@ begin
   FStopFlag := False;
   FNonblockSendTimeout := 15000;
   FHeartbeatRate := 0;
+  FConnectionTimeout := 0;
+  FOwner := nil;
 {$IFNDEF ONCEWINSOCK}
   if Stub = '' then
     Stub := DLLStackName;
@@ -1508,6 +1607,9 @@ var
   li: TLinger;
   x: integer;
   buf: TMemory;
+{$IFNDEF MSWINDOWS}
+  timeval: TTimeval;
+{$ENDIF}
 begin
   case value.Option of
     SOT_Linger:
@@ -1552,21 +1654,37 @@ begin
       begin
         {$IFDEF CIL}
         buf := System.BitConverter.GetBytes(value.Value);
-        {$ELSE}
-        buf := @Value.Value;
-        {$ENDIF}
         synsock.SetSockOpt(FSocket, integer(SOL_SOCKET), integer(SO_RCVTIMEO),
           buf, SizeOf(Value.Value));
+        {$ELSE}
+          {$IFDEF MSWINDOWS}
+        buf := @Value.Value;
+        synsock.SetSockOpt(FSocket, integer(SOL_SOCKET), integer(SO_RCVTIMEO),
+          buf, SizeOf(Value.Value));
+          {$ELSE}
+        timeval.tv_sec:=Value.Value div 1000;
+        timeval.tv_usec:=(Value.Value mod 1000) * 1000;
+        synsock.SetSockOpt(FSocket, integer(SOL_SOCKET), integer(SO_RCVTIMEO),
+          @timeval, SizeOf(timeval));
+          {$ENDIF}
+        {$ENDIF}
       end;
     SOT_SendTimeout:
       begin
         {$IFDEF CIL}
         buf := System.BitConverter.GetBytes(value.Value);
         {$ELSE}
+          {$IFDEF MSWINDOWS}
         buf := @Value.Value;
-        {$ENDIF}
         synsock.SetSockOpt(FSocket, integer(SOL_SOCKET), integer(SO_SNDTIMEO),
           buf, SizeOf(Value.Value));
+          {$ELSE}
+        timeval.tv_sec:=Value.Value div 1000;
+        timeval.tv_usec:=(Value.Value mod 1000) * 1000;
+        synsock.SetSockOpt(FSocket, integer(SOL_SOCKET), integer(SO_SNDTIMEO),
+          @timeval, SizeOf(timeval));
+          {$ENDIF}
+        {$ENDIF}
       end;
     SOT_Reuse:
       begin
@@ -1677,7 +1795,7 @@ begin
     f := FFamily;
   FLastError := synsock.SetVarSin(sin, ip, port, FamilyToAF(f),
     GetSocketprotocol, GetSocketType, FPreferIP4);
-  DoStatus(HR_ResolvingEnd, IP + ':' + Port);
+  DoStatus(HR_ResolvingEnd, GetSinIP(sin) + ':' + IntTostr(GetSinPort(sin)));
 end;
 
 function TBlockSocket.GetSinIP(Sin: TVarSin): string;
@@ -1781,7 +1899,6 @@ end;
 procedure TBlockSocket.Bind(IP, Port: string);
 var
   Sin: TVarSin;
-  res : integer;
 begin
   ResetLastError;
   if (FSocket <> INVALID_SOCKET)
@@ -1792,8 +1909,7 @@ begin
     begin
       if FSocket = INVALID_SOCKET then
         InternalCreateSocket(Sin);
-        res := synsock.Bind(FSocket, Sin);
-      SockCheck(res);
+      SockCheck(synsock.Bind(FSocket, Sin));
       GetSinLocal;
       FBuffer := '';
       FBinded := True;
@@ -1806,21 +1922,53 @@ end;
 procedure TBlockSocket.Connect(IP, Port: string);
 var
   Sin: TVarSin;
+  b: boolean;
 begin
   SetSin(Sin, IP, Port);
   if FLastError = 0 then
   begin
     if FSocket = INVALID_SOCKET then
       InternalCreateSocket(Sin);
-    SockCheck(synsock.Connect(FSocket, Sin));
+    if FConnectionTimeout > 0 then
+    begin
+      // connect in non-blocking mode
+      b := NonBlockMode;
+      NonBlockMode := true;
+      SockCheck(synsock.Connect(FSocket, Sin));
+      if (FLastError = WSAEINPROGRESS) OR (FLastError = WSAEWOULDBLOCK) then
+        if not CanWrite(FConnectionTimeout) then
+          FLastError := WSAETIMEDOUT;
+      NonBlockMode := b;
+    end
+    else
+      SockCheck(synsock.Connect(FSocket, Sin));
     if FLastError = 0 then
-      GetSins;
+      GetSins
+      else begin
+      showmessage(FLastErrorDesc);
+           end;;
     FBuffer := '';
     FLastCR := False;
     FLastLF := False;
   end;
   ExceptCheck;
   DoStatus(HR_Connect, IP + ':' + Port);
+end;
+
+procedure TBlockSocket.Listen;
+begin
+  SockCheck(synsock.Listen(FSocket, SOMAXCONN));
+  GetSins;
+  ExceptCheck;
+  DoStatus(HR_Listen, '');
+end;
+
+function TBlockSocket.Accept: TSocket;
+begin
+  Result := synsock.Accept(FSocket, FRemoteSin);
+///    SockCheck(Result);
+  ExceptCheck;
+  DoStatus(HR_Accept, '');
 end;
 
 procedure TBlockSocket.GetSinLocal;
@@ -1958,11 +2106,10 @@ procedure TBlockSocket.SendString(Data: AnsiString);
 var
   buf: TMemory;
 begin
-//  SendBuffer(PChar(Data), Length(Data));
   {$IFDEF CIL}
   buf := BytesOf(Data);
   {$ELSE}
-  buf := pchar(data);
+  buf := Pointer(data);
   {$ENDIF}
   SendBuffer(buf, Length(Data));
 end;
@@ -1989,29 +2136,26 @@ end;
 
 procedure TBlockSocket.InternalSendStream(const Stream: TStream; WithSize, Indy: boolean);
 var
-  si, l: integer;
-  x, y, yr: integer;
+  l: integer;
+  yr: integer;
   s: AnsiString;
   b: boolean;
 {$IFDEF CIL}
   buf: TMemory;
 {$ENDIF}
 begin
-  si := Stream.Size - Stream.Position;
-  if not indy then
-    l := SwapBytes(si)
-  else
-    l := si;
-  x := 0;
   b := true;
-  while x < si do
+  l := 0;
+  if WithSize then
   begin
-    y := si - x;
-    if y > FSendMaxChunk then
-      y := FSendMaxChunk;
+    l := Stream.Size - Stream.Position;;
+    if not Indy then
+      l := synsock.HToNL(l);
+  end;
+  repeat
     {$IFDEF CIL}
-    Setlength(buf, y);
-    yr := Stream.read(buf, y);
+    Setlength(buf, FSendMaxChunk);
+    yr := Stream.read(buf, FSendMaxChunk);
     if yr > 0 then
     begin
       if WithSize and b then
@@ -2022,13 +2166,10 @@ begin
       SendBuffer(buf, yr);
       if FLastError <> 0 then
         break;
-      Inc(x, yr);
     end
-    else
-      break;
     {$ELSE}
-    Setlength(s, y);
-    yr := Stream.read(Pchar(s)^, y);
+    Setlength(s, FSendMaxChunk);
+    yr := Stream.read(Pointer(s)^, FSendMaxChunk);
     if yr > 0 then
     begin
       SetLength(s, yr);
@@ -2041,12 +2182,9 @@ begin
         SendString(s);
       if FLastError <> 0 then
         break;
-      Inc(x, yr);
     end
-    else
-      break;
     {$ENDIF}
-  end;
+  until yr <= 0;
 end;
 
 procedure TBlockSocket.SendStreamRaw(const Stream: TStream);
@@ -2136,7 +2274,7 @@ begin
   end;
 end;
 
-function TBlockSocket.RecvBufferStr(Length: Integer; Timeout: Integer): AnsiString;
+function TBlockSocket.RecvBufferStr(Len: Integer; Timeout: Integer): AnsiString;
 var
   x: integer;
 {$IFDEF CIL}
@@ -2144,11 +2282,11 @@ var
 {$ENDIF}
 begin
   Result := '';
-  if Length > 0 then
+  if Len > 0 then
   begin
     {$IFDEF CIL}
-    Setlength(Buf, Length);
-    x := RecvBufferEx(buf, Length , Timeout);
+    Setlength(Buf, Len);
+    x := RecvBufferEx(buf, Len , Timeout);
     if FLastError = 0 then
     begin
       SetLength(Buf, x);
@@ -2157,8 +2295,8 @@ begin
     else
       Result := '';
     {$ELSE}
-    Setlength(Result, Length);
-    x := RecvBufferEx(PChar(Result), Length , Timeout);
+    Setlength(Result, Len);
+    x := RecvBufferEx(Pointer(Result), Len , Timeout);
     if FLastError = 0 then
       SetLength(Result, x)
     else
@@ -2183,7 +2321,7 @@ begin
   end
   else
   begin
-    {$IFDEF WIN32}
+    {$IFDEF MSWINDOWS}
     //not drain CPU on large downloads...
     Sleep(0);
     {$ENDIF}
@@ -2390,7 +2528,7 @@ begin
     s := RecvBufferStr(FSendMaxChunk, Timeout);
     if FLastError <> 0 then
       Exit;
-    Stream.Write(Pchar(s)^, FSendMaxChunk);
+    WriteStrToStream(Stream, s);
     {$ENDIF}
   end;
   n := Size mod FSendMaxChunk;
@@ -2406,7 +2544,7 @@ begin
     s := RecvBufferStr(n, Timeout);
     if FLastError <> 0 then
       Exit;
-    Stream.Write(Pchar(s)^, n);
+    WriteStrToStream(Stream, s);
     {$ENDIF}
   end;
 end;
@@ -2577,7 +2715,7 @@ end;
 
 function TBlockSocket.ResolveIPToName(IP: string): string;
 begin
-  if not IsIP(IP) or not IsIp6(IP) then
+  if not IsIP(IP) and not IsIp6(IP) then
     IP := ResolveName(IP);
   Result := synsock.ResolveIPToName(IP, FamilyToAF(FFamily), GetSocketProtocol, GetSocketType);
 end;
@@ -2667,7 +2805,7 @@ begin
     DoStatus(HR_CanRead, '');
 end;
 
-function TBlockSocket.CanWrite(Timeout: Integer): Boolean;
+function TBlockSocket.InternalCanWrite(Timeout: Integer): Boolean;
 {$IFDEF CIL}
 begin
   Result := FSocket.Poll(Timeout * 1000, SelectMode.SelectWrite);
@@ -2690,6 +2828,38 @@ begin
     x := 0;
   Result := x > 0;
 {$ENDIF}
+end;
+
+function TBlockSocket.CanWrite(Timeout: Integer): Boolean;
+var
+  ti, tr: Integer;
+  n: integer;
+begin
+  if (FHeartbeatRate <> 0) and (Timeout <> -1) then
+  begin
+    ti := Timeout div FHeartbeatRate;
+    tr := Timeout mod FHeartbeatRate;
+  end
+  else
+  begin
+    ti := 0;
+    tr := Timeout;
+  end;
+  Result := InternalCanWrite(tr);
+  if not Result then
+    for n := 0 to ti do
+    begin
+      DoHeartbeat;
+      if FStopFlag then
+      begin
+        Result := False;
+        FStopFlag := False;
+        Break;
+      end;
+      Result := InternalCanWrite(FHeartbeatRate);
+      if Result then
+        break;
+    end;
   ExceptCheck;
   if Result then
     DoStatus(HR_CanWrite, '');
@@ -2920,7 +3090,11 @@ end;
 
 function TBlockSocket.GetWsaData: TWSAData;
 begin
+  {$IFDEF ONCEWINSOCK}
   Result := WsaDataOnce;
+  {$ELSE}
+  Result := FWsaDataOnce;
+  {$ENDIF}
 end;
 
 function TBlockSocket.GetSocketType: integer;
@@ -2941,7 +3115,7 @@ end;
 
 procedure TBlockSocket.DoReadFilter(Buffer: TMemory; var Len: Integer);
 var
-  s: string;
+  s: AnsiString;
 begin
   if assigned(OnReadFilter) then
     if Len > 0 then
@@ -3139,7 +3313,7 @@ end;
 
 function TSocksBlockSocket.SocksOpen: boolean;
 var
-  Buf: string;
+  Buf: AnsiString;
   n: integer;
 begin
   Result := False;
@@ -3169,8 +3343,8 @@ begin
           ;
         2:
           begin
-            Buf := #1 + char(Length(FSocksUsername)) + FSocksUsername
-              + char(Length(FSocksPassword)) + FSocksPassword;
+            Buf := #1 + AnsiChar(Length(FSocksUsername)) + FSocksUsername
+              + AnsiChar(Length(FSocksPassword)) + FSocksPassword;
             SendString(Buf);
             Buf := RecvBufferStr(2, FSocksTimeout);
             if Length(Buf) < 2 then
@@ -3193,14 +3367,14 @@ end;
 function TSocksBlockSocket.SocksRequest(Cmd: Byte;
   const IP, Port: string): Boolean;
 var
-  Buf: string;
+  Buf: AnsiString;
 begin
   FBypassFlag := True;
   try
     if FSocksType <> ST_Socks5 then
-      Buf := #4 + char(Cmd) + SocksCode(IP, Port)
+      Buf := #4 + AnsiChar(Cmd) + SocksCode(IP, Port)
     else
-      Buf := #5 + char(Cmd) + #0 + SocksCode(IP, Port);
+      Buf := #5 + AnsiChar(Cmd) + #0 + SocksCode(IP, Port);
     SendString(Buf);
     Result := FLastError = 0;
   finally
@@ -3210,7 +3384,7 @@ end;
 
 function TSocksBlockSocket.SocksResponse: Boolean;
 var
-  Buf, s: string;
+  Buf, s: AnsiString;
   x: integer;
 begin
   Result := False;
@@ -3243,7 +3417,7 @@ begin
             x := RecvByte(FSocksTimeout);
             if FLastError <> 0 then
               Exit;
-            s := char(x) + RecvBufferStr(x, FSocksTimeout);
+            s := AnsiChar(x) + RecvBufferStr(x, FSocksTimeout);
           end;
         4:
           s := RecvBufferStr(16, FSocksTimeout);
@@ -3264,7 +3438,7 @@ begin
   end;
 end;
 
-function TSocksBlockSocket.SocksCode(IP, Port: string): string;
+function TSocksBlockSocket.SocksCode(IP, Port: string): Ansistring;
 var
   ip6: TIp6Bytes;
   n: integer;
@@ -3298,15 +3472,15 @@ begin
         ip6 := StrToIP6(IP);
         Result := #4;
         for n := 0 to 15 do
-          Result := Result + char(ip6[n]);
+          Result := Result + AnsiChar(ip6[n]);
       end
       else
-        Result := #3 + char(Length(IP)) + IP;
+        Result := #3 + AnsiChar(Length(IP)) + IP;
     Result := Result + CodeInt(ResolvePort(Port));
   end;
 end;
 
-function TSocksBlockSocket.SocksDecode(Value: string): integer;
+function TSocksBlockSocket.SocksDecode(Value: Ansistring): integer;
 var
   Atyp: Byte;
   y, n: integer;
@@ -3447,7 +3621,7 @@ function TUDPBlockSocket.SendBufferTo(Buffer: TMemory; Length: Integer): Integer
 var
   SIp: string;
   SPort: integer;
-  Buf: string;
+  Buf: Ansistring;
 begin
   Result := 0;
   FUsingSocks := False;
@@ -3462,9 +3636,9 @@ begin
       SPort := GetRemoteSinPort;
       SetRemoteSin(FSocksRemoteIP, FSocksRemotePort);
       SetLength(Buf,Length);
-      Move(Buffer^, PChar(Buf)^, Length);
+      Move(Buffer^, Pointer(Buf)^, Length);
       Buf := #0 + #0 + #0 + SocksCode(Sip, IntToStr(SPort)) + Buf;
-      Result := inherited SendBufferTo(PChar(Buf), System.Length(buf));
+      Result := inherited SendBufferTo(Pointer(Buf), System.Length(buf));
       SetRemoteSin(Sip, IntToStr(SPort));
 {$ENDIF}
     end
@@ -3475,7 +3649,7 @@ end;
 
 function TUDPBlockSocket.RecvBufferFrom(Buffer: TMemory; Length: Integer): Integer;
 var
-  Buf: string;
+  Buf: Ansistring;
   x: integer;
 begin
   Result := inherited RecvBufferFrom(Buffer, Length);
@@ -3483,11 +3657,11 @@ begin
   begin
 {$IFNDEF CIL}
     SetLength(Buf, Result);
-    Move(Buffer^, PChar(Buf)^, Result);
+    Move(Buffer^, Pointer(Buf)^, Result);
     x := SocksDecode(Buf);
     Result := Result - x + 1;
     Buf := Copy(Buf, x, Result);
-    Move(PChar(Buf)^, Buffer^, Result);
+    Move(Pointer(Buf)^, Buffer^, Result);
     SetRemoteSin(FSocksResponseIP, FSocksResponsePort);
 {$ENDIF}
   end;
@@ -3508,14 +3682,15 @@ begin
       Multicast6.ipv6mr_multiaddr.u6_addr8[n] := Ip6[n];
     Multicast6.ipv6mr_interface := 0;
     SockCheck(synsock.SetSockOpt(FSocket, IPPROTO_IPV6, IPV6_JOIN_GROUP,
-      pchar(@Multicast6), SizeOf(Multicast6)));
+      PAnsiChar(@Multicast6), SizeOf(Multicast6)));
   end
   else
   begin
     Multicast.imr_multiaddr.S_addr := swapbytes(strtoip(MCastIP));
-    Multicast.imr_interface.S_addr := INADDR_ANY;
+//    Multicast.imr_interface.S_addr := INADDR_ANY;
+    Multicast.imr_interface.S_addr := FLocalSin.sin_addr.S_addr;
     SockCheck(synsock.SetSockOpt(FSocket, IPPROTO_IP, IP_ADD_MEMBERSHIP,
-      pchar(@Multicast), SizeOf(Multicast)));
+      PAnsiChar(@Multicast), SizeOf(Multicast)));
   end;
   ExceptCheck;
 end;
@@ -3534,14 +3709,15 @@ begin
       Multicast6.ipv6mr_multiaddr.u6_addr8[n] := Ip6[n];
     Multicast6.ipv6mr_interface := 0;
     SockCheck(synsock.SetSockOpt(FSocket, IPPROTO_IPV6, IPV6_LEAVE_GROUP,
-      pchar(@Multicast6), SizeOf(Multicast6)));
+      PAnsiChar(@Multicast6), SizeOf(Multicast6)));
   end
   else
   begin
     Multicast.imr_multiaddr.S_addr := swapbytes(strtoip(MCastIP));
-    Multicast.imr_interface.S_addr := INADDR_ANY;
+//    Multicast.imr_interface.S_addr := INADDR_ANY;
+    Multicast.imr_interface.S_addr := FLocalSin.sin_addr.S_addr;
     SockCheck(synsock.SetSockOpt(FSocket, IPPROTO_IP, IP_DROP_MEMBERSHIP,
-      pchar(@Multicast), SizeOf(Multicast)));
+      PAnsiChar(@Multicast), SizeOf(Multicast)));
   end;
   ExceptCheck;
 end;
@@ -3661,8 +3837,7 @@ var
 begin
   if FSocksIP = '' then
   begin
-    SockCheck(synsock.Listen(FSocket, SOMAXCONN));
-    GetSins;
+    inherited Listen;
   end
   else
   begin
@@ -3684,9 +3859,9 @@ begin
     FSocksLocalPort := FSocksResponsePort;
     FSocksRemoteIP := '';
     FSocksRemotePort := '';
+    ExceptCheck;
+    DoStatus(HR_Listen, '');
   end;
-  ExceptCheck;
-  DoStatus(HR_Listen, '');
 end;
 
 function TTCPBlockSocket.Accept: TSocket;
@@ -3698,14 +3873,13 @@ begin
     FSocksRemoteIP := FSocksResponseIP;
     FSocksRemotePort := FSocksResponsePort;
     Result := FSocket;
+    ExceptCheck;
+    DoStatus(HR_Accept, '');
   end
   else
   begin
-    Result := synsock.Accept(FSocket, FRemoteSin);
-///    SockCheck(Result);
+    result := inherited Accept;
   end;
-  ExceptCheck;
-  DoStatus(HR_Accept, '');
 end;
 
 procedure TTCPBlockSocket.Connect(IP, Port: string);
@@ -3769,7 +3943,7 @@ begin
       FHTTPTunnel := s[10] = '2';
   until (s = '') or (s = #$0d);
   if (FLasterror = 0) and not FHTTPTunnel then
-    FLastError := WSASYSNOTREADY;
+    FLastError := WSAECONNREFUSED;
   FHTTPTunnelRemoteIP := IP;
   FHTTPTunnelRemotePort := Port;
   ExceptCheck;
@@ -3950,13 +4124,37 @@ end;
 
 {======================================================================}
 
+function TPGMmessageBlockSocket.GetSocketType: integer;
+begin
+  Result := integer(SOCK_RDM);
+end;
+
+function TPGMmessageBlockSocket.GetSocketProtocol: integer;
+begin
+  Result := integer(IPPROTO_RM);
+end;
+
+{======================================================================}
+
+function TPGMstreamBlockSocket.GetSocketType: integer;
+begin
+  Result := integer(SOCK_STREAM);
+end;
+
+function TPGMstreamBlockSocket.GetSocketProtocol: integer;
+begin
+  Result := integer(IPPROTO_RM);
+end;
+
+{======================================================================}
+
 constructor TSynaClient.Create;
 begin
   inherited Create;
   FIPInterface := cAnyHost;
   FTargetHost := cLocalhost;
   FTargetPort := cAnyPort;
-  FTimeout := 5000;
+  FTimeout := 1000;
   FUsername := '';
   FPassword := '';
 end;
@@ -3989,6 +4187,8 @@ begin
   FSSHChannelType := '';
   FSSHChannelArg1 := '';
   FSSHChannelArg2 := '';
+  FCertComplianceLevel := -1; //default
+  FSNIHost := '';
 end;
 
 procedure TCustomSSL.Assign(const Value: TCustomSSL);
@@ -4009,6 +4209,8 @@ begin
   FPrivateKey := Value.PrivateKey;
   FPFX := Value.PFX;
   FPFXfile := Value.PFXfile;
+  FCertComplianceLevel := Value.CertComplianceLevel;
+  FSNIHost := Value.FSNIHost;
 end;
 
 procedure TCustomSSL.ReturnError;
@@ -4062,6 +4264,11 @@ begin
   Result := integer(SOCKET_ERROR);
 end;
 
+procedure TCustomSSL.SetCertCAFile(const Value: string);
+begin
+  FCertCAFile := Value;
+end;
+
 function TCustomSSL.RecvBuffer(Buffer: TMemory; Len: Integer): Integer;
 begin
   ReturnError;
@@ -4084,9 +4291,19 @@ begin
   Result := '';
 end;
 
+function TCustomSSL.GetPeerSerialNo: integer;
+begin
+  Result := -1;
+end;
+
 function TCustomSSL.GetPeerName: string;
 begin
   Result := '';
+end;
+
+function TCustomSSL.GetPeerNameHash: cardinal;
+begin
+  Result := 0;
 end;
 
 function TCustomSSL.GetPeerIssuer: string;
@@ -4124,6 +4341,17 @@ begin
   Result := 1;
 end;
 
+function TCustomSSL.DoVerifyCert:boolean;
+begin
+  if assigned(OnVerifyCert) then
+  begin
+    result:=OnVerifyCert(Self);
+  end
+  else
+    result:=true;
+end;
+
+
 {======================================================================}
 
 function TSSLNone.LibVersion: String;
@@ -4138,9 +4366,9 @@ end;
 
 {======================================================================}
 
-{$IFDEF ONCEWINSOCK}
 initialization
 begin
+{$IFDEF ONCEWINSOCK}
   if not InitSocketInterface(DLLStackName) then
   begin
     e := ESynapseError.Create('Error loading Socket interface (' + DLLStackName + ')!');
@@ -4149,8 +4377,8 @@ begin
     raise e;
   end;
   synsock.WSAStartup(WinsockLevel, WsaDataOnce);
-end;
 {$ENDIF}
+end;
 
 finalization
 begin

@@ -315,6 +315,10 @@ Var
   MTFontSizeS: integer = 16;
   MTFontSizeB: integer = 18;
 
+  DefaultTransition : string = 'Cut';
+  DefTransDuration  : longint = 25;
+  DefTransSet       : integer = 0;
+
   // Procedure SetMainGridPanel(TypeGrid : TTypeGrid);
 function UserExists(User, Pass: string): boolean;
 function SetMainGridPanel(TypeGrid: TTypeGrid): boolean;
@@ -402,6 +406,7 @@ procedure GetListParam(SrcStr: string; lst: tstrings);
 // ==============================================================================
 Procedure LoadProject(mode : boolean);
 Procedure PutGridTimeLinesToServer(GridTimeLines: tstringgrid);
+Procedure PutTimeLinesToServer;
 // ===========SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs=============================
 // ========================  Helpers для классов. Сохранения в JSON и загрузка ==
 // ==============================================================================
@@ -426,6 +431,7 @@ begin
   PutGridTimeLinesToServer(form1.GridTimeLines);
 
 end;
+
 Procedure PutGridTimeLinesToServer(GridTimeLines: tstringgrid);
 var
   i: integer;
@@ -439,7 +445,7 @@ begin
   if LoadProject_active then exit;
 
      sl := TStringList.Create;
-  for I := 0 to GridTimeLines.RowCount - 1 do
+  for I := 1 to GridTimeLines.RowCount - 1 do
   begin
      tlo := TTimelineOptions(GridTimeLines.Objects[0,i]);
      if tlo = nil  then continue;
@@ -449,6 +455,56 @@ begin
 //     if str1 <> str2  then
 //        showmessage('!error retrieve '+'TLO['+IntToStr(i)+']');
   end;
+     str1:=TLParameters.SaveToJSONStr;
+     PutJsonStrToServer('TLP',str1);
+     str2 := GetJsonStrFromServer('TLP');
+//     if str1 <> str2  then
+//        showmessage('!error retrieve '+'TLineparameters');
+//sssscheck
+    PutJsonStrToServer('TLEDITOR', TLZone.TLEditor.SaveToJSONstr);
+
+//     str1:=TLEditor.SaveToJSONStr;
+//     PutJsonStrToServer('TLEDITOR',str1);
+//     str2 := GetJsonStrFromServer('TLEDITOR');
+//     if str1 <> str2  then
+//        showmessage('!error retrieve '+'TLineparameters');
+
+  for I := 0 to tlzone.count-1 do
+  begin
+     TlTimeline := TTlTimeline(tlzone.timelines[i]);
+     if TlTimeline = nil  then continue;
+     str1:=TlTimeline.SaveToJSONStr;
+     PutJsonStrToServer('TLT['+IntToStr(i)+']',str1);
+     str2 := GetJsonStrFromServer('TLT['+IntToStr(i)+']');
+     if str1 <> str2  then
+//        showmessage('!error retrieve '+'TLT['+IntToStr(i)+']');
+  end;
+
+end;
+
+Procedure PutTimeLinesToServer;
+var
+  i: integer;
+  str1: ansistring;
+  str2: ansistring;
+  TLO: TTimeLineOptions;
+  TlTimeline :TTlTimeline;
+  sl : tstringlist;
+  tle : ansistring;
+begin
+  if LoadProject_active then exit;
+
+//     sl := TStringList.Create;
+//  for I := 0 to GridTimeLines.RowCount - 1 do
+//  begin
+//     tlo := TTimelineOptions(GridTimeLines.Objects[0,i]);
+//     if tlo = nil  then continue;
+//     str1:=TLO.SaveToJSONStr;
+//     PutJsonStrToServer('TLO['+IntToStr(i)+']',str1);
+//     str2 := GetJsonStrFromServer('TLO['+IntToStr(i)+']');
+////     if str1 <> str2  then
+////        showmessage('!error retrieve '+'TLO['+IntToStr(i)+']');
+//  end;
      str1:=TLParameters.SaveToJSONStr;
      PutJsonStrToServer('TLP',str1);
      str2 := GetJsonStrFromServer('TLP');
@@ -3305,6 +3361,7 @@ begin
             if (GridTimeLines.Selection.Top < 1) or
               (GridTimeLines.Selection.Top >= GridTimeLines.RowCount) then
               exit;
+            PutGridTimeLinesToServer(Form1.GridTimeLines); //ssssssjson
             EditTimeline(GridTimeLines.Selection.Top);
           end;
       end; // case
@@ -3315,6 +3372,7 @@ begin
       GridTimeLines.Repaint;
       if PanelPrepare.Visible then
         UpdatePanelPrepare;
+      PutGridTimeLinesToServer(Form1.GridTimeLines);       //ssssssjson
     end;
   except
     On E: Exception do

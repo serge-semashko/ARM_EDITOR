@@ -39,8 +39,8 @@ Type
         StopPosition: longint; // Позиция остановки клип (кадры)
         Scaler: real; // Отношение ширины Bitmap к ширине экрана
         vlcmode: TPlayerMode;
-        TLTimeCode : string;
-        command : string;
+        TLTimeCode: string;
+        command: string;
         procedure InitParameters;
         procedure UpdateParameters;
         procedure SetScreenBoanders;

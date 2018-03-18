@@ -24,6 +24,7 @@ Procedure WriteStrToPort(Str: ansistring);
 Procedure WriteCharToPort(Ch: ansistring);
 Procedure WriteBuffToPort(cnt: Cardinal);
 function GetSerialPortNames(lst: TStrings): string;
+function MyGetCommState : boolean;
 
 // глобальные переменные
 Var
@@ -165,6 +166,39 @@ Begin { QueryPort }
     end;
 End; { QueryPort }
 
+function MyGetCommState : boolean;
+Var DCB: TDCB;
+begin
+  result := true;
+  If (hPort < 0) Or Not SetupComm(hPort, 2048, 2048) Or
+  Not GetCommState(hPort, DCB) then
+  begin
+    SysErrorMessage(GetLastError);
+    StopService;
+    Result := false;
+    Exit;
+  End; { ошибка }
+  Port422Speed := inttostr(DCB.BaudRate);
+  Port422Bits := inttostr(DCB.ByteSize);
+      case DCB.Parity of
+  0 : Port422Parity := 'нет';
+  1 : Port422Parity := 'нечет';
+  2 : Port422Parity := 'чет';
+  3 : Port422Parity := 'маркер';
+  4 : Port422Parity := 'пробел';
+      end;
+
+      case DCB.StopBits of
+  0 : Port422Stop := '1';
+  1 : Port422Stop := '1.5';
+  2 : Port422Stop := '2';
+      end;
+
+      if (DCB.Flags and $00002015)=$00002015 then Port422Flow := 'Аппаратное'
+      else if (DCB.Flags and $00000311)=$00000311 then Port422Flow := 'XOn/XOff'
+      else if (DCB.Flags and $00000011)=$00000011 then Port422Flow := 'нет';
+end;
+
 function InitPort: boolean;
 Var
     DCB: TDCB; // структура для хранения настроек порта
@@ -193,7 +227,7 @@ Begin { InitPort }
             // Port422Flow : string = 'нет';
 
             if trim(Port422Speed) = '' then
-                DCB.BaudRate := 38400
+                DCB.BaudRate := strtoint(Port422Speed)
             else
                 DCB.BaudRate := StrToInt(Port422Speed);
             if trim(Port422Bits) = '' then

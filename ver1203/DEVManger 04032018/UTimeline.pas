@@ -5,7 +5,7 @@ interface
 uses
     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
     Dialogs, Buttons, ExtCtrls, StdCtrls, Grids, ImgList, Spin, ucommon,
-    umyevents,system.json;
+    umyevents, system.json, uwebget;
 
 type
     // TTypeTimeline = (tldevice, tltext, tlmedia);
@@ -41,6 +41,7 @@ type
         destructor Destroy; override;
     end;
 {$INCLUDE ..\helpers\utimeline_hdr.inc}
+
 var
     OPTTimeline: TTimelineOptions;
     IconsLocation: array [1 .. 10] of Trect;

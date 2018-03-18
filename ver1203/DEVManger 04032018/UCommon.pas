@@ -157,6 +157,10 @@ Var
     INFOName3: string = '';
     INFOText3: string = '';
 
+    NumberManeger: Integer = -1;
+    CountWaitReplay : integer = 0;
+    MaxCountReplay : integer = 10;
+
 function UserExists(User, Pass: string): boolean;
 function TwoDigit(dig: integer): string;
 procedure LoadBMPFromRes(cv: tcanvas; rect: TRect; width, height: integer;
@@ -183,10 +187,6 @@ function MyDateTimeToStr(tm: tdatetime): string;
 function TimeCodeDelta: Double;
 function TColorToTfcolor(color: tcolor): TFColor;
 procedure Delay(const AMilliseconds: Cardinal);
-Procedure addVariableToJson(var JSON: tjsonObject; varName: string;
-  varvalue: variant);
-Function getVariableFromJson(var JSON: tjsonObject; varName: string;
-  varvalue: variant): variant;
 procedure initrect(rt: TRect);
 function chartohex(ch: char): byte;
 function StrToByte(stri: string): byte;
@@ -214,7 +214,7 @@ function GetDigit(value, posdig: string): string;
 implementation
 
 uses mainunit, utimeline, udrawtimelines, ugrtimelines, ComPortUnit,
-    umyprotocols;
+    umyprotocols, uwebget;
 { TRectJSON }
 
 function TRectJSON.LoadFromJSONObject(JSON: tjsonObject): boolean;
@@ -259,41 +259,7 @@ begin
 end;
 /// // SSSSSSSSSSSSSSSSSSSSSSSSSSSSS end
 
-Function getVariableFromJson(var JSON: tjsonObject; varName: string;
-  varvalue: variant): variant;
-var
-    tmpjson: tjsonvalue;
-    tmpstr: string;
-    res: variant;
-begin
-    tmpjson := JSON.GetValue(varName);
-    if (tmpjson <> nil) then
-    begin
-        tmpstr := tmpjson.value;
-        // varValue := tmpStr;
-        result := tmpstr;
-    end;
-end;
 
-Procedure addVariableToJson(var JSON: tjsonObject; varName: string;
-  varvalue: variant);
-var
-    teststr: ansistring;
-    List: TStringList;
-    numElement: integer;
-    utf8val: string;
-    tmpjson: tjsonvalue;
-    retval: string;
-    strValue: string;
-    vType: tvarType;
-    tmpInt: integer;
-begin
-    FormatSettings.DecimalSeparator := '.';
-    vType := varType(varvalue);
-    strValue := varvalue;
-    utf8val := stringOf(TEncoding.UTF8.GetBytes(strValue));
-    JSON.AddPair(varName, strValue);
-end;
 
 function hexchartoint(Hexchar: ansichar): integer;
 begin
@@ -829,6 +795,7 @@ Begin
     if not MakeLogging then
         exit;
     try
+      try
         DecodeDate(now, Year, Month, Day);
         PathLog := extractfilepath(application.ExeName) + 'Log';
         if not DirectoryExists(PathLog) then
@@ -836,18 +803,18 @@ Begin
         FN := PathLog + '\' + trim(FileName) + TwoDigit(Day) + TwoDigit(Month) +
           inttostr(Year) + '.log';
         AssignFile(F, FN);
-        try
-            if FileExists(FN) then
-                Append(F)
-            else
-                Rewrite(F);
-            DateTimeToString(txt, 'dd.mm.yyyy hh:mm:ss:ms', now);
-            Writeln(F, txt + ' |' + log);
-        except
-        end;
-    finally
+        if FileExists(FN) then
+            Append(F)
+        else
+            Rewrite(F);
+        DateTimeToString(txt, 'dd.mm.yyyy hh:mm:ss:ms', now);
+        Writeln(F, txt + ' |' + log);
+      finally
         CloseFile(F);
-    end
+      end
+    except
+      CloseFile(F);
+    end;
 End;
 
 function chartohex(ch: char): byte;

@@ -467,7 +467,7 @@ uses UInitForms, UGrid, UProject, UIMGButtons, UDelGridRow, UTimeline,
   USubtitrs, USetTemplate, ugridsort, uwebserv, ulkjson, uMyMediaSwitcher,
   ushifttl, ushortnum, umyinifile, uevswapbuffer, uLock, umyundo, UlistUsers,
   umyltc, usettc, UMyTextTemplate, umymenu, UStartWindow, ufrhotkeys,
-  UMyOptions,
+  UMyOptions, udevmanagers,
   UMyTextTable, ufrsaveproject;
 
 {$R *.dfm}
@@ -645,6 +645,7 @@ var
   CTC: string;
 begin
   try
+     UpdateManagerList;
     // Если ни одного клипа не загруженно в окно подготовки выходим из данного модуля
     // if trim(form1.lbActiveClipID.Caption)='' then exit;
     // Анализируем состояние системы на предмет запуска по времени.
@@ -1796,7 +1797,7 @@ begin
     res := pnlprojcntl.ClickButton(imgButtonsControlProj.Canvas, X, Y);
     ButtonControlLists(res);
     // ssssjson
-          PutGridTimeLinesToServer(Form1.GridTimeLines);
+          //PutGridTimeLinesToServer(Form1.GridTimeLines);
 
     IsProjectChanges := true;
   except
@@ -1815,6 +1816,7 @@ begin
     exit;
   end;
   EditTimeline(GridTimeLines.Selection.Top);
+  PutGridTimeLinesToServer(Form1.GridTimeLines);
   GridTimeLines.Repaint;
   IsProjectChanges := true;
 end;

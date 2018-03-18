@@ -28,7 +28,8 @@ var
     jsonware_url: string;
     LoadProject_active: boolean = true;
     webredis_errlasttime: double = -1;
-    local_vlcMode :Integer = -1;
+    local_vlcMode: integer = -1;
+
 implementation
 
 var
@@ -50,6 +51,9 @@ begin
     if (tmpjSon <> nil) then
     begin
         tmpstr := tmpjSon.Value;
+        tmpstr := AnsiReplaceStr(tmpstr,'#$%#$%', ' ');
+
+
         // varValue := tmpStr;
         result := tmpstr;
     end;
@@ -72,8 +76,8 @@ begin
     vType := varType(varvalue);
     strValue := varvalue;
     // if varName = 'Name'  then begin
-    s1 := AnsiReplaceStr(strValue, ' ', '_');
-    strValue := AnsiReplaceStr(strValue, ' ', '_');
+    s1 := AnsiReplaceStr(strValue, ' ', '#$%#$%');
+    strValue := AnsiReplaceStr(strValue, ' ', '#$%#$%');
     // end;
     utf8val := stringOf(tencoding.UTF8.GetBytes(strValue));
     json.AddPair(varName, strValue);
@@ -90,12 +94,15 @@ var
     mstr: tmemorystream;
     ff: tfilestream;
 begin
+    // exit;
+    // WriteLog('vlcmode','WEB GET '+ varName);
     result := '';
-    if LoadProject_active then
-        exit;
     if (now - webredis_errlasttime) * 24 * 3600 < 10 then
-        exit;
+    begin
+        // WriteLog('vlcmode',' errlasttime ');
 
+        exit;
+    end;
     strlist := TStringList.create;
     if pos('HTTP://', AnsiUpperCase(varName)) < 1 then
         putcommand := jsonware_url + 'GET_' + varName
@@ -103,19 +110,23 @@ begin
         putcommand := varName;
     if not httpgettext(putcommand, strlist) then
     begin
+        strlist.Free;
+        // WriteLog('vlcmode',' httpgettext error: '+putcommand);
         webredis_errlasttime := now;
         exit;
     end;
     result := strlist.text;
-    if length(strlist.text) < 6 then
+    strlist.Free;
+
+    // WriteLog('vlcmode','      '+system.copy(result,1, 40));
+    if length(result) < 6 then
     begin
-        webredis_errlasttime := now;
         exit;
     end;
-    i1 := pos('{', strlist.text);
+    i1 := pos('{', result);
     if i1 < 1 then
         exit;
-    result := system.copy(strlist.text, i1, length(strlist.text) - 2);
+    result := system.copy(result, i1, length(result) - 2);
     while (result[length(result)] <> '}') and (length(result) > 0) do
         system.delete(result, length(result), 1);
 end;
@@ -132,6 +143,7 @@ var
     ff: tfilestream;
     putcommand: ansistring;
 begin
+    // exit;
     result := '';
     if LoadProject_active then
         exit;

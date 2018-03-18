@@ -3,14 +3,10 @@ unit UPortOptions;
 interface
 
 uses
-    Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-    System.Classes,
-    Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
-    Vcl.ExtCtrls,
+    Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+    Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
     Math, FastDIB, FastFX, FastSize, FastFiles, FConvert, FastBlend, Utils,
-    StrUtils,
-    system.json,
-    Vcl.Buttons;
+    StrUtils, System.json, Vcl.Buttons, uwebget;
 
 type
     TOneOption = class
@@ -26,7 +22,7 @@ type
     end;
 
     TProgOptions = class
-        description : string;
+        dev_desc: string;
         Count: integer;
         Options: array of TOneOption;
         procedure draw(cv: tcanvas; HeightRow: integer);
@@ -37,27 +33,25 @@ type
         procedure LoadData;
         procedure SaveData;
         procedure clear;
-        Constructor create;
-        Destructor destroy;
+        constructor create;
+        destructor destroy;
     end;
 
     // sss helpers
     TProgOptionsJson = class helper for TProgOptions
     public
-        Function SaveToJSONStr: string;
-        Function SaveToJSONObject: tjsonObject;
-        Function LoadFromJSONObject(json: tjsonObject): boolean;
-        Function LoadFromJSONstr(JSONstr: string): boolean;
-
+        function SaveToJSONStr: string;
+        function SaveToJSONObject: tjsonObject;
+        function LoadFromJSONObject(json: tjsonObject): boolean;
+        function LoadFromJSONstr(JSONstr: string): boolean;
     end;
 
     TOneOptionJson = class helper for TOneOption
     public
-        Function SaveToJSONStr: string;
-        Function SaveToJSONObject: tjsonObject;
-        Function LoadFromJSONObject(json: tjsonObject): boolean;
-        Function LoadFromJSONstr(JSONstr: string): boolean;
-
+        function SaveToJSONStr: string;
+        function SaveToJSONObject: tjsonObject;
+        function LoadFromJSONObject(json: tjsonObject): boolean;
+        function LoadFromJSONstr(JSONstr: string): boolean;
     end;
 
     // sss end
@@ -69,13 +63,10 @@ type
         ComboBox1: TComboBox;
         SpeedButton1: TSpeedButton;
         SpeedButton2: TSpeedButton;
-        procedure ImgOptionsMouseMove(Sender: TObject; Shift: TShiftState;
-          X, Y: integer);
-        procedure ImgOptionsMouseUp(Sender: TObject; Button: TMouseButton;
-          Shift: TShiftState; X, Y: integer);
+        procedure ImgOptionsMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
+        procedure ImgOptionsMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: integer);
         procedure Edit1Change(Sender: TObject);
-        procedure Edit1KeyDown(Sender: TObject; var Key: Word;
-          Shift: TShiftState);
+        procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
         procedure Edit1KeyPress(Sender: TObject; var Key: Char);
         procedure ComboBox1Change(Sender: TObject);
         procedure SpeedButton2Click(Sender: TObject);
@@ -96,7 +87,8 @@ procedure setoptions;
 
 implementation
 
-uses mainunit, ucommon, comportunit, umyinitfile;
+uses
+    mainunit, ucommon, comportunit, umyinitfile;
 
 {$R *.dfm}
 
@@ -123,21 +115,17 @@ begin
     lst.clear;
     pss := 1;
     pse := posex('|', SrcStr, pss);
-    while pse <> 0 do
-    begin
+    while pse <> 0 do begin
         stmp := copy(SrcStr, pss, pse - pss);
         stmp := StringReplace(stmp, '|', '', [rfReplaceAll, rfIgnoreCase]);
-        if trim(stmp) <> '' then
-        begin
+        if trim(stmp) <> '' then begin
             ps1 := posex('[', stmp, 1);
             ps2 := posex(']', stmp, ps1);
-            if (ps1 <> 0) and (ps2 <> 0) then
-            begin
+            if (ps1 <> 0) and (ps2 <> 0) then begin
                 ssc := copy(stmp, 1, ps1 - 1);
                 ss1 := copy(stmp, ps1 + 1, ps2 - ps1 - 1);
                 ps1 := posex('..', ss1, 1);
-                if ps1 <> 0 then
-                begin
+                if ps1 <> 0 then begin
                     ss2 := copy(ss1, ps1 + 2, length(ss1));
                     ss1 := copy(ss1, 1, ps1 - 1);
                     for i := strtoint(ss1) to strtoint(ss2) do
@@ -154,17 +142,14 @@ begin
     end;
     stmp := copy(SrcStr, pss, length(SrcStr));
     stmp := StringReplace(stmp, '|', '', [rfReplaceAll, rfIgnoreCase]);
-    if trim(stmp) <> '' then
-    begin
+    if trim(stmp) <> '' then begin
         ps1 := posex('[', stmp, 1);
         ps2 := posex(']', stmp, ps1);
-        if (ps1 <> 0) and (ps2 <> 0) then
-        begin
+        if (ps1 <> 0) and (ps2 <> 0) then begin
             ssc := copy(stmp, 1, ps1 - 1);
             ss1 := copy(stmp, ps1 + 1, ps2 - ps1 - 1);
             ps1 := posex('..', ss1, 1);
-            if ps1 <> 0 then
-            begin
+            if ps1 <> 0 then begin
                 ss2 := copy(ss1, ps1 + 2, length(ss1));
                 ss1 := copy(ss1, 1, ps1 - 1);
                 for i := strtoint(ss1) to strtoint(ss2) do
@@ -178,17 +163,17 @@ begin
     end;
 end;
 
-Constructor TProgOptions.create;
+constructor TProgOptions.create;
 begin
     Count := 0;
+    dev_desc := 'test';
 end;
 
 procedure TProgOptions.clear;
 var
     i: integer;
 begin
-    for i := Count - 1 downto 0 do
-    begin
+    for i := Count - 1 downto 0 do begin
         Options[Count - 1].FreeInstance;
         Count := Count - 1;
         setlength(Options, Count);
@@ -196,7 +181,7 @@ begin
     Count := 0;
 end;
 
-Destructor TProgOptions.destroy;
+destructor TProgOptions.destroy;
 begin
     clear;
     freemem(@Count);
@@ -223,8 +208,7 @@ begin
         tmp.SetFont(ProgrammFontName, MTFontSize);
         top := 10;
         ps := (wdth - 10) div 2;
-        for i := 0 to Count - 1 do
-        begin
+        for i := 0 to Count - 1 do begin
             Options[i].RTN.Left := 5;
             Options[i].RTN.Right := Options[i].RTN.Left + ps - 5;
             Options[i].RTN.top := top;
@@ -235,19 +219,14 @@ begin
             Options[i].RTT.top := Options[i].RTN.top;
             Options[i].RTT.Bottom := Options[i].RTN.Bottom;
 
-            if Options[i].select then
-            begin
-                tmp.Rectangle(Options[i].RTT.Left, Options[i].RTT.top,
-                  Options[i].RTT.Right, Options[i].RTT.Bottom);
+            if Options[i].select then begin
+                tmp.Rectangle(Options[i].RTT.Left, Options[i].RTT.top, Options[i].RTT.Right, Options[i].RTT.Bottom);
             end;
-            tmp.DrawText(Options[i].Name, Options[i].RTN,
-              DT_VCENTER or DT_SINGLELINE);
-            tmp.DrawText(Options[i].Text, Options[i].RTT,
-              DT_VCENTER or DT_SINGLELINE);
+            tmp.DrawText(Options[i].Name, Options[i].RTN, DT_VCENTER or DT_SINGLELINE);
+            tmp.DrawText(Options[i].Text, Options[i].RTT, DT_VCENTER or DT_SINGLELINE);
         end;
         tmp.SetTransparent(false);
-        tmp.DrawRect(cv.Handle, cv.ClipRect.Left, cv.ClipRect.top,
-          cv.ClipRect.Right, cv.ClipRect.Bottom, 0, 0);
+        tmp.DrawRect(cv.Handle, cv.ClipRect.Left, cv.ClipRect.top, cv.ClipRect.Right, cv.ClipRect.Bottom, 0, 0);
         cv.Refresh;
     finally
         tmp.Free;
@@ -261,11 +240,8 @@ var
 begin
     for i := 0 to Count - 1 do
         Options[i].select := false;
-    for i := 1 to Count - 1 do
-    begin
-        if (X > Options[i].RTT.Left) and (X < Options[i].RTT.Right) and
-          (Y > Options[i].RTT.top) and (Y < Options[i].RTT.Bottom) then
-        begin
+    for i := 1 to Count - 1 do begin
+        if (X > Options[i].RTT.Left) and (X < Options[i].RTT.Right) and (Y > Options[i].RTT.top) and (Y < Options[i].RTT.Bottom) then begin
             Options[i].select := true;
             exit;
         end;
@@ -279,11 +255,8 @@ begin
     result := -1;
     for i := 0 to Count - 1 do
         Options[i].select := false;
-    for i := 1 to Count - 1 do
-    begin
-        if (X > Options[i].RTT.Left) and (X < Options[i].RTT.Right) and
-          (Y > Options[i].RTT.top) and (Y < Options[i].RTT.Bottom) then
-        begin
+    for i := 1 to Count - 1 do begin
+        if (X > Options[i].RTT.Left) and (X < Options[i].RTT.Right) and (Y > Options[i].RTT.top) and (Y < Options[i].RTT.Bottom) then begin
             result := i;
             // Options[i].select:=true;
             exit;
@@ -303,10 +276,8 @@ function TProgOptions.Get(Name: string): string;
 var
     i: integer;
 begin
-    for i := 0 to Count - 1 do
-    begin
-        if ansilowercase(trim(Options[i].Name)) = ansilowercase(trim(Name)) then
-        begin
+    for i := 0 to Count - 1 do begin
+        if ansilowercase(trim(Options[i].Name)) = ansilowercase(trim(Name)) then begin
             result := Options[i].Text;
             exit;
         end;
@@ -314,7 +285,7 @@ begin
 end;
 
 procedure TProgOptions.LoadData;
-Var
+var ps : integer;
     ss: string;
 begin
     clear;
@@ -327,11 +298,16 @@ begin
         ss := 'IP Адрес';
     Add('Порт передачи данных:', ss, 'RS232/422|IP Адрес');
     ss := trim(GetSerialPortNames(ListComports));
-    ss := StringReplace(ss, ',', '|', [rfReplaceAll, rfIgnoreCase]);
+    if trim(ss)<>'' then begin
+      ss := StringReplace(ss, ',', '|', [rfReplaceAll, rfIgnoreCase]);
+      ps := ListComports.IndexOf(Port422Name);
+      if ps<0 then Port422Name:='';
+    end else begin
+      Port422Name:='';
+    end;
     Add('Последовательный порт:', Port422Name, ss); // : string ='';
     // Add('',Port422Number,''); //: integer = 0;
-    Add('Скорость порта (бит/сек):', Port422Speed,
-      '1200|2400|4800|9600|14400|19200|38400|57600|115200');
+    Add('Скорость порта (бит/сек):', Port422Speed, '1200|2400|4800|9600|14400|19200|38400|57600|115200');
     // : string = '38400';
     Add('Количество бит:', Port422Bits, '8|7|6|5'); // : string = '8';
     Add('Четность:', Port422Parity, 'нет|чет|нечет|маркер|пробел');
@@ -362,7 +338,7 @@ begin
 end;
 
 procedure TProgOptions.SaveData;
-Var
+var
     ss: string;
 begin
     ss := Get('Номер устройства:');
@@ -439,8 +415,11 @@ procedure TfrOptions.ComboBox1Change(Sender: TObject);
 begin
     if indxoption = -1 then
         exit;
-    ProgOptions.Options[indxoption].Text := ComboBox1.Items.Strings
-      [ComboBox1.ItemIndex];
+    ProgOptions.Options[indxoption].Text := ComboBox1.Items.Strings[ComboBox1.ItemIndex];
+    if indxoption=1 then begin
+      if trim(ProgOptions.Options[1].Text)<>'' then ManagerNumber:=strtoint(ProgOptions.Options[1].Text);
+    end;
+
     ProgOptions.draw(ImgOptions.Canvas, ComboBox1.Height);
     ImgOptions.Repaint;
 end;
@@ -452,8 +431,7 @@ var
 begin
     if indxoption = -1 then
         exit;
-    if ProgOptions.Options[indxoption].EditType = 1 then
-    begin
+    if ProgOptions.Options[indxoption].EditType = 1 then begin
         s := trim(Edit1.Text);
         if length(s) > 15 then
             s := copy(s, 1, 15);
@@ -464,8 +442,7 @@ begin
     ImgOptions.Repaint;
 end;
 
-procedure TfrOptions.Edit1KeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TfrOptions.Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
     if indxoption = -1 then
         exit;
@@ -479,30 +456,25 @@ var
     s: string;
     i, p1, p2, p3: integer;
 begin
-    if ProgOptions.Options[indxoption].EditType = 1 then
-    begin
-        if not(Key in ['0' .. '9', #8]) then
-        begin
+    if ProgOptions.Options[indxoption].EditType = 1 then begin
+        if not (Key in ['0'..'9', #8]) then begin
             Key := #0;
             exit;
         end;
         s := Edit1.Text;
         p2 := Edit1.SelStart;
-        Case Key of
+        case Key of
             #8:
                 begin
-                    if Edit1.SelLength = 0 then
-                    begin
-                        if (p2 <> 4) and (p2 <> 8) and (p2 <> 12) then
-                        begin
+                    if Edit1.SelLength = 0 then begin
+                        if (p2 <> 4) and (p2 <> 8) and (p2 <> 12) then begin
                             s[p2] := '0';
                             Edit1.Text := s;
                             Key := #0;
                             if p2 > 0 then
                                 Edit1.SelStart := p2 - 1;
                         end
-                        else
-                        begin
+                        else begin
                             s[p2] := '.';
                             Edit1.Text := s;
                             Key := #0;
@@ -510,10 +482,8 @@ begin
                                 Edit1.SelStart := p2 - 1;
                         end;
                     end
-                    else
-                    begin
-                        for i := p2 + 1 to p2 + Edit1.SelLength do
-                        begin
+                    else begin
+                        for i := p2 + 1 to p2 + Edit1.SelLength do begin
                             if (i <> 4) and (i <> 8) and (i <> 12) then
                                 s[i] := '0';
                         end;
@@ -525,12 +495,11 @@ begin
                             Key := s[p2 - 1];
                     end;
                 end;
-            '0' .. '9':
+            '0'..'9':
                 begin
                     if (p2 = 3) or (p2 = 7) or (p2 = 11) then
                         p2 := p2 + 1;
-                    if (p2 <> 3) and (p2 <> 7) and (p2 <> 11) then
-                    begin
+                    if (p2 <> 3) and (p2 <> 7) and (p2 <> 11) then begin
                         if p2 < 15 then
                             p2 := p2 + 1
                         else
@@ -538,8 +507,7 @@ begin
                         s[p2] := Key;
                         Edit1.Text := s;
                         Key := #0;
-                        if p2 <= 15 then
-                        begin
+                        if p2 <= 15 then begin
                             if (p2 = 3) or (p2 = 7) or (p2 = 11) then
                                 Edit1.SelStart := p2 + 1
                             else
@@ -547,13 +515,11 @@ begin
                         end;
                     end;
                 end;
-        End;
+        end;
         exit;
     end;
-    if ProgOptions.Options[indxoption].EditType = 0 then
-    begin
-        if not(Key in ['0' .. '9', #8]) then
-        begin
+    if ProgOptions.Options[indxoption].EditType = 0 then begin
+        if not (Key in ['0'..'9', #8]) then begin
             Key := #0;
             exit;
         end;
@@ -583,8 +549,7 @@ begin
     ComboBox1.Font.Color := ProgrammEditFontColor;
 end;
 
-procedure TfrOptions.ImgOptionsMouseMove(Sender: TObject; Shift: TShiftState;
-  X, Y: integer);
+procedure TfrOptions.ImgOptionsMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
     ProgOptions.MouseMove(ImgOptions.Canvas, X, Y);
     ProgOptions.draw(ImgOptions.Canvas, ComboBox1.Height);
@@ -594,34 +559,26 @@ begin
         ComboBox1.Visible := false;
 end;
 
-procedure TfrOptions.ImgOptionsMouseUp(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: integer);
+procedure TfrOptions.ImgOptionsMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: integer);
 begin
     indxoption := ProgOptions.ClickMouse(ImgOptions.Canvas, X, Y);
     Edit1.Visible := false;
     ComboBox1.Visible := false;
-    if indxoption <> -1 then
-    begin
-        if trim(ProgOptions.Options[indxoption].VarText) = '' then
-        begin
+    if indxoption <> -1 then begin
+        if trim(ProgOptions.Options[indxoption].VarText) = '' then begin
             Edit1.Left := ProgOptions.Options[indxoption].RTT.Left;
             Edit1.top := ProgOptions.Options[indxoption].RTT.top;
-            Edit1.Width := ProgOptions.Options[indxoption].RTT.Right -
-              ProgOptions.Options[indxoption].RTT.Left;
+            Edit1.Width := ProgOptions.Options[indxoption].RTT.Right - ProgOptions.Options[indxoption].RTT.Left;
             Edit1.Text := ProgOptions.Options[indxoption].Text;
             Edit1.Visible := true;
         end
-        else
-        begin
+        else begin
             ComboBox1.Left := ProgOptions.Options[indxoption].RTT.Left;
             ComboBox1.top := ProgOptions.Options[indxoption].RTT.top;
-            ComboBox1.Width := ProgOptions.Options[indxoption].RTT.Right -
-              ProgOptions.Options[indxoption].RTT.Left;
+            ComboBox1.Width := ProgOptions.Options[indxoption].RTT.Right - ProgOptions.Options[indxoption].RTT.Left;
             ComboBox1.clear;
-            GetListParam(ProgOptions.Options[indxoption].VarText,
-              ComboBox1.Items);
-            ComboBox1.ItemIndex := ComboBox1.Items.IndexOf
-              (ProgOptions.Options[indxoption].Text);
+            GetListParam(ProgOptions.Options[indxoption].VarText, ComboBox1.Items);
+            ComboBox1.ItemIndex := ComboBox1.Items.IndexOf(ProgOptions.Options[indxoption].Text);
             ComboBox1.Visible := true;
         end;
     end;
@@ -632,8 +589,7 @@ end;
 procedure TfrOptions.SpeedButton1Click(Sender: TObject);
 begin
     ProgOptions.SaveData;
-    if Port422select then
-    begin
+    if Port422select then begin
         fmMain.Timer1.Enabled := false;
         StopService;
         fmMain.ComportInit;
@@ -642,6 +598,8 @@ begin
     Edit1.Visible := false;
     ComboBox1.Visible := false;
     SetIconApplication(fmMain.image1, ManagerNumber);
+    fmMain.Caption := 'Модуль управления устройствами: ' + '  S/N: '
+                    + SerialNumber + '   ID=' + inttostr(ManagerNumber);
     ProgOptions.draw(ImgOptions.Canvas, ComboBox1.Height);
     ImgOptions.Repaint;
     if AutoStart then
@@ -660,45 +618,160 @@ end;
 { TProgOptionsJson }
 
 function TProgOptionsJson.LoadFromJSONObject(json: tjsonObject): boolean;
+var
+    i1: integer;
+    tmpjson: tjsonObject;
 begin
+    // description : string;
+    dev_desc := getVariableFromJson(json, 'description', dev_desc);
+    // Count: integer;
+    Count := getVariableFromJson(json, 'Count', Count);
+    // Options: array of TOneOption;
+    setlength(Options, 0);
+    setlength(Options, Count);
+    for i1 := 0 to Count - 1 do begin
+        tmpjson := tjsonObject(json.GetValue('Options' + inttostr(i1)));
+        assert(tmpjson <> nil, 'Options нет для ' + inttostr(i1));
+        if tmpjson = nil then
+            break;
+        Options[i1] := TOneOption.create('', '', '');
+        Options[i1].LoadFromJSONObject(tmpjson);
+    end;
 
 end;
 
 function TProgOptionsJson.LoadFromJSONstr(JSONstr: string): boolean;
+var
+    json: tjsonObject;
 begin
-
+    json := tjsonObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONstr), 0) as tjsonObject;
+    result := true;
+    if json = nil then begin
+        result := false;
+    end
+    else
+        LoadFromJSONObject(json);
 end;
 
 function TProgOptionsJson.SaveToJSONObject: tjsonObject;
-begin
+var
+    str1: string;
+    js1, json: tjsonObject;
+    i1, i2: integer;
+    jsondata: string;
+    (*
+      ** сохранение всех переменных в строку JSONDATA в формате JSON
+    *)
 
+begin
+    json := tjsonObject.create;
+    try
+        str1 := dev_desc;
+        addVariableToJson(json, 'dev_desc', dev_desc);
+        // Count: integer;
+        addVariableToJson(json, 'Count', Count);
+        // Options: array of TOneOption;
+        for i1 := 0 to Count - 1 do
+            json.AddPair('Options' + inttostr(i1), Options[i1].SaveToJSONObject);
+    except
+        on E: Exception do
+
+
+    end;
+    result := json;
 end;
 
 function TProgOptionsJson.SaveToJSONStr: string;
+var
+    jsontmp: tjsonObject;
+    JSONstr: string;
 begin
-
+    jsontmp := SaveToJSONObject;
+    JSONstr := jsontmp.ToJSON;
+    result := JSONstr;
+    jsontmp.Free;
 end;
 
 { TOneOptionJson }
 
 function TOneOptionJson.LoadFromJSONObject(json: tjsonObject): boolean;
 begin
+    // Name: string;
+    Name := getVariableFromJson(json, 'Name', Name);
+    // RTN: trect;
+    // Text: string;
+    Text := getVariableFromJson(json, 'Text', Text);
+    // VarText: string;
+    VarText := getVariableFromJson(json, 'VarText', VarText);
+    // RTT: trect;
+    // EditType: integer;
+    EditType := getVariableFromJson(json, 'EditType', EditType);
+    // select: boolean;
+    select := getVariableFromJson(json, 'select', select);
 
 end;
 
 function TOneOptionJson.LoadFromJSONstr(JSONstr: string): boolean;
+var
+    json: tjsonObject;
 begin
-
+    json := tjsonObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JSONstr), 0) as tjsonObject;
+    result := true;
+    if json = nil then begin
+        result := false;
+    end
+    else
+        LoadFromJSONObject(json);
 end;
 
 function TOneOptionJson.SaveToJSONObject: tjsonObject;
-begin
+var
+    str1: string;
+    js1, json: tjsonObject;
+    i1, i2: integer;
+    jsondata: string;
+    (*
+      ** сохранение всех переменных в строку JSONDATA в формате JSON
+    *)
 
+begin
+    json := tjsonObject.create;
+    try
+        // Name: string;
+        addVariableToJson(json, 'Name', Name);
+
+        // RTN: trect;
+        // Text: string;
+        addVariableToJson(json, 'Text', Text);
+
+        // VarText: string;
+        addVariableToJson(json, '', VarText);
+
+        // RTT: trect;
+        // EditType: integer;
+        addVariableToJson(json, 'EditType', EditType);
+
+        // select: boolean;
+        addVariableToJson(json, 'select', select);
+
+    except
+        on E: Exception do
+
+
+    end;
+    result := json;
 end;
 
 function TOneOptionJson.SaveToJSONStr: string;
+var
+    jsontmp: tjsonObject;
+    JSONstr: string;
 begin
-
+    jsontmp := SaveToJSONObject;
+    JSONstr := jsontmp.ToJSON;
+    result := JSONstr;
+    jsontmp.Free;
 end;
 
 end.
+

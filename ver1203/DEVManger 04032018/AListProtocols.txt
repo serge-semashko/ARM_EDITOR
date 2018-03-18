@@ -54,24 +54,24 @@
                 <0=byte.value.05>
                 <1=byte.main.EffectAdress>
                 <2=byte.value.CC>
-                <3=byte.value.C0>
-                <4=hbyte.value.1|lbyte.phrase.Duration(Data).hundres>
-                <5=hbyte.phrase.Duration(Data).tens|lbyte.phrase.Duration(Data).ones>
+                <3=hbyte.value.C|lbyte.phrase.Duration(Data).hundres>
+                <4=hbyte.value.0|lbyte.phrase.Duration(Data).tens>
+                <5=hbyte.value.0|lbyte.phrase.Duration(Data).ones>
               </Command=WriteAutoTransRatePrwPgm>
-              <Command=RunMixTransition>
+              <Command=SetMixTransition>
                 <Count=4>
                 <0=byte.value.03>
                 <1=byte.main.EffectAdress>
                 <2=byte.value.FB>
                 <3=byte.value.0F> 
-              </Command=RunMixTransition>
-              <Command=RunWipeTransition>
+              </Command=SetMixTransition>
+              <Command=SetWipeTransition>
                 <Count=4>
                 <0=byte.value.03>
                 <1=byte.main.EffectAdress>
                 <2=byte.value.FB>
                 <3=byte.value.0E> 
-              </Command=RunWipeTransition>
+              </Command=SetWipeTransition>
               <Command=WriteWipePattern>
                 <Count=4>
                 <0=byte.value.03>
@@ -79,53 +79,84 @@
                 <2=byte.value.C8>
                 <3=byte.phrase.Set(Data)> 
               </Command=WriteWipePattern>
+              <Command=ReadPresetBus>
+                <Count=3>
+                <0=byte.value.02>
+                <1=byte.main.EffectAdress>
+                <2=byte.value.42> 
+              </Command=ReadPresetBus>
             </CommandsList>
-            <CommandsStart>
+            <CommandsPaused>
               <Type=List>
-              <Count=1>
-              <1=CrossPointProgrammBus>
+              <Count=2>
+              <1=CrossPointProgrammBus[Event]>
+              <2=CrossPointPreviewBus[Event+1]>  
+            </CommandsPaused>  
+            <CommandsStart>
+              <Type=Case>
+              <Case=phrase.Command(Text)|Cut|Mix|Wipe|Ignore>
+              <Cut>
+                <Count=2>
+                <1=ReadPresetBus[Event]>
+                <2=CrossPointProgrammBus[Event]>
+              </Cut> 
+              <Mix>
+                <Count=1>
+                <1=WriteAutoTransRatePrwPgm[Event]>
+              </Mix>
+              <Wipe>
+                <Count=1> 
+                <1=WriteAutoTransRatePrwPgm[Event]>
+              </Wipe>
+              <Ignore>
+                <Count=2>
+                <1=ReadPresetBus[Event]> 
+                <2=CrossPointProgrammBus[Event]> 
+              </Ignore>
             </CommandsStart>
             <CommandsTransition>
               <Type=Case>
               <Case=phrase.Command(Text)|Cut|Mix|Wipe|Ignore>
               <Cut>
-                <Count=0> 
+                <Count=2> 
+                <1=ReadPresetBus[Event+1]>
+                <2=CrossPointPreviewBus[Event+1]> 
               </Cut> 
               <Mix>
-                <Count=2>
-                <1=CrossPointPreviewBus>
-                <2=WriteAutoTransRatePrwPgm> 
+                <Count=3>
+                <1=SetMixTransition[Event+1]>
+                <2=ReadPresetBus[Event+1]>
+                <3=CrossPointPreviewBus[Event+1]>
               </Mix>
               <Wipe>
-                <Count=3> 
-                <1=CrossPointPreviewBus>
-                <2=WriteAutoTransRatePrwPgm>
-                <3=WriteWipePattern> 
+                <Count=4> 
+                <1=SetWipeTransition[Event+1]>
+                <2=WriteWipePattern[Event+1]> 
+                <3ReadPresetBus[Event+1]>
+                <4=CrossPointPreviewBus[Event+1]>
               </Wipe>
               <Ignore>
-                <Count=0>
+                <Count=2>
+                <1=ReadPresetBus[Event+1]>
+                <2=CrossPointPreviewBus[Event+1]> 
               </Ignore>            
             </CommandsTransition>
-            <CommandFsinish>
+            <CommandsFinish>
               <Type=Case>
               <Case=phrase.Command(Text)|Cut|Mix|Wipe|Ignore>
               <Cut>
-                <Count=1>
-                <1=CrossPointProgrammBus>
+                <Count=0>
               </Cut> 
               <Mix>
-                <Count=1>
-                <1=RunMixTransition>
+                <Count=0>
               </Mix>
               <Wipe>
-                <Count=1> 
-                <1=RunWipeTransition>
+                <Count=0> 
               </Wipe>
               <Ignore>
-                <Count=1>
-                <1=CrossPointProgrammBus> 
+                <Count=0>
               </Ignore>
-            </CommandFinish>
+            </CommandsFinish>
           </CommandsTemplates>
           <MainOptions>
             <Param=EffectAdress>
@@ -141,7 +172,7 @@
           <AddOptions>
             <Param=XPT>
               <Count=1>
-              <1:Xpt[0..196]=byte.[0]>
+              <1:Xpt[1..196]=byte.[0]>
             </Param=XPT>
             <Param=TRANS>
               <Count=4>
@@ -208,9 +239,9 @@
                 <0=byte.value.05>
                 <1=byte.main.EffectAdress>
                 <2=byte.value.CC>
-                <3=byte.value.C0>
-                <4=hbyte.value.1|lbyte.phrase.Duration(Data).hundres>
-                <5=hbyte.phrase.Duration(Data).tens|lbyte.phrase.Duration(Data).ones>
+                <3=hbyte.value.C|lbyte.phrase.Duration(Data).hundres>
+                <4=hbyte.value.0|lbyte.phrase.Duration(Data).tens>
+                <5=hbyte.value.0|lbyte.phrase.Duration(Data).ones>
               </Command=WriteAutoTransRatePrwPgm>
               <Command=RunMixTransition>
                 <Count=4>
@@ -260,7 +291,7 @@
                 <Count=0>
               </Ignore>            
             </CommandsTransition>
-            <CommandFsinish>
+            <CommandsFsinish>
               <Type=Case>
               <Case=phrase.Command(Text)|Cut|Mix|Wipe|Ignore>
               <Cut>
@@ -279,7 +310,7 @@
                 <Count=1>
                 <1=CrossPointProgrammBus> 
               </Ignore>
-            </CommandFinish>
+            </CommandsFinish>
           </CommandsTemplates>
           <MainOptions>
             <Param=EffectAdress>

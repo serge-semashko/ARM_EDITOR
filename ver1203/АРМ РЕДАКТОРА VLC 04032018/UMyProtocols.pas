@@ -87,12 +87,14 @@ type
     rt1: trect;
     rtdm: trect;
     dmselect : boolean;
-    devicemanager: string;
+    devicemanager : string;
+    ldevicemanager : string;
     port422: TPort422;
     portip: TPortIP;
     function GetString: string;
     procedure GetListString(lst: tstrings);
     procedure SetString(stri: string);
+    procedure SetStringPr(stri: string);
     procedure draw(cv: tcanvas; HghtRw: integer);
     procedure unselect;
     procedure MouseMove(cv: tcanvas; X, Y: integer);
@@ -928,6 +930,7 @@ begin
   initrect(rt1);
   initrect(rtdm);
   devicemanager := '';
+  ldevicemanager := '0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16';
   port422 := TPort422.create;
   portip := TPortIP.create;
   dmselect := false;
@@ -943,6 +946,7 @@ begin
   freemem(@rt1);
   freemem(@rtdm);
   freemem(@devicemanager);
+  freemem(@ldevicemanager);
   freemem(@port422);
   freemem(@portip);
   freemem(@dmselect);
@@ -966,6 +970,38 @@ begin
   if existip then
     portip.GetListString(lst);
   lst.Add(SetSpace(10) + '</Ports>');
+end;
+
+procedure TMyPort.SetStringPr(stri: string);
+var
+  sports: string;
+begin
+  sports := GetProtocolsStr(stri, 'Port422');
+  if trim(sports) <> '' then
+  begin
+    port422.SetString(sports);
+    exist422 := true;
+  //end
+  //else
+  //begin
+  //  exist422 := false;
+  end;
+
+  sports := GetProtocolsStr(stri, 'PortIP');
+  if trim(sports) <> '' then
+  begin
+    portip.SetString(sports);
+    existip := true;
+  //end
+  //else
+  //begin
+  //  existip := false;
+  end;
+
+  if (not exist422) and existip then
+    select422 := false
+  else if (not existip) and exist422 then
+    select422 := true;
 end;
 
 procedure TMyPort.SetString(stri: string);

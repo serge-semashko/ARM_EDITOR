@@ -130,8 +130,6 @@
         <DCCReference Include="..\helpers\uwebget.pas"/>
         <None Include="..\helpers\events_body.inc"/>
         <None Include="..\helpers\events_hdr.inc"/>
-        <None Include="..\helpers\ugrtimelines_body.inc"/>
-        <None Include="..\helpers\ugrtimelines_hdr.inc"/>
         <None Include="..\helpers\utimeline_body.inc"/>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
@@ -166,21 +164,15 @@
                 <Platform value="Win64">False</Platform>
             </Platforms>
             <Deployment Version="3">
-                <DeployFile LocalName="DEVManager.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>DEVManager.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\helpers\ugrtimelines_body.inc" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="..\helpers\utimeline_body.inc" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="DEVManager.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>DEVManager.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -191,12 +183,6 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\helpers\events_hdr.inc" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\helpers\ugrtimelines_hdr.inc" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

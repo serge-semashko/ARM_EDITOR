@@ -527,7 +527,8 @@ begin
     WriteLog('MAIN',
       'UActPlayList.LoadDefaultClipToPlayer Пустой клип загружен.');
 
-    PutJsonStrToServer('TLEDITOR', TLZone.TLEditor.SaveToJSONstr);
+//    PutJsonStrToServer('TLEDITOR', TLZone.TLEditor.SaveToJSONstr);
+    PutTimeLinesToServer;
     SetMediaButtons;
   except
     on E: Exception do
@@ -894,7 +895,8 @@ begin
     Form1.ImgLayer0.Canvas.FillRect(Form1.ImgLayer0.Canvas.ClipRect);
     WriteLog('MAIN', 'UActPlayList.LoadClipsToPlayer Клип загружен');
     // MediaPause;
-    PutJsonStrToServer('TLEDITOR', TLZone.TLEditor.SaveToJSONstr);
+    //PutJsonStrToServer('TLEDITOR', TLZone.TLEditor.SaveToJSONstr);
+    PutTimeLinesToServer;
     SetMediaButtons;
   except
     on E: Exception do

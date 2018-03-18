@@ -1589,6 +1589,27 @@ begin
           ARow := InsertDevice(Position);
           Events[ARow].SetEvents((form1.GridTimeLines.Objects[0,
             psgrd] as TTimelineOptions).DevEvents[psclr]);
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          if trim(Events[ARow].ReadPhraseText('Command'))='' then begin
+            Events[ARow].SetPhraseText('Command',DefaultTransition);
+            if trim(DefaultTransition)='Cut' then begin
+              Events[ARow].SetPhraseData('Duration',0);
+              Events[ARow].SetPhraseVisible('Duration',false);
+              Events[ARow].SetPhraseData('Set',0);
+              Events[ARow].SetPhraseVisible('Set',false);
+            end else begin
+              Events[ARow].SetPhraseData('Duration',DefTransDuration);
+              Events[ARow].SetPhraseData('Set',DefTransSet);
+              if trim(DefaultTransition)='Mix' then begin
+                Events[ARow].SetPhraseVisible('Duration',true);
+                Events[ARow].SetPhraseVisible('Set',false);
+              end else begin
+                Events[ARow].SetPhraseVisible('Duration',true);
+                Events[ARow].SetPhraseVisible('Set',true);
+              end;
+            end;
+          end;
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
           result := ARow;
           AllSelectFalse;
         end;

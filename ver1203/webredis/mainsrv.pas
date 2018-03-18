@@ -23,6 +23,8 @@ type
         Minimize1: TMenuItem;
         quit1: TMenuItem;
     Memo1: TMemo;
+    txt1: TStaticText;
+    txt2: TStaticText;
         procedure FormCreate(Sender: TObject);
         procedure SpeedButton1Click(Sender: TObject);
         procedure terminate1Click(Sender: TObject);
@@ -380,9 +382,25 @@ procedure AddWebVar(keyname: ansistring; KeyValue: ansistring; json: tjsonobject
 var
     i1, i2, i3: integer;
     tnow: int64;
+    JSvalue : TJSONValue;
+    posstr : string;
 begin
     tnow := timeGetTime;
-//    HTTPSRVForm.memo1.lines.Values[keyname] := formatdatetime('HH:NN:SS ZZZ',now);
+    if keyname = 'TLP' then begin
+
+      jsvalue := json.GetValue('Position');
+      if JSvalue<>nil
+         then posstr := JSvalue.Value
+         else posstr := 'NIL';
+
+      HTTPSRVForm.txt1.Caption :='TLP:'+ formatdatetime('TLP: HH:NN:SS ZZZ ',now)+' position:'+posstr;
+
+    end else
+        if keyname = 'CTC'
+           then HTTPSRVForm.txt2.Caption :='CTC:'+ formatdatetime('TLP: HH:NN:SS ZZZ ',now)
+           else   HTTPSRVForm.memo1.lines.Values[keyname] := formatdatetime('HH:NN:SS ZZZ',now);
+    ;
+
     for i1 := 0 to VarCount - 1 do begin
         if ansiuppercase(webvars[i1].Name) <> ansiuppercase(keyname) then
             continue;
